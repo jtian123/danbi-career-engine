@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+tmp/
+output/
+data/.lock
+data/feedback.json
+private/
+Prev-career/
+Danbi-math-cowork/
+*.pdf
+*.docx
+*.ipynb

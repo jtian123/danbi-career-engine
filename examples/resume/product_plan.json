@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "lane": "product",
+  "summary_key": "product",
+  "experience": [
+    {
+      "id": "apateu",
+      "title": "Co-Founder, Product & Design",
+      "bullets": [
+        {
+          "claim_id": "ap_product",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_contract",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_distribution",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_trust",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_positioning",
+          "variant": "standard"
+        }
+      ]
+    },
+    {
+      "id": "silicon2",
+      "title": "Example Commercial Associate",
+      "bullets": [
+        {
+          "claim_id": "s2_launches",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "s2_shop",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "s2_operations",
+          "variant": "standard"
+        }
+      ]
+    },
+    {
+      "id": "xresearch",
+      "title": "Co-Founder, Product & Research",
+      "bullets": [
+        {
+          "claim_id": "xr_competitors",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "xr_deck_studio",
+          "variant": "standard"
+        }
+      ]
+    }
+  ],
+  "skill_ids": [
+    "flows",
+    "requirements",
+    "competitive",
+    "positioning",
+    "python",
+    "sql",
+    "excel",
+    "powerpoint"
+  ],
+  "writer_notes": "Synthetic public demonstration selection. Never submit these invented example claims.",
+  "coursework_ids": [
+    "ise534",
+    "ise562"
+  ]
+}

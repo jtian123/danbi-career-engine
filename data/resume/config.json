@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "max_words": 540,
+  "max_experiences": 3,
+  "min_experiences": 2,
+  "max_bullets": 11,
+  "max_primary_bullets": 5,
+  "max_other_bullets": 4,
+  "max_secondary_bullets": 2,
+  "max_skill_groups": 3,
+  "max_skills_per_group": 6,
+  "font": "Calibri",
+  "font_size": 11,
+  "min_font_size": 10.5,
+  "name_size": 19,
+  "heading_size": 11,
+  "margin": 0.55,
+  "max_review_rounds": 3,
+  "include_secondary_lanes": [
+    "product",
+    "insights"
+  ],
+  "page_target": 1,
+  "headlines": {
+    "product": "Product Management & Operations",
+    "commerce": "Commerce & Growth Analytics",
+    "insights": "Consumer Insights & Market Research",
+    "business": "Business Analysis & Operations",
+    "demand": "Demand Planning & Commercial Operations",
+    "finance": "Commercial Finance & Business Analysis",
+    "data": "Business Data Analytics"
+  },
+  "max_courses": 3
+}

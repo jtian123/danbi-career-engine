@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "lane": "commerce",
+  "summary_key": "commerce",
+  "experience": [
+    {
+      "id": "apateu",
+      "title": "Co-Founder, Product & Growth",
+      "bullets": [
+        {
+          "claim_id": "ap_distribution_scope",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_distribution",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_creative",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_cadence",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "ap_positioning",
+          "variant": "standard"
+        }
+      ]
+    },
+    {
+      "id": "silicon2",
+      "title": "Example Commercial Associate",
+      "bullets": [
+        {
+          "claim_id": "s2_shop",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "s2_operations",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "s2_creators",
+          "variant": "standard"
+        },
+        {
+          "claim_id": "s2_launches",
+          "variant": "standard"
+        }
+      ]
+    }
+  ],
+  "skill_ids": [
+    "content",
+    "research",
+    "positioning",
+    "commerce",
+    "sql",
+    "excel",
+    "powerpoint",
+    "photoshop"
+  ],
+  "writer_notes": "Synthetic public demonstration selection. Never submit these invented example claims.",
+  "coursework_ids": [
+    "ise525",
+    "ise529"
+  ]
+}
