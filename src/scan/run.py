@@ -44,7 +44,7 @@ def _tasks(general_boards=True):
         for a in e.get('ats', []):
             if a.get('verified') is False:
                 continue
-            tasks.append((f"{a['type']}:{a.get('token') or a.get('tenant') or a.get('domain') or a.get('host') or e['name']}",
+            tasks.append((f"{a['type']}:{a.get('token') or a.get('tenant') or a.get('domain') or a.get('host') or a.get('refNum') or a.get('site') or e['name']}",
                           'enterprise', e['name'], a))
     if general_boards:
         for b in _load('boards.json')['boards']:
@@ -56,6 +56,7 @@ def _tasks(general_boards=True):
 ADAPTERS = {'greenhouse': sources.greenhouse, 'lever': sources.lever, 'ashby': sources.ashby,
             'smartrecruiters': sources.smartrecruiters, 'workday': sources.workday,
             'eightfold': sources.eightfold, 'oracle': sources.oracle, 'simplify': sources.simplify,
+            'jibe': sources.jibe, 'phenom': sources.phenom, 'jobscore': sources.jobscore,
             **sources.BIGTECH}
 
 

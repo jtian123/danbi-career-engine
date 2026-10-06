@@ -188,11 +188,24 @@ def _wd_posted(s):
     return None
 
 
-def eightfold(company, host, domain, **_):
+def eightfold(company, host, domain, api=None, **_):
+    """Eightfold career sites. Newer ones (api='pcsx') use /api/pcsx/search."""
     rows = []
     for q in ('intern', 'internship'):
-        d = net.get(f'https://{host}/api/apply/v2/jobs?domain={domain}&start=0&num=100&query={q}')
-        for p in d.get('positions', []):
+        if api == 'pcsx':
+            d = net.get(f'https://{host}/api/pcsx/search?domain={domain}&start=0&num=100&query={q}&sort_by=timestamp')
+            positions = (d.get('data') or {}).get('positions') or []
+        else:
+            d = net.get(f'https://{host}/api/apply/v2/jobs?domain={domain}&start=0&num=100&query={q}')
+            positions = d.get('positions', [])
+        for p in positions:
+            if api == 'pcsx':
+                rows.append(_row(source='bigtech', board=f'eightfold:{domain}', company=company,
+                                 title=p.get('name') or p.get('title'),
+                                 location=p.get('location') or '; '.join(p.get('locations') or []),
+                                 url=f"https://{host}" + (p.get('positionUrl') or f"/careers/job/{p.get('id')}"),
+                                 posted=_day(p.get('postedTs')), req_id=str(p.get('displayJobId') or p.get('id'))))
+                continue
             rows.append(_row(source='bigtech', board=f'eightfold:{domain}', company=company, title=p.get('name'),
                              location=p.get('location') or ', '.join(p.get('locations') or []),
                              url=p.get('canonicalPositionUrl') or f"https://{host}/careers/job/{p.get('id')}",
@@ -201,7 +214,8 @@ def eightfold(company, host, domain, **_):
     return rows, len(rows)
 
 
-def oracle(company, host, site, public_site=None, **_):
+def oracle(company, host, site=None, siteNumber=None, public_site=None, **_):
+    site = site or siteNumber
     rows = []
     for q in ('intern', 'internship'):
         u = (f'https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true'
@@ -216,6 +230,85 @@ def oracle(company, host, site, public_site=None, **_):
                                  posted=_day(j.get('PostedDate')), req_id=str(j.get('Id')),
                                  description=text(j.get('ShortDescriptionStr') or '')))
     return rows, len(rows)
+
+
+def jibe(company, host, **_):
+    """iCIMS career sites behind a Jibe front: GET /api/jobs?keywords=… (public JSON)."""
+    rows, page = [], 1
+    while page <= 5:
+        d = net.get(f'https://{host}/api/jobs?keywords=intern&page={page}')
+        for j in d.get('jobs', []):
+            x = j.get('data') or {}
+            rows.append(_row(source='ats', board=f'jibe:{host}', company=company, title=x.get('title'),
+                             location=x.get('full_location') or ', '.join(v for v in (x.get('city'), x.get('state'), x.get('country')) if v),
+                             url=f"https://{host}/jobs/{x.get('slug') or x.get('req_id')}",
+                             posted=_day(x.get('posted_date') or x.get('create_date')), req_id=str(x.get('req_id', '')),
+                             description=text(x.get('description'))[:12000]))
+        if len(rows) >= (d.get('totalCount') or 0) or not d.get('jobs'):
+            break
+        page += 1
+    return rows, len(rows)
+
+
+def phenom(company, base, refNum, **_):
+    """Phenom career sites: POST {base}/widgets with ddoKey=refineSearch (public JSON)."""
+    body = {'lang': 'en_us', 'deviceType': 'desktop', 'country': 'us', 'pageName': 'search-results',
+            'ddoKey': 'refineSearch', 'sortBy': '', 'subsearch': '', 'from': 0, 'jobs': True, 'counts': True,
+            'all_fields': ['category', 'country', 'city', 'type'], 'size': 100, 'clearAll': False,
+            'jdsource': 'facets', 'isSliderEnable': False, 'pageId': 'page20', 'siteType': 'external',
+            'keywords': 'intern', 'global': True, 'selected_fields': {}, 'locationData': {}, 'refNum': refNum}
+    origin = '/'.join(base.split('/')[:3])
+    d = net.get(base.rstrip('/') + '/widgets', data=body, headers={'Origin': origin, 'Referer': origin + '/'})
+    rows = []
+    for j in (((d.get('refineSearch') or {}).get('data') or {}).get('jobs') or []):
+        rows.append(_row(source='ats', board=f'phenom:{refNum}', company=company, title=j.get('title'),
+                         location=j.get('cityStateCountry') or j.get('location') or j.get('cityState') or '',
+                         url=j.get('applyUrl') or f"{origin}/us/en/job/{j.get('jobSeqNo') or j.get('jobId')}",
+                         posted=_day(j.get('postedDate') or j.get('dateCreated')), req_id=str(j.get('jobId') or j.get('reqId') or ''),
+                         description=text(j.get('descriptionTeaser') or '')))
+    return rows, (d.get('refineSearch') or {}).get('totalHits', len(rows))
+
+
+def jobscore(company, token, **_):
+    d = net.get(f'https://careers.jobscore.com/jobs/{token}/feed.json')
+    rows = []
+    for j in d.get('jobs', d if isinstance(d, list) else []):
+        rows.append(_row(source='ats', board=f'jobscore:{token}', company=company, title=j.get('title'),
+                         location=j.get('location') or '', url=j.get('detail_url') or j.get('url') or '',
+                         posted=_day(j.get('opened_date') or j.get('created_at')), req_id=str(j.get('id', '')),
+                         description=text(j.get('description'))[:12000]))
+    return rows, len(rows)
+
+
+def tiktok(company='TikTok', site='tiktok', **_):
+    """lifeattiktok.com's public search (header website-path: tiktok; 'en' = ByteDance). Global
+    results: keep the US ones. No posting date in the API (date_precision 'ingestion')."""
+    rows, offset, total = [], 0, 1
+    public = 'https://lifeattiktok.com/search/' if site == 'tiktok' else 'https://joinbytedance.com/search/'
+    while offset < min(total, 3000):
+        d = net.get('https://api.lifeattiktok.com/api/v1/public/supplier/search/job/posts',
+                    data={'keyword': 'intern', 'limit': 100, 'offset': offset, 'recruitment_id_list': [],
+                          'job_category_id_list': [], 'subject_id_list': [], 'location_code_list': []},
+                    headers={'website-path': site})
+        data = d.get('data') or {}
+        total = data.get('count') or 0
+        batch = data.get('job_post_list') or []
+        for j in batch:
+            c, places = j.get('city_info') or {}, []
+            while c:
+                places.append(c.get('en_name') or '')
+                c = c.get('parent')
+            rows.append(_row(source='bigtech', board=f'tiktok:{site}', company=company, title=j.get('title'),
+                             location=', '.join(p for p in places if p).replace('United States of America', 'USA'),
+                             url=public + str(j.get('id')), posted=None, date_precision='ingestion',
+                             req_id=str(j.get('code') or j.get('id')),
+                             intern_hint=((j.get('recruit_type') or {}).get('en_name') == 'Intern'),
+                             description=(text(j.get('description')) + '\n\n' + text(j.get('requirement')))[:12000]))
+        if not batch:
+            break
+        offset += len(batch)
+        time.sleep(0.3)
+    return rows, total
 
 
 # ------------------------------------------------------------------ big tech custom APIs
@@ -266,7 +359,7 @@ def apple(**_):
     for q in ('intern', 'internship'):
         d = net.get('https://jobs.apple.com/api/v1/search',
                     data={'query': q, 'filters': {'locations': ['postLocation-USA']}, 'page': 1, 'locale': 'en-us',
-                          'sort': 'newest'},
+                          'sort': 'newest', 'format': {'longDate': 'MMMM D, YYYY', 'mediumDate': 'MMM D, YYYY'}},
                     headers={'X-Apple-CSRF-Token': tok, 'Cookie': cookie, 'Origin': 'https://jobs.apple.com',
                              'Referer': 'https://jobs.apple.com/en-us/search'})
         for j in ((d.get('res') or {}).get('searchResults') or []):
@@ -302,7 +395,7 @@ def google(**_):
     return rows, len(rows)
 
 
-BIGTECH = {'amazon': amazon, 'microsoft': microsoft, 'apple': apple, 'google': google}
+BIGTECH = {'amazon': amazon, 'microsoft': microsoft, 'apple': apple, 'google': google, 'tiktok': tiktok}
 
 
 # ------------------------------------------------------------------ community list

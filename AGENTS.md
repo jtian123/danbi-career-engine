@@ -58,8 +58,9 @@ public ATS token list in `registry/boards.json` was seeded from his scanner's en
 Details, lessons learned and the do-not list: `docs/DAILY_RUN.md`.
 
 ## 4. Discovery rules
-- **Sources:** big employers' own career APIs (registry/enterprises.json: Workday, Greenhouse, Lever,
-  Ashby, SmartRecruiters, Eightfold, Oracle, Amazon/Microsoft/Apple/Google), ~1,300 mid-size and
+- **Sources:** big employers' own career APIs (registry/enterprises.json — ~190 employers on Workday,
+  Oracle HCM, Eightfold, Phenom, iCIMS/Jibe, Greenhouse, Lever, SmartRecruiters, JobScore, plus
+  TikTok/ByteDance, Amazon, Microsoft, Apple, Google), ~1,250 mid-size and
   growth company boards (registry/boards.json), the SimplifyJobs internship list on GitHub, and
   LinkedIn's public guest search with the internship filter.
 - **Never** log in, scrape Handshake, bypass a block, or retry a 403/429/999. LinkedIn: ≤ 20 requests

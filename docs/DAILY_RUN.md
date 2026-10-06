@@ -39,6 +39,19 @@ or industries not yet in the queue (exploration).
   facet first — far more precise than keyword search, which on some tenants returns hundreds of
   unrelated jobs. Pharmacy/medical intern facets are skipped. Dates are relative ("Posted 3 Days
   Ago").
+- **Oracle HCM** (JPMorgan, Amex, Dell, Kroger, Macy's, Marriott, Hilton, Honeywell…): keyword
+  search is loose ("intern" returns thousands); titles are filtered afterwards. The search ignores a
+  wrong `siteNumber`, so take it from the employer's own careers page.
+- **Eightfold**: newer sites (Microsoft, Starbucks, Estée Lauder, Boston Scientific, Haleon) need
+  `api: "pcsx"` (`/api/pcsx/search`); older ones use `/api/apply/v2/jobs`.
+- **Phenom** (Honda, UPS, United, Activision, Blizzard, Skechers, BCG): POST `{base}/widgets` with the
+  site's `refNum`. **iCIMS behind Jibe** (PepsiCo, AMD, Ulta, Costco): GET `/api/jobs?keywords=intern`.
+- **TikTok / ByteDance**: lifeattiktok's public search API needs the header `website-path: tiktok`
+  (or `en` for ByteDance). Results are global (~3,000 for "intern", ~40 s to page through); the US
+  ones are kept. No posting date in the API. TikTok caps applications at two roles across TikTok and
+  ByteDance — mention it whenever several TikTok roles are recommended.
+- No public API (found through LinkedIn/Simplify/Handshake instead): SuccessFactors, Avature, Taleo
+  sites — e.g. Hyundai, Kia, L'Oréal, Deloitte, EY, IBM, Walmart, Google's and Meta's own boards.
 - **Greenhouse** gives `company_name`, `first_published` and sometimes `application_deadline`.
   **Ashby** marks `employmentType: Intern` even when the title doesn't say intern.
 - **SimplifyJobs** (`SimplifyJobs/Summer2027-Internships` on GitHub) is community-maintained and

@@ -133,6 +133,18 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(len(rows), 25)
         self.assertEqual(seen[1]['appliedFacets'], {'workerSubType': ['INT']})   # pharmacy facet skipped
 
+    def test_tiktok_keeps_place_chain_and_full_text(self):
+        page = {'data': {'count': 1, 'job_post_list': [{'id': '1', 'code': 'A1', 'title': 'Campaign Marketing Intern',
+                 'description': 'About', 'requirement': 'Minimum Qualifications', 'recruit_type': {'en_name': 'Intern'},
+                 'city_info': {'en_name': 'Los Angeles', 'parent': {'en_name': 'California',
+                               'parent': {'en_name': 'United States of America'}}}}]}}
+        with patch.object(net, 'get', return_value=page), patch.object(sources.time, 'sleep'):
+            rows, total = sources.tiktok('TikTok', 'tiktok')
+        self.assertEqual(rows[0]['location'], 'Los Angeles, California, USA')
+        self.assertEqual(C.us_status(rows[0]['location']), 'US')
+        self.assertIn('Minimum Qualifications', rows[0]['description'])
+        self.assertTrue(rows[0]['url'].startswith('https://lifeattiktok.com/search/'))
+
     def test_detail_links_parse(self):
         self.assertEqual(sources._detail_from_url('https://job-boards.greenhouse.io/acme/jobs/123')['kind'], 'greenhouse')
         d = sources._detail_from_url('https://target.wd5.myworkdayjobs.com/en-US/targetcareers/job/MN/Intern_R1')

@@ -8,11 +8,6 @@
 },
 {
 "type": "greenhouse",
-"token": "airbnb",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "airtable",
 "company": ""
 },
@@ -158,11 +153,6 @@
 },
 {
 "type": "greenhouse",
-"token": "doordashusa",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "doximity",
 "company": ""
 },
@@ -278,11 +268,6 @@
 },
 {
 "type": "greenhouse",
-"token": "instacart",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "isomorphiclabs",
 "company": ""
 },
@@ -324,11 +309,6 @@
 {
 "type": "greenhouse",
 "token": "lucidmotors",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "lyft",
 "company": ""
 },
 {
@@ -419,16 +399,6 @@
 {
 "type": "greenhouse",
 "token": "pagerduty",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "peloton",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "pinterest",
 "company": ""
 },
 {
@@ -853,11 +823,6 @@
 },
 {
 "type": "greenhouse",
-"token": "samsungsemiconductor",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "turing",
 "company": ""
 },
@@ -1188,11 +1153,6 @@
 },
 {
 "type": "greenhouse",
-"token": "hasbro",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "altium",
 "company": ""
 },
@@ -1304,11 +1264,6 @@
 {
 "type": "greenhouse",
 "token": "ethos",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "riotgames",
 "company": ""
 },
 {
@@ -1474,11 +1429,6 @@
 {
 "type": "greenhouse",
 "token": "digicert",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "samsungresearchamerica",
 "company": ""
 },
 {
@@ -1763,11 +1713,6 @@
 },
 {
 "type": "greenhouse",
-"token": "coupang",
-"company": ""
-},
-{
-"type": "greenhouse",
 "token": "analyticservicesinc",
 "company": ""
 },
@@ -1869,11 +1814,6 @@
 {
 "type": "greenhouse",
 "token": "fetch",
-"company": ""
-},
-{
-"type": "greenhouse",
-"token": "lgelectronics",
 "company": ""
 },
 {
@@ -2780,11 +2720,6 @@
 "type": "lever",
 "token": "shieldai",
 "company": "Shieldai"
-},
-{
-"type": "lever",
-"token": "spotify",
-"company": "Spotify"
 },
 {
 "type": "lever",

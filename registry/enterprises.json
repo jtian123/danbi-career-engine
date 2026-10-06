@@ -2,6 +2,71 @@
  "note": "Big employers searched directly through their own public career APIs (no login). tier=enterprise gets the big-employer priority. large_names only tags employers found through other sources. Workday sites were verified by a live probe on 2026-10-06; re-probe if one starts failing (the scanner records a fail streak per board).",
  "employers": [
   {
+   "name": "3M",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "3m",
+     "wd": 1,
+     "site": "Search"
+    }
+   ],
+   "intern_hits_probe": 690
+  },
+  {
+   "name": "Abbott",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "abbott",
+     "wd": 5,
+     "site": "abbottcareers"
+    }
+   ],
+   "intern_hits_probe": 1981
+  },
+  {
+   "name": "Accenture",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "accenture",
+     "wd": 103,
+     "site": "AccentureCareers"
+    }
+   ]
+  },
+  {
+   "name": "Activision Blizzard",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://careers.activisionblizzard.com",
+     "refNum": "ACCOUS"
+    }
+   ]
+  },
+  {
    "name": "Adobe",
    "aliases": [],
    "tier": "enterprise",
@@ -19,348 +84,44 @@
    "intern_hits_probe": 171
   },
   {
-   "name": "Salesforce",
+   "name": "Airbnb",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "tech",
+   "industry": "travel",
    "korean": false,
    "usc": true,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "salesforce",
-     "wd": 12,
-     "site": "External_Career_Site"
+     "type": "greenhouse",
+     "token": "airbnb"
     }
-   ],
-   "intern_hits_probe": 750
+   ]
   },
   {
-   "name": "NVIDIA",
+   "name": "Alaska Airlines",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "tech",
+   "industry": "travel",
    "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "nvidia",
-     "wd": 5,
-     "site": "NVIDIAExternalCareerSite"
-    }
-   ],
-   "intern_hits_probe": 1058
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.alaskaair.com/",
+   "ats_note": "icims — no public JSON API; found via LinkedIn/Simplify/Handshake"
   },
   {
-   "name": "Intel",
+   "name": "Albertsons",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "intel",
-     "wd": 1,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 374
-  },
-  {
-   "name": "HP Inc.",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
+   "industry": "retail",
    "korean": false,
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "hp",
-     "wd": 5,
-     "site": "ExternalCareerSite"
+     "type": "oracle",
+     "host": "eofd.fa.us6.oraclecloud.com",
+     "siteNumber": "CX_1001"
     }
-   ],
-   "intern_hits_probe": 492
-  },
-  {
-   "name": "Hewlett Packard Enterprise",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "hpe",
-     "wd": 5,
-     "site": "Jobsathpe"
-    }
-   ],
-   "intern_hits_probe": 923
-  },
-  {
-   "name": "Workday",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "workday",
-     "wd": 5,
-     "site": "Workday"
-    }
-   ],
-   "intern_hits_probe": 163
-  },
-  {
-   "name": "Autodesk",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "autodesk",
-     "wd": 1,
-     "site": "Ext"
-    }
-   ],
-   "intern_hits_probe": 318
-  },
-  {
-   "name": "PayPal",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "fintech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "paypal",
-     "wd": 1,
-     "site": "jobs"
-    }
-   ],
-   "intern_hits_probe": 177
-  },
-  {
-   "name": "Zillow",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "zillow",
-     "wd": 5,
-     "site": "Zillow_Group_External"
-    }
-   ],
-   "intern_hits_probe": 44
-  },
-  {
-   "name": "Mastercard",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "fintech",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "mastercard",
-     "wd": 1,
-     "site": "CorporateCareers"
-    }
-   ],
-   "intern_hits_probe": 690
-  },
-  {
-   "name": "Capital One",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "capitalone",
-     "wd": 12,
-     "site": "Capital_One"
-    }
-   ],
-   "intern_hits_probe": 1129
-  },
-  {
-   "name": "Wells Fargo",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "wf",
-     "wd": 1,
-     "site": "WellsFargoJobs"
-    }
-   ],
-   "intern_hits_probe": 704
-  },
-  {
-   "name": "U.S. Bank",
-   "aliases": [
-    "US Bank"
-   ],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "usbank",
-     "wd": 1,
-     "site": "US_Bank_Careers"
-    }
-   ],
-   "intern_hits_probe": 1205
-  },
-  {
-   "name": "PNC",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "pnc",
-     "wd": 5,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 1348
-  },
-  {
-   "name": "Truist",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "truist",
-     "wd": 1,
-     "site": "Careers"
-    }
-   ],
-   "intern_hits_probe": 980
-  },
-  {
-   "name": "Fidelity Investments",
-   "aliases": [
-    "Fidelity"
-   ],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "fmr",
-     "wd": 1,
-     "site": "FidelityCareers"
-    }
-   ],
-   "intern_hits_probe": 302
-  },
-  {
-   "name": "BlackRock",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "blackrock",
-     "wd": 1,
-     "site": "BlackRock_Professional"
-    }
-   ],
-   "intern_hits_probe": 179
-  },
-  {
-   "name": "State Street",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "statestreet",
-     "wd": 1,
-     "site": "Global"
-    }
-   ],
-   "intern_hits_probe": 633
-  },
-  {
-   "name": "Northern Trust",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "ntrs",
-     "wd": 1,
-     "site": "northerntrust"
-    }
-   ],
-   "intern_hits_probe": 337
-  },
-  {
-   "name": "Travelers",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "insurance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "travelers",
-     "wd": 5,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 281
+   ]
   },
   {
    "name": "Allstate",
@@ -380,41 +141,53 @@
    "intern_hits_probe": 357
   },
   {
-   "name": "Nationwide",
+   "name": "Amazon",
+   "aliases": [
+    "Amazon.com",
+    "AWS",
+    "Amazon Web Services"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "amazon"
+    }
+   ]
+  },
+  {
+   "name": "AMD",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "insurance",
+   "industry": "tech",
    "korean": false,
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "nationwide",
-     "wd": 1,
-     "site": "Nationwide_Career"
+     "type": "jibe",
+     "host": "careers.amd.com"
     }
-   ],
-   "intern_hits_probe": 130
+   ]
   },
   {
-   "name": "Prudential",
+   "name": "American Express",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "insurance",
+   "industry": "fintech",
    "korean": false,
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "pru",
-     "wd": 5,
-     "site": "Careers"
+     "type": "oracle",
+     "host": "egug.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_1"
     }
-   ],
-   "intern_hits_probe": 106
+   ]
   },
   {
-   "name": "Humana",
+   "name": "Amgen",
    "aliases": [],
    "tier": "enterprise",
    "industry": "healthcare",
@@ -423,12 +196,502 @@
    "ats": [
     {
      "type": "workday",
-     "tenant": "humana",
-     "wd": 5,
-     "site": "Humana_External_Career_Site"
+     "tenant": "amgen",
+     "wd": 1,
+     "site": "Careers"
     }
    ],
-   "intern_hits_probe": 208
+   "intern_hits_probe": 834
+  },
+  {
+   "name": "Amorepacific US",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.linkedin.com/company/amorepacific-us/jobs/",
+   "ats_note": "unknown — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Apple",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "apple"
+    }
+   ]
+  },
+  {
+   "name": "Applied Materials",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "amat",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1413
+  },
+  {
+   "name": "AT&T",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "att",
+     "wd": 1,
+     "site": "ATTGeneral"
+    }
+   ],
+   "intern_hits_probe": 1088
+  },
+  {
+   "name": "Autodesk",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "autodesk",
+     "wd": 1,
+     "site": "Ext"
+    }
+   ],
+   "intern_hits_probe": 318
+  },
+  {
+   "name": "Bain",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.bain.com/careers/find-a-role/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Bank of America",
+   "aliases": [
+    "BofA"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ghr",
+     "wd": 1,
+     "site": "Lateral-US"
+    }
+   ],
+   "intern_hits_probe": 961
+  },
+  {
+   "name": "Bayer",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.bayer.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "BCG",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://careers.bcg.com",
+     "refNum": "BCG1US"
+    }
+   ]
+  },
+  {
+   "name": "Best Buy",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.bestbuy.com/bby?id=all_jobs",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "BlackRock",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "blackrock",
+     "wd": 1,
+     "site": "BlackRock_Professional"
+    }
+   ],
+   "intern_hits_probe": 179
+  },
+  {
+   "name": "Blizzard Entertainment",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://careers.blizzard.com",
+     "refNum": "BLENGLOBAL"
+    }
+   ]
+  },
+  {
+   "name": "Boeing",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "boeing",
+     "wd": 1,
+     "site": "EXTERNAL_CAREERS"
+    }
+   ],
+   "intern_hits_probe": 495
+  },
+  {
+   "name": "Booz Allen",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "bah",
+     "wd": 1,
+     "site": "BAH_Jobs"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "Bosch",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "smartrecruiters",
+     "token": "BoschGroup"
+    }
+   ]
+  },
+  {
+   "name": "Boston Scientific",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "bostonscientific.eightfold.ai",
+     "domain": "bostonscientific.com",
+     "api": "pcsx"
+    }
+   ]
+  },
+  {
+   "name": "Bristol Myers Squibb",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "bristolmyerssquibb",
+     "wd": 5,
+     "site": "BMS"
+    }
+   ],
+   "intern_hits_probe": 440
+  },
+  {
+   "name": "Broadcom",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "broadcom",
+     "wd": 1,
+     "site": "External_Career"
+    }
+   ],
+   "intern_hits_probe": 93
+  },
+  {
+   "name": "ByteDance",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "tiktok",
+     "site": "en"
+    }
+   ]
+  },
+  {
+   "name": "Capital One",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "capitalone",
+     "wd": 12,
+     "site": "Capital_One"
+    }
+   ],
+   "intern_hits_probe": 1129
+  },
+  {
+   "name": "Capri Holdings",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "capri",
+     "wd": 1,
+     "site": "Michael_Kors"
+    }
+   ]
+  },
+  {
+   "name": "Cardinal Health",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cardinalhealth",
+     "wd": 1,
+     "site": "EXT"
+    }
+   ],
+   "intern_hits_probe": 657
+  },
+  {
+   "name": "Cargill",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.cargill.com/en/search-jobs",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Caterpillar",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cat",
+     "wd": 5,
+     "site": "CaterpillarCareers"
+    }
+   ],
+   "intern_hits_probe": 371
+  },
+  {
+   "name": "Cedars-Sinai",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "hdkk.fa.us6.oraclecloud.com",
+     "siteNumber": "CX_2001"
+    }
+   ]
+  },
+  {
+   "name": "Cencora",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "myhrabc",
+     "wd": 5,
+     "site": "Global"
+    }
+   ],
+   "intern_hits_probe": 461
+  },
+  {
+   "name": "Centene",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "centene",
+     "wd": 5,
+     "site": "Centene_External"
+    }
+   ],
+   "intern_hits_probe": 112
+  },
+  {
+   "name": "Charles Schwab",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.schwabjobs.com/search-jobs",
+   "ats_note": "icims — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Chevron",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chevron",
+     "wd": 5,
+     "site": "jobs"
+    }
+   ],
+   "intern_hits_probe": 93
+  },
+  {
+   "name": "Chewy",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chewy",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 72
+  },
+  {
+   "name": "Chipotle",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chipotle",
+     "wd": 5,
+     "site": "chipotlecareers"
+    }
+   ],
+   "intern_hits_probe": 22
+  },
+  {
+   "name": "Chubb",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "fa-ewgu-saasfaprod1.fa.ocs.oraclecloud.com",
+     "siteNumber": "CX_2001"
+    }
+   ]
   },
   {
    "name": "Cigna",
@@ -446,6 +709,342 @@
     }
    ],
    "intern_hits_probe": 506
+  },
+  {
+   "name": "Cisco",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cisco",
+     "wd": 5,
+     "site": "Cisco_Careers"
+    }
+   ],
+   "intern_hits_probe": 593
+  },
+  {
+   "name": "Citi",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "citi",
+     "wd": 5,
+     "site": "2"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "CJ America / CJ CheilJedang",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.cjamerica.com/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Clorox",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "clorox",
+     "wd": 1,
+     "site": "Clorox"
+    }
+   ]
+  },
+  {
+   "name": "Coca-Cola",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "coke",
+     "wd": 1,
+     "site": "coca-cola-careers"
+    }
+   ],
+   "intern_hits_probe": 103
+  },
+  {
+   "name": "Colgate-Palmolive",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.colgate.com/search/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Comcast / NBCUniversal",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "comcast",
+     "wd": 115,
+     "site": "Comcast_Careers"
+    }
+   ]
+  },
+  {
+   "name": "Conagra Brands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "conagrabrands",
+     "wd": 1,
+     "site": "careers_us"
+    }
+   ],
+   "intern_hits_probe": 159
+  },
+  {
+   "name": "Constellation Brands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cbrands",
+     "wd": 5,
+     "site": "CBI_External_Careers"
+    }
+   ],
+   "intern_hits_probe": 60
+  },
+  {
+   "name": "Costco",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "jibe",
+     "host": "careers.costco.com"
+    }
+   ]
+  },
+  {
+   "name": "Coty",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.coty.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Coupang",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "coupang"
+    }
+   ]
+  },
+  {
+   "name": "Cox Enterprises",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.coxenterprises.com/",
+   "ats_note": "workday — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "CVS Health",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cvshealth",
+     "wd": 1,
+     "site": "CVS_Health_Careers"
+    }
+   ],
+   "intern_hits_probe": 4074
+  },
+  {
+   "name": "Dell Technologies",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "enterpriseplatform.dell.com",
+     "siteNumber": "CX_1001"
+    }
+   ]
+  },
+  {
+   "name": "Deloitte",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://apply.deloitte.com/en_US/careers/SearchJobs",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Delta Air Lines",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://delta.avature.net/careers",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Disney",
+   "aliases": [
+    "The Walt Disney Company",
+    "Walt Disney",
+    "Disney Entertainment"
+   ],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "disney",
+     "wd": 5,
+     "site": "disneycareer"
+    }
+   ],
+   "intern_hits_probe": 500
+  },
+  {
+   "name": "DoorDash",
+   "aliases": [],
+   "tier": "large",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "doordashusa"
+    }
+   ]
+  },
+  {
+   "name": "e.l.f. Beauty",
+   "aliases": [],
+   "tier": "large",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "lever",
+     "token": "elfbeauty"
+    }
+   ]
+  },
+  {
+   "name": "eBay",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ebay",
+     "wd": 5,
+     "site": "apply"
+    }
+   ]
+  },
+  {
+   "name": "Edwards Lifesciences",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "edwards",
+     "wd": 5,
+     "site": "EdwardsCareers"
+    }
+   ],
+   "intern_hits_probe": 196
+  },
+  {
+   "name": "Electronic Arts",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.ea.com/en_US/careers",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
   },
   {
    "name": "Elevance Health",
@@ -467,7 +1066,7 @@
    "intern_hits_probe": 77
   },
   {
-   "name": "CVS Health",
+   "name": "Eli Lilly",
    "aliases": [],
    "tier": "enterprise",
    "industry": "healthcare",
@@ -476,293 +1075,139 @@
    "ats": [
     {
      "type": "workday",
-     "tenant": "cvshealth",
-     "wd": 1,
-     "site": "CVS_Health_Careers"
+     "tenant": "lilly",
+     "wd": 115,
+     "site": "LLY"
     }
-   ],
-   "intern_hits_probe": 4074
+   ]
   },
   {
-   "name": "Johnson & Johnson",
-   "aliases": [
-    "J&J",
-    "Johnson and Johnson"
-   ],
+   "name": "Equifax",
+   "aliases": [],
    "tier": "enterprise",
-   "industry": "healthcare",
+   "industry": "finance",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "jj",
+     "tenant": "equifax",
      "wd": 5,
-     "site": "JJ"
+     "site": "External"
     }
    ],
-   "intern_hits_probe": 1319
+   "intern_hits_probe": 121
   },
   {
-   "name": "Pfizer",
+   "name": "Etsy",
    "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "pfizer",
-     "wd": 1,
-     "site": "PfizerCareers"
-    }
-   ],
-   "intern_hits_probe": 238
-  },
-  {
-   "name": "Abbott",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "abbott",
-     "wd": 5,
-     "site": "abbottcareers"
-    }
-   ],
-   "intern_hits_probe": 1981
-  },
-  {
-   "name": "Medtronic",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "medtronic",
-     "wd": 1,
-     "site": "MedtronicCareers"
-    }
-   ],
-   "intern_hits_probe": 754
-  },
-  {
-   "name": "Stryker",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "stryker",
-     "wd": 1,
-     "site": "StrykerCareers"
-    }
-   ],
-   "intern_hits_probe": 749
-  },
-  {
-   "name": "Merck",
-   "aliases": [
-    "MSD",
-    "Merck & Co."
-   ],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "msd",
-     "wd": 5,
-     "site": "SearchJobs"
-    }
-   ],
-   "intern_hits_probe": 664
-  },
-  {
-   "name": "Bristol Myers Squibb",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "bristolmyerssquibb",
-     "wd": 5,
-     "site": "BMS"
-    }
-   ],
-   "intern_hits_probe": 440
-  },
-  {
-   "name": "Amgen",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "amgen",
-     "wd": 1,
-     "site": "Careers"
-    }
-   ],
-   "intern_hits_probe": 834
-  },
-  {
-   "name": "Gilead Sciences",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "gilead",
-     "wd": 1,
-     "site": "gileadcareers"
-    }
-   ],
-   "intern_hits_probe": 508
-  },
-  {
-   "name": "Genentech / Roche",
-   "aliases": [
-    "Genentech",
-    "Roche"
-   ],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "roche",
-     "wd": 3,
-     "site": "roche-ext"
-    }
-   ],
-   "intern_hits_probe": 763
-  },
-  {
-   "name": "McKesson",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "mckesson",
-     "wd": 3,
-     "site": "External_Careers"
-    }
-   ],
-   "intern_hits_probe": 301
-  },
-  {
-   "name": "Cardinal Health",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "cardinalhealth",
-     "wd": 1,
-     "site": "EXT"
-    }
-   ],
-   "intern_hits_probe": 657
-  },
-  {
-   "name": "Cencora",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "myhrabc",
-     "wd": 5,
-     "site": "Global"
-    }
-   ],
-   "intern_hits_probe": 461
-  },
-  {
-   "name": "IQVIA",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "iqvia",
-     "wd": 1,
-     "site": "IQVIA"
-    }
-   ],
-   "intern_hits_probe": 1009
-  },
-  {
-   "name": "Target",
-   "aliases": [],
-   "tier": "enterprise",
+   "tier": "large",
    "industry": "retail",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "target",
+     "tenant": "etsy",
      "wd": 5,
-     "site": "targetcareers"
+     "site": "Etsy_Careers"
     }
-   ],
-   "intern_hits_probe": 335
+   ]
   },
   {
-   "name": "Nike",
+   "name": "Expedia Group",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "retail",
+   "industry": "travel",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "nike",
-     "wd": 1,
-     "site": "nke"
+     "tenant": "expedia",
+     "wd": 108,
+     "site": "search"
     }
    ],
-   "intern_hits_probe": 189
+   "intern_hits_probe": 130
+  },
+  {
+   "name": "Experian",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "smartrecruiters",
+     "token": "Experian"
+    }
+   ]
+  },
+  {
+   "name": "EY",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://careers.ey.com/ey/search/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "FedEx",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "logistics",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fedex",
+     "wd": 1,
+     "site": "FXE-LAC_External_Career_Site"
+    }
+   ],
+   "intern_hits_probe": 65
+  },
+  {
+   "name": "Fidelity Investments",
+   "aliases": [
+    "Fidelity"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fmr",
+     "wd": 1,
+     "site": "FidelityCareers"
+    }
+   ],
+   "intern_hits_probe": 302
+  },
+  {
+   "name": "Fox Corporation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fox",
+     "wd": 1,
+     "site": "Domestic"
+    }
+   ],
+   "intern_hits_probe": 227
   },
   {
    "name": "Gap Inc.",
@@ -787,32 +1232,668 @@
    "intern_hits_probe": 81
   },
   {
-   "name": "TJX Companies",
-   "aliases": [
-    "TJX",
-    "T.J. Maxx",
-    "Marshalls",
-    "HomeGoods"
-   ],
+   "name": "GE Aerospace",
+   "aliases": [],
    "tier": "enterprise",
-   "industry": "retail",
+   "industry": "aerospace",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "tjx",
-     "wd": 1,
-     "site": "TJX_EXTERNAL"
+     "tenant": "geaerospace",
+     "wd": 5,
+     "site": "GE_ExternalSite"
     }
    ],
-   "intern_hits_probe": 9069
+   "intern_hits_probe": 274
   },
   {
-   "name": "The Home Depot",
-   "aliases": [
-    "Home Depot"
+   "name": "GE HealthCare",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gehc",
+     "wd": 5,
+     "site": "GEHC_ExternalSite"
+    }
    ],
+   "intern_hits_probe": 504
+  },
+  {
+   "name": "GE Vernova",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gevernova",
+     "wd": 5,
+     "site": "Vernova_ExternalSite"
+    }
+   ],
+   "intern_hits_probe": 1234
+  },
+  {
+   "name": "Genentech / Roche",
+   "aliases": [
+    "Genentech",
+    "Roche"
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "roche",
+     "wd": 3,
+     "site": "roche-ext"
+    }
+   ],
+   "intern_hits_probe": 763
+  },
+  {
+   "name": "General Mills",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "genmills",
+     "wd": 1,
+     "site": "GMI_External_Careers"
+    }
+   ]
+  },
+  {
+   "name": "General Motors",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "generalmotors",
+     "wd": 5,
+     "site": "Careers_GM"
+    }
+   ],
+   "intern_hits_probe": 353
+  },
+  {
+   "name": "Gilead Sciences",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gilead",
+     "wd": 1,
+     "site": "gileadcareers"
+    }
+   ],
+   "intern_hits_probe": 508
+  },
+  {
+   "name": "Glossier",
+   "aliases": [],
+   "tier": "large",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "glossier"
+    }
+   ]
+  },
+  {
+   "name": "Goldman Sachs",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://higher.gs.com/roles",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Google",
+   "aliases": [
+    "Alphabet",
+    "YouTube"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "google"
+    }
+   ]
+  },
+  {
+   "name": "Haleon",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "careers.haleon.com",
+     "domain": "haleon.com",
+     "api": "pcsx"
+    }
+   ]
+  },
+  {
+   "name": "Hasbro",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consumer",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "hasbro"
+    }
+   ]
+  },
+  {
+   "name": "Hershey",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.thehersheycompany.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Hewlett Packard Enterprise",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "hpe",
+     "wd": 5,
+     "site": "Jobsathpe"
+    }
+   ],
+   "intern_hits_probe": 923
+  },
+  {
+   "name": "Hilton",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "efet.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_1"
+    }
+   ]
+  },
+  {
+   "name": "Honda",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://careers.honda.com",
+     "refNum": "AHMAHMUS"
+    }
+   ]
+  },
+  {
+   "name": "Honeywell",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "ibqbjb.fa.ocs.oraclecloud.com",
+     "siteNumber": "CX_1"
+    }
+   ]
+  },
+  {
+   "name": "HP Inc.",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "hp",
+     "wd": 5,
+     "site": "ExternalCareerSite"
+    }
+   ],
+   "intern_hits_probe": 492
+  },
+  {
+   "name": "Humana",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "humana",
+     "wd": 5,
+     "site": "Humana_External_Career_Site"
+    }
+   ],
+   "intern_hits_probe": 208
+  },
+  {
+   "name": "Hyatt",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.hyatt.com/en-US/careers/jobs",
+   "ats_note": "taleo — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "HYBE America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.hybecorp.com/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Hyundai Capital America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers-americas.hyundai.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Hyundai Motor America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers-americas.hyundai.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "IBM",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://www.ibm.com/careers/search",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "iHeartMedia",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "iheartmedia",
+     "wd": 5,
+     "site": "External_iHM"
+    }
+   ]
+  },
+  {
+   "name": "Illumina",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "illumina",
+     "wd": 1,
+     "site": "illumina-careers"
+    }
+   ],
+   "intern_hits_probe": 120
+  },
+  {
+   "name": "Instacart",
+   "aliases": [],
+   "tier": "large",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "instacart"
+    }
+   ]
+  },
+  {
+   "name": "Intel",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "intel",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 374
+  },
+  {
+   "name": "Intuit",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.intuit.com/search-jobs",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "IQVIA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "iqvia",
+     "wd": 1,
+     "site": "IQVIA"
+    }
+   ],
+   "intern_hits_probe": 1009
+  },
+  {
+   "name": "John Deere",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.deere.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Johnson & Johnson",
+   "aliases": [
+    "J&J",
+    "Johnson and Johnson"
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "jj",
+     "wd": 5,
+     "site": "JJ"
+    }
+   ],
+   "intern_hits_probe": 1319
+  },
+  {
+   "name": "JPMorgan Chase",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "jpmc.fa.oraclecloud.com",
+     "siteNumber": "CX_1001"
+    }
+   ]
+  },
+  {
+   "name": "Kaiser Permanente",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.kaiserpermanentejobs.org/",
+   "ats_note": "taleo — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Kenvue",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "kenvue",
+     "wd": 5,
+     "site": "kenvue"
+    }
+   ],
+   "intern_hits_probe": 108
+  },
+  {
+   "name": "Keurig Dr Pepper",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "ats_note": "Eightfold endpoint answered 403 on 2026-10-06 — blocked, not retried. Found via LinkedIn/Simplify."
+  },
+  {
+   "name": "Kia America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers-americas.kia.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Kimberly-Clark",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "kimberlyclark",
+     "wd": 1,
+     "site": "GLOBAL"
+    }
+   ],
+   "intern_hits_probe": 70
+  },
+  {
+   "name": "Korean Air (US)",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.koreanair.com/us/en/footer/about-us/careers",
+   "ats_note": "unknown — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "KPMG",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://www.kpmguscareers.com/",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Kraft Heinz",
+   "aliases": [
+    "The Kraft Heinz Company"
+   ],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "heinz",
+     "wd": 1,
+     "site": "KraftHeinz_Careers"
+    }
+   ],
+   "intern_hits_probe": 650
+  },
+  {
+   "name": "Krafton",
+   "aliases": [],
+   "tier": "large",
+   "industry": "gaming",
+   "korean": true,
+   "usc": true,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "krafton"
+    },
+    {
+     "type": "greenhouse",
+     "token": "kraftonamericas"
+    }
+   ]
+  },
+  {
+   "name": "Kroger",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "eluq.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_2001"
+    }
+   ]
+  },
+  {
+   "name": "L'Oreal USA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.loreal.com/en",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Las Vegas Sands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "sands",
+     "wd": 1,
+     "site": "sands_careers"
+    }
+   ],
+   "intern_hits_probe": 10
+  },
+  {
+   "name": "Levi Strauss & Co.",
+   "aliases": [],
    "tier": "enterprise",
    "industry": "retail",
    "korean": false,
@@ -820,12 +1901,82 @@
    "ats": [
     {
      "type": "workday",
-     "tenant": "homedepot",
+     "tenant": "levistraussandco",
      "wd": 5,
-     "site": "CareerDepot"
+     "site": "External"
+    }
+   ]
+  },
+  {
+   "name": "LG Electronics",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "lgelectronics"
+    }
+   ]
+  },
+  {
+   "name": "Liberty Mutual",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "searchjobs.libertymutualgroup.com",
+     "domain": "libertymutual.com"
+    }
+   ]
+  },
+  {
+   "name": "LinkedIn",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.linkedin.com/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Live Nation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "livenation",
+     "wd": 503,
+     "site": "LNExternalSite"
     }
    ],
-   "intern_hits_probe": 306
+   "intern_hits_probe": 1286
+  },
+  {
+   "name": "Lotte (US)",
+   "aliases": [],
+   "tier": "large",
+   "industry": "healthcare",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "lottebiologicsusallc"
+    }
+   ]
   },
   {
    "name": "Lowe's",
@@ -845,6 +1996,403 @@
    "intern_hits_probe": 190
   },
   {
+   "name": "Lululemon",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.lululemon.com/en_US/careers",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Lyft",
+   "aliases": [],
+   "tier": "large",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "lyft"
+    }
+   ]
+  },
+  {
+   "name": "Macy's",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "ebwh.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_1001"
+    }
+   ]
+  },
+  {
+   "name": "Marriott",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "ejwl.fa.us2.oraclecloud.com",
+     "siteNumber": "CX"
+    }
+   ]
+  },
+  {
+   "name": "Mars",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mars",
+     "wd": 3,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 317
+  },
+  {
+   "name": "Mastercard",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mastercard",
+     "wd": 1,
+     "site": "CorporateCareers"
+    }
+   ],
+   "intern_hits_probe": 690
+  },
+  {
+   "name": "Mattel",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consumer",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "smartrecruiters",
+     "token": "MattelInc"
+    }
+   ]
+  },
+  {
+   "name": "McKesson",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mckesson",
+     "wd": 3,
+     "site": "External_Careers"
+    }
+   ],
+   "intern_hits_probe": 301
+  },
+  {
+   "name": "McKinsey",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.mckinsey.com/careers/search-jobs",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Medtronic",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "medtronic",
+     "wd": 1,
+     "site": "MedtronicCareers"
+    }
+   ],
+   "intern_hits_probe": 754
+  },
+  {
+   "name": "Merck",
+   "aliases": [
+    "MSD",
+    "Merck & Co."
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "msd",
+     "wd": 5,
+     "site": "SearchJobs"
+    }
+   ],
+   "intern_hits_probe": 664
+  },
+  {
+   "name": "Meta",
+   "aliases": [
+    "Facebook",
+    "Instagram",
+    "WhatsApp"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": []
+  },
+  {
+   "name": "MetLife",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.metlifecareers.com/en_US/ml",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Micron",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "micron",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 3107
+  },
+  {
+   "name": "Microsoft",
+   "aliases": [
+    "LinkedIn"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "microsoft"
+    }
+   ]
+  },
+  {
+   "name": "Molina Healthcare",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "hckd.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_1"
+    }
+   ]
+  },
+  {
+   "name": "Mondelez",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mdlz",
+     "wd": 3,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1283
+  },
+  {
+   "name": "Moody's",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.moodys.com/en",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Morgan Stanley",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ms",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 696
+  },
+  {
+   "name": "Nasdaq",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nasdaq",
+     "wd": 1,
+     "site": "Global_External_Site"
+    }
+   ],
+   "intern_hits_probe": 80
+  },
+  {
+   "name": "Nationwide",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nationwide",
+     "wd": 1,
+     "site": "Nationwide_Career"
+    }
+   ],
+   "intern_hits_probe": 130
+  },
+  {
+   "name": "Nestle USA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.nestlejobs.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Netflix",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "explore.jobs.netflix.net",
+     "domain": "netflix.com"
+    }
+   ]
+  },
+  {
+   "name": "Netmarble US",
+   "aliases": [],
+   "tier": "large",
+   "industry": "gaming",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://apply.workable.com/netmarbleus/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Nexon America",
+   "aliases": [],
+   "tier": "large",
+   "industry": "gaming",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "jobscore",
+     "token": "nexonamericainc"
+    }
+   ]
+  },
+  {
+   "name": "Nike",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nike",
+     "wd": 1,
+     "site": "nke"
+    }
+   ],
+   "intern_hits_probe": 189
+  },
+  {
+   "name": "Nongshim America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": true,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://nongshimusa.com/careers/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
    "name": "Nordstrom",
    "aliases": [],
    "tier": "enterprise",
@@ -860,6 +2408,201 @@
     }
    ],
    "intern_hits_probe": 60
+  },
+  {
+   "name": "Northern Trust",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ntrs",
+     "wd": 1,
+     "site": "northerntrust"
+    }
+   ],
+   "intern_hits_probe": 337
+  },
+  {
+   "name": "Northrop Grumman",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ngc",
+     "wd": 1,
+     "site": "Northrop_Grumman_External_Site"
+    }
+   ],
+   "intern_hits_probe": 1597
+  },
+  {
+   "name": "NVIDIA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nvidia",
+     "wd": 5,
+     "site": "NVIDIAExternalCareerSite"
+    }
+   ],
+   "intern_hits_probe": 1058
+  },
+  {
+   "name": "Olaplex",
+   "aliases": [],
+   "tier": "large",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "olaplexcareers"
+    }
+   ]
+  },
+  {
+   "name": "Oracle",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "eeho.fa.us2.oraclecloud.com",
+     "siteNumber": "CX_45001"
+    }
+   ]
+  },
+  {
+   "name": "Paramount",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.paramount.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "PayPal",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "paypal",
+     "wd": 1,
+     "site": "jobs"
+    }
+   ],
+   "intern_hits_probe": 177
+  },
+  {
+   "name": "Peloton",
+   "aliases": [],
+   "tier": "large",
+   "industry": "consumer",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "peloton"
+    }
+   ]
+  },
+  {
+   "name": "PepsiCo",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "jibe",
+     "host": "www.pepsicojobs.com"
+    }
+   ]
+  },
+  {
+   "name": "Pfizer",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pfizer",
+     "wd": 1,
+     "site": "PfizerCareers"
+    }
+   ],
+   "intern_hits_probe": 238
+  },
+  {
+   "name": "PG&E",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.pge.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Pinterest",
+   "aliases": [],
+   "tier": "large",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "pinterest"
+    }
+   ]
+  },
+  {
+   "name": "PNC",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pnc",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1348
   },
   {
    "name": "Procter & Gamble",
@@ -882,387 +2625,122 @@
    "intern_hits_probe": 531
   },
   {
-   "name": "Coca-Cola",
+   "name": "Prudential",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "cpg",
+   "industry": "insurance",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "coke",
+     "tenant": "pru",
+     "wd": 5,
+     "site": "Careers"
+    }
+   ],
+   "intern_hits_probe": 106
+  },
+  {
+   "name": "PVH",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pvh",
      "wd": 1,
-     "site": "coca-cola-careers"
+     "site": "PVH_Careers"
     }
    ],
-   "intern_hits_probe": 103
+   "intern_hits_probe": 620
   },
   {
-   "name": "Kraft Heinz",
-   "aliases": [
-    "The Kraft Heinz Company"
-   ],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "heinz",
-     "wd": 1,
-     "site": "KraftHeinz_Careers"
-    }
-   ],
-   "intern_hits_probe": 650
-  },
-  {
-   "name": "Mondelez",
+   "name": "PwC",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "mdlz",
-     "wd": 3,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 1283
-  },
-  {
-   "name": "Kimberly-Clark",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "kimberlyclark",
-     "wd": 1,
-     "site": "GLOBAL"
-    }
-   ],
-   "intern_hits_probe": 70
-  },
-  {
-   "name": "Conagra Brands",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "conagrabrands",
-     "wd": 1,
-     "site": "careers_us"
-    }
-   ],
-   "intern_hits_probe": 159
-  },
-  {
-   "name": "Chipotle",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "food",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "chipotle",
-     "wd": 5,
-     "site": "chipotlecareers"
-    }
-   ],
-   "intern_hits_probe": 22
-  },
-  {
-   "name": "Kenvue",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "kenvue",
-     "wd": 5,
-     "site": "kenvue"
-    }
-   ],
-   "intern_hits_probe": 108
-  },
-  {
-   "name": "Constellation Brands",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "cbrands",
-     "wd": 5,
-     "site": "CBI_External_Careers"
-    }
-   ],
-   "intern_hits_probe": 60
-  },
-  {
-   "name": "Disney",
-   "aliases": [
-    "The Walt Disney Company",
-    "Walt Disney",
-    "Disney Entertainment"
-   ],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "disney",
-     "wd": 5,
-     "site": "disneycareer"
-    }
-   ],
-   "intern_hits_probe": 500
-  },
-  {
-   "name": "Warner Bros. Discovery",
-   "aliases": [
-    "Warner Bros",
-    "WBD"
-   ],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "warnerbros",
-     "wd": 5,
-     "site": "global"
-    }
-   ],
-   "intern_hits_probe": 195
-  },
-  {
-   "name": "Sony",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "sonyglobal",
-     "wd": 1,
-     "site": "SonyGlobalCareers"
-    }
-   ],
-   "intern_hits_probe": 69
-  },
-  {
-   "name": "Universal Music Group",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "umusic",
-     "wd": 5,
-     "site": "UMGUS"
-    }
-   ],
-   "intern_hits_probe": 20
-  },
-  {
-   "name": "Live Nation",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "livenation",
-     "wd": 503,
-     "site": "LNExternalSite"
-    }
-   ],
-   "intern_hits_probe": 1286
-  },
-  {
-   "name": "Fox Corporation",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "fox",
-     "wd": 1,
-     "site": "Domestic"
-    }
-   ],
-   "intern_hits_probe": 227
-  },
-  {
-   "name": "General Motors",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "automotive",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "generalmotors",
-     "wd": 5,
-     "site": "Careers_GM"
-    }
-   ],
-   "intern_hits_probe": 353
-  },
-  {
-   "name": "Toyota North America",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "automotive",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "toyota",
-     "wd": 503,
-     "site": "TMNA"
-    }
-   ],
-   "intern_hits_probe": 47
-  },
-  {
-   "name": "Caterpillar",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "industrial",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "cat",
-     "wd": 5,
-     "site": "CaterpillarCareers"
-    }
-   ],
-   "intern_hits_probe": 371
-  },
-  {
-   "name": "3M",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "industrial",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "3m",
-     "wd": 1,
-     "site": "Search"
-    }
-   ],
-   "intern_hits_probe": 690
-  },
-  {
-   "name": "GE Aerospace",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "aerospace",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "geaerospace",
-     "wd": 5,
-     "site": "GE_ExternalSite"
-    }
-   ],
-   "intern_hits_probe": 274
-  },
-  {
-   "name": "GE Vernova",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "energy",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "gevernova",
-     "wd": 5,
-     "site": "Vernova_ExternalSite"
-    }
-   ],
-   "intern_hits_probe": 1234
-  },
-  {
-   "name": "GE HealthCare",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "gehc",
-     "wd": 5,
-     "site": "GEHC_ExternalSite"
-    }
-   ],
-   "intern_hits_probe": 504
-  },
-  {
-   "name": "Boeing",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "aerospace",
+   "industry": "consulting",
    "korean": false,
    "usc": true,
    "ats": [
     {
      "type": "workday",
-     "tenant": "boeing",
-     "wd": 1,
-     "site": "EXTERNAL_CAREERS"
+     "tenant": "pwc",
+     "wd": 3,
+     "site": "Global_Experienced_Careers"
     }
    ],
-   "intern_hits_probe": 495
+   "intern_hits_probe": 2136
+  },
+  {
+   "name": "Qualcomm",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "qualcomm",
+     "wd": 12,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 0
+  },
+  {
+   "name": "Ralph Lauren",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.ralphlauren.com/",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Riot Games",
+   "aliases": [],
+   "tier": "large",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "riotgames"
+    }
+   ]
+  },
+  {
+   "name": "Roblox",
+   "aliases": [],
+   "tier": "large",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "roblox"
+    }
+   ]
+  },
+  {
+   "name": "Ross Stores",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.rossstores.com/",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
   },
   {
    "name": "RTX",
@@ -1286,174 +2764,38 @@
    "intern_hits_probe": 2445
   },
   {
-   "name": "Northrop Grumman",
+   "name": "S&P Global",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "aerospace",
+   "industry": "finance",
    "korean": false,
    "usc": false,
    "ats": [
     {
      "type": "workday",
-     "tenant": "ngc",
-     "wd": 1,
-     "site": "Northrop_Grumman_External_Site"
-    }
-   ],
-   "intern_hits_probe": 1597
-  },
-  {
-   "name": "FedEx",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "logistics",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "fedex",
-     "wd": 1,
-     "site": "FXE-LAC_External_Career_Site"
-    }
-   ],
-   "intern_hits_probe": 65
-  },
-  {
-   "name": "Southwest Airlines",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "travel",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "swa",
-     "wd": 1,
-     "site": "external"
-    }
-   ],
-   "intern_hits_probe": 52
-  },
-  {
-   "name": "Expedia Group",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "travel",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "expedia",
-     "wd": 108,
-     "site": "search"
-    }
-   ],
-   "intern_hits_probe": 130
-  },
-  {
-   "name": "T-Mobile",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "telecom",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "tmobile",
-     "wd": 1,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 2000
-  },
-  {
-   "name": "Verizon",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "telecom",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "verizon",
-     "wd": 12,
-     "site": "verizon-careers"
-    }
-   ],
-   "intern_hits_probe": 992
-  },
-  {
-   "name": "AT&T",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "telecom",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "att",
-     "wd": 1,
-     "site": "ATTGeneral"
-    }
-   ],
-   "intern_hits_probe": 1088
-  },
-  {
-   "name": "Chevron",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "energy",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "chevron",
+     "tenant": "spgi",
      "wd": 5,
-     "site": "jobs"
+     "site": "SPGI_Careers"
     }
    ],
-   "intern_hits_probe": 93
+   "intern_hits_probe": 261
   },
   {
-   "name": "PwC",
+   "name": "Salesforce",
    "aliases": [],
    "tier": "enterprise",
-   "industry": "consulting",
+   "industry": "tech",
    "korean": false,
    "usc": true,
    "ats": [
     {
      "type": "workday",
-     "tenant": "pwc",
-     "wd": 3,
-     "site": "Global_Experienced_Careers"
+     "tenant": "salesforce",
+     "wd": 12,
+     "site": "External_Career_Site"
     }
    ],
-   "intern_hits_probe": 2136
-  },
-  {
-   "name": "Booz Allen",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "consulting",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "bah",
-     "wd": 1,
-     "site": "BAH_Jobs"
-    }
-   ],
-   "intern_hits_probe": 2000
+   "intern_hits_probe": 750
   },
   {
    "name": "Samsung Electronics America",
@@ -1475,179 +2817,61 @@
    "intern_hits_probe": 247
   },
   {
-   "name": "Visa",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "fintech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "visa",
-     "wd": 5,
-     "site": "Visa"
-    }
-   ],
-   "intern_hits_probe": 470
-  },
-  {
-   "name": "Bank of America",
-   "aliases": [
-    "BofA"
-   ],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "ghr",
-     "wd": 1,
-     "site": "Lateral-US"
-    }
-   ],
-   "intern_hits_probe": 961
-  },
-  {
-   "name": "Morgan Stanley",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "ms",
-     "wd": 5,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 696
-  },
-  {
-   "name": "Citi",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "citi",
-     "wd": 5,
-     "site": "2"
-    }
-   ],
-   "intern_hits_probe": 2000
-  },
-  {
-   "name": "S&P Global",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "spgi",
-     "wd": 5,
-     "site": "SPGI_Careers"
-    }
-   ],
-   "intern_hits_probe": 261
-  },
-  {
-   "name": "Nasdaq",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "nasdaq",
-     "wd": 1,
-     "site": "Global_External_Site"
-    }
-   ],
-   "intern_hits_probe": 80
-  },
-  {
-   "name": "Equifax",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "equifax",
-     "wd": 5,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 121
-  },
-  {
-   "name": "TransUnion",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "finance",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "transunion",
-     "wd": 5,
-     "site": "TransUnion"
-    }
-   ],
-   "intern_hits_probe": 182
-  },
-  {
-   "name": "Cisco",
+   "name": "Samsung Research America",
    "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
-   "korean": false,
-   "usc": true,
+   "korean": true,
+   "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "cisco",
-     "wd": 5,
-     "site": "Cisco_Careers"
+     "type": "greenhouse",
+     "token": "samsungresearchamerica"
+    },
+    {
+     "type": "greenhouse",
+     "token": "samsungresearchamericainternship"
     }
-   ],
-   "intern_hits_probe": 593
+   ]
   },
   {
-   "name": "Qualcomm",
+   "name": "Samsung Semiconductor",
    "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
-   "korean": false,
-   "usc": true,
+   "korean": true,
+   "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "qualcomm",
-     "wd": 12,
-     "site": "External"
+     "type": "greenhouse",
+     "token": "samsungsemiconductor"
     }
-   ],
-   "intern_hits_probe": 0
+   ]
   },
   {
-   "name": "Micron",
+   "name": "Sempra",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.sempra.com/careers",
+   "ats_note": "unknown — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Sephora",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.sephora.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "ServiceNow",
    "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
@@ -1655,135 +2879,63 @@
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "micron",
-     "wd": 1,
-     "site": "External"
+     "type": "smartrecruiters",
+     "token": "ServiceNow"
     }
-   ],
-   "intern_hits_probe": 3107
+   ]
   },
   {
-   "name": "Applied Materials",
+   "name": "Shein",
+   "aliases": [],
+   "tier": "large",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "shein"
+    }
+   ]
+  },
+  {
+   "name": "Shopify",
    "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
    "korean": false,
    "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "amat",
-     "wd": 1,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 1413
+   "ats": [],
+   "careers_url": "https://www.shopify.com/careers",
+   "ats_note": "ashby — no public JSON API; found via LinkedIn/Simplify/Handshake"
   },
   {
-   "name": "Broadcom",
+   "name": "Siemens",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.siemens.com/careers",
+   "ats_note": "avature — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "SK hynix America",
    "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
-   "korean": false,
+   "korean": true,
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "broadcom",
-     "wd": 1,
-     "site": "External_Career"
+     "type": "greenhouse",
+     "token": "skhynixamerica"
     }
-   ],
-   "intern_hits_probe": 93
+   ]
   },
   {
-   "name": "Mars",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "mars",
-     "wd": 3,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 317
-  },
-  {
-   "name": "Unilever",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "cpg",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "unilever",
-     "wd": 3,
-     "site": "Unilever_Experienced_Professionals"
-    }
-   ],
-   "intern_hits_probe": 105
-  },
-  {
-   "name": "Centene",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "centene",
-     "wd": 5,
-     "site": "Centene_External"
-    }
-   ],
-   "intern_hits_probe": 112
-  },
-  {
-   "name": "Edwards Lifesciences",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "edwards",
-     "wd": 5,
-     "site": "EdwardsCareers"
-    }
-   ],
-   "intern_hits_probe": 196
-  },
-  {
-   "name": "Illumina",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "healthcare",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "illumina",
-     "wd": 1,
-     "site": "illumina-careers"
-    }
-   ],
-   "intern_hits_probe": 120
-  },
-  {
-   "name": "Chewy",
+   "name": "Skechers",
    "aliases": [],
    "tier": "enterprise",
    "industry": "retail",
@@ -1791,171 +2943,9 @@
    "usc": false,
    "ats": [
     {
-     "type": "workday",
-     "tenant": "chewy",
-     "wd": 5,
-     "site": "External"
-    }
-   ],
-   "intern_hits_probe": 72
-  },
-  {
-   "name": "Tapestry",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "retail",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "tapestry",
-     "wd": 108,
-     "site": "tapestry_careers"
-    }
-   ],
-   "intern_hits_probe": 2000
-  },
-  {
-   "name": "PVH",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "retail",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "pvh",
-     "wd": 1,
-     "site": "PVH_Careers"
-    }
-   ],
-   "intern_hits_probe": 620
-  },
-  {
-   "name": "VF Corporation",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "retail",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "vfc",
-     "wd": 5,
-     "site": "vfc_careers"
-    }
-   ],
-   "intern_hits_probe": 986
-  },
-  {
-   "name": "Las Vegas Sands",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "travel",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "workday",
-     "tenant": "sands",
-     "wd": 1,
-     "site": "sands_careers"
-    }
-   ],
-   "intern_hits_probe": 10
-  },
-  {
-   "name": "Amazon",
-   "aliases": [
-    "Amazon.com",
-    "AWS",
-    "Amazon Web Services"
-   ],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "amazon"
-    }
-   ]
-  },
-  {
-   "name": "Microsoft",
-   "aliases": [
-    "LinkedIn"
-   ],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "microsoft"
-    }
-   ]
-  },
-  {
-   "name": "Apple",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "apple"
-    }
-   ]
-  },
-  {
-   "name": "Google",
-   "aliases": [
-    "Alphabet",
-    "YouTube"
-   ],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": true,
-   "ats": [
-    {
-     "type": "google"
-    }
-   ]
-  },
-  {
-   "name": "Netflix",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "media",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "eightfold",
-     "host": "explore.jobs.netflix.net",
-     "domain": "netflix.com"
-    }
-   ]
-  },
-  {
-   "name": "Uber",
-   "aliases": [],
-   "tier": "enterprise",
-   "industry": "tech",
-   "korean": false,
-   "usc": false,
-   "ats": [
-    {
-     "type": "oracle",
-     "host": "iaziqy.fa.ocs.oraclecloud.com",
-     "site": "CX_1",
-     "public_site": "UberCareers"
+     "type": "phenom",
+     "base": "https://careers.skechers.com",
+     "refNum": "SRJSVUUS"
     }
    ]
   },
@@ -1979,28 +2969,671 @@
    ]
   },
   {
-   "name": "Meta",
-   "aliases": [
-    "Facebook",
-    "Instagram",
-    "WhatsApp"
+   "name": "Sony",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "sonyglobal",
+     "wd": 1,
+     "site": "SonyGlobalCareers"
+    }
    ],
+   "intern_hits_probe": 69
+  },
+  {
+   "name": "Sony Interactive Entertainment",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "gaming",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "greenhouse",
+     "token": "sonyinteractiveentertainmentglobal"
+    }
+   ]
+  },
+  {
+   "name": "Southern California Edison",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.edisoncareers.com",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Southwest Airlines",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "swa",
+     "wd": 1,
+     "site": "external"
+    }
+   ],
+   "intern_hits_probe": 52
+  },
+  {
+   "name": "Spotify",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "lever",
+     "token": "spotify"
+    }
+   ]
+  },
+  {
+   "name": "Starbucks",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "starbucks.eightfold.ai",
+     "domain": "starbucks.com",
+     "api": "pcsx"
+    }
+   ]
+  },
+  {
+   "name": "State Street",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "statestreet",
+     "wd": 1,
+     "site": "Global"
+    }
+   ],
+   "intern_hits_probe": 633
+  },
+  {
+   "name": "Stryker",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "stryker",
+     "wd": 1,
+     "site": "StrykerCareers"
+    }
+   ],
+   "intern_hits_probe": 749
+  },
+  {
+   "name": "T-Mobile",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tmobile",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "Tapestry",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tapestry",
+     "wd": 108,
+     "site": "tapestry_careers"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "Target",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "target",
+     "wd": 5,
+     "site": "targetcareers"
+    }
+   ],
+   "intern_hits_probe": 335
+  },
+  {
+   "name": "Temu",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.temu.com/",
+   "ats_note": "unknown — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Texas Instruments",
+   "aliases": [],
    "tier": "enterprise",
    "industry": "tech",
    "korean": false,
    "usc": false,
-   "ats": []
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "edbz.fa.us2.oraclecloud.com",
+     "siteNumber": "CX"
+    }
+   ]
+  },
+  {
+   "name": "The Estee Lauder Companies",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "elcompanies.eightfold.ai",
+     "domain": "elcompanies.com",
+     "api": "pcsx"
+    }
+   ]
+  },
+  {
+   "name": "The Home Depot",
+   "aliases": [
+    "Home Depot"
+   ],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "homedepot",
+     "wd": 5,
+     "site": "CareerDepot"
+    }
+   ],
+   "intern_hits_probe": 306
   },
   {
    "name": "TikTok",
-   "aliases": [
-    "ByteDance"
-   ],
+   "aliases": [],
    "tier": "enterprise",
    "industry": "media",
    "korean": false,
    "usc": true,
-   "ats": []
+   "ats": [
+    {
+     "type": "tiktok",
+     "site": "tiktok"
+    }
+   ]
+  },
+  {
+   "name": "TJX Companies",
+   "aliases": [
+    "TJX",
+    "T.J. Maxx",
+    "Marshalls",
+    "HomeGoods"
+   ],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tjx",
+     "wd": 1,
+     "site": "TJX_EXTERNAL"
+    }
+   ],
+   "intern_hits_probe": 9069
+  },
+  {
+   "name": "Toyota North America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "toyota",
+     "wd": 503,
+     "site": "TMNA"
+    }
+   ],
+   "intern_hits_probe": 47
+  },
+  {
+   "name": "TransUnion",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "transunion",
+     "wd": 5,
+     "site": "TransUnion"
+    }
+   ],
+   "intern_hits_probe": 182
+  },
+  {
+   "name": "Travelers",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "travelers",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 281
+  },
+  {
+   "name": "Truist",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "truist",
+     "wd": 1,
+     "site": "Careers"
+    }
+   ],
+   "intern_hits_probe": 980
+  },
+  {
+   "name": "Tyson Foods",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tysonfoods",
+     "wd": 5,
+     "site": "TSN"
+    }
+   ]
+  },
+  {
+   "name": "U.S. Bank",
+   "aliases": [
+    "US Bank"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "usbank",
+     "wd": 1,
+     "site": "US_Bank_Careers"
+    }
+   ],
+   "intern_hits_probe": 1205
+  },
+  {
+   "name": "Uber",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "iaziqy.fa.ocs.oraclecloud.com",
+     "site": "CX_1",
+     "public_site": "UberCareers"
+    }
+   ]
+  },
+  {
+   "name": "Ulta Beauty",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "beauty",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "jibe",
+     "host": "careers.ulta.com"
+    }
+   ]
+  },
+  {
+   "name": "Under Armour",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.underarmour.com/",
+   "ats_note": "successfactors — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Unilever",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "unilever",
+     "wd": 3,
+     "site": "Unilever_Experienced_Professionals"
+    }
+   ],
+   "intern_hits_probe": 105
+  },
+  {
+   "name": "United Airlines",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://careers.united.com",
+     "refNum": "UAIUADUS"
+    }
+   ]
+  },
+  {
+   "name": "UnitedHealth Group",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.unitedhealthgroup.com/search-jobs",
+   "ats_note": "taleo — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Universal Music Group",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "umusic",
+     "wd": 5,
+     "site": "UMGUS"
+    }
+   ],
+   "intern_hits_probe": 20
+  },
+  {
+   "name": "UPS",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "logistics",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "phenom",
+     "base": "https://www.jobs-ups.com",
+     "refNum": "UPBUPSGLOBAL"
+    }
+   ]
+  },
+  {
+   "name": "Verizon",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "verizon",
+     "wd": 12,
+     "site": "verizon-careers"
+    }
+   ],
+   "intern_hits_probe": 992
+  },
+  {
+   "name": "VF Corporation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "vfc",
+     "wd": 5,
+     "site": "vfc_careers"
+    }
+   ],
+   "intern_hits_probe": 986
+  },
+  {
+   "name": "Visa",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "visa",
+     "wd": 5,
+     "site": "Visa"
+    }
+   ],
+   "intern_hits_probe": 470
+  },
+  {
+   "name": "Walgreens",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.walgreens.com/en/search-jobs",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Walmart",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": true,
+   "ats": [],
+   "careers_url": "https://careers.walmart.com/us/en/results?q=intern",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Warner Bros. Discovery",
+   "aliases": [
+    "Warner Bros",
+    "WBD"
+   ],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "warnerbros",
+     "wd": 5,
+     "site": "global"
+    }
+   ],
+   "intern_hits_probe": 195
+  },
+  {
+   "name": "Wayfair",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://www.wayfair.com/careers/jobs",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "WEBTOON Entertainment",
+   "aliases": [],
+   "tier": "large",
+   "industry": "media",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "lever",
+     "token": "wattpad"
+    }
+   ]
+  },
+  {
+   "name": "Wells Fargo",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "wf",
+     "wd": 1,
+     "site": "WellsFargoJobs"
+    }
+   ],
+   "intern_hits_probe": 704
+  },
+  {
+   "name": "Western Digital",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "smartrecruiters",
+     "token": "WesternDigital"
+    }
+   ]
+  },
+  {
+   "name": "Williams-Sonoma",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://careers.williams-sonomainc.com/",
+   "ats_note": "custom — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Workday",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "workday",
+     "wd": 5,
+     "site": "Workday"
+    }
+   ],
+   "intern_hits_probe": 163
   },
   {
    "name": "Workiva",
@@ -2017,6 +3650,34 @@
      "site": "careers"
     }
    ]
+  },
+  {
+   "name": "Yum! Brands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": false,
+   "usc": false,
+   "ats": [],
+   "careers_url": "https://jobs.yum.com/",
+   "ats_note": "oracle — no public JSON API; found via LinkedIn/Simplify/Handshake"
+  },
+  {
+   "name": "Zillow",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "zillow",
+     "wd": 5,
+     "site": "Zillow_Group_External"
+    }
+   ],
+   "intern_hits_probe": 44
   }
  ],
  "large_names": [
