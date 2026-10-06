@@ -1,9 +1,15 @@
 # Public and private data
 
-Included: engine source, review prompts, dashboard template, public ATS board metadata, role-search vocabulary, curriculum metadata, tests and explicitly synthetic examples.
+The repository (code, `registry/`, `prompts/`, `docs/`, `examples/`, `tests/`) is public. Everything
+personal lives in `data/` and `output/`, which are git-ignored and travel only in her private bundle.
 
-Excluded: personal contacts, residency details, prior resumes, academic files, private startup extracts and metrics, factual material banks, original full employer job descriptions, feedback, application records, source snapshots, generated resumes, credentials, local machine paths and Git history from other projects.
+Public: engine source, the hub page, review prompts, public career-site endpoints and search
+vocabulary, USC resource links, curriculum metadata, synthetic fixtures, tests.
 
-The public fixture retains stable schema IDs and a few fixed dates needed by regression tests. That compatibility does not turn synthetic prose or test states into real evidence. Example job flags such as `reviewed` and `ats_live` exist solely to test code paths; example.com URLs have no application role.
+Private (`data/`, `output/`): who she is (`ABOUT_ME.md`), eligibility and residency details,
+contacts, prior résumés, the résumé claim bank and evidence, her personal résumé rules
+(`private_docs/`), the hub database (ratings, statuses, notes), scanner memory, saved job
+descriptions, generated résumés.
 
-Keep real applicant data in a private workspace. Ignoring generated output does not protect edits to tracked fixture JSON files: do not push real profile replacements into this public repository.
+Never copy a file from `data/` into a tracked path, and never write personal facts into tracked
+docs. Tests run on `examples/data/` (synthetic) — set `DANBI_DATA` to point elsewhere.

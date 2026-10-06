@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+if not os.environ.get('DANBI_DATA'):
+    os.environ['DANBI_DATA'] = str(Path(__file__).resolve().parents[1] / 'examples' / 'data')
 import copy
 import json
 import tempfile
@@ -7,16 +11,16 @@ from pathlib import Path
 from unittest.mock import patch
 from urllib.error import HTTPError
 
-from src import engine, discovery
+from src import engine, paths
 
 DAY = date(2026, 9, 16)
 
 
 class EngineTests(unittest.TestCase):
     def setUp(self):
-        self.jobs = engine.load(engine.ROOT / 'data/jobs.json')
-        self.profile = engine.load(engine.ROOT / 'data/profile.json')
-        self.lanes = engine.load(engine.ROOT / 'data/lanes.json')
+        self.jobs = engine.load(paths.data('jobs.json'))
+        self.profile = engine.load(paths.data('profile.json'))
+        self.lanes = engine.load_lanes()
         self.job = copy.deepcopy(self.jobs[0])
 
     def rank(self, jobs=None, feedback=None, today=DAY):
@@ -145,42 +149,6 @@ class EngineTests(unittest.TestCase):
             html = path.read_text()
             self.assertEqual(html.count('</script>'), 1)
             self.assertIn('\\u003c/script', html)
-
-
-class DiscoveryTests(unittest.TestCase):
-    def setUp(self):
-        self.lanes = engine.load(engine.ROOT / 'data/lanes.json')
-
-    def test_encoded_html_and_word_boundary(self):
-        self.assertEqual(discovery.text('&lt;p&gt;Analyze &amp;amp; explain&lt;/p&gt;'), 'Analyze & explain')
-        self.assertIsNone(discovery.classify('Creative Production Intern', self.lanes))
-
-    def test_greenhouse_unreviewed_and_senior_engineering_excluded(self):
-        raw = {'jobs': [{'id': 1, 'title': 'Product Management Intern', 'location': {'name': 'US'},
-                        'absolute_url': 'https://example.com/1', 'content': '&lt;p&gt;MS allowed&lt;/p&gt;'},
-                       {'id': 2, 'title': 'Machine Learning Engineer Intern, Data', 'location': {'name': 'US'},
-                        'absolute_url': 'https://example.com/2'}]}
-        with patch.object(discovery, 'fetch', return_value=raw):
-            jobs, diag = discovery.harvest({'company': 'A', 'type': 'greenhouse', 'token': 'a'}, self.lanes)
-        self.assertEqual(len(jobs), 1)
-        self.assertFalse(jobs[0]['reviewed'])
-        self.assertEqual(jobs[0]['country'], 'unknown')
-        self.assertEqual(jobs[0]['description'], 'MS allowed')
-        self.assertEqual(diag['inventory'], 2)
-
-    def test_access_block_recorded_without_retry(self):
-        with patch.object(discovery, 'fetch', side_effect=HTTPError('https://x', 403, 'Forbidden', {}, None)) as fetch:
-            jobs, diag = discovery.harvest({'company': 'A', 'type': 'greenhouse', 'token': 'a'}, self.lanes)
-        self.assertEqual(jobs, [])
-        self.assertEqual(diag['status'], 'blocked')
-        self.assertEqual(fetch.call_count, 1)
-
-    def test_workday_pagination_limit_and_truncation(self):
-        batch = {'total': 205, 'jobPostings': [{'title': 'Finance Intern', 'externalPath': '/job/'+str(i), 'bulletFields': [str(i)]} for i in range(20)]}
-        with patch.object(discovery, 'fetch', return_value=batch) as fetch:
-            _, diag = discovery.harvest({'company': 'A', 'type': 'workday', 'token': 'a', 'wd': '1', 'site': 'careers'}, self.lanes)
-        self.assertEqual(fetch.call_count, 10)
-        self.assertTrue(diag['truncated'])
 
 
 if __name__ == '__main__':

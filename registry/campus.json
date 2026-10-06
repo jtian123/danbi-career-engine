@@ -1,0 +1,1026 @@
+{
+ "verified_on": "2026-10-06",
+ "resources": [
+  {
+   "id": "handshake",
+   "title": "Handshake (USC)",
+   "url": "https://usc.joinhandshake.com/",
+   "kind": "platform",
+   "what": "USC's job board, event RSVP and advising-booking system; expo employer lists and most info sessions live here.",
+   "how": "Log in with USC NetID, finish the profile, set it visible to employers, and save job alerts for analytics, product, marketing and ops internships.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "viterbi-career-advising",
+   "title": "Viterbi Career Connections advising",
+   "url": "https://viterbicareers.usc.edu/students/advising/",
+   "kind": "advising",
+   "what": "Viterbi career advisors: booked appointments Mon-Fri 9-5 and drop-ins Mon-Thu 1:30-3:30pm in RTH 218 (or Zoom), Aug 24-Dec 4.",
+   "how": "Book in Handshake (Career Center > Appointments > USC Viterbi Career Connections) or join the drop-in waitlist at https://www.waitlist.me/w/careerconnections; run the resume through Quinncia first.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "quinncia",
+   "title": "Quinncia AI resume check",
+   "url": "https://quinncia.io/access",
+   "kind": "tool",
+   "what": "AI resume-scoring tool that Viterbi asks students to use before a drop-in resume review.",
+   "how": "Upload the resume here, fix the flagged items, then bring it to a Viterbi drop-in.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "usc-career-center-advising",
+   "title": "USC Career Center appointments",
+   "url": "https://usc.joinhandshake.com/stu/appointments",
+   "kind": "advising",
+   "what": "The university-wide Career Center (Student Union 110) also books advising through Handshake, with industry teams (Finance & Technology; Creative, Media & Management; Social Impact & Health).",
+   "how": "Book a session with the industry team that matches the role type, e.g. Creative, Media & Management for marketing or Finance & Technology for product/analytics.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "on-campus-recruiting",
+   "title": "USC on-campus recruiting (OCR)",
+   "url": "https://careers.usc.edu/channels/on-campus-recruiting/",
+   "kind": "platform",
+   "what": "Employers interview enrolled USC undergrad and grad students on campus; windows are Sep 2-Nov 20, 2026 and Jan 20-Apr 23, 2027.",
+   "how": "In Handshake, filter jobs by 'Interviewing on campus' and apply before each posting's deadline; late cancellations lock you out of OCR.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "usc-career-center-events",
+   "title": "USC Career Center events calendar",
+   "url": "https://careers.usc.edu/events/",
+   "kind": "events",
+   "what": "Daily list of campus-wide employer info sessions (Trojan Talks), industry panels, and workshops, most with Handshake RSVP links.",
+   "how": "Check weekly and RSVP for sessions open to grad students; some sessions are limited by class year, so read each one's eligibility line.",
+   "cadence": "weekly",
+   "verified": true
+  },
+  {
+   "id": "viterbi-workshops",
+   "title": "Viterbi Career Connections workshops",
+   "url": "https://viterbicareers.usc.edu/workshops/",
+   "kind": "events",
+   "what": "Short Viterbi workshops on the U.S. job search, interviews and offer negotiation, held in RTH 211 and on Zoom.",
+   "how": "Attend the October sessions (job search Oct 13, interviews Oct 22, negotiation Oct 27).",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "viterbi-career-expo",
+   "title": "Viterbi Career & Internship Expo",
+   "url": "https://viterbicareers.usc.edu/employers/careerexpo/",
+   "kind": "fair",
+   "what": "Viterbi-only career fair each fall and spring, with employer info sessions (Trojan Talks) beforehand; fall 2026 ran Sep 28-30.",
+   "how": "Watch for the spring 2027 date (spring 2026 was Feb 9-11) and RSVP in Handshake to see which employers are coming.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "usc-career-fairs",
+   "title": "USC Career Center career fairs",
+   "url": "https://careers.usc.edu/channels/attend-career-event/",
+   "kind": "fair",
+   "what": "Campus-wide General Career Fair and Internship Expo each fall and spring, open to all majors and class levels.",
+   "how": "Look for the spring 2027 dates in Handshake (fall 2026 fairs were Sep 9-10) and bring a printed resume.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "career-fest",
+   "title": "USC Career Fest 2027",
+   "url": "https://careers.usc.edu/career-fest/",
+   "kind": "events",
+   "what": "A week of Career Center events Jan 25-29, 2027, starting with an Employer Resume Review on Jan 25.",
+   "how": "Sign up for the Jan 25 Employer Resume Review and any employer sessions that week through Handshake.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "viterbi-trek",
+   "title": "Viterbi Trek (company site visits)",
+   "url": "https://viterbicareers.usc.edu/viterbi-trek-students/",
+   "kind": "program",
+   "what": "Selected Viterbi students visit one company during spring recess; first-year grad students get priority. Past hosts include McKinsey, Whatnot and The Trade Desk.",
+   "how": "Apply when the spring 2027 application opens (essay, then interview); needs a 3.0+ GPA. Contact joseleon@usc.edu.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "viterbi-mock-interviews",
+   "title": "Viterbi Mock Interview Day",
+   "url": "https://viterbicareers.usc.edu/students/events/mock-interviews-student/",
+   "kind": "events",
+   "what": "One 15-minute behavioral mock interview with an industry expert or Viterbi alum; spring 2027 date not set.",
+   "how": "Watch Handshake email invites; registration opens early spring 2027.",
+   "cadence": "per-semester",
+   "verified": true
+  },
+  {
+   "id": "trojan-network",
+   "title": "Trojan Network (PeopleGrove)",
+   "url": "https://usc.peoplegrove.com/",
+   "kind": "alumni",
+   "what": "USC's alumni mentoring and networking platform, open to grad students.",
+   "how": "Sign in with 'USC NetID (Students)', fill in interests, and request short chats with alumni in target companies; do not send unsolicited resumes.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "viterbi-link",
+   "title": "Viterbi Link (Viterbi hub on Trojan Network)",
+   "url": "https://viterbicareers.usc.edu/viterbilink/",
+   "kind": "alumni",
+   "what": "Viterbi's own alumni and peer mentoring hub inside PeopleGrove (https://usc.peoplegrove.com/hub/viterbi/).",
+   "how": "Join the Viterbi hub and filter for alumni in analytics, product and marketing roles.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "linkedin-alumni",
+   "title": "LinkedIn USC alumni search",
+   "url": "https://www.linkedin.com/school/university-of-southern-california/people/",
+   "kind": "alumni",
+   "what": "LinkedIn's alumni tool for USC; filter by company, job title or keyword.",
+   "how": "Search by target company, find USC alumni in relevant roles, and ask for 15-minute informational chats.",
+   "cadence": "weekly",
+   "verified": false
+  },
+  {
+   "id": "big-interview",
+   "title": "Big Interview",
+   "url": "https://usccareercenter.biginterview.com/",
+   "kind": "tool",
+   "what": "AI mock-interview practice licensed by the Career Center.",
+   "how": "Log in with USC SSO and practice behavioral and role-specific interviews before first-round screens.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "vault-firsthand",
+   "title": "Vault / Firsthand career guides",
+   "url": "https://careers.usc.edu/resources/vault/",
+   "kind": "tool",
+   "what": "Industry and employer guides plus 'day in the life' articles, opened through Handshake.",
+   "how": "Read the industry guides for consulting, marketing and tech before choosing a target industry.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "careershift",
+   "title": "CareerShift",
+   "url": "https://careers.usc.edu/resources/careershift/",
+   "kind": "tool",
+   "what": "Contact and job search tool for finding recruiters and hiring managers.",
+   "how": "Use it to find recruiter or hiring-manager contacts at target companies.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "linkedin-learning",
+   "title": "LinkedIn Learning (free via USC)",
+   "url": "https://itservices.usc.edu/linkedin-learning/",
+   "kind": "tool",
+   "what": "Online courses free to USC students, e.g. SQL, Tableau, Excel, product management.",
+   "how": "Take short courses to fill tool gaps listed in target job posts.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "ms-analytics-program",
+   "title": "MS Analytics program page",
+   "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/",
+   "kind": "department",
+   "what": "Program page with core courses, tracks, and outcomes; recent grads work as data scientists, BI analysts, analytics consultants and product/marketing analysts.",
+   "how": "Use the outcomes list to pick target roles and employers.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "ise-handbook",
+   "title": "ISE 2026-2027 student handbook",
+   "url": "https://ise.usc.edu/wp-content/uploads/2026/08/2026-2027-ISE-Handbook.pdf",
+   "kind": "department",
+   "what": "Degree rules for MS Analytics (28 units: 3 foundation, 1 project-based, 2 methodology courses, 1 elective) and the list of ISE student groups.",
+   "how": "Plan the spring 2027 schedule around a project-based course you can use as resume experience.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "ise-534-consulting",
+   "title": "ISE 534 Data Analytics Consulting",
+   "url": "https://ise.usc.edu/wp-content/uploads/2026/08/2026-2027-ISE-Handbook.pdf",
+   "kind": "department",
+   "what": "Project-based MS Analytics course; the catalogue says students work on real client projects as analytics consultants.",
+   "how": "Consider taking it in spring 2027 to get a client project for the resume; check the Schedule of Classes for sections.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "viterbi-internship-credit",
+   "title": "Viterbi internship for credit (ENGR 596)",
+   "url": "https://viterbicareers.usc.edu/internship/",
+   "kind": "department",
+   "what": "Optional internship course for grad students; required for F-1 CPT, not for permanent residents.",
+   "how": "Not needed to work an internship; use only if she wants credit. Questions: engrinternshipcourses@usc.edu.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "ise-current-students",
+   "title": "ISE current students page",
+   "url": "https://ise.usc.edu/current-students/",
+   "kind": "department",
+   "what": "Department resource page; it has no job board of its own and points to Viterbi and USC career services.",
+   "how": "Check for department notices; rely on Handshake for jobs.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "iasa",
+   "title": "ISE Analytics Student Association (IASA)",
+   "url": "https://engage.usc.edu/IASA/home/",
+   "kind": "club",
+   "what": "Club for students in the MS Analytics program, with industry events, projects and alumni networking (handbook: membership limited to Analytics students).",
+   "how": "Join on EngageSC and ask officers about upcoming industry or alumni events.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "informs-usc",
+   "title": "INFORMS USC Student Chapter",
+   "url": "https://connect.informs.org/usc/about-us/about",
+   "kind": "club",
+   "what": "Grad-student chapter for operations research and analytics: talks, journal clubs, coffee hours.",
+   "how": "Join if operations or supply-chain analytics is a target; EngageSC shows the group as not yet registered this year, so confirm it is active.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "iise-usc",
+   "title": "USC IISE (industrial & systems engineers)",
+   "url": "https://usciise.wordpress.com/",
+   "kind": "club",
+   "what": "ISE professional club open to all majors, with company networking; contact usciise@gmail.com.",
+   "how": "Join for operations and supply-chain employer contacts.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "emsa",
+   "title": "Engineering Management Student Association (EMSA)",
+   "url": "https://ise.usc.edu/current-students/student-life/",
+   "kind": "club",
+   "what": "ISE club linking students with industry and alumni; free to all USC students; contact emsa@usc.edu.",
+   "how": "Join for industry panels and alumni contacts.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "grids",
+   "title": "Graduates Rising in Data Science (GRIDS)",
+   "url": "https://engage.usc.edu/club_signup?view=all",
+   "kind": "club",
+   "what": "Viterbi graduate data-science student group (listed on the EngageSC club directory).",
+   "how": "Find it on EngageSC and join for data-science events.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "adcc",
+   "title": "Advanced Degree Consulting Club (ADCC)",
+   "url": "https://engage.usc.edu/adcc/home/",
+   "kind": "club",
+   "what": "Consulting-prep club for master's and PhD students.",
+   "how": "Join for case practice if consulting or strategy is a target.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "ama-usc",
+   "title": "American Marketing Association at USC",
+   "url": "https://www.amausc.org/",
+   "kind": "club",
+   "what": "Marketing club open to undergrad and grad students: workshops, speakers, company tours, case competitions.",
+   "how": "Join for marketing and growth contacts and case competitions.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "business-cosmetics-club",
+   "title": "Business Cosmetics Club",
+   "url": "https://uscbusinesscc.wixsite.com/uscbcc",
+   "kind": "club",
+   "what": "Beauty-industry club with speaker panels and networking with industry professionals.",
+   "how": "Join for beauty-brand contacts that match her K-beauty background; confirm grad students can join.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "productsc",
+   "title": "ProductSC",
+   "url": "https://engage.usc.edu/ProductSc/",
+   "kind": "club",
+   "what": "USC's product-management club with intro and interview-prep programs (Compass, Catalyst).",
+   "how": "Email product@usc.edu to ask if grad students can join and when applications open.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "global-supply-chain-club",
+   "title": "Global Supply Chain Club",
+   "url": "https://engage.usc.edu/GSCM/home/",
+   "kind": "club",
+   "what": "Supply-chain club with company showcases, case competitions and alumni networks (233 members).",
+   "how": "Join if operations or supply chain is a target; confirm grad eligibility.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "kojobs",
+   "title": "KOJOBS USC (Korean Job Search)",
+   "url": "https://engage.usc.edu/Kojobs/home/",
+   "kind": "club",
+   "what": "Club that helps Korean undergrad and grad students build career connections with professionals; contact kojobsatusc@gmail.com.",
+   "how": "Join for Korean-speaking professional contacts and Korea-linked employers.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "ksea-usc",
+   "title": "Korean-American Scientists and Engineers Association (USC KSEA)",
+   "url": "https://engage.usc.edu/club_signup?view=all",
+   "kind": "club",
+   "what": "STEM career club with guest speakers and a national KSEA network (listed on EngageSC; uscksea.com blocked automated access).",
+   "how": "Join for speaker events and the national KSEA network.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "kgsa",
+   "title": "Korean Graduate Student Association (KGSA)",
+   "url": "https://engage.usc.edu/KoreanGraduateStudentAssociation",
+   "kind": "club",
+   "what": "Korean graduate student group that has linked members with Korean company recruiters (per search snippet; contact usckgsa1@gmail.com).",
+   "how": "Email to check if the group is still active; its EngageSC page no longer loads.",
+   "cadence": "ongoing",
+   "verified": false
+  },
+  {
+   "id": "vgsa",
+   "title": "Viterbi Graduate Student Association (VGSA)",
+   "url": "https://engage.usc.edu/Uscvgsa/",
+   "kind": "club",
+   "what": "Large Viterbi grad student association (800+ members) running academic, career and social events.",
+   "how": "Join and follow its event emails.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "viterbi-grad-mentorship",
+   "title": "Viterbi Graduate Mentorship Program",
+   "url": "https://engage.usc.edu/viterbigradmentorship/home/",
+   "kind": "club",
+   "what": "Pairs new Viterbi master's students with experienced grad-student mentors; contact vgradm@vase.usc.edu.",
+   "how": "Ask for a mentor from MS Analytics who has done an internship search.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "wie-grad",
+   "title": "Viterbi Women in Engineering graduate committee",
+   "url": "https://viterbigrad.usc.edu/2020/01/women-in-engineering-opportunities/",
+   "kind": "club",
+   "what": "Grad-women programming (coffee hours, fireside chats) and a WIE newsletter; contact uscviterbiwie@gmail.com.",
+   "how": "Subscribe to the WIE newsletter; page is from 2020 (updated 2024), so confirm current events.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "swe-usc",
+   "title": "Society of Women Engineers, USC section",
+   "url": "https://engage.usc.edu/club_signup?view=all",
+   "kind": "club",
+   "what": "Professional-development, service and social group for women engineers at USC (listed on EngageSC; sweusc.com is down).",
+   "how": "Join through EngageSC for employer events.",
+   "cadence": "ongoing",
+   "verified": true
+  },
+  {
+   "id": "analysis-group-summer-analyst",
+   "title": "Analysis Group Summer Analyst 2027",
+   "url": "https://analystcareers-analysisgroup.icims.com/jobs/3005/summer-analyst-intern---generalist-%282027-start-date%29/job",
+   "kind": "program",
+   "what": "Economic-consulting summer internship open to master's students graduating winter 2027 or summer 2028, with a Los Angeles office; 3.3 GPA minimum.",
+   "how": "Deadline was Sep 30 but applications are still reviewed on a rolling basis; apply soon with a cover letter and transcripts.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "capital-one-ms-ds-intern",
+   "title": "Capital One Current Master's Data Science Internship (Summer 2027)",
+   "url": "https://www.builtinla.com/job/current-master-s-data-science-internship-summer-2027/10293586",
+   "kind": "program",
+   "what": "Master's-only 10-week data-science internship (quant fields incl. analytics); posted Jul 20, 2026.",
+   "how": "Check capitalonecareers.com; the official posting returned 404, so it may be closed.",
+   "cadence": "once",
+   "verified": false
+  },
+  {
+   "id": "rewriting-the-code",
+   "title": "Rewriting the Code",
+   "url": "https://rewritingthecode.org/join-us/",
+   "kind": "program",
+   "what": "Free community for women university students in tech and data fields, with career summits, recruiter events and mentors.",
+   "how": "Apply (about 5 minutes) and watch for career-summit invites.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "wids-datathon",
+   "title": "WiDS Datathon 2027",
+   "url": "https://www.widsworldwide.org/learn/datathon/",
+   "kind": "program",
+   "what": "Kaggle data challenge for teams at least half women; 2027 details due January 2027.",
+   "how": "Form a team with MS Analytics classmates in January for a resume project.",
+   "cadence": "once",
+   "verified": true
+  },
+  {
+   "id": "loreal-brandstorm",
+   "title": "L'Oreal Brandstorm",
+   "url": "https://brandstorm.loreal.com/",
+   "kind": "program",
+   "what": "L'Oreal's student innovation competition for ages 18-30, open to master's students (not MBA/PhD) per third-party listings.",
+   "how": "Check if the U.S. is a participating country this year; site blocked automated access.",
+   "cadence": "once",
+   "verified": false
+  }
+ ],
+ "events": [
+  {
+   "title": "TikTok NEXT @ USC: interest form due",
+   "date": "2026-10-07",
+   "end_date": null,
+   "time": null,
+   "url": "https://careers.usc.edu/events/2026/10/14/tiktok-next-usc/",
+   "kind": "deadline",
+   "description": "Fill the TikTok interest form by Oct 7 to be considered for the Oct 14 event; open to class of 2027/2028 BS, MS, PhD.",
+   "verified": true
+  },
+  {
+   "title": "Finance & Technology Recruiting Drop-In",
+   "date": "2026-10-12",
+   "end_date": null,
+   "time": "12:30-1:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/12/finance-technology-recruiting-office-hours-bring-your-applications-questions/",
+   "kind": "workshop",
+   "description": "Bring application and recruiting questions for finance and tech roles; open to grad students; STU B3.",
+   "verified": true
+  },
+  {
+   "title": "Trojan Ready Series: Careers at the NBA (Global Partnerships & Media)",
+   "date": "2026-10-12",
+   "end_date": null,
+   "time": "1:00-2:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/12/trojan-ready-series-life-and-careers-at-the-nba-inside-global-partnerships-media/",
+   "kind": "info_session",
+   "description": "NBA VP on careers and hiring in partnerships and media; grad students encouraged; virtual.",
+   "verified": true
+  },
+  {
+   "title": "Viterbi: Navigating the U.S. Job & Internship Search",
+   "date": "2026-10-13",
+   "end_date": null,
+   "time": "12:00-12:30pm",
+   "url": "https://viterbicareers.usc.edu/workshops/",
+   "kind": "workshop",
+   "description": "U.S. recruiting timelines, applicant tracking systems, Handshake search; RTH 211 or Zoom.",
+   "verified": true
+  },
+  {
+   "title": "The Networking Hub: How to Prepare for a Networking Event",
+   "date": "2026-10-13",
+   "end_date": null,
+   "time": "2:00-3:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/13/the-networking-hub-how-to-prepare-for-a-networking-event/",
+   "kind": "workshop",
+   "description": "Career Center networking workshop; STU B6.",
+   "verified": true
+  },
+  {
+   "title": "AI Career Tools Lab: LinkedIn & Networking Lab",
+   "date": "2026-10-14",
+   "end_date": null,
+   "time": "1:00-2:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/14/usc-career-center-ai-career-tools-lab-series-linkedin-networking-lab/",
+   "kind": "workshop",
+   "description": "Hands-on LinkedIn profile and outreach practice; open to grad students; virtual.",
+   "verified": true
+  },
+  {
+   "title": "TikTok NEXT @ USC",
+   "date": "2026-10-14",
+   "end_date": null,
+   "time": "6:00-8:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/14/tiktok-next-usc/",
+   "kind": "info_session",
+   "description": "TikTok panels and networking on Product, TikTok Shop, corporate and R&D teams; attendance only if TikTok confirms you; 3501 Trousdale Pkwy.",
+   "verified": true
+  },
+  {
+   "title": "Finance & Technology: Ace the Interview",
+   "date": "2026-10-15",
+   "end_date": null,
+   "time": "2:00-3:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/15/finance-technology-ace-the-interview-technical-questions-cases-how-to-prep/",
+   "kind": "workshop",
+   "description": "Technical questions, cases and prep for finance and tech interviews; STU B3.",
+   "verified": true
+  },
+  {
+   "title": "Creative, Media & Management: Make the Connection",
+   "date": "2026-10-15",
+   "end_date": null,
+   "time": "5:00-6:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/15/creative-media-management-make-the-connection-networking-that-works/",
+   "kind": "workshop",
+   "description": "Networking and coffee-chat strategy; open to grad students; STU B3.",
+   "verified": true
+  },
+  {
+   "title": "Industry Insights: Entertainment",
+   "date": "2026-10-20",
+   "end_date": null,
+   "time": "5:00-6:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/20/industry-insights-entertainment-3/",
+   "kind": "info_session",
+   "description": "Career Center industry panel; virtual.",
+   "verified": true
+  },
+  {
+   "title": "The Inside Scoop: Interview Tips from Recruiters",
+   "date": "2026-10-21",
+   "end_date": null,
+   "time": "12:00-1:00pm",
+   "url": "https://careers.usc.edu/events/2026/10/21/the-inside-scoop-interview-tips-from-recruiters-3/",
+   "kind": "workshop",
+   "description": "Recruiter panel on internship interviews; open to grad students; virtual.",
+   "verified": true
+  },
+  {
+   "title": "Finance & Technology: Still Seeking? Spring Recruiting & Late-Cycle Opportunities",
+   "date": "2026-10-22",
+   "end_date": null,
+   "time": "2:00-3:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/22/still-looking-spring-recruiting-late-cycle-opportunities/",
+   "kind": "workshop",
+   "description": "How to find spring, rolling, startup and off-cycle internships; for undergrad and grad students; STU B3.",
+   "verified": true
+  },
+  {
+   "title": "Viterbi: Interview to Offer",
+   "date": "2026-10-22",
+   "end_date": null,
+   "time": "4:00-4:30pm",
+   "url": "https://viterbicareers.usc.edu/workshops/",
+   "kind": "workshop",
+   "description": "Behavioral and technical interview prep; RTH 211 or Zoom.",
+   "verified": true
+  },
+  {
+   "title": "Viterbi: Evaluating & Negotiating Your Job/Internship Offer",
+   "date": "2026-10-27",
+   "end_date": null,
+   "time": "4:00-4:30pm",
+   "url": "https://viterbicareers.usc.edu/workshops/",
+   "kind": "workshop",
+   "description": "How to weigh and negotiate offers; RTH 211 or Zoom.",
+   "verified": true
+  },
+  {
+   "title": "Creative, Media & Management: Pitch Yourself",
+   "date": "2026-10-27",
+   "end_date": null,
+   "time": "4:30-5:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/27/creative-media-management-pitch-yourself-tell-your-story-stand-out/",
+   "kind": "workshop",
+   "description": "Tell-your-story practice for creative, media and marketing roles; virtual.",
+   "verified": true
+  },
+  {
+   "title": "Grace Hopper Celebration 2026 (Anaheim)",
+   "date": "2026-10-27",
+   "end_date": "2026-10-30",
+   "time": null,
+   "url": "https://ghc.anitab.org/",
+   "kind": "fair",
+   "description": "Large women-in-tech conference with 700+ employers; near LA; paid registration, check student rates.",
+   "verified": true
+  },
+  {
+   "title": "Industry Insights: AI and Data Science",
+   "date": "2026-10-28",
+   "end_date": null,
+   "time": "5:00-6:30pm",
+   "url": "https://careers.usc.edu/events/2026/10/28/industry-insights-ai-and-data-science/",
+   "kind": "info_session",
+   "description": "Panel on data analytics, product and AI careers; all majors and levels; virtual.",
+   "verified": true
+  },
+  {
+   "title": "American Express Data Science Intern (Global Decision Science) deadline",
+   "date": "2026-10-30",
+   "end_date": null,
+   "time": null,
+   "url": "https://simplify.jobs/p/bb78f0cb-d806-4ae3-8996-ed333399cb6b",
+   "kind": "deadline",
+   "description": "Summer 2027, New York, in person; master's students graduating Dec 2027-Jun 2028. Seen on a Simplify listing; confirm on the Amex careers site.",
+   "verified": true
+  },
+  {
+   "title": "Your Career Starter Pack: Resume, Interview, Networking",
+   "date": "2026-11-05",
+   "end_date": null,
+   "time": "4:00-5:30pm",
+   "url": "https://careers.usc.edu/events/2026/11/05/your-career-starter-pack-resume-interview-networking-essentials/",
+   "kind": "workshop",
+   "description": "Career Center basics workshop; 3607 Trousdale Pkwy.",
+   "verified": true
+  },
+  {
+   "title": "Trojan Ready Series: Interview Strategies with Rakuten International",
+   "date": "2026-11-05",
+   "end_date": null,
+   "time": "5:00-6:00pm",
+   "url": "https://careers.usc.edu/events/2026/11/05/trojan-ready-series-interview-strategies-for-success-with-rakuten-international/",
+   "kind": "info_session",
+   "description": "Rakuten staff on STAR answers and follow-up; STU B3.",
+   "verified": true
+  },
+  {
+   "title": "Ask a Career Advisor pop-up: Internship and Job Search",
+   "date": "2026-11-18",
+   "end_date": null,
+   "time": "11:00am-1:00pm",
+   "url": "https://careers.usc.edu/events/2026/11/18/ask-a-career-advisor-farmers-market-pop-up-internship-and-job-search/",
+   "kind": "workshop",
+   "description": "Walk-up advising at the Trojan Farmers Market, McCarthy Quad.",
+   "verified": true
+  },
+  {
+   "title": "Trojan Ready Series: Creative & Tech Industries with alum Jeeyoon Na",
+   "date": "2026-11-19",
+   "end_date": null,
+   "time": "5:30-6:30pm",
+   "url": "https://careers.usc.edu/events/2026/11/19/trojan-ready-series-thriving-in-creative-tech-industries-with-usc-alum-jeeyoon-na-google-disney-hulu/",
+   "kind": "info_session",
+   "description": "USC alum, Google/YouTube UX designer, formerly Disney, Warner Bros. and Hulu marketing; STU B6.",
+   "verified": true
+  },
+  {
+   "title": "Fall 2026 on-campus recruiting window closes",
+   "date": "2026-11-20",
+   "end_date": null,
+   "time": null,
+   "url": "https://careers.usc.edu/channels/on-campus-recruiting/",
+   "kind": "deadline",
+   "description": "Last day of the Sep 2-Nov 20 on-campus interview window.",
+   "verified": true
+  },
+  {
+   "title": "Spring 2027 on-campus recruiting window",
+   "date": "2027-01-20",
+   "end_date": "2027-04-23",
+   "time": null,
+   "url": "https://careers.usc.edu/channels/on-campus-recruiting/",
+   "kind": "window",
+   "description": "Employers interview USC students on campus; apply through Handshake 'Interviewing on campus'.",
+   "verified": true
+  },
+  {
+   "title": "USC Career Fest 2027",
+   "date": "2027-01-25",
+   "end_date": "2027-01-29",
+   "time": null,
+   "url": "https://careers.usc.edu/career-fest/",
+   "kind": "workshop",
+   "description": "Week of Career Center workshops and employer events; schedule posts in Handshake.",
+   "verified": true
+  },
+  {
+   "title": "Career Fest: Employer Resume Review",
+   "date": "2027-01-25",
+   "end_date": null,
+   "time": "9:00am-12:00pm",
+   "url": "https://careers.usc.edu/career-fest/",
+   "kind": "workshop",
+   "description": "Recruiters and hiring managers review resumes in person; TCC Ballroom.",
+   "verified": true
+  },
+  {
+   "title": "Viterbi Trek, spring 2027",
+   "date": "2027-03-15",
+   "end_date": "2027-03-17",
+   "time": null,
+   "url": "https://viterbicareers.usc.edu/employers/viterbi-treks/",
+   "kind": "info_session",
+   "description": "Company site visits during spring recess; application not yet open; first-year grad students get priority.",
+   "verified": true
+  }
+ ],
+ "recruiting_employers": [
+  {
+   "name": "Abbott",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Lockheed Martin",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Qualcomm",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Visa",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Bloomberg",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Boeing",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Microsoft",
+   "source_url": "https://viterbicareers.usc.edu/employers/partner-program/"
+  },
+  {
+   "name": "Google",
+   "source_url": "https://viterbicareers.usc.edu/students/how-to-get-hired-series/"
+  },
+  {
+   "name": "FBI",
+   "source_url": "https://viterbicareers.usc.edu/students/how-to-get-hired-series/"
+  },
+  {
+   "name": "Qvest.US",
+   "source_url": "https://viterbicareers.usc.edu/students/how-to-get-hired-series/"
+  },
+  {
+   "name": "Griffith Company",
+   "source_url": "https://viterbicareers.usc.edu/students/how-to-get-hired-series/"
+  },
+  {
+   "name": "McKinsey & Company",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Whatnot",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Secretariat",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "The Trade Desk",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "SpaceX",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "The Aerospace Corporation",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Farmers Insurance",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Verizon",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "EY",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Accenture",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "KPMG",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Tencent",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Walmart",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Zillow Group",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "TripAdvisor",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Medtronic",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "NVIDIA",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "Cisco",
+   "source_url": "https://viterbicareers.usc.edu/employers/viterbi-treks/"
+  },
+  {
+   "name": "TikTok",
+   "source_url": "https://careers.usc.edu/events/2026/10/14/tiktok-next-usc/"
+  },
+  {
+   "name": "NBA",
+   "source_url": "https://careers.usc.edu/events/2026/10/12/trojan-ready-series-life-and-careers-at-the-nba-inside-global-partnerships-media/"
+  },
+  {
+   "name": "Rakuten International",
+   "source_url": "https://careers.usc.edu/events/2026/11/05/trojan-ready-series-interview-strategies-for-success-with-rakuten-international/"
+  },
+  {
+   "name": "Creative Artists Agency (CAA)",
+   "source_url": "https://careers.usc.edu/events/2026/10/15/trojan-talk-with-creative-artists-agency-caa/"
+  },
+  {
+   "name": "Stifel",
+   "source_url": "https://careers.usc.edu/events/2026/10/22/trojan-talk-with-stifel-4/"
+  },
+  {
+   "name": "E. & J. Gallo (GALLO)",
+   "source_url": "https://careers.usc.edu/events/2026/10/06/trojan-ready-series-communication-best-practices-with-gallo/"
+  },
+  {
+   "name": "Financial Technology Partners",
+   "source_url": "https://careers.usc.edu/events/2026/10/06/trojan-talk-with-financial-technology-partners-4/"
+  },
+  {
+   "name": "Central Intelligence Agency",
+   "source_url": "https://careers.usc.edu/events/2026/10/07/trojan-talk-with-central-intelligence-agency-information-session/"
+  },
+  {
+   "name": "County of Los Angeles",
+   "source_url": "https://careers.usc.edu/events/2026/10/07/trojan-talk-with-county-of-los-angeles-academic-internship-program-3/"
+  },
+  {
+   "name": "Epic",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "KRAFTON",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "Semler Brossy",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "Henkel",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "New York Life",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "Fabletics",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "PacSun",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "Eggs Unlimited",
+   "source_url": "https://careers.usc.edu/career-fest-2026/"
+  },
+  {
+   "name": "Amazon",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "UniUni Logistics",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "Tesla",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "Salesforce",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "Alibaba",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "eBay",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "Airbnb",
+   "source_url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/industrial-systems-engineering/ms-analytics/"
+  },
+  {
+   "name": "Apple",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Adobe",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Deloitte",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "PwC",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Boston Consulting Group",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Goldman Sachs",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "JPMorganChase",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Bank of America",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "IBM",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Intel",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Oracle",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Palantir Technologies",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "PayPal",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  },
+  {
+   "name": "Honeywell",
+   "source_url": "https://viterbicareers.usc.edu/firstdestination/"
+  }
+ ],
+ "alumni_search_url_template": "https://www.linkedin.com/school/university-of-southern-california/people/?keywords={company}",
+ "notes": [
+  "Handshake needs her USC NetID. Expo employer lists, Trojan Talk RSVPs, appointment booking and most Zoom links are only visible after login.",
+  "Spring 2027 Viterbi Career & Internship Expo date is not published yet. Spring 2026 ran Feb 9-11 (fair on Feb 11), so expect early-to-mid Feb 2027; re-check https://viterbicareers.usc.edu/employers/careerexpo/ in December.",
+  "Spring 2027 USC Career Center Career Fair and Internship Expo dates are not published. Spring 2026 fairs were in early Feb (Career Fair Feb 5, 2026 per a search snippet; that page is now gone). Career Fest 2027 (Jan 25-29) is confirmed.",
+  "No USC internship-funding program for grad students was found: the Career Center Impact Scholarship ($2,500, applications Oct 12, 2026-Apr 16, 2027) is undergraduate-only.",
+  "Permanent residents and citizens do not need CPT or ENGR 596 to intern; the course is optional. Fall 2026 internship-course requests closed Oct 9.",
+  "Many Career Center info sessions limit who can attend (e.g., Flexport Oct 14 is graduating seniors only, so it is left out). Check each event's eligibility line before RSVP. No-shows can be penalized.",
+  "Viterbi drop-ins: none on Oct 8-9, Nov 6, 11, 26-27, and none Dec 7-Jan 8. Drop-ins end Dec 4.",
+  "TikTok NEXT interest form is due Oct 7, 2026 (tomorrow); TikTok confirms selected students about two days before the Oct 14 event.",
+  "LinkedIn slug 'university-of-southern-california' is confirmed by search results (official USC page, ~540K followers); LinkedIn blocks automated page loads. usc.edu also links the numeric school ID 3084. The People tab needs a logged-in LinkedIn account.",
+  "Viterbi Trek page says spring 2027 application is 'coming soon'; the employer page lists Mar 15-17, 2027. First-year grad students get priority.",
+  "IASA membership is limited to MS Analytics students (2026-27 ISE handbook), so it is the closest-fit club. EngageSC shows INFORMS USC as 'not registered yet' this year.",
+  "KGSA's EngageSC page no longer loads; KOJOBS and KSEA are the active Korean career groups found.",
+  "ProductSC, Business Cosmetics Club and Global Supply Chain Club do not state whether grad students can join; ask the officers.",
+  "The ISE department has no job board of its own (its page links to Indeed) and its events calendar did not render; Viterbi Career Connections and the Career Center are the real channels.",
+  "External programs: only items whose pages state master's eligibility are included. Forte is MBA-only and was skipped. Capital One and L'Oreal Brandstorm are verified=false (official pages did not load).",
+  "recruiting_employers mixes three signals: Viterbi partners, trek hosts and info-session hosts (they actively recruit at USC), and first-destination and MS Analytics outcome lists (where grads were hired). Source URLs show which is which."
+ ]
+}

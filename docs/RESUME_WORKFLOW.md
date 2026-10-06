@@ -1,14 +1,26 @@
-# Resume pipeline
+# Résumé pipeline
 
-The supplied profile and evidence are **synthetic fixtures**, not an applicant resume. The code is the same source compiler and quality-gate architecture used in the private workspace.
+Her personal résumé facts and rules are private: `data/master_profile.json` (the only claim
+authority), `data/resume/evidence.json` (source ledger), `data/private_docs/RESUME_WORKFLOW.md` (her
+specifics: anchors, titles, open dates) and `data/ABOUT_ME.md`. Read those first. Public clones run
+the same code on synthetic fixtures in `examples/data/`.
 
-1. Maintain reviewed facts and wording variants in a private canonical profile, with evidence IDs and limitations.
-2. Save a target job description and select relevant claims, skills and two or three curriculum courses.
-3. The current assistant writes the selection plan and performs a separate source/editorial review. There is no automatic second-model or paid API call.
-4. Compile only known claims and supported titles. Unknown dates stay unknown. Course availability cannot manufacture skill, project or completion claims.
-5. Render Word/PDF, measure the actual PDF, fit by concise wording and lower-priority content, then re-audit the content that actually rendered.
-6. Inspect every final page. Release requires clean source, editorial and visual reviews bound to exact content and artifact hashes.
+1. Save the target job description (`jobs_in/company_role.txt`, or the scan's `jds/` file).
+2. `python3 career.py resume jobs_in/x.txt --lane LANE --label company_role --plan-only` — a source
+   packet and a starter selection (`writer_packet.json` includes `plain_language_lint`).
+3. Write the selection plan per `prompts/resume_writer.md`; build with `--proposal plan.json`.
+   The compiler accepts only known claim IDs, titles and skills.
+4. Rendering: python-docx → Word file → **LibreOffice headless** → PDF → page image (pypdfium2). No
+   Microsoft Word, no file-access popups. Each render uses a fresh folder. The fit loop only trims
+   (concise variants, then lower-priority content); it never shrinks type.
+5. Audit per `prompts/resume_auditor.md`; revise with `resume-revise` (earlier builds stay); compare
+   revisions with `resume-compare`.
+6. Visual review per `prompts/resume_visual_review.md` (one page, ~90–95% filled).
+7. `resume-finalize` creates `resume.docx` / `resume.pdf` only when content and visual reviews match
+   the exact current hashes.
 
-The default public data intentionally keeps one synthetic employment end date unresolved, so real release is blocked. This exercises the gate without inventing an applicant fact. Public demos must never be submitted.
+Lanes: product, commerce, insights, business, demand, finance, data. A strategy job uses `business`;
+operations/supply chain uses `demand`.
 
-`python3 career.py resume jobs_in/example_product_intern.txt --lane product --plan-only` works with Python's standard library. Full document rendering requires the separate document runtime described in the README. Prompt files define the assistant's editorial responsibilities.
+Setup: `python3 -m pip install --user -r requirements.txt` and LibreOffice
+(`brew install --cask libreoffice`). `python3 career.py doctor` checks both.

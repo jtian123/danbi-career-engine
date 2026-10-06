@@ -1,0 +1,6360 @@
+{
+"note": "Public ATS job boards (Greenhouse/Lever/Ashby/SmartRecruiters) of mostly growth-stage and mid-size employers. Seeded 2026-10-06 from the token list of James's scanner (public endpoint names only \u2014 no scores, preferences or history). Greenhouse supplies the company name at scan time.",
+"boards": [
+{
+"type": "greenhouse",
+"token": "affirm",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "airbnb",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "airtable",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "alloy",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "altoslabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "andurilindustries",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "anthropic",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aqr",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "archer",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "arcinstitute",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "asana",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "astranis",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "block",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "braze",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "brex",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "bridgewater89",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "calicolabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "careportalinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "chanzuckerberginitiative",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "checkr",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "chime",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cloudflare",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cockroachlabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "coinbase",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "coreweave",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "coursera",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "databento",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "databricks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "datadog",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "descript",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "discord",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "doordashusa",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "doximity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dropbox",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "drweng",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "duolingo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "elastic",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "faire",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "figma",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "figureai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fireblocks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fivetran",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "flatironhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "flexport",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "freenome",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gemini",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "generatebiomedicines",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ginkgobioworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gitlab",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gleanwork",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "goatgroup",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gongio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gusto",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "imbue",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "imc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "instacart",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "isomorphiclabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "janestreet",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "jumptrading",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kalshi",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "khealthcareers",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "komodohealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lattice",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "launchdarkly",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lucidmotors",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lyft",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mercury",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "misfitsmarket",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mixpanel",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mochihealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "modernhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mongodb",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "motional",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "natera",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nebius",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "neo4j",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nuro",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "okta",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "omadahealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "optiver",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "optiverus",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oscar",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oura",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pagerduty",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "peloton",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pinterest",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "point72",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "poshmark",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "recursionpharmaceuticals",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "reddit",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "relativity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "robinhood",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "salesloft",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sambanovasystems",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "samsara",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "scaleai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sigmacomputing",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sourcegraph91",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "springhealth66",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "stockx",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "stripe",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "suki",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tailscale",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thoughtworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "togetherai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "towerresearchcapital",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "truveta",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "twilio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "twitch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "typeface",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "urbancompass",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vardaspace",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "veracyte",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vercel",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "verkada",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "virtu",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "waymo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "webflow",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "wehrtyou",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "xairatherapeutics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "zocdoc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "brightcoreenergy",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "canopyworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "doubleverify",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ionq",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kinelo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thealleninstitute",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "smartsheet",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mozilla",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "radixark",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "yipitdata",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "accenturefederalservices",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "canonical",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "wayve",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hubspot",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "liftoff",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "calendly",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "genevatrading",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "brightai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "qventus",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "picarroinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "c3iot",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "koch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "axon",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mavenclinic",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dealpath",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "latitude",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "iterativehealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oklo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nextdoor",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "1stdibscom",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "garnerhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ispottv",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "novacredit",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fareharbor",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "moduscreate",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vailexa",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "elementbiosciences",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "indeed",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "socket",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hark",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "microsoftcorporation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "idme",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "descope",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "8451",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "roboforce",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mgproperties",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "patientpoint",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "datavations",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thenewyorktimes",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "samsungsemiconductor",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "turing",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "singulargenomics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clinchoice",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "air",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "taxbit",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pallet",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "avride",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "doppel",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "honeycombinsurance",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clear",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "smithrx",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gapinternational",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "capstoneinvestmentadvisors",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "distantjob",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "comfrt",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "zuora",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "betterhelp",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "netdocuments",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "branch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "consensys",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "otter",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "weave",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ses",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fastspring",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cloverhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "spacex",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "coherehealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tavily",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "robotsandpencils",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "terzo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "upstart",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "netskope",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "uberfreight",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "qualtrics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nortal",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "speechmatics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "devrev",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "blend",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vannevarlabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kodiaksolutions",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "globalizationpartners",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oddball",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "chainguard",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "customerio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "testlio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "codepath",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "stackadapt",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "attentive",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "blackcanyonconsulting",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mattermost",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "wikimedia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "assemblyai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "klaviyo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thea",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "energyhub",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "logos",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "empowerpharmacy",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "chaosindustries",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lovable",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "project44",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "enterpret",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "billcom",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "adyen",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gigs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sonatus",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "bouldercare",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hasbro",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "altium",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dropzoneai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "motive",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "launchpotato",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thatch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "playlist",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "awardco",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "onenergy",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "machindustries",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vast",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "courierhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "linkedin",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tenstorrent",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "interwellhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cresta",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hightouch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "medium",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "flex",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "axiom",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "juullabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rithum",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sunset",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ethos",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "riotgames",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "liveperson",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ziprecruiter",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "apptronik",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thorn",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "voyagertechnologiesinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "praxisprecisionmedicines",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "homechef",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lilasciences",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "biohub",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lucidsoftware",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "trustpilot",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "squirro",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "jellyvision",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "crexi",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "offline",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thetradedesk",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "moloco",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "onestream",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rvohealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "toast",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "grafanalabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "perfectserve",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nextiva",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fts",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "roku",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "himarley",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pitchbookdata",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "protagonist",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "indiciumai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "zscaler",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kikoff",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "profound",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "digicert",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "samsungresearchamerica",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "builtinintegrationsandbox",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fellow",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "life360",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "formationbio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "array",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rushstreetinteractive",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "system",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fourkites",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "anaplan",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gremlin",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "seatgeek",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "upbound",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "happymoney",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clockworksystems",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "earnin",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "current",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pathai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "archera",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oneoncology",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "prenuvo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "redventures",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "blueroseresearch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "summittherapeutics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "wonderschool",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "baton",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "revolutional",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "diligent",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "eonio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "agoda",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rocketlab",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "afresh",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sphinxdefense",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sayari",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kunai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fleetio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "centralreach",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "grovecollaborative",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "precisionmedicinegroup",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "givedirectly",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "d2l",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "alertmedia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "remote",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "beyondfinance",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ripple",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "conga",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "xpengmotors",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "simplisafe",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "newrelic",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "onetrust",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "prophet",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rockstargames",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "guidepointsecurity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "veeamsoftware",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "honeycomb",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kalepa",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "heygen",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "coupang",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "analyticservicesinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "athletics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "engine",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ninjatrader",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "strike",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rackner",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "torcrobotics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "maymobility",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "spoileralert",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "boulevard",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "udacity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "veriff",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "paperlesspost",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nex",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "blakewillsongroup",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "babylist",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aclu",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "moxxidigital",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lightningai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "proof",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fetch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lgelectronics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "arenaclub",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tetra",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "myome",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "taskrabbit",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "veranahealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nametag",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "helsing",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fingerprint",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "budderfly",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mitratech",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cloudbeds",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "super",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cei",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "datacamp",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "xometry",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "place",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pmg",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "liaisoninternational",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "litify",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "trace3",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "botauto",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "zetaglobal",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "mcafee",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "1800contacts",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aceable",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "taxreliefadvocates",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "defenseunicorns",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aviatrix",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "phaidra",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "confidentialcompany",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "orb",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hypr",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pulley",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "homelight",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "enova",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "9thwayinsignia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fictiv",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aechelontechnology",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "snorkelai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "debtbook",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "singlestore",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "eplusinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "moonlite",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "opencoreventures",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "stackblitz",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "justworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "praxent",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "aircallioinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "newsbreak",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "striveworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "agero",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "privateer",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "steelpointsolutions",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lighthouse",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "inspiraeducation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clerkie",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "zerodriftinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "charterup",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kizen",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "labelbox",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "patronusaiinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tenableinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dyopath",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "twistbioscience",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "axle",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "colossalbiosciences",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "eikontherapeutics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "caredxinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "entradatherapeutics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ifit",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "otterai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hazel",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "neuralink",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "calm",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "contentful",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "oneimaging",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "copilotiq",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "qualia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "everlaw",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "valohealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "eve",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cfdresearchcorporation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "loenbro",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dominodatalab",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "fairlife",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "extrahopnetworks",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cribl",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "collibra",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "dots",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "spade",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "client",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "hyliion",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gridmaticinc",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "thrivemarket",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vay",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "alpaca",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "quinstreet",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "northbeam",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "upgrade",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nintendo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "recordedfuture",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "keepersecurity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "endorlabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tubi",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "atoms",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "purestorage",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sapienceaicorporation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "withcoverage",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "leap",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sproutsocial",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "paperlessparts",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "cookunity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pulmovant",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clara",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "generalproximity",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "understoodcare",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ansabiotechnologies",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kernalbio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "daybreakhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ophelia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pairteam",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "papa",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "meruhealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "culturebiosciences",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "pelago",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "carrotfertility",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "akidolabs",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "picnicai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "rightwayhealthcare",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vivodyne",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "ultimagenomics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "stylusmedicine",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "eudia",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "sixfold",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "federato",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "gradientai",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "kettle",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "galileo",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "k2spacecorporation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "recidiviz",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "muonspace",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "clutch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "proto",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "wise",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "vianttechnology",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "precisionaq",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "siriuspoint",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nlogic",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nerostechnologies",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "newtonresearch",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "abacusinsights",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "humanagency",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "imaginepediatrics",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "beaconbiosignals",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "savantbio",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "volohealth",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "catawiki",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "imanage",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "handshake",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "schrdinger",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "lindawernerassociates",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "appnovation",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "nolantransportationgroup",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "yesenergy",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "logicgate",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "epirus",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "butterflynetwork",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "abinbev",
+"company": ""
+},
+{
+"type": "greenhouse",
+"token": "tines",
+"company": ""
+},
+{
+"type": "lever",
+"token": "anchorage",
+"company": "Anchorage"
+},
+{
+"type": "lever",
+"token": "contentsquare",
+"company": "Contentsquare"
+},
+{
+"type": "lever",
+"token": "gopuff",
+"company": "Gopuff"
+},
+{
+"type": "lever",
+"token": "grailbio",
+"company": "Grailbio"
+},
+{
+"type": "lever",
+"token": "includedhealth",
+"company": "Includedhealth"
+},
+{
+"type": "lever",
+"token": "lyrahealth",
+"company": "Lyrahealth"
+},
+{
+"type": "lever",
+"token": "matchgroup",
+"company": "Matchgroup"
+},
+{
+"type": "lever",
+"token": "metabase",
+"company": "Metabase"
+},
+{
+"type": "lever",
+"token": "outreach",
+"company": "Outreach"
+},
+{
+"type": "lever",
+"token": "palantir",
+"company": "Palantir"
+},
+{
+"type": "lever",
+"token": "ro",
+"company": "Ro"
+},
+{
+"type": "lever",
+"token": "shieldai",
+"company": "Shieldai"
+},
+{
+"type": "lever",
+"token": "spotify",
+"company": "Spotify"
+},
+{
+"type": "lever",
+"token": "swordhealth",
+"company": "Swordhealth"
+},
+{
+"type": "lever",
+"token": "veeva",
+"company": "Veeva"
+},
+{
+"type": "lever",
+"token": "zoox",
+"company": "Zoox"
+},
+{
+"type": "lever",
+"token": "atomcomputing",
+"company": "Atomcomputing"
+},
+{
+"type": "lever",
+"token": "eleostech",
+"company": "Eleostech"
+},
+{
+"type": "lever",
+"token": "gausslabs",
+"company": "Gausslabs"
+},
+{
+"type": "lever",
+"token": "mactores",
+"company": "Mactores"
+},
+{
+"type": "lever",
+"token": "workwave",
+"company": "Workwave"
+},
+{
+"type": "lever",
+"token": "blueorigin",
+"company": "Blueorigin"
+},
+{
+"type": "lever",
+"token": "subsense",
+"company": "Subsense"
+},
+{
+"type": "lever",
+"token": "kpmg",
+"company": "Kpmg"
+},
+{
+"type": "lever",
+"token": "tenna",
+"company": "Tenna"
+},
+{
+"type": "lever",
+"token": "nitra",
+"company": "Nitra"
+},
+{
+"type": "lever",
+"token": "ttecdigital",
+"company": "Ttecdigital"
+},
+{
+"type": "lever",
+"token": "magnetforensics",
+"company": "Magnetforensics"
+},
+{
+"type": "lever",
+"token": "agile-defense",
+"company": "Agile Defense"
+},
+{
+"type": "lever",
+"token": "wisdomai",
+"company": "Wisdomai"
+},
+{
+"type": "lever",
+"token": "arcadia",
+"company": "Arcadia"
+},
+{
+"type": "lever",
+"token": "teleo",
+"company": "Teleo"
+},
+{
+"type": "lever",
+"token": "luxurypresence",
+"company": "Luxurypresence"
+},
+{
+"type": "lever",
+"token": "teamsnap",
+"company": "Teamsnap"
+},
+{
+"type": "lever",
+"token": "chownow",
+"company": "Chownow"
+},
+{
+"type": "lever",
+"token": "findigs",
+"company": "Findigs"
+},
+{
+"type": "lever",
+"token": "loftorbital",
+"company": "Loftorbital"
+},
+{
+"type": "lever",
+"token": "rai",
+"company": "Rai"
+},
+{
+"type": "lever",
+"token": "reply",
+"company": "Reply"
+},
+{
+"type": "lever",
+"token": "avalerehealth",
+"company": "Avalerehealth"
+},
+{
+"type": "lever",
+"token": "gridware",
+"company": "Gridware"
+},
+{
+"type": "lever",
+"token": "angellist",
+"company": "Angellist"
+},
+{
+"type": "lever",
+"token": "linkedin",
+"company": "Linkedin"
+},
+{
+"type": "lever",
+"token": "saviynt",
+"company": "Saviynt"
+},
+{
+"type": "lever",
+"token": "payabli",
+"company": "Payabli"
+},
+{
+"type": "lever",
+"token": "foodsmart",
+"company": "Foodsmart"
+},
+{
+"type": "lever",
+"token": "drivemode",
+"company": "Drivemode"
+},
+{
+"type": "lever",
+"token": "convergentresearch",
+"company": "Convergentresearch"
+},
+{
+"type": "lever",
+"token": "ucsf",
+"company": "Ucsf"
+},
+{
+"type": "lever",
+"token": "avante",
+"company": "Avante"
+},
+{
+"type": "lever",
+"token": "entrata",
+"company": "Entrata"
+},
+{
+"type": "lever",
+"token": "evry-health",
+"company": "Evry Health"
+},
+{
+"type": "lever",
+"token": "toptal",
+"company": "Toptal"
+},
+{
+"type": "lever",
+"token": "cyara",
+"company": "Cyara"
+},
+{
+"type": "lever",
+"token": "protective",
+"company": "Protective"
+},
+{
+"type": "lever",
+"token": "sdhrconsulting",
+"company": "Sdhrconsulting"
+},
+{
+"type": "lever",
+"token": "atmosera",
+"company": "Atmosera"
+},
+{
+"type": "lever",
+"token": "azul",
+"company": "Azul"
+},
+{
+"type": "lever",
+"token": "d2l",
+"company": "D2L"
+},
+{
+"type": "lever",
+"token": "bumbleinc",
+"company": "Bumbleinc"
+},
+{
+"type": "lever",
+"token": "fiscalnote",
+"company": "Fiscalnote"
+},
+{
+"type": "lever",
+"token": "smarsh",
+"company": "Smarsh"
+},
+{
+"type": "lever",
+"token": "gmo",
+"company": "Gmo"
+},
+{
+"type": "lever",
+"token": "freshworks",
+"company": "Freshworks"
+},
+{
+"type": "lever",
+"token": "engine",
+"company": "Engine"
+},
+{
+"type": "lever",
+"token": "canvasmedical",
+"company": "Canvasmedical"
+},
+{
+"type": "lever",
+"token": "xage-security",
+"company": "Xage Security"
+},
+{
+"type": "lever",
+"token": "tala",
+"company": "Tala"
+},
+{
+"type": "lever",
+"token": "quantummetric",
+"company": "Quantummetric"
+},
+{
+"type": "lever",
+"token": "proof",
+"company": "Proof"
+},
+{
+"type": "lever",
+"token": "s32",
+"company": "S32"
+},
+{
+"type": "lever",
+"token": "payactiv",
+"company": "Payactiv"
+},
+{
+"type": "lever",
+"token": "forterra",
+"company": "Forterra"
+},
+{
+"type": "lever",
+"token": "celerion",
+"company": "Celerion"
+},
+{
+"type": "lever",
+"token": "mitratech",
+"company": "Mitratech"
+},
+{
+"type": "lever",
+"token": "concurrency",
+"company": "Concurrency"
+},
+{
+"type": "lever",
+"token": "pigment",
+"company": "Pigment"
+},
+{
+"type": "lever",
+"token": "appen",
+"company": "Appen"
+},
+{
+"type": "lever",
+"token": "super",
+"company": "Super"
+},
+{
+"type": "lever",
+"token": "biointellisense",
+"company": "Biointellisense"
+},
+{
+"type": "lever",
+"token": "artera",
+"company": "Artera"
+},
+{
+"type": "lever",
+"token": "lendbuzz",
+"company": "Lendbuzz"
+},
+{
+"type": "lever",
+"token": "versapay",
+"company": "Versapay"
+},
+{
+"type": "lever",
+"token": "intenseye",
+"company": "Intenseye"
+},
+{
+"type": "lever",
+"token": "spreedly",
+"company": "Spreedly"
+},
+{
+"type": "lever",
+"token": "goodleap",
+"company": "Goodleap"
+},
+{
+"type": "lever",
+"token": "distro",
+"company": "Distro"
+},
+{
+"type": "lever",
+"token": "wealthfront",
+"company": "Wealthfront"
+},
+{
+"type": "lever",
+"token": "waabi",
+"company": "Waabi"
+},
+{
+"type": "lever",
+"token": "labelbox",
+"company": "Labelbox"
+},
+{
+"type": "lever",
+"token": "collate",
+"company": "Collate"
+},
+{
+"type": "lever",
+"token": "lirvanalabs",
+"company": "Lirvanalabs"
+},
+{
+"type": "lever",
+"token": "xby2",
+"company": "Xby2"
+},
+{
+"type": "lever",
+"token": "ladders",
+"company": "Ladders"
+},
+{
+"type": "lever",
+"token": "employ",
+"company": "Employ"
+},
+{
+"type": "lever",
+"token": "innodata",
+"company": "Innodata"
+},
+{
+"type": "lever",
+"token": "snaplogic",
+"company": "Snaplogic"
+},
+{
+"type": "lever",
+"token": "merlinlabs",
+"company": "Merlinlabs"
+},
+{
+"type": "lever",
+"token": "gridline",
+"company": "Gridline"
+},
+{
+"type": "lever",
+"token": "extremenetworks",
+"company": "Extremenetworks"
+},
+{
+"type": "lever",
+"token": "spear-ai",
+"company": "Spear Ai"
+},
+{
+"type": "lever",
+"token": "docebo",
+"company": "Docebo"
+},
+{
+"type": "lever",
+"token": "packagex",
+"company": "Packagex"
+},
+{
+"type": "lever",
+"token": "altarum",
+"company": "Altarum"
+},
+{
+"type": "lever",
+"token": "paceline",
+"company": "Paceline"
+},
+{
+"type": "lever",
+"token": "synapticure",
+"company": "Synapticure"
+},
+{
+"type": "lever",
+"token": "pillar",
+"company": "Pillar"
+},
+{
+"type": "lever",
+"token": "verifiable",
+"company": "Verifiable"
+},
+{
+"type": "lever",
+"token": "voltalabs",
+"company": "Voltalabs"
+},
+{
+"type": "lever",
+"token": "postera",
+"company": "Postera"
+},
+{
+"type": "lever",
+"token": "quartzy",
+"company": "Quartzy"
+},
+{
+"type": "lever",
+"token": "curai",
+"company": "Curai"
+},
+{
+"type": "lever",
+"token": "nimblerx",
+"company": "Nimblerx"
+},
+{
+"type": "lever",
+"token": "kariusdx",
+"company": "Kariusdx"
+},
+{
+"type": "lever",
+"token": "egenesisbio",
+"company": "Egenesisbio"
+},
+{
+"type": "lever",
+"token": "harmony",
+"company": "Harmony"
+},
+{
+"type": "lever",
+"token": "alector",
+"company": "Alector"
+},
+{
+"type": "lever",
+"token": "narmi",
+"company": "Narmi"
+},
+{
+"type": "lever",
+"token": "circadiahealth",
+"company": "Circadiahealth"
+},
+{
+"type": "lever",
+"token": "certik",
+"company": "Certik"
+},
+{
+"type": "lever",
+"token": "peerspace",
+"company": "Peerspace"
+},
+{
+"type": "lever",
+"token": "topazlabs",
+"company": "Topazlabs"
+},
+{
+"type": "ashby",
+"token": "1password",
+"company": "1Password"
+},
+{
+"type": "ashby",
+"token": "abridge",
+"company": "Abridge"
+},
+{
+"type": "ashby",
+"token": "ambiencehealthcare",
+"company": "Ambiencehealthcare"
+},
+{
+"type": "ashby",
+"token": "atlan",
+"company": "Atlan"
+},
+{
+"type": "ashby",
+"token": "benchling",
+"company": "Benchling"
+},
+{
+"type": "ashby",
+"token": "color-health",
+"company": "Color Health"
+},
+{
+"type": "ashby",
+"token": "commure",
+"company": "Commure"
+},
+{
+"type": "ashby",
+"token": "confluent",
+"company": "Confluent"
+},
+{
+"type": "ashby",
+"token": "crusoe",
+"company": "Crusoe"
+},
+{
+"type": "ashby",
+"token": "headway",
+"company": "Headway"
+},
+{
+"type": "ashby",
+"token": "insitro",
+"company": "Insitro"
+},
+{
+"type": "ashby",
+"token": "kraken.com",
+"company": "Kraken.Com"
+},
+{
+"type": "ashby",
+"token": "nabla",
+"company": "Nabla"
+},
+{
+"type": "ashby",
+"token": "openevidence",
+"company": "Openevidence"
+},
+{
+"type": "ashby",
+"token": "sierra",
+"company": "Sierra"
+},
+{
+"type": "ashby",
+"token": "airbyte",
+"company": "Airbyte"
+},
+{
+"type": "ashby",
+"token": "amplitude",
+"company": "Amplitude"
+},
+{
+"type": "ashby",
+"token": "applied",
+"company": "Applied"
+},
+{
+"type": "ashby",
+"token": "aurora-operations-inc",
+"company": "Aurora Operations Inc"
+},
+{
+"type": "ashby",
+"token": "baseten",
+"company": "Baseten"
+},
+{
+"type": "ashby",
+"token": "browserbase",
+"company": "Browserbase"
+},
+{
+"type": "ashby",
+"token": "cerebras",
+"company": "Cerebras"
+},
+{
+"type": "ashby",
+"token": "character",
+"company": "Character"
+},
+{
+"type": "ashby",
+"token": "claylabs",
+"company": "Claylabs"
+},
+{
+"type": "ashby",
+"token": "cognition",
+"company": "Cognition"
+},
+{
+"type": "ashby",
+"token": "cohere",
+"company": "Cohere"
+},
+{
+"type": "ashby",
+"token": "cursor",
+"company": "Cursor"
+},
+{
+"type": "ashby",
+"token": "decagon",
+"company": "Decagon"
+},
+{
+"type": "ashby",
+"token": "elevenlabs",
+"company": "Elevenlabs"
+},
+{
+"type": "ashby",
+"token": "fireworks",
+"company": "Fireworks"
+},
+{
+"type": "ashby",
+"token": "found",
+"company": "Found"
+},
+{
+"type": "ashby",
+"token": "function-health",
+"company": "Function Health"
+},
+{
+"type": "ashby",
+"token": "grow-therapy",
+"company": "Grow Therapy"
+},
+{
+"type": "ashby",
+"token": "harvey",
+"company": "Harvey"
+},
+{
+"type": "ashby",
+"token": "hex",
+"company": "Hex"
+},
+{
+"type": "ashby",
+"token": "hims-and-hers",
+"company": "Hims And Hers"
+},
+{
+"type": "ashby",
+"token": "hinge-health",
+"company": "Hinge Health"
+},
+{
+"type": "ashby",
+"token": "kalshi",
+"company": "Kalshi"
+},
+{
+"type": "ashby",
+"token": "knock",
+"company": "Knock"
+},
+{
+"type": "ashby",
+"token": "lambda",
+"company": "Lambda"
+},
+{
+"type": "ashby",
+"token": "langchain",
+"company": "Langchain"
+},
+{
+"type": "ashby",
+"token": "linear",
+"company": "Linear"
+},
+{
+"type": "ashby",
+"token": "llamaindex",
+"company": "Llamaindex"
+},
+{
+"type": "ashby",
+"token": "lumaai",
+"company": "Lumaai"
+},
+{
+"type": "ashby",
+"token": "mercury",
+"company": "Mercury"
+},
+{
+"type": "ashby",
+"token": "mintlify",
+"company": "Mintlify"
+},
+{
+"type": "ashby",
+"token": "miro",
+"company": "Miro"
+},
+{
+"type": "ashby",
+"token": "mistral.ai",
+"company": "Mistral.Ai"
+},
+{
+"type": "ashby",
+"token": "modal",
+"company": "Modal"
+},
+{
+"type": "ashby",
+"token": "montecarlodata",
+"company": "Montecarlodata"
+},
+{
+"type": "ashby",
+"token": "notion",
+"company": "Notion"
+},
+{
+"type": "ashby",
+"token": "openai",
+"company": "Openai"
+},
+{
+"type": "ashby",
+"token": "perplexity",
+"company": "Perplexity"
+},
+{
+"type": "ashby",
+"token": "physicalintelligence",
+"company": "Physicalintelligence"
+},
+{
+"type": "ashby",
+"token": "pinecone",
+"company": "Pinecone"
+},
+{
+"type": "ashby",
+"token": "plaid",
+"company": "Plaid"
+},
+{
+"type": "ashby",
+"token": "poshmark",
+"company": "Poshmark"
+},
+{
+"type": "ashby",
+"token": "posthog",
+"company": "Posthog"
+},
+{
+"type": "ashby",
+"token": "ramp",
+"company": "Ramp"
+},
+{
+"type": "ashby",
+"token": "render",
+"company": "Render"
+},
+{
+"type": "ashby",
+"token": "replit",
+"company": "Replit"
+},
+{
+"type": "ashby",
+"token": "resend",
+"company": "Resend"
+},
+{
+"type": "ashby",
+"token": "revenuecat",
+"company": "Revenuecat"
+},
+{
+"type": "ashby",
+"token": "rula",
+"company": "Rula"
+},
+{
+"type": "ashby",
+"token": "runway-ml",
+"company": "Runway Ml"
+},
+{
+"type": "ashby",
+"token": "sardine",
+"company": "Sardine"
+},
+{
+"type": "ashby",
+"token": "saronic",
+"company": "Saronic"
+},
+{
+"type": "ashby",
+"token": "sentilink",
+"company": "Sentilink"
+},
+{
+"type": "ashby",
+"token": "sentry",
+"company": "Sentry"
+},
+{
+"type": "ashby",
+"token": "skydio",
+"company": "Skydio"
+},
+{
+"type": "ashby",
+"token": "snowflake",
+"company": "Snowflake"
+},
+{
+"type": "ashby",
+"token": "sprinter-health",
+"company": "Sprinter Health"
+},
+{
+"type": "ashby",
+"token": "strava",
+"company": "Strava"
+},
+{
+"type": "ashby",
+"token": "suno",
+"company": "Suno"
+},
+{
+"type": "ashby",
+"token": "supabase",
+"company": "Supabase"
+},
+{
+"type": "ashby",
+"token": "superpower",
+"company": "Superpower"
+},
+{
+"type": "ashby",
+"token": "talkiatry",
+"company": "Talkiatry"
+},
+{
+"type": "ashby",
+"token": "temporal",
+"company": "Temporal"
+},
+{
+"type": "ashby",
+"token": "truemed",
+"company": "Truemed"
+},
+{
+"type": "ashby",
+"token": "unlearn",
+"company": "Unlearn"
+},
+{
+"type": "ashby",
+"token": "vanta",
+"company": "Vanta"
+},
+{
+"type": "ashby",
+"token": "voleon",
+"company": "Voleon"
+},
+{
+"type": "ashby",
+"token": "warp",
+"company": "Warp"
+},
+{
+"type": "ashby",
+"token": "watershed",
+"company": "Watershed"
+},
+{
+"type": "ashby",
+"token": "weaviate",
+"company": "Weaviate"
+},
+{
+"type": "ashby",
+"token": "whoop",
+"company": "Whoop"
+},
+{
+"type": "ashby",
+"token": "writer",
+"company": "Writer"
+},
+{
+"type": "ashby",
+"token": "zed",
+"company": "Zed"
+},
+{
+"type": "ashby",
+"token": "aptura",
+"company": "Aptura"
+},
+{
+"type": "ashby",
+"token": "category-labs",
+"company": "Category Labs"
+},
+{
+"type": "ashby",
+"token": "charge-robotics",
+"company": "Charge Robotics"
+},
+{
+"type": "ashby",
+"token": "checkly",
+"company": "Checkly"
+},
+{
+"type": "ashby",
+"token": "confido",
+"company": "Confido"
+},
+{
+"type": "ashby",
+"token": "deepsetai",
+"company": "Deepsetai"
+},
+{
+"type": "ashby",
+"token": "duck-duck-go",
+"company": "Duck Duck Go"
+},
+{
+"type": "ashby",
+"token": "everis",
+"company": "Everis"
+},
+{
+"type": "ashby",
+"token": "forus",
+"company": "Forus"
+},
+{
+"type": "ashby",
+"token": "lago",
+"company": "Lago"
+},
+{
+"type": "ashby",
+"token": "livekit",
+"company": "Livekit"
+},
+{
+"type": "ashby",
+"token": "maincode",
+"company": "Maincode"
+},
+{
+"type": "ashby",
+"token": "middesk",
+"company": "Middesk"
+},
+{
+"type": "ashby",
+"token": "nango",
+"company": "Nango"
+},
+{
+"type": "ashby",
+"token": "norm-ai",
+"company": "Norm Ai"
+},
+{
+"type": "ashby",
+"token": "onecrew",
+"company": "Onecrew"
+},
+{
+"type": "ashby",
+"token": "oneleet",
+"company": "Oneleet"
+},
+{
+"type": "ashby",
+"token": "oscilar",
+"company": "Oscilar"
+},
+{
+"type": "ashby",
+"token": "pear-vc",
+"company": "Pear Vc"
+},
+{
+"type": "ashby",
+"token": "permitflow",
+"company": "Permitflow"
+},
+{
+"type": "ashby",
+"token": "prior-labs",
+"company": "Prior Labs"
+},
+{
+"type": "ashby",
+"token": "proxima-fusion",
+"company": "Proxima Fusion"
+},
+{
+"type": "ashby",
+"token": "radical-numerics",
+"company": "Radical Numerics"
+},
+{
+"type": "ashby",
+"token": "railway",
+"company": "Railway"
+},
+{
+"type": "ashby",
+"token": "stream",
+"company": "Stream"
+},
+{
+"type": "ashby",
+"token": "tonicai",
+"company": "Tonicai"
+},
+{
+"type": "ashby",
+"token": "turquoise-health",
+"company": "Turquoise Health"
+},
+{
+"type": "ashby",
+"token": "voltai.careers",
+"company": "Voltai.Careers"
+},
+{
+"type": "ashby",
+"token": "roboflow",
+"company": "Roboflow"
+},
+{
+"type": "ashby",
+"token": "reddit",
+"company": "Reddit"
+},
+{
+"type": "ashby",
+"token": "mercor",
+"company": "Mercor"
+},
+{
+"type": "ashby",
+"token": "kaizen",
+"company": "Kaizen"
+},
+{
+"type": "ashby",
+"token": "dune",
+"company": "Dune"
+},
+{
+"type": "ashby",
+"token": "radixark",
+"company": "Radixark"
+},
+{
+"type": "ashby",
+"token": "mural",
+"company": "Mural"
+},
+{
+"type": "ashby",
+"token": "vercel",
+"company": "Vercel"
+},
+{
+"type": "ashby",
+"token": "clera",
+"company": "Clera"
+},
+{
+"type": "ashby",
+"token": "artosai",
+"company": "Artosai"
+},
+{
+"type": "ashby",
+"token": "basecamp-research",
+"company": "Basecamp Research"
+},
+{
+"type": "ashby",
+"token": "pragmatike",
+"company": "Pragmatike"
+},
+{
+"type": "ashby",
+"token": "hooglee",
+"company": "Hooglee"
+},
+{
+"type": "ashby",
+"token": "clickup",
+"company": "Clickup"
+},
+{
+"type": "ashby",
+"token": "close",
+"company": "Close"
+},
+{
+"type": "ashby",
+"token": "medely",
+"company": "Medely"
+},
+{
+"type": "ashby",
+"token": "favorited",
+"company": "Favorited"
+},
+{
+"type": "ashby",
+"token": "inferact",
+"company": "Inferact"
+},
+{
+"type": "ashby",
+"token": "footprint",
+"company": "Footprint"
+},
+{
+"type": "ashby",
+"token": "pryzm",
+"company": "Pryzm"
+},
+{
+"type": "ashby",
+"token": "solstice",
+"company": "Solstice"
+},
+{
+"type": "ashby",
+"token": "fieldguide",
+"company": "Fieldguide"
+},
+{
+"type": "ashby",
+"token": "wayve",
+"company": "Wayve"
+},
+{
+"type": "ashby",
+"token": "liftoff",
+"company": "Liftoff"
+},
+{
+"type": "ashby",
+"token": "opengov",
+"company": "Opengov"
+},
+{
+"type": "ashby",
+"token": "exa",
+"company": "Exa"
+},
+{
+"type": "ashby",
+"token": "quilter",
+"company": "Quilter"
+},
+{
+"type": "ashby",
+"token": "clickhouse",
+"company": "Clickhouse"
+},
+{
+"type": "ashby",
+"token": "kaizenlabs",
+"company": "Kaizenlabs"
+},
+{
+"type": "ashby",
+"token": "condor-software",
+"company": "Condor Software"
+},
+{
+"type": "ashby",
+"token": "spherecast",
+"company": "Spherecast"
+},
+{
+"type": "ashby",
+"token": "pax-historia",
+"company": "Pax Historia"
+},
+{
+"type": "ashby",
+"token": "rox-data-corp",
+"company": "Rox Data Corp"
+},
+{
+"type": "ashby",
+"token": "netboxlabs",
+"company": "Netboxlabs"
+},
+{
+"type": "ashby",
+"token": "govwell",
+"company": "Govwell"
+},
+{
+"type": "ashby",
+"token": "hcompany",
+"company": "Hcompany"
+},
+{
+"type": "ashby",
+"token": "telus-digital",
+"company": "Telus Digital"
+},
+{
+"type": "ashby",
+"token": "skip",
+"company": "Skip"
+},
+{
+"type": "ashby",
+"token": "firecrawl",
+"company": "Firecrawl"
+},
+{
+"type": "ashby",
+"token": "topline-pro",
+"company": "Topline Pro"
+},
+{
+"type": "ashby",
+"token": "arlo",
+"company": "Arlo"
+},
+{
+"type": "ashby",
+"token": "petual",
+"company": "Petual"
+},
+{
+"type": "ashby",
+"token": "light",
+"company": "Light"
+},
+{
+"type": "ashby",
+"token": "wellbeam",
+"company": "Wellbeam"
+},
+{
+"type": "ashby",
+"token": "scope-labs",
+"company": "Scope Labs"
+},
+{
+"type": "ashby",
+"token": "dexmate",
+"company": "Dexmate"
+},
+{
+"type": "ashby",
+"token": "dave",
+"company": "Dave"
+},
+{
+"type": "ashby",
+"token": "idler",
+"company": "Idler"
+},
+{
+"type": "ashby",
+"token": "duvo",
+"company": "Duvo"
+},
+{
+"type": "ashby",
+"token": "rubie",
+"company": "Rubie"
+},
+{
+"type": "ashby",
+"token": "liven",
+"company": "Liven"
+},
+{
+"type": "ashby",
+"token": "socket",
+"company": "Socket"
+},
+{
+"type": "ashby",
+"token": "vapi",
+"company": "Vapi"
+},
+{
+"type": "ashby",
+"token": "illumio",
+"company": "Illumio"
+},
+{
+"type": "ashby",
+"token": "monk",
+"company": "Monk"
+},
+{
+"type": "ashby",
+"token": "embedding-vc",
+"company": "Embedding Vc"
+},
+{
+"type": "ashby",
+"token": "mirage",
+"company": "Mirage"
+},
+{
+"type": "ashby",
+"token": "granica",
+"company": "Granica"
+},
+{
+"type": "ashby",
+"token": "antioch",
+"company": "Antioch"
+},
+{
+"type": "ashby",
+"token": "afterquery",
+"company": "Afterquery"
+},
+{
+"type": "ashby",
+"token": "turing",
+"company": "Turing"
+},
+{
+"type": "ashby",
+"token": "polymarket",
+"company": "Polymarket"
+},
+{
+"type": "ashby",
+"token": "webai",
+"company": "Webai"
+},
+{
+"type": "ashby",
+"token": "reducto",
+"company": "Reducto"
+},
+{
+"type": "ashby",
+"token": "chalk",
+"company": "Chalk"
+},
+{
+"type": "ashby",
+"token": "brellium",
+"company": "Brellium"
+},
+{
+"type": "ashby",
+"token": "sea12",
+"company": "Sea12"
+},
+{
+"type": "ashby",
+"token": "strider-technologies",
+"company": "Strider Technologies"
+},
+{
+"type": "ashby",
+"token": "nevis",
+"company": "Nevis"
+},
+{
+"type": "ashby",
+"token": "airapps",
+"company": "Airapps"
+},
+{
+"type": "ashby",
+"token": "cinder",
+"company": "Cinder"
+},
+{
+"type": "ashby",
+"token": "doppel",
+"company": "Doppel"
+},
+{
+"type": "ashby",
+"token": "garage",
+"company": "Garage"
+},
+{
+"type": "ashby",
+"token": "sift",
+"company": "Sift"
+},
+{
+"type": "ashby",
+"token": "unwrap",
+"company": "Unwrap"
+},
+{
+"type": "ashby",
+"token": "maintainx",
+"company": "Maintainx"
+},
+{
+"type": "ashby",
+"token": "lm-studio",
+"company": "Lm Studio"
+},
+{
+"type": "ashby",
+"token": "pave",
+"company": "Pave"
+},
+{
+"type": "ashby",
+"token": "bedrock-robotics",
+"company": "Bedrock Robotics"
+},
+{
+"type": "ashby",
+"token": "quorum",
+"company": "Quorum"
+},
+{
+"type": "ashby",
+"token": "dispatch",
+"company": "Dispatch"
+},
+{
+"type": "ashby",
+"token": "tremendous",
+"company": "Tremendous"
+},
+{
+"type": "ashby",
+"token": "trm-labs",
+"company": "Trm Labs"
+},
+{
+"type": "ashby",
+"token": "lumen",
+"company": "Lumen"
+},
+{
+"type": "ashby",
+"token": "circle",
+"company": "Circle"
+},
+{
+"type": "ashby",
+"token": "weave",
+"company": "Weave"
+},
+{
+"type": "ashby",
+"token": "alpacahealth",
+"company": "Alpacahealth"
+},
+{
+"type": "ashby",
+"token": "gen-digital",
+"company": "Gen Digital"
+},
+{
+"type": "ashby",
+"token": "point",
+"company": "Point"
+},
+{
+"type": "ashby",
+"token": "conduit",
+"company": "Conduit"
+},
+{
+"type": "ashby",
+"token": "tavily",
+"company": "Tavily"
+},
+{
+"type": "ashby",
+"token": "cogent-security",
+"company": "Cogent Security"
+},
+{
+"type": "ashby",
+"token": "qualtrics",
+"company": "Qualtrics"
+},
+{
+"type": "ashby",
+"token": "podium",
+"company": "Podium"
+},
+{
+"type": "ashby",
+"token": "commence",
+"company": "Commence"
+},
+{
+"type": "ashby",
+"token": "vorto",
+"company": "Vorto"
+},
+{
+"type": "ashby",
+"token": "picogrid",
+"company": "Picogrid"
+},
+{
+"type": "ashby",
+"token": "bubble",
+"company": "Bubble"
+},
+{
+"type": "ashby",
+"token": "aiuc",
+"company": "Aiuc"
+},
+{
+"type": "ashby",
+"token": "artificialanalysis",
+"company": "Artificialanalysis"
+},
+{
+"type": "ashby",
+"token": "chariotclaims",
+"company": "Chariotclaims"
+},
+{
+"type": "ashby",
+"token": "comity",
+"company": "Comity"
+},
+{
+"type": "ashby",
+"token": "deepl",
+"company": "Deepl"
+},
+{
+"type": "ashby",
+"token": "hiya",
+"company": "Hiya"
+},
+{
+"type": "ashby",
+"token": "latchbio",
+"company": "Latchbio"
+},
+{
+"type": "ashby",
+"token": "neon",
+"company": "Neon"
+},
+{
+"type": "ashby",
+"token": "odyssey",
+"company": "Odyssey"
+},
+{
+"type": "ashby",
+"token": "productgenius",
+"company": "Productgenius"
+},
+{
+"type": "ashby",
+"token": "reframesystems",
+"company": "Reframesystems"
+},
+{
+"type": "ashby",
+"token": "smarkets",
+"company": "Smarkets"
+},
+{
+"type": "ashby",
+"token": "tolmo",
+"company": "Tolmo"
+},
+{
+"type": "ashby",
+"token": "biograph",
+"company": "Biograph"
+},
+{
+"type": "ashby",
+"token": "boomi",
+"company": "Boomi"
+},
+{
+"type": "ashby",
+"token": "ontic",
+"company": "Ontic"
+},
+{
+"type": "ashby",
+"token": "vitalize",
+"company": "Vitalize"
+},
+{
+"type": "ashby",
+"token": "marianaminerals",
+"company": "Marianaminerals"
+},
+{
+"type": "ashby",
+"token": "foundry-robotics",
+"company": "Foundry Robotics"
+},
+{
+"type": "ashby",
+"token": "pactfi",
+"company": "Pactfi"
+},
+{
+"type": "ashby",
+"token": "project44",
+"company": "Project44"
+},
+{
+"type": "ashby",
+"token": "lovable",
+"company": "Lovable"
+},
+{
+"type": "ashby",
+"token": "cape",
+"company": "Cape"
+},
+{
+"type": "ashby",
+"token": "iambic-therapeutics",
+"company": "Iambic Therapeutics"
+},
+{
+"type": "ashby",
+"token": "sciforium",
+"company": "Sciforium"
+},
+{
+"type": "ashby",
+"token": "imprint",
+"company": "Imprint"
+},
+{
+"type": "ashby",
+"token": "scalar",
+"company": "Scalar"
+},
+{
+"type": "ashby",
+"token": "airwallex",
+"company": "Airwallex"
+},
+{
+"type": "ashby",
+"token": "ibotta",
+"company": "Ibotta"
+},
+{
+"type": "ashby",
+"token": "noda-ai",
+"company": "Noda Ai"
+},
+{
+"type": "ashby",
+"token": "nash",
+"company": "Nash"
+},
+{
+"type": "ashby",
+"token": "vast",
+"company": "Vast"
+},
+{
+"type": "ashby",
+"token": "venn",
+"company": "Venn"
+},
+{
+"type": "ashby",
+"token": "harmonic",
+"company": "Harmonic"
+},
+{
+"type": "ashby",
+"token": "braintrust",
+"company": "Braintrust"
+},
+{
+"type": "ashby",
+"token": "wonderful",
+"company": "Wonderful"
+},
+{
+"type": "ashby",
+"token": "deeter-analytics",
+"company": "Deeter Analytics"
+},
+{
+"type": "ashby",
+"token": "safelease",
+"company": "Safelease"
+},
+{
+"type": "ashby",
+"token": "hightouch",
+"company": "Hightouch"
+},
+{
+"type": "ashby",
+"token": "upside",
+"company": "Upside"
+},
+{
+"type": "ashby",
+"token": "serverobotics",
+"company": "Serverobotics"
+},
+{
+"type": "ashby",
+"token": "thumbtack",
+"company": "Thumbtack"
+},
+{
+"type": "ashby",
+"token": "axiom",
+"company": "Axiom"
+},
+{
+"type": "ashby",
+"token": "angi",
+"company": "Angi"
+},
+{
+"type": "ashby",
+"token": "deepgram",
+"company": "Deepgram"
+},
+{
+"type": "ashby",
+"token": "colonist",
+"company": "Colonist"
+},
+{
+"type": "ashby",
+"token": "mastra",
+"company": "Mastra"
+},
+{
+"type": "ashby",
+"token": "leadbank",
+"company": "Leadbank"
+},
+{
+"type": "ashby",
+"token": "alternativepayments",
+"company": "Alternativepayments"
+},
+{
+"type": "ashby",
+"token": "sunset",
+"company": "Sunset"
+},
+{
+"type": "ashby",
+"token": "futurefitai",
+"company": "Futurefitai"
+},
+{
+"type": "ashby",
+"token": "truelogic",
+"company": "Truelogic"
+},
+{
+"type": "ashby",
+"token": "junipersquare",
+"company": "Junipersquare"
+},
+{
+"type": "ashby",
+"token": "payabli",
+"company": "Payabli"
+},
+{
+"type": "ashby",
+"token": "terac",
+"company": "Terac"
+},
+{
+"type": "ashby",
+"token": "zefr",
+"company": "Zefr"
+},
+{
+"type": "ashby",
+"token": "thesis",
+"company": "Thesis"
+},
+{
+"type": "ashby",
+"token": "answerthis",
+"company": "Answerthis"
+},
+{
+"type": "ashby",
+"token": "kombo",
+"company": "Kombo"
+},
+{
+"type": "ashby",
+"token": "eventual",
+"company": "Eventual"
+},
+{
+"type": "ashby",
+"token": "industrious",
+"company": "Industrious"
+},
+{
+"type": "ashby",
+"token": "traba",
+"company": "Traba"
+},
+{
+"type": "ashby",
+"token": "rogo",
+"company": "Rogo"
+},
+{
+"type": "ashby",
+"token": "assorthealth",
+"company": "Assorthealth"
+},
+{
+"type": "ashby",
+"token": "anrok",
+"company": "Anrok"
+},
+{
+"type": "ashby",
+"token": "attio",
+"company": "Attio"
+},
+{
+"type": "ashby",
+"token": "parafin",
+"company": "Parafin"
+},
+{
+"type": "ashby",
+"token": "dex",
+"company": "Dex"
+},
+{
+"type": "ashby",
+"token": "stealth-startup",
+"company": "Stealth Startup"
+},
+{
+"type": "ashby",
+"token": "hackerone",
+"company": "Hackerone"
+},
+{
+"type": "ashby",
+"token": "bayesianhealth",
+"company": "Bayesianhealth"
+},
+{
+"type": "ashby",
+"token": "phantom",
+"company": "Phantom"
+},
+{
+"type": "ashby",
+"token": "wynd-labs",
+"company": "Wynd Labs"
+},
+{
+"type": "ashby",
+"token": "finvari",
+"company": "Finvari"
+},
+{
+"type": "ashby",
+"token": "datasnipper",
+"company": "Datasnipper"
+},
+{
+"type": "ashby",
+"token": "sylvan-labs",
+"company": "Sylvan Labs"
+},
+{
+"type": "ashby",
+"token": "hatz-ai",
+"company": "Hatz Ai"
+},
+{
+"type": "ashby",
+"token": "radiant-industries",
+"company": "Radiant Industries"
+},
+{
+"type": "ashby",
+"token": "profound",
+"company": "Profound"
+},
+{
+"type": "ashby",
+"token": "luminai",
+"company": "Luminai"
+},
+{
+"type": "ashby",
+"token": "lightsage",
+"company": "Lightsage"
+},
+{
+"type": "ashby",
+"token": "fellow",
+"company": "Fellow"
+},
+{
+"type": "ashby",
+"token": "edra",
+"company": "Edra"
+},
+{
+"type": "ashby",
+"token": "brainco",
+"company": "Brainco"
+},
+{
+"type": "ashby",
+"token": "ciroos",
+"company": "Ciroos"
+},
+{
+"type": "ashby",
+"token": "reka",
+"company": "Reka"
+},
+{
+"type": "ashby",
+"token": "anterior",
+"company": "Anterior"
+},
+{
+"type": "ashby",
+"token": "langfuse",
+"company": "Langfuse"
+},
+{
+"type": "ashby",
+"token": "quora",
+"company": "Quora"
+},
+{
+"type": "ashby",
+"token": "crosby",
+"company": "Crosby"
+},
+{
+"type": "ashby",
+"token": "astra",
+"company": "Astra"
+},
+{
+"type": "ashby",
+"token": "ashby",
+"company": "Ashby"
+},
+{
+"type": "ashby",
+"token": "zoomlogi",
+"company": "Zoomlogi"
+},
+{
+"type": "ashby",
+"token": "sydecar",
+"company": "Sydecar"
+},
+{
+"type": "ashby",
+"token": "madhive",
+"company": "Madhive"
+},
+{
+"type": "ashby",
+"token": "legora",
+"company": "Legora"
+},
+{
+"type": "ashby",
+"token": "sainapse",
+"company": "Sainapse"
+},
+{
+"type": "ashby",
+"token": "interplay",
+"company": "Interplay"
+},
+{
+"type": "ashby",
+"token": "petra-security",
+"company": "Petra Security"
+},
+{
+"type": "ashby",
+"token": "valkai",
+"company": "Valkai"
+},
+{
+"type": "ashby",
+"token": "neocognition",
+"company": "Neocognition"
+},
+{
+"type": "ashby",
+"token": "ntt-data-aivista",
+"company": "Ntt Data Aivista"
+},
+{
+"type": "ashby",
+"token": "black-forest-labs",
+"company": "Black Forest Labs"
+},
+{
+"type": "ashby",
+"token": "security-level-5",
+"company": "Security Level 5"
+},
+{
+"type": "ashby",
+"token": "pangramlabs",
+"company": "Pangramlabs"
+},
+{
+"type": "ashby",
+"token": "skiffra",
+"company": "Skiffra"
+},
+{
+"type": "ashby",
+"token": "tsenta",
+"company": "Tsenta"
+},
+{
+"type": "ashby",
+"token": "ropes",
+"company": "Ropes"
+},
+{
+"type": "ashby",
+"token": "lavendo",
+"company": "Lavendo"
+},
+{
+"type": "ashby",
+"token": "modelai",
+"company": "Modelai"
+},
+{
+"type": "ashby",
+"token": "bedrock-talent",
+"company": "Bedrock Talent"
+},
+{
+"type": "ashby",
+"token": "people-culture-talent",
+"company": "People Culture Talent"
+},
+{
+"type": "ashby",
+"token": "kira",
+"company": "Kira"
+},
+{
+"type": "ashby",
+"token": "classdojo",
+"company": "Classdojo"
+},
+{
+"type": "ashby",
+"token": "baton",
+"company": "Baton"
+},
+{
+"type": "ashby",
+"token": "plenful",
+"company": "Plenful"
+},
+{
+"type": "ashby",
+"token": "fulcrum",
+"company": "Fulcrum"
+},
+{
+"type": "ashby",
+"token": "revin",
+"company": "Revin"
+},
+{
+"type": "ashby",
+"token": "aiprise",
+"company": "Aiprise"
+},
+{
+"type": "ashby",
+"token": "handshake",
+"company": "Handshake"
+},
+{
+"type": "ashby",
+"token": "ease-health",
+"company": "Ease Health"
+},
+{
+"type": "ashby",
+"token": "novellia",
+"company": "Novellia"
+},
+{
+"type": "ashby",
+"token": "taptapsend",
+"company": "Taptapsend"
+},
+{
+"type": "ashby",
+"token": "afresh",
+"company": "Afresh"
+},
+{
+"type": "ashby",
+"token": "bobyard",
+"company": "Bobyard"
+},
+{
+"type": "ashby",
+"token": "foxelligroup",
+"company": "Foxelligroup"
+},
+{
+"type": "ashby",
+"token": "zapier",
+"company": "Zapier"
+},
+{
+"type": "ashby",
+"token": "siro",
+"company": "Siro"
+},
+{
+"type": "ashby",
+"token": "e-source",
+"company": "E Source"
+},
+{
+"type": "ashby",
+"token": "boom",
+"company": "Boom"
+},
+{
+"type": "ashby",
+"token": "xds",
+"company": "Xds"
+},
+{
+"type": "ashby",
+"token": "bumbleinc",
+"company": "Bumbleinc"
+},
+{
+"type": "ashby",
+"token": "hopper",
+"company": "Hopper"
+},
+{
+"type": "ashby",
+"token": "sieve",
+"company": "Sieve"
+},
+{
+"type": "ashby",
+"token": "orpex",
+"company": "Orpex"
+},
+{
+"type": "ashby",
+"token": "opusclip",
+"company": "Opusclip"
+},
+{
+"type": "ashby",
+"token": "wiz",
+"company": "Wiz"
+},
+{
+"type": "ashby",
+"token": "constellation",
+"company": "Constellation"
+},
+{
+"type": "ashby",
+"token": "semgrep",
+"company": "Semgrep"
+},
+{
+"type": "ashby",
+"token": "cantina",
+"company": "Cantina"
+},
+{
+"type": "ashby",
+"token": "uipath",
+"company": "Uipath"
+},
+{
+"type": "ashby",
+"token": "sereact",
+"company": "Sereact"
+},
+{
+"type": "ashby",
+"token": "tessera-labs",
+"company": "Tessera Labs"
+},
+{
+"type": "ashby",
+"token": "talkdesk",
+"company": "Talkdesk"
+},
+{
+"type": "ashby",
+"token": "aim4hire",
+"company": "Aim4Hire"
+},
+{
+"type": "ashby",
+"token": "emberai",
+"company": "Emberai"
+},
+{
+"type": "ashby",
+"token": "ninjatrader",
+"company": "Ninjatrader"
+},
+{
+"type": "ashby",
+"token": "camunda",
+"company": "Camunda"
+},
+{
+"type": "ashby",
+"token": "blockworks",
+"company": "Blockworks"
+},
+{
+"type": "ashby",
+"token": "servicetitan",
+"company": "Servicetitan"
+},
+{
+"type": "ashby",
+"token": "higharc",
+"company": "Higharc"
+},
+{
+"type": "ashby",
+"token": "interrahealth",
+"company": "Interrahealth"
+},
+{
+"type": "ashby",
+"token": "wheel",
+"company": "Wheel"
+},
+{
+"type": "ashby",
+"token": "infisical",
+"company": "Infisical"
+},
+{
+"type": "ashby",
+"token": "stickermule",
+"company": "Stickermule"
+},
+{
+"type": "ashby",
+"token": "quicknode",
+"company": "Quicknode"
+},
+{
+"type": "ashby",
+"token": "opensea",
+"company": "Opensea"
+},
+{
+"type": "ashby",
+"token": "standardbots",
+"company": "Standardbots"
+},
+{
+"type": "ashby",
+"token": "teleskope",
+"company": "Teleskope"
+},
+{
+"type": "ashby",
+"token": "oden-technologies",
+"company": "Oden Technologies"
+},
+{
+"type": "ashby",
+"token": "possible-finance",
+"company": "Possible Finance"
+},
+{
+"type": "ashby",
+"token": "rivet",
+"company": "Rivet"
+},
+{
+"type": "ashby",
+"token": "laurel",
+"company": "Laurel"
+},
+{
+"type": "ashby",
+"token": "percepta",
+"company": "Percepta"
+},
+{
+"type": "ashby",
+"token": "sequencing",
+"company": "Sequencing"
+},
+{
+"type": "ashby",
+"token": "pebl",
+"company": "Pebl"
+},
+{
+"type": "ashby",
+"token": "primeintellect",
+"company": "Primeintellect"
+},
+{
+"type": "ashby",
+"token": "hanover-park",
+"company": "Hanover Park"
+},
+{
+"type": "ashby",
+"token": "phylo",
+"company": "Phylo"
+},
+{
+"type": "ashby",
+"token": "abundant",
+"company": "Abundant"
+},
+{
+"type": "ashby",
+"token": "watney",
+"company": "Watney"
+},
+{
+"type": "ashby",
+"token": "ando",
+"company": "Ando"
+},
+{
+"type": "ashby",
+"token": "terminal",
+"company": "Terminal"
+},
+{
+"type": "ashby",
+"token": "noto",
+"company": "Noto"
+},
+{
+"type": "ashby",
+"token": "thundercompute",
+"company": "Thundercompute"
+},
+{
+"type": "ashby",
+"token": "artie",
+"company": "Artie"
+},
+{
+"type": "ashby",
+"token": "aida",
+"company": "Aida"
+},
+{
+"type": "ashby",
+"token": "northwoodspace",
+"company": "Northwoodspace"
+},
+{
+"type": "ashby",
+"token": "neon-health",
+"company": "Neon Health"
+},
+{
+"type": "ashby",
+"token": "terraai",
+"company": "Terraai"
+},
+{
+"type": "ashby",
+"token": "scribdinc",
+"company": "Scribdinc"
+},
+{
+"type": "ashby",
+"token": "ema",
+"company": "Ema"
+},
+{
+"type": "ashby",
+"token": "architect",
+"company": "Architect"
+},
+{
+"type": "ashby",
+"token": "zenos",
+"company": "Zenos"
+},
+{
+"type": "ashby",
+"token": "nextpatient",
+"company": "Nextpatient"
+},
+{
+"type": "ashby",
+"token": "hadrian-automation",
+"company": "Hadrian Automation"
+},
+{
+"type": "ashby",
+"token": "numeral",
+"company": "Numeral"
+},
+{
+"type": "ashby",
+"token": "cartesia",
+"company": "Cartesia"
+},
+{
+"type": "ashby",
+"token": "netpreme",
+"company": "Netpreme"
+},
+{
+"type": "ashby",
+"token": "atomic-invest",
+"company": "Atomic Invest"
+},
+{
+"type": "ashby",
+"token": "hauler-hero",
+"company": "Hauler Hero"
+},
+{
+"type": "ashby",
+"token": "quadric",
+"company": "Quadric"
+},
+{
+"type": "ashby",
+"token": "jobber",
+"company": "Jobber"
+},
+{
+"type": "ashby",
+"token": "atomic",
+"company": "Atomic"
+},
+{
+"type": "ashby",
+"token": "defenseunicorns",
+"company": "Defenseunicorns"
+},
+{
+"type": "ashby",
+"token": "lark",
+"company": "Lark"
+},
+{
+"type": "ashby",
+"token": "orb",
+"company": "Orb"
+},
+{
+"type": "ashby",
+"token": "metriport",
+"company": "Metriport"
+},
+{
+"type": "ashby",
+"token": "bonfireanalytics",
+"company": "Bonfireanalytics"
+},
+{
+"type": "ashby",
+"token": "atticus",
+"company": "Atticus"
+},
+{
+"type": "ashby",
+"token": "console",
+"company": "Console"
+},
+{
+"type": "ashby",
+"token": "distyl",
+"company": "Distyl"
+},
+{
+"type": "ashby",
+"token": "astronomer",
+"company": "Astronomer"
+},
+{
+"type": "ashby",
+"token": "socure",
+"company": "Socure"
+},
+{
+"type": "ashby",
+"token": "lightfield",
+"company": "Lightfield"
+},
+{
+"type": "ashby",
+"token": "archy",
+"company": "Archy"
+},
+{
+"type": "ashby",
+"token": "stepful",
+"company": "Stepful"
+},
+{
+"type": "ashby",
+"token": "qumulo",
+"company": "Qumulo"
+},
+{
+"type": "ashby",
+"token": "pathos",
+"company": "Pathos"
+},
+{
+"type": "ashby",
+"token": "concurrence",
+"company": "Concurrence"
+},
+{
+"type": "ashby",
+"token": "openai-foundation",
+"company": "Openai Foundation"
+},
+{
+"type": "ashby",
+"token": "niantic-spatial",
+"company": "Niantic Spatial"
+},
+{
+"type": "ashby",
+"token": "redis",
+"company": "Redis"
+},
+{
+"type": "ashby",
+"token": "thera",
+"company": "Thera"
+},
+{
+"type": "ashby",
+"token": "netic",
+"company": "Netic"
+},
+{
+"type": "ashby",
+"token": "clipbook",
+"company": "Clipbook"
+},
+{
+"type": "ashby",
+"token": "krew",
+"company": "Krew"
+},
+{
+"type": "ashby",
+"token": "agentio",
+"company": "Agentio"
+},
+{
+"type": "ashby",
+"token": "preference-model",
+"company": "Preference Model"
+},
+{
+"type": "ashby",
+"token": "moonlake",
+"company": "Moonlake"
+},
+{
+"type": "ashby",
+"token": "artemis",
+"company": "Artemis"
+},
+{
+"type": "ashby",
+"token": "blossom-health",
+"company": "Blossom Health"
+},
+{
+"type": "ashby",
+"token": "nidus-technologies",
+"company": "Nidus Technologies"
+},
+{
+"type": "ashby",
+"token": "promise",
+"company": "Promise"
+},
+{
+"type": "ashby",
+"token": "hazel",
+"company": "Hazel"
+},
+{
+"type": "ashby",
+"token": "creatoriq",
+"company": "Creatoriq"
+},
+{
+"type": "ashby",
+"token": "chariot",
+"company": "Chariot"
+},
+{
+"type": "ashby",
+"token": "proterahealth",
+"company": "Proterahealth"
+},
+{
+"type": "ashby",
+"token": "salient",
+"company": "Salient"
+},
+{
+"type": "ashby",
+"token": "within",
+"company": "Within"
+},
+{
+"type": "ashby",
+"token": "paxoslabs",
+"company": "Paxoslabs"
+},
+{
+"type": "ashby",
+"token": "earlymedia",
+"company": "Earlymedia"
+},
+{
+"type": "ashby",
+"token": "cardless",
+"company": "Cardless"
+},
+{
+"type": "ashby",
+"token": "genmo",
+"company": "Genmo"
+},
+{
+"type": "ashby",
+"token": "inworld-ai",
+"company": "Inworld Ai"
+},
+{
+"type": "ashby",
+"token": "runlayer",
+"company": "Runlayer"
+},
+{
+"type": "ashby",
+"token": "dimensional",
+"company": "Dimensional"
+},
+{
+"type": "ashby",
+"token": "aic",
+"company": "Aic"
+},
+{
+"type": "ashby",
+"token": "chakra-labs",
+"company": "Chakra Labs"
+},
+{
+"type": "ashby",
+"token": "chaidiscovery",
+"company": "Chaidiscovery"
+},
+{
+"type": "ashby",
+"token": "conversion",
+"company": "Conversion"
+},
+{
+"type": "ashby",
+"token": "brettonai",
+"company": "Brettonai"
+},
+{
+"type": "ashby",
+"token": "gumloop",
+"company": "Gumloop"
+},
+{
+"type": "ashby",
+"token": "cribl",
+"company": "Cribl"
+},
+{
+"type": "ashby",
+"token": "spade",
+"company": "Spade"
+},
+{
+"type": "ashby",
+"token": "maybern",
+"company": "Maybern"
+},
+{
+"type": "ashby",
+"token": "tennr",
+"company": "Tennr"
+},
+{
+"type": "ashby",
+"token": "maxinsights",
+"company": "Maxinsights"
+},
+{
+"type": "ashby",
+"token": "freckle",
+"company": "Freckle"
+},
+{
+"type": "ashby",
+"token": "nollahealth",
+"company": "Nollahealth"
+},
+{
+"type": "ashby",
+"token": "kovari",
+"company": "Kovari"
+},
+{
+"type": "ashby",
+"token": "auctor",
+"company": "Auctor"
+},
+{
+"type": "ashby",
+"token": "axion",
+"company": "Axion"
+},
+{
+"type": "ashby",
+"token": "eliseai",
+"company": "Eliseai"
+},
+{
+"type": "ashby",
+"token": "atlys",
+"company": "Atlys"
+},
+{
+"type": "ashby",
+"token": "spear-ai",
+"company": "Spear Ai"
+},
+{
+"type": "ashby",
+"token": "river",
+"company": "River"
+},
+{
+"type": "ashby",
+"token": "onoshealth",
+"company": "Onoshealth"
+},
+{
+"type": "ashby",
+"token": "virtahealth",
+"company": "Virtahealth"
+},
+{
+"type": "ashby",
+"token": "blank-metal",
+"company": "Blank Metal"
+},
+{
+"type": "ashby",
+"token": "docebo",
+"company": "Docebo"
+},
+{
+"type": "ashby",
+"token": "lio",
+"company": "Lio"
+},
+{
+"type": "ashby",
+"token": "openai-deployment-company",
+"company": "Openai Deployment Company"
+},
+{
+"type": "ashby",
+"token": "cyvl",
+"company": "Cyvl"
+},
+{
+"type": "ashby",
+"token": "rogerhealthcare",
+"company": "Rogerhealthcare"
+},
+{
+"type": "ashby",
+"token": "fluidstack",
+"company": "Fluidstack"
+},
+{
+"type": "ashby",
+"token": "purestorage",
+"company": "Purestorage"
+},
+{
+"type": "ashby",
+"token": "futureproofing",
+"company": "Futureproofing"
+},
+{
+"type": "ashby",
+"token": "peanoai",
+"company": "Peanoai"
+},
+{
+"type": "ashby",
+"token": "mirendil",
+"company": "Mirendil"
+},
+{
+"type": "ashby",
+"token": "leap",
+"company": "Leap"
+},
+{
+"type": "ashby",
+"token": "eon",
+"company": "Eon"
+},
+{
+"type": "ashby",
+"token": "infera",
+"company": "Infera"
+},
+{
+"type": "ashby",
+"token": "panacea",
+"company": "Panacea"
+},
+{
+"type": "ashby",
+"token": "klarify",
+"company": "Klarify"
+},
+{
+"type": "ashby",
+"token": "claim-health",
+"company": "Claim Health"
+},
+{
+"type": "ashby",
+"token": "verahealth",
+"company": "Verahealth"
+},
+{
+"type": "ashby",
+"token": "sagecare",
+"company": "Sagecare"
+},
+{
+"type": "ashby",
+"token": "pharos",
+"company": "Pharos"
+},
+{
+"type": "ashby",
+"token": "anthrogen",
+"company": "Anthrogen"
+},
+{
+"type": "ashby",
+"token": "clarion",
+"company": "Clarion"
+},
+{
+"type": "ashby",
+"token": "arini",
+"company": "Arini"
+},
+{
+"type": "ashby",
+"token": "junction",
+"company": "Junction"
+},
+{
+"type": "ashby",
+"token": "argon-ai",
+"company": "Argon Ai"
+},
+{
+"type": "ashby",
+"token": "fortuna-health",
+"company": "Fortuna Health"
+},
+{
+"type": "ashby",
+"token": "empirical",
+"company": "Empirical"
+},
+{
+"type": "ashby",
+"token": "andromedasurgical",
+"company": "Andromedasurgical"
+},
+{
+"type": "ashby",
+"token": "latent",
+"company": "Latent"
+},
+{
+"type": "ashby",
+"token": "loula",
+"company": "Loula"
+},
+{
+"type": "ashby",
+"token": "novel",
+"company": "Novel"
+},
+{
+"type": "ashby",
+"token": "kivo-health",
+"company": "Kivo Health"
+},
+{
+"type": "ashby",
+"token": "knowtex",
+"company": "Knowtex"
+},
+{
+"type": "ashby",
+"token": "invert",
+"company": "Invert"
+},
+{
+"type": "ashby",
+"token": "serifhealth",
+"company": "Serifhealth"
+},
+{
+"type": "ashby",
+"token": "scout",
+"company": "Scout"
+},
+{
+"type": "ashby",
+"token": "output",
+"company": "Output"
+},
+{
+"type": "ashby",
+"token": "parallel-bio",
+"company": "Parallel Bio"
+},
+{
+"type": "ashby",
+"token": "legionhealth",
+"company": "Legionhealth"
+},
+{
+"type": "ashby",
+"token": "triomics",
+"company": "Triomics"
+},
+{
+"type": "ashby",
+"token": "camber",
+"company": "Camber"
+},
+{
+"type": "ashby",
+"token": "axle-health",
+"company": "Axle Health"
+},
+{
+"type": "ashby",
+"token": "kingdom",
+"company": "Kingdom"
+},
+{
+"type": "ashby",
+"token": "candidhealth",
+"company": "Candidhealth"
+},
+{
+"type": "ashby",
+"token": "bunkerhillhealth",
+"company": "Bunkerhillhealth"
+},
+{
+"type": "ashby",
+"token": "aios",
+"company": "Aios"
+},
+{
+"type": "ashby",
+"token": "probablygenetic",
+"company": "Probablygenetic"
+},
+{
+"type": "ashby",
+"token": "centaur",
+"company": "Centaur"
+},
+{
+"type": "ashby",
+"token": "versemedical",
+"company": "Versemedical"
+},
+{
+"type": "ashby",
+"token": "blueberrypediatrics",
+"company": "Blueberrypediatrics"
+},
+{
+"type": "ashby",
+"token": "cairns-health",
+"company": "Cairns Health"
+},
+{
+"type": "ashby",
+"token": "mednet",
+"company": "Mednet"
+},
+{
+"type": "ashby",
+"token": "billiontoone",
+"company": "Billiontoone"
+},
+{
+"type": "ashby",
+"token": "verge-genomics",
+"company": "Verge Genomics"
+},
+{
+"type": "ashby",
+"token": "shasqi",
+"company": "Shasqi"
+},
+{
+"type": "ashby",
+"token": "tempo",
+"company": "Tempo"
+},
+{
+"type": "ashby",
+"token": "caremessage",
+"company": "Caremessage"
+},
+{
+"type": "ashby",
+"token": "healthsherpa",
+"company": "Healthsherpa"
+},
+{
+"type": "ashby",
+"token": "limbic",
+"company": "Limbic"
+},
+{
+"type": "ashby",
+"token": "radai",
+"company": "Radai"
+},
+{
+"type": "ashby",
+"token": "radical-health",
+"company": "Radical Health"
+},
+{
+"type": "ashby",
+"token": "cellular-intelligence",
+"company": "Cellular Intelligence"
+},
+{
+"type": "ashby",
+"token": "infinitus",
+"company": "Infinitus"
+},
+{
+"type": "ashby",
+"token": "owkin",
+"company": "Owkin"
+},
+{
+"type": "ashby",
+"token": "kodex",
+"company": "Kodex"
+},
+{
+"type": "ashby",
+"token": "hedge",
+"company": "Hedge"
+},
+{
+"type": "ashby",
+"token": "fernstone",
+"company": "Fernstone"
+},
+{
+"type": "ashby",
+"token": "solva",
+"company": "Solva"
+},
+{
+"type": "ashby",
+"token": "harperinsure",
+"company": "Harperinsure"
+},
+{
+"type": "ashby",
+"token": "avallon",
+"company": "Avallon"
+},
+{
+"type": "ashby",
+"token": "corgi",
+"company": "Corgi"
+},
+{
+"type": "ashby",
+"token": "anglehealth",
+"company": "Anglehealth"
+},
+{
+"type": "ashby",
+"token": "shepherd",
+"company": "Shepherd"
+},
+{
+"type": "ashby",
+"token": "hadrius",
+"company": "Hadrius"
+},
+{
+"type": "ashby",
+"token": "notabene",
+"company": "Notabene"
+},
+{
+"type": "ashby",
+"token": "infinite",
+"company": "Infinite"
+},
+{
+"type": "ashby",
+"token": "firstwork",
+"company": "Firstwork"
+},
+{
+"type": "ashby",
+"token": "greenboard",
+"company": "Greenboard"
+},
+{
+"type": "ashby",
+"token": "affinity",
+"company": "Affinity"
+},
+{
+"type": "ashby",
+"token": "safetykit",
+"company": "Safetykit"
+},
+{
+"type": "ashby",
+"token": "ekho",
+"company": "Ekho"
+},
+{
+"type": "ashby",
+"token": "plane",
+"company": "Plane"
+},
+{
+"type": "ashby",
+"token": "surge-ai",
+"company": "Surge Ai"
+},
+{
+"type": "ashby",
+"token": "outset",
+"company": "Outset"
+},
+{
+"type": "ashby",
+"token": "simile",
+"company": "Simile"
+},
+{
+"type": "ashby",
+"token": "aaru",
+"company": "Aaru"
+},
+{
+"type": "ashby",
+"token": "listenlabs",
+"company": "Listenlabs"
+},
+{
+"type": "ashby",
+"token": "conveo",
+"company": "Conveo"
+},
+{
+"type": "ashby",
+"token": "electric-twin",
+"company": "Electric Twin"
+},
+{
+"type": "ashby",
+"token": "growfig",
+"company": "Growfig"
+},
+{
+"type": "ashby",
+"token": "jupus",
+"company": "Jupus"
+},
+{
+"type": "ashby",
+"token": "krakentech",
+"company": "Krakentech"
+},
+{
+"type": "ashby",
+"token": "menlo",
+"company": "Menlo"
+},
+{
+"type": "ashby",
+"token": "rebar",
+"company": "Rebar"
+},
+{
+"type": "ashby",
+"token": "sheerhealth",
+"company": "Sheerhealth"
+},
+{
+"type": "ashby",
+"token": "solace",
+"company": "Solace"
+},
+{
+"type": "ashby",
+"token": "somana.tech",
+"company": "Somana.Tech"
+},
+{
+"type": "ashby",
+"token": "voladynamics",
+"company": "Voladynamics"
+},
+{
+"type": "ashby",
+"token": "delos-data",
+"company": "Delos Data"
+},
+{
+"type": "ashby",
+"token": "harmony",
+"company": "Harmony"
+},
+{
+"type": "ashby",
+"token": "zip",
+"company": "Zip"
+},
+{
+"type": "ashby",
+"token": "glimpse",
+"company": "Glimpse"
+},
+{
+"type": "ashby",
+"token": "hud",
+"company": "Hud"
+},
+{
+"type": "ashby",
+"token": "whop",
+"company": "Whop"
+},
+{
+"type": "ashby",
+"token": "astrocade",
+"company": "Astrocade"
+},
+{
+"type": "ashby",
+"token": "runway",
+"company": "Runway"
+},
+{
+"type": "ashby",
+"token": "modus",
+"company": "Modus"
+},
+{
+"type": "ashby",
+"token": "bernard",
+"company": "Bernard"
+},
+{
+"type": "ashby",
+"token": "mach9",
+"company": "Mach9"
+},
+{
+"type": "ashby",
+"token": "meridianlink",
+"company": "Meridianlink"
+},
+{
+"type": "ashby",
+"token": "phonic",
+"company": "Phonic"
+},
+{
+"type": "ashby",
+"token": "conduct",
+"company": "Conduct"
+},
+{
+"type": "ashby",
+"token": "linero",
+"company": "Linero"
+},
+{
+"type": "ashby",
+"token": "alector",
+"company": "Alector"
+},
+{
+"type": "ashby",
+"token": "abby-care",
+"company": "Abby Care"
+},
+{
+"type": "ashby",
+"token": "pivotal-health",
+"company": "Pivotal Health"
+},
+{
+"type": "ashby",
+"token": "hercules",
+"company": "Hercules"
+},
+{
+"type": "ashby",
+"token": "eightsleep",
+"company": "Eightsleep"
+},
+{
+"type": "ashby",
+"token": "luxor",
+"company": "Luxor"
+},
+{
+"type": "ashby",
+"token": "elliptic",
+"company": "Elliptic"
+},
+{
+"type": "ashby",
+"token": "t1energy",
+"company": "T1Energy"
+},
+{
+"type": "ashby",
+"token": "code-metal",
+"company": "Code Metal"
+},
+{
+"type": "ashby",
+"token": "zyphra",
+"company": "Zyphra"
+},
+{
+"type": "ashby",
+"token": "addison-group",
+"company": "Addison Group"
+},
+{
+"type": "ashby",
+"token": "logicgate",
+"company": "Logicgate"
+},
+{
+"type": "ashby",
+"token": "pure",
+"company": "Pure"
+},
+{
+"type": "ashby",
+"token": "vals-ai",
+"company": "Vals Ai"
+},
+{
+"type": "smartrecruiters",
+"token": "canva",
+"company": "canva"
+},
+{
+"type": "smartrecruiters",
+"token": "respecinc",
+"company": "respecinc"
+},
+{
+"type": "smartrecruiters",
+"token": "guidehealth",
+"company": "guidehealth"
+},
+{
+"type": "smartrecruiters",
+"token": "abbvie",
+"company": "abbvie"
+},
+{
+"type": "smartrecruiters",
+"token": "phillytechco",
+"company": "phillytechco"
+}
+]
+}

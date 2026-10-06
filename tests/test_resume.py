@@ -1,3 +1,7 @@
+import os
+from pathlib import Path
+if not os.environ.get('DANBI_DATA'):
+    os.environ['DANBI_DATA'] = str(Path(__file__).resolve().parents[1] / 'examples' / 'data')
 import copy
 import json
 import tempfile

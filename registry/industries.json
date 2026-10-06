@@ -1,0 +1,203 @@
+{
+  "industries": [
+    {
+      "id": "tech",
+      "name": "Tech & software"
+    },
+    {
+      "id": "fintech",
+      "name": "Fintech & payments"
+    },
+    {
+      "id": "finance",
+      "name": "Banking & investing"
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance"
+    },
+    {
+      "id": "healthcare",
+      "name": "Health, pharma & medtech"
+    },
+    {
+      "id": "beauty",
+      "name": "Beauty & personal care"
+    },
+    {
+      "id": "retail",
+      "name": "Retail, fashion & e-commerce"
+    },
+    {
+      "id": "cpg",
+      "name": "Food, beverage & consumer goods"
+    },
+    {
+      "id": "food",
+      "name": "Restaurants & hospitality food"
+    },
+    {
+      "id": "consumer",
+      "name": "Toys, fitness & consumer products"
+    },
+    {
+      "id": "media",
+      "name": "Media, entertainment & music"
+    },
+    {
+      "id": "gaming",
+      "name": "Video games"
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive & mobility"
+    },
+    {
+      "id": "aerospace",
+      "name": "Aerospace & defense"
+    },
+    {
+      "id": "industrial",
+      "name": "Industrial & manufacturing"
+    },
+    {
+      "id": "energy",
+      "name": "Energy & utilities"
+    },
+    {
+      "id": "logistics",
+      "name": "Logistics & transportation"
+    },
+    {
+      "id": "travel",
+      "name": "Travel & hospitality"
+    },
+    {
+      "id": "telecom",
+      "name": "Telecom"
+    },
+    {
+      "id": "consulting",
+      "name": "Consulting & professional services"
+    },
+    {
+      "id": "realestate",
+      "name": "Real estate & proptech"
+    },
+    {
+      "id": "education",
+      "name": "Education"
+    },
+    {
+      "id": "public",
+      "name": "Government & nonprofit"
+    },
+    {
+      "id": "sports",
+      "name": "Sports"
+    },
+    {
+      "id": "other",
+      "name": "Other"
+    }
+  ],
+  "keyword_rules": [
+    {
+      "id": "tech",
+      "pattern": "software|cloud|saas|platform|\\bai\\b|artificial intelligence|semiconductor|internet|app\\b|data platform|cyber|devices"
+    },
+    {
+      "id": "fintech",
+      "pattern": "fintech|payments?\\b|crypto|blockchain|neobank|brokerage app"
+    },
+    {
+      "id": "finance",
+      "pattern": "bank|banking|capital markets|asset management|investment|securities|wealth|credit union|financial services|private equity|hedge fund|ratings"
+    },
+    {
+      "id": "insurance",
+      "pattern": "insurance|insurer|underwriting|reinsurance|annuit"
+    },
+    {
+      "id": "healthcare",
+      "pattern": "health|hospital|pharma|biotech|medical|medtech|clinical|therapeut|life sciences|diagnostic|patient"
+    },
+    {
+      "id": "beauty",
+      "pattern": "beauty|cosmetic|skincare|skin care|fragrance|makeup|personal care|salon"
+    },
+    {
+      "id": "retail",
+      "pattern": "retail|apparel|fashion|footwear|e-?commerce|department store|marketplace|luxury|outdoor gear|home goods|furniture"
+    },
+    {
+      "id": "cpg",
+      "pattern": "consumer (packaged )?goods|\\bcpg\\b|food|beverage|snack|brewing|spirits|grocery|household products|cereal|dairy"
+    },
+    {
+      "id": "food",
+      "pattern": "restaurant|coffee|quick[- ]service|dining|franchise"
+    },
+    {
+      "id": "consumer",
+      "pattern": "toy|games and toys|fitness|consumer electronics|consumer products|pet"
+    },
+    {
+      "id": "media",
+      "pattern": "media|entertainment|studio|film|television|\\btv\\b|streaming|music|publishing|news|broadcast|theme park"
+    },
+    {
+      "id": "gaming",
+      "pattern": "video game|gaming|game studio|esports|interactive entertainment"
+    },
+    {
+      "id": "automotive",
+      "pattern": "automotive|vehicle|\\bev\\b|electric vehicle|car maker|mobility|auto parts"
+    },
+    {
+      "id": "aerospace",
+      "pattern": "aerospace|defense|aircraft|space|satellite|aviation"
+    },
+    {
+      "id": "industrial",
+      "pattern": "manufactur|industrial|machinery|chemicals|materials|construction equipment|engineering services"
+    },
+    {
+      "id": "energy",
+      "pattern": "energy|utility|utilities|oil|gas|solar|renewable|power generation|electric company"
+    },
+    {
+      "id": "logistics",
+      "pattern": "logistics|shipping|freight|supply chain services|delivery|trucking|transportation|rail"
+    },
+    {
+      "id": "travel",
+      "pattern": "airline|hotel|resort|travel|cruise|hospitality|casino"
+    },
+    {
+      "id": "telecom",
+      "pattern": "telecom|wireless|carrier|broadband|cable"
+    },
+    {
+      "id": "consulting",
+      "pattern": "consult|advisory|professional services|accounting firm|audit firm"
+    },
+    {
+      "id": "realestate",
+      "pattern": "real estate|property|proptech|homebuilder|reit|housing|rental"
+    },
+    {
+      "id": "education",
+      "pattern": "education|edtech|university|school|learning platform"
+    },
+    {
+      "id": "public",
+      "pattern": "nonprofit|non-profit|foundation|government|public sector|city of|county of|state of"
+    },
+    {
+      "id": "sports",
+      "pattern": "sports|athletic|league|\\bnba\\b|\\bnfl\\b|\\bmlb\\b|\\bnhl\\b|\\bmls\\b|stadium"
+    }
+  ],
+  "note": "Industry comes from registry/enterprises.json when the employer is known; otherwise the first keyword rule matching the company name, then the posting text."
+}

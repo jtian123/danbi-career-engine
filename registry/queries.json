@@ -1,0 +1,17 @@
+{
+ "note": "Extra LinkedIn guest-search phrasings on top of each direction's queries in lanes.json. The scanner rotates 10 queries a run, ranked by how many distinct companies each has found.",
+ "extra": [
+  "analytics intern",
+  "business analytics intern",
+  "korean bilingual intern",
+  "beauty marketing intern",
+  "tiktok shop intern",
+  "retail analytics intern",
+  "operations research intern",
+  "strategy and operations intern",
+  "merchandise planning intern",
+  "people analytics intern",
+  "customer insights analyst intern",
+  "pricing strategy intern"
+ ]
+}

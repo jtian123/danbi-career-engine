@@ -1,0 +1,312 @@
+{
+  "lanes": [
+    {
+      "id": "commerce",
+      "name": "Marketing, growth & e-commerce",
+      "tier": "Closest to her experience",
+      "why": "Uses her TikTok Shop, creator and brand work directly; adds analysis on top.",
+      "day": "A merchant campaign underperformed. Work out why and recommend the next change.",
+      "skills": "SQL joins, funnel metrics, Excel pivots; evaluate the reason for a result.",
+      "keywords": [
+        "marketing analytics",
+        "growth",
+        "ecommerce",
+        "brand marketing",
+        "product marketing",
+        "social media",
+        "CRM",
+        "lifecycle",
+        "retail media"
+      ],
+      "match_terms": [
+        "growth",
+        "commerce",
+        "marketing",
+        "creator",
+        "livestream"
+      ],
+      "queries": [
+        "marketing analytics intern",
+        "e-commerce intern",
+        "brand marketing intern",
+        "growth marketing intern",
+        "product marketing intern",
+        "social media marketing intern"
+      ]
+    },
+    {
+      "id": "insights",
+      "name": "Consumer insights & research",
+      "tier": "Strong starting hypothesis",
+      "why": "Connect behavior, research and business decisions.",
+      "day": "Combine interviews, a survey and sales data into a customer recommendation.",
+      "skills": "Survey design, descriptive statistics, Excel; quantitative research may demand more.",
+      "keywords": [
+        "consumer insights",
+        "market research",
+        "customer insights",
+        "UX research",
+        "user research"
+      ],
+      "match_terms": [
+        "insights",
+        "market research",
+        "customer research"
+      ],
+      "queries": [
+        "consumer insights intern",
+        "market research intern",
+        "UX research intern"
+      ]
+    },
+    {
+      "id": "product",
+      "name": "Product management & operations",
+      "tier": "Promising exploration",
+      "why": "Use real founder examples to show customer understanding and prioritization.",
+      "day": "Choose the most important customer problem and define a measurable feature.",
+      "skills": "Product case writing, usage metrics, stakeholder communication; technical depth varies.",
+      "keywords": [
+        "product operations",
+        "product management",
+        "product analyst",
+        "associate product manager",
+        "product strategy"
+      ],
+      "match_terms": [
+        "product"
+      ],
+      "queries": [
+        "product management intern",
+        "product operations intern",
+        "product analyst intern"
+      ]
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy, consulting & business operations",
+      "tier": "Promising exploration",
+      "why": "Structured problem-solving for leadership; founder experience is a real asset here.",
+      "day": "A unit missed its plan. Size the gap, find the two causes that matter, and recommend a fix.",
+      "skills": "Excel models, crisp slides, structured reasoning, basic SQL.",
+      "keywords": [
+        "strategy",
+        "business operations",
+        "consulting",
+        "corporate development",
+        "strategy and operations"
+      ],
+      "match_terms": [
+        "strategy",
+        "consulting",
+        "business operations"
+      ],
+      "queries": [
+        "strategy intern",
+        "business operations intern",
+        "consulting intern",
+        "corporate strategy intern"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business analysis, sales & revenue ops",
+      "tier": "Promising exploration",
+      "why": "Turn process knowledge and analysis into better business execution.",
+      "day": "Find why a sales or service process is slow, then test a fix.",
+      "skills": "Excel, basic SQL, process mapping and structured business reasoning.",
+      "keywords": [
+        "business analyst",
+        "revenue operations",
+        "sales operations",
+        "partnerships",
+        "business development",
+        "customer success"
+      ],
+      "match_terms": [
+        "business analyst",
+        "business analysis",
+        "commercial",
+        "revenue operations",
+        "sales operations"
+      ],
+      "queries": [
+        "business analyst intern",
+        "sales operations intern",
+        "partnerships intern"
+      ]
+    },
+    {
+      "id": "demand",
+      "name": "Merchandising, pricing & category",
+      "tier": "Strong adjacent path",
+      "why": "Connect inventory and merchandising experience with analytical planning.",
+      "day": "Explain a stockout or promotion result and build a better forecast.",
+      "skills": "Excel forecasting, SQL, uncertainty; avoid advanced optimization roles initially.",
+      "keywords": [
+        "category management",
+        "merchandising",
+        "pricing analyst",
+        "demand planning",
+        "revenue management",
+        "buying"
+      ],
+      "match_terms": [
+        "demand",
+        "supply chain",
+        "pricing",
+        "category"
+      ],
+      "queries": [
+        "merchandising intern",
+        "pricing analyst intern",
+        "category management intern"
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Operations, supply chain & industrial engineering",
+      "tier": "Strong USC fit (ISE department)",
+      "why": "Her ISE program trains exactly this: optimization, forecasting, process and supply-chain decisions.",
+      "day": "Orders are shipping late from one warehouse. Find the bottleneck and test a better plan.",
+      "skills": "Excel, SQL, forecasting and optimization basics (ISE 530), process mapping.",
+      "keywords": [
+        "supply chain",
+        "operations analyst",
+        "logistics",
+        "industrial engineering",
+        "program management",
+        "procurement"
+      ],
+      "match_terms": [
+        "supply chain",
+        "operations",
+        "logistics"
+      ],
+      "queries": [
+        "supply chain intern",
+        "operations analyst intern",
+        "industrial engineering intern",
+        "program management intern",
+        "logistics analyst intern"
+      ]
+    },
+    {
+      "id": "finance",
+      "name": "Finance & FP&A",
+      "tier": "Explore before committing",
+      "why": "Test whether business performance and financial planning are interesting.",
+      "day": "Explain a budget variance and forecast the next quarter.",
+      "skills": "Financial statements, accounting basics, Excel modeling; a real domain-learning cost.",
+      "keywords": [
+        "financial analyst",
+        "FP&A intern",
+        "commercial finance",
+        "finance analytics"
+      ],
+      "match_terms": [
+        "financial",
+        "finance",
+        "fp&a"
+      ],
+      "queries": [
+        "FP&A intern",
+        "financial analyst intern"
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data, BI & data science",
+      "tier": "Build toward; data science is a stretch",
+      "why": "Develop SQL and data-quality skills on real business questions.",
+      "day": "Clean data, define a metric, produce a chart and explain a decision.",
+      "skills": "SQL joins and windows, one BI tool, Python fundamentals, basic inference.",
+      "keywords": [
+        "data analyst",
+        "business intelligence",
+        "product analytics",
+        "data science",
+        "decision science"
+      ],
+      "match_terms": [
+        "data",
+        "analytics",
+        "intelligence"
+      ],
+      "queries": [
+        "data analyst intern",
+        "business intelligence intern",
+        "data science intern"
+      ]
+    },
+    {
+      "id": "explore",
+      "name": "Other directions to explore",
+      "tier": "Open exploration",
+      "why": "Roles that fit none of the named directions. Kept so new fields can surface.",
+      "day": "Varies — read the posting and react.",
+      "skills": "Varies.",
+      "keywords": [],
+      "match_terms": [],
+      "queries": []
+    }
+  ],
+  "title_rules": [
+    {
+      "pattern": "data scien|decision scien|machine learning|\\bml\\b|\\bai\\b (analyst|data)|data engineer|analytics engineer|statistic",
+      "lane": "data",
+      "stretch": true
+    },
+    {
+      "pattern": "product marketing|marketing|growth|e-?commerce|\\bbrand|social media|content (strategy|marketing|creat)|creator|influencer|campaign|\\bcrm\\b|lifecycle|retention|digital (media|advertising)|advertising|media (planning|buying)|communications|public relations|\\bpr\\b|livestream|live stream|tiktok shop|seo|sem\\b|performance marketing|demand gen|public affairs",
+      "lane": "commerce",
+      "stretch": false
+    },
+    {
+      "pattern": "insight|market research|consumer research|customer research|user research|ux research|research operations|\\bvoice of",
+      "lane": "insights",
+      "stretch": false
+    },
+    {
+      "pattern": "product (manag|owner|operations|ops|strateg|analy|lead|intern)|\\bapm\\b|associate product manager|\\bpm intern|product$|product development",
+      "lane": "product",
+      "stretch": false
+    },
+    {
+      "pattern": "strateg|consult|corporate development|corp dev|business operations|biz ?ops|chief of staff|transformation|innovation|venture|m&a",
+      "lane": "strategy",
+      "stretch": false
+    },
+    {
+      "pattern": "sales op|revenue op|rev ?ops|sales strategy|sales analy",
+      "lane": "business",
+      "stretch": false
+    },
+    {
+      "pattern": "merchandis|category|pricing|revenue management|assortment|\\bbuyer\\b|buying|demand planning|forecast",
+      "lane": "demand",
+      "stretch": false
+    },
+    {
+      "pattern": "financ|fp&a|fp & a|treasury|accounting|audit|\\btax\\b|investment|banking|credit|risk|wealth|equity research|valuation|controller|underwrit|actuarial analyst|insurance analyst",
+      "lane": "finance",
+      "stretch": false
+    },
+    {
+      "pattern": "supply chain|operations|logistics|industrial (and systems )?engineer|process improvement|procurement|sourcing|fulfillment|inventory|planning|program manag|project manag|lean|six sigma|quality|operations research|manufacturing|purchasing|customs|trade compliance|import|export|distribution|warehouse operations",
+      "lane": "operations",
+      "stretch": false
+    },
+    {
+      "pattern": "business analy|revenue operations|rev ?ops|sales|business development|partnership|customer success|account (manage|executive)|commercial|go-to-market|\\bgtm\\b|alliances",
+      "lane": "business",
+      "stretch": false
+    },
+    {
+      "pattern": "business intelligence|\\bbi\\b|data analy|analytics|analyst|data|reporting|visuali",
+      "lane": "data",
+      "stretch": false
+    }
+  ],
+  "note": "title_rules are tried in order on the job title; first match wins. Unmatched titles go to \"explore\" and are kept."
+}

@@ -30,5 +30,25 @@
     "finance": "Commercial Finance & Business Analysis",
     "data": "Business Data Analytics"
   },
-  "max_courses": 3
+  "max_courses": 3,
+  "plain_language": {
+    "note": "Warnings only. Terms an outside recruiter would not understand; prefer variants without them, or add a plainer source-backed variant to data/master_profile.json.",
+    "avoid_terms": [
+      "Scenario Lab",
+      "Population Lab",
+      "progressive disclosure",
+      "information hierarchy",
+      "state-aware",
+      "contextual revision controls",
+      "actors",
+      "evidence trail",
+      "IA",
+      "PRD",
+      "MVP flows"
+    ]
+  },
+  "fill_band": [
+    0.85,
+    0.98
+  ]
 }

@@ -1,0 +1,10 @@
+{
+  "note": "Staffing agencies and data-labeling marketplaces: their listings hide the real employer. Dropped before ranking and counted in the scan summary. Add names with `career.py never \"Company\"` or the hub's Never-show button.",
+  "staffing": ["Jobot", "Kforce", "CyberCoders", "Insight Global", "Robert Half", "Aerotek", "TEKsystems",
+    "SynergisticIT", "Randstad", "Adecco", "Manpower", "ManpowerGroup", "Apex Systems", "Collabera", "Mastech",
+    "LanceSoft", "Pro Unlimited", "Jobgether", "Hays", "Harnham", "DataAnnotation", "Outlier", "Alignerr",
+    "Jobs for Humanity", "Actalent", "Kelly Services", "Volt", "Beacon Hill Staffing", "Motion Recruitment",
+    "Revature", "SmartIT Frame", "Dice", "Hired", "Crossover", "Toptal", "Turing", "Mercor", "Micro1",
+    "Hirequest", "Talentify", "Lensa", "Jooble", "ZipRecruiter", "Handshake AI", "Remotasks", "Scale AI Outlier"],
+  "never": []
+}

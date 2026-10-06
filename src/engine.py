@@ -11,7 +11,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-ROOT = Path(__file__).resolve().parents[1]
+from .paths import ROOT, data as data_path, registry as registry_path
 RATINGS = {'interested': 1, 'curious': 0.4, 'not_for_me': -1}
 STATUSES = {'not_started', 'saved', 'applied', 'interview', 'offer', 'rejected', 'closed'}
 REASONS = {'work', 'technical', 'pay', 'location', 'timing', 'other', ''}
@@ -19,6 +19,12 @@ REASONS = {'work', 'technical', 'pay', 'location', 'timing', 'other', ''}
 
 def load(path, default=None):
     return json.loads(Path(path).read_text()) if Path(path).exists() else default
+
+
+def load_lanes():
+    """Directions as a list (registry/lanes.json also carries title rules)."""
+    raw = load(registry_path('lanes.json'))
+    return raw['lanes'] if isinstance(raw, dict) else raw
 
 
 def atomic_json(path, obj):
@@ -263,20 +269,23 @@ def import_reviewed(current, incoming, lanes):
     return list(merged.values())
 
 
-def render(root=ROOT, output=None, today=None):
-    root = Path(root)
+def render(root=None, output=None, today=None):
+    """Legacy standalone HTML snapshot (the hub replaced it; kept for offline sharing)."""
+    root = Path(root) if root else None
     today = today or date.today()
-    profile = load(root / 'data/profile.json')
-    lanes = load(root / 'data/lanes.json')
-    feedback = load(root / 'data/feedback.json', {})
-    jobs = rank(load(root / 'data/jobs.json', []), profile, lanes, feedback, today)
+    d = (lambda n: root / 'data' / n) if root else data_path
+    profile = load(d('profile.json'))
+    lanes = load(root / 'data/lanes.json') if root and (root / 'data/lanes.json').exists() else load_lanes()
+    feedback = load(d('feedback.json'), {})
+    jobs = rank(load(d('jobs.json'), []), profile, lanes, feedback, today)
     data = {'profile_name': profile['identity']['name'], 'profile_id': 'danbi-jang',
             'built_date': today.isoformat(), 'jobs': jobs, 'lanes': lanes,
-            'today_ids': select_today(jobs), 'resources': load(root / 'data/resources.json', []),
-            'feedback': feedback, 'coverage': load(root / 'data/coverage.json', {})}
+            'today_ids': select_today(jobs), 'resources': load(d('resources.json'), []) or load(registry_path('resources.json'), []),
+            'feedback': feedback, 'coverage': load(d('coverage.json'), {})}
     payload = json.dumps(data, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
-    html = (root / 'templates/dashboard.html').read_text().replace('__DATA__', payload)
-    output = Path(output or root / 'output' / ('danbi_internships_' + today.isoformat() + '.html'))
+    base = root or ROOT
+    html = (base / 'templates/dashboard.html').read_text().replace('__DATA__', payload)
+    output = Path(output or base / 'output' / ('danbi_internships_' + today.isoformat() + '.html'))
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(html)
     return output, data

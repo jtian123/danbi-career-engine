@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Danbi · Career Hub</title>
+<style>
+:root{--bg:#f6f5ef;--paper:#fffefb;--rail:#eff1e9;--ink:#173b36;--ink2:#3d5a54;--muted:#66756f;--line:#dadfd5;--line2:#c9d0c3;
+--green:#dfead6;--green-ink:#2f5d33;--sage:#788d6f;--orange:#eeb787;--orange-wash:#f8e5ce;--orange-ink:#76512b;
+--plum-wash:#e5e2f3;--plum-ink:#544879;--red:#a34432;--red-wash:#f3e2dc;--teal-wash:#dcebe8;--teal-ink:#245e57;
+--shadow:0 1px 2px #14392d0d,0 8px 24px -14px #14392d33;--serif:Georgia,"Iowan Old Style","Times New Roman",serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:3px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:6px 11px}
+button:hover{background:#e6eddc}
+button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+input,select,textarea{border:1px solid var(--line);border-radius:7px;background:#fff;padding:7px 9px;max-width:100%}
+textarea{resize:vertical;min-height:54px;width:100%}
+.wrap{max-width:1320px;margin:0 auto;padding:22px clamp(14px,3vw,40px) 70px}
+header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.brand{font-size:20px;font-weight:650;letter-spacing:-.4px;display:flex;align-items:center;gap:9px}
+.brand-mark{display:inline-grid;place-items:center;width:32px;height:32px;background:var(--ink);color:#fff;border-radius:50%;font-family:var(--serif);font-weight:400}
+.sub{color:var(--muted);font-size:13px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 18px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 16px;min-width:112px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:650}
+.stat.small b{font-size:15px;font-family:inherit;font-weight:600;line-height:1.5}
+nav.tabs{display:flex;gap:2px;border-bottom:2px solid var(--line2);margin-bottom:20px;overflow-x:auto}
+nav.tabs button{border:0;background:none;border-radius:0;padding:10px 15px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--ink);background:none}
+nav.tabs button:hover{color:var(--ink2);background:none}
+h2{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:-.4px;margin:0 0 4px}
+h3{font-size:16px;margin:0 0 8px;font-weight:650}
+.muted{color:var(--muted)} .small{font-size:12.5px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.cols{display:grid;grid-template-columns:minmax(300px,410px) minmax(0,1fr);gap:22px;align-items:start}
+@media(max-width:960px){.cols{grid-template-columns:1fr}}
+.sticky{position:sticky;top:12px}
+/* calendar */
+.calhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.calhead b{font-family:var(--serif);font-weight:400;font-size:19px}
+.calhead button{width:32px;height:32px;padding:0}
+table.cal{width:100%;border-collapse:collapse;table-layout:fixed}
+table.cal th{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:3px 0;font-weight:650}
+table.cal td{border:1px solid var(--line);height:58px;vertical-align:top;padding:3px 4px;cursor:pointer}
+table.cal td:hover{background:var(--green)}
+table.cal td.off{border-color:transparent;cursor:default;background:none}
+table.cal td.today{outline:2px solid var(--sage);outline-offset:-2px}
+table.cal td.sel{background:var(--green)}
+table.cal .d{font-size:12px;color:var(--ink2);font-weight:600}
+.dots{display:flex;flex-direction:column;gap:2px;margin-top:2px}
+.dot{font-size:10px;border-radius:7px;padding:0 5px;width:fit-content;font-weight:650;white-space:nowrap}
+.dot.p{background:var(--green);color:var(--green-ink)} .dot.a{background:var(--teal-wash);color:var(--teal-ink)}
+.dot.e{background:var(--orange-wash);color:var(--orange-ink)} .dot.u{background:#ecefe8;color:var(--muted)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--muted)}
+/* day panel */
+.dayhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.funnel{font-size:12.5px;color:var(--muted);margin:2px 0 12px}
+.warn{background:var(--orange-wash);color:var(--orange-ink);border-radius:8px;padding:8px 12px;font-size:12.5px;margin:6px 0}
+.group{margin:18px 0 8px;display:flex;align-items:baseline;gap:8px}
+.group h3{margin:0}.group .n{font-size:12px;color:var(--muted)}
+details.fold>summary{cursor:pointer;font-weight:650;margin:16px 0 8px;list-style:none}
+details.fold>summary::before{content:'▸ ';color:var(--muted)} details.fold[open]>summary::before{content:'▾ '}
+.empty{border:1px dashed var(--line2);border-radius:10px;padding:18px;color:var(--muted);font-size:13.5px}
+/* job card */
+.job{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px 17px;margin:10px 0;box-shadow:var(--shadow)}
+.job.compact{padding:10px 14px;box-shadow:none}
+.job .row1{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.co{font-size:11.5px;font-weight:750;letter-spacing:1px;text-transform:uppercase}
+.ttl{font-size:16.5px;font-weight:620;margin:2px 0 3px;line-height:1.3}
+.ttl a{text-decoration:none} .ttl a:hover{text-decoration:underline}
+.meta{font-size:12.5px;color:var(--muted)}
+.fit{text-align:right;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.fit b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink);line-height:1.1}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
+.tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:5px;background:#e9ede3;font-size:11px;font-weight:650;line-height:1.5}
+.tag.big{background:var(--ink);color:#fff} .tag.edge{background:var(--plum-wash);color:var(--plum-ink)}
+.tag.stretch{background:var(--plum-wash);color:var(--plum-ink)} .tag.warnt{background:var(--orange-wash);color:var(--orange-ink)}
+.tag.applied{background:var(--teal-wash);color:var(--teal-ink)} .tag.src{background:transparent;border:1px solid var(--line);font-weight:550}
+.kv{display:grid;grid-template-columns:96px 1fr;gap:3px 12px;font-size:13.5px;margin:8px 0}
+.kv dt{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:700;padding-top:2px}
+.kv dd{margin:0}
+.checks{background:#fbf3e6;border-radius:8px;padding:8px 12px;font-size:12.5px;margin:8px 0}
+.checks ul{margin:3px 0 0;padding-left:17px}
+.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.actions select{font-size:12.5px;padding:5px 7px}
+.rate button{font-size:12.5px;padding:5px 10px}
+.rate button.on.no{background:var(--red);border-color:var(--red)}
+.links{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;margin-top:8px}
+.links a,.linkbtn{color:var(--ink2);font-size:12.5px}
+.linkbtn{border:0;background:none;padding:0;text-decoration:underline;text-underline-offset:3px}
+.linkbtn:hover{background:none;color:var(--ink)}
+.notes{margin-top:8px}
+/* boards */
+.kanban{display:grid;grid-template-columns:repeat(5,minmax(200px,1fr));gap:12px;overflow-x:auto}
+.col{background:var(--rail);border:1px solid var(--line);border-radius:12px;padding:10px;min-height:120px}
+.col h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink2);display:flex;justify-content:space-between}
+.mini{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 10px;margin:8px 0;font-size:13px}
+.mini .ttl{font-size:13.5px}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px;align-items:end}
+.formgrid label{font-size:11.5px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.card p{margin:6px 0;font-size:13.5px}
+.bar{display:grid;grid-template-columns:minmax(150px,230px) 1fr 70px;gap:10px;align-items:center;font-size:13px;margin:5px 0}
+.bar .track{height:10px;background:#eceee7;border-radius:6px;position:relative}
+.bar .fill{position:absolute;top:0;height:10px;border-radius:6px}
+.bar .mid{position:absolute;left:50%;top:-3px;width:1px;height:16px;background:var(--line2)}
+table.list{width:100%;border-collapse:collapse;font-size:13px}
+table.list th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line2)}
+table.list td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;text-align:left}
+.tile b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
+.tile span{font-size:12.5px}
+.event{display:grid;grid-template-columns:110px 1fr auto;gap:14px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:8px 0}
+.event .date{font-weight:650;font-size:13px}
+.event.done{opacity:.55}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;display:none;z-index:9}
+.toast.show{display:block}
+.err{color:var(--red)}
+@media(max-width:700px){.kv{grid-template-columns:1fr}.event{grid-template-columns:1fr}.bar{grid-template-columns:1fr 1fr 50px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div>
+    <div class="brand"><span class="brand-mark">d</span> Danbi · Career Hub</div>
+    <div class="sub" id="sub">Loading…</div>
+  </div>
+  <div class="sub">US-wide internships · big employers first · <a href="#" data-goto="how">how this works</a></div>
+</header>
+<div class="stats" id="stats"></div>
+<nav class="tabs" id="tabs">
+  <button data-tab="today" class="on">Today</button>
+  <button data-tab="apps">Applications</button>
+  <button data-tab="explore">Explore</button>
+  <button data-tab="usc">USC</button>
+  <button data-tab="cos">Companies</button>
+  <button data-tab="how">How it works</button>
+</nav>
+<main id="view"></main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+let S=null, busy=false, tab='today', sel=null, calMonth=null, browse={q:'',lane:'',industry:'',tier:'',status:'',reviewed:false};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safe=u=>{try{const x=new URL(u);return ['http:','https:'].includes(x.protocol)?esc(x.href):'';}catch{return '';}};
+const pd=s=>new Date(s+'T12:00:00');
+const fmtDay=s=>pd(s).toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'});
+const short=s=>s?pd(s).toLocaleDateString(undefined,{month:'short',day:'numeric'}):'';
+const STATUS=['new','saved','applied','interviewing','offer','rejected','withdrawn','closed','dismissed'];
+const STATUS_LABEL={new:'New',saved:'Saved',applied:'Applied',interviewing:'Interviewing',offer:'Offer',rejected:'Rejected',withdrawn:'Withdrawn',closed:'Closed',dismissed:'Not now'};
+const REASONS={work:'The work itself',industry:'The industry',technical:'Too technical now',pay:'Pay',location:'Location',timing:'Timing',other:'Other'};
+const READY={ready:'I could do this now',learn:'I could learn it',too_technical:'Too technical for now'};
+const ARENA={korean:'Korean edge',beauty_commerce:'Beauty & e-commerce'};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2600);}
+async function load(){const r=await fetch('/api/state');S=await r.json();if(!sel)sel=S.today;if(!calMonth)calMonth=sel.slice(0,7);render();}
+async function post(url,body){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const j=await r.json();if(!r.ok||j.error){toast(j.error||'Something went wrong');throw new Error(j.error);}return j;}
+const laneName=id=>(S.lanes.find(l=>l.id===id)||{name:id||'—'}).name;
+const indName=id=>(S.industries.find(i=>i.id===id)||{name:id||'Other'}).name;
+const byId=id=>S.jobs.find(j=>j.id===id);
+function patch(job){const i=S.jobs.findIndex(j=>j.id===job.id);if(i>=0){const old=S.jobs[i];S.jobs[i]=Object.assign({},old,job,{review:old.review,also_locations:old.also_locations,arenas:old.arenas,prescore_parts:old.prescore_parts,priority:old.priority,pref:old.pref,tier_bonus:old.tier_bonus});}}
+function applied(){const m={};for(const j of S.jobs)if(['applied','interviewing','offer','rejected'].includes(j.status)){const d=j.status_date||'';if(!m[j.company_canon]||m[j.company_canon]<d)m[j.company_canon]=d;}return m;}
+
+/* ---------------------------------------------------------------- header */
+function renderTop(){
+  const js=S.jobs, t=S.today;
+  const todays=js.filter(j=>j.last_surfaced===t&&j.reviewed&&['apply','stretch'].includes(j.bucket));
+  const cnt=s=>js.filter(j=>j.status===s).length;
+  const next=S.campus_events.filter(e=>e.date>=t&&!e.done)[0];
+  const dl=js.filter(j=>j.deadline&&j.deadline>=t&&['new','saved'].includes(j.status)).sort((a,b)=>a.deadline.localeCompare(b.deadline))[0];
+  const lastScan=Object.keys(S.days).sort().pop();
+  $('#sub').textContent=`${fmtDay(t)} · last scan ${lastScan?short(lastScan):'not yet'} · ${js.length} jobs remembered`;
+  $('#stats').innerHTML=`
+   <div class="stat"><b>${todays.length}</b><span>Today's picks</span></div>
+   <div class="stat"><b>${cnt('saved')}</b><span>Saved</span></div>
+   <div class="stat"><b>${cnt('applied')}</b><span>Applied</span></div>
+   <div class="stat"><b>${cnt('interviewing')}</b><span>Interviewing</span></div>
+   <div class="stat"><b>${cnt('offer')}</b><span>Offers</span></div>
+   <div class="stat small"><b>${dl?esc(short(dl.deadline)+' · '+dl.company):'—'}</b><span>Next deadline</span></div>
+   <div class="stat small"><b>${next?esc(short(next.date)+' · '+next.title.slice(0,34)):'—'}</b><span>Next on campus</span></div>`;
+}
+
+/* ---------------------------------------------------------------- job card */
+function fitBox(j){
+  if(!j.reviewed) return j.prescore!=null?`<div class="fit" title="Automatic pre-rank, not a review">pre-rank<b>${Math.round(j.prescore)}</b>not reviewed</div>`:'';
+  const parts=[`fit ${Math.round(j.fit)}`];
+  if(j.tier_bonus)parts.push(`+${j.tier_bonus} big employer`);
+  if(j.pref)parts.push(`${j.pref>0?'+':''}${j.pref} your ratings`);
+  return `<div class="fit" title="Priority = reviewed fit + big-employer bonus + what your ratings learned">priority<b>${Math.round(j.priority)}</b>${esc(parts.join(' · '))}</div>`;
+}
+function tags(j,ap){
+  const t=[];
+  if(j.tier==='enterprise')t.push('<span class="tag big">Big employer</span>');else if(j.tier==='large')t.push('<span class="tag big">Large company</span>');
+  t.push(`<span class="tag">${esc(laneName(j.lane))}</span>`,`<span class="tag">${esc(indName(j.industry))}</span>`);
+  if(j.stretch||(j.review&&j.review.technical_level>=4))t.push('<span class="tag stretch">Stretch</span>');
+  for(const a of (j.arenas||[]))if(ARENA[a])t.push(`<span class="tag edge">${ARENA[a]}</span>`);
+  if(j.origin==='lead')t.push(`<span class="tag src">Your find · ${esc(j.source)}</span>`);
+  else if(j.url){const h=(()=>{try{return new URL(j.url).hostname}catch{return ''}})();
+    t.push(`<span class="tag src">${/linkedin\.com$/.test(h)?'LinkedIn copy — find the employer link':/simplify\.jobs$/.test(h)?'Simplify copy':'Employer link'}</span>`);}
+  const d=ap[j.company_canon];
+  if(d&&!['applied','interviewing','offer','rejected'].includes(j.status))t.push(`<span class="tag applied">You applied here ${esc(short(d))}</span>`);
+  if(j.deadline)t.push(`<span class="tag warnt">Deadline ${esc(short(j.deadline))}</span>`);
+  return `<div class="tags">${t.join('')}</div>`;
+}
+function rateRow(j){
+  const b=(v,l,cls='')=>`<button class="${j.interest===v?'on '+cls:''}" data-rate="${v}" data-id="${j.id}">${l}</button>`;
+  let h=`<span class="rate">${b('interested','Interested')}${b('curious','Curious')}${b('not_for_me','Not for me','no')}</span>`;
+  if(j.interest==='not_for_me'){h+=`<select data-reason="${j.id}" title="Why not?"><option value="">Why not?</option>${Object.entries(REASONS).map(([k,v])=>`<option value="${k}"${j.reason===k?' selected':''}>${v}</option>`).join('')}</select>`;}
+  h+=`<select data-ready="${j.id}" title="Could you do this job?"><option value="">Readiness…</option>${Object.entries(READY).map(([k,v])=>`<option value="${k}"${j.confidence===k?' selected':''}>${v}</option>`).join('')}</select>`;
+  h+=`<select data-status="${j.id}" title="Application status">${STATUS.map(s=>`<option value="${s}"${j.status===s?' selected':''}>${STATUS_LABEL[s]}</option>`).join('')}</select>`;
+  return h;
+}
+function alumniUrl(co){const t=(S.campus&&S.campus.alumni_search_url_template)||'https://www.linkedin.com/school/university-of-southern-california/people/?keywords={company}';return t.replace('{company}',encodeURIComponent(co));}
+function jobCard(j,ap,compact){
+  const r=j.review||{};
+  const where=[j.location,(j.also_locations||[]).length?`+${j.also_locations.length} more`:'' ,j.season,j.pay].filter(Boolean).join(' · ');
+  let body='';
+  if(!compact&&j.reviewed){
+    body=`<dl class="kv">${r.why?`<dt>Why you</dt><dd>${esc(r.why)}</dd>`:''}${r.task?`<dt>The work</dt><dd>${esc(r.task)}</dd>`:''}${r.gaps?`<dt>Gaps</dt><dd>${esc(r.gaps)}</dd>`:''}${r.conversion?`<dt>Return offer</dt><dd>${esc(r.conversion)}</dd>`:''}${r.next_step?`<dt>Next step</dt><dd><b>${esc(r.next_step)}</b></dd>`:''}</dl>`;
+    const ch=[...(r.blockers||[]).map(x=>'⛔ '+x),...(r.checks||[])];
+    if(ch.length)body+=`<div class="checks"><b>Check first</b><ul>${ch.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`;
+  } else if(!j.reviewed&&r.checks&&r.checks.length&&!compact){
+    body=`<div class="checks"><b>Not reviewed yet — things to check</b><ul>${r.checks.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`;
+  }
+  const url=safe(j.url);
+  const resumeAsk=`Build my résumé for ${j.company} — ${j.title}.${j.jd_path?' The posting text is saved at '+j.jd_path+'.':''}${j.url?' Posting: '+j.url:''}`;
+  return `<article class="job${compact?' compact':''}" id="job-${j.id}">
+   <div class="row1"><div><div class="co">${esc(j.company)}</div>
+   <div class="ttl">${url?`<a href="${url}" target="_blank" rel="noopener">${esc(j.title)}</a>`:esc(j.title)}</div>
+   <div class="meta">${esc(where)}</div></div>${fitBox(j)}</div>
+   ${tags(j,ap)}${body}
+   <div class="actions">${rateRow(j)}</div>
+   ${compact?'':`<textarea class="notes" data-notes="${j.id}" placeholder="Notes for yourself (or for Claude)…">${esc(j.notes||'')}</textarea>`}
+   <div class="links">${url?`<a href="${url}" target="_blank" rel="noopener">Open posting ↗</a>`:''}
+     ${j.jd_path?`<a href="/jd/${esc(j.jd_path.replace(/^output\/scans\//,''))}" target="_blank">Saved posting text</a>`:''}
+     <a href="${safe(alumniUrl(j.company))}" target="_blank" rel="noopener">USC alumni at ${esc(j.company)} ↗</a>
+     <button class="linkbtn" data-copy="${esc(resumeAsk)}">Copy résumé request for Claude</button></div>
+  </article>`;
+}
+
+/* ---------------------------------------------------------------- Today */
+function dayJobs(d){return S.jobs.filter(j=>j.last_surfaced===d);}
+function renderToday(){
+  const [y,m]=calMonth.split('-').map(Number);
+  const first=new Date(y,m-1,1), days=new Date(y,m,0).getDate(), lead=first.getDay();
+  const picks={},apps={},unrev={},evs={};
+  for(const j of S.jobs){if(j.reviewed&&['apply','stretch','check'].includes(j.bucket))picks[j.last_surfaced]=(picks[j.last_surfaced]||0)+1;else if(!j.reviewed)unrev[j.last_surfaced]=(unrev[j.last_surfaced]||0)+1;}
+  for(const e of S.events)if(['applied','interviewing','offer'].includes(e.kind))apps[e.day]=(apps[e.day]||0)+1;
+  for(const e of S.campus_events)evs[e.date]=(evs[e.date]||0)+1;
+  let cells='',i=0;
+  for(;i<lead;i++)cells+='<td class="off"></td>';
+  for(let d=1;d<=days;d++,i++){
+    const ds=`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    if(i%7===0&&i)cells+='</tr><tr>';
+    const dots=[picks[ds]?`<span class="dot p">${picks[ds]} picks</span>`:'',apps[ds]?`<span class="dot a">${apps[ds]} applied</span>`:'',evs[ds]?`<span class="dot e">${evs[ds]} campus</span>`:'',!picks[ds]&&unrev[ds]?`<span class="dot u">${unrev[ds]} listed</span>`:''].join('');
+    cells+=`<td data-day="${ds}" class="${ds===S.today?'today ':''}${ds===sel?'sel':''}"><div class="d">${d}</div><div class="dots">${dots}</div></td>`;
+  }
+  while(i%7){cells+='<td class="off"></td>';i++;}
+  const monthName=first.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+  $('#view').innerHTML=`<div class="cols"><div><div class="panel sticky">
+    <div class="calhead"><button data-mon="-1" aria-label="Previous month">‹</button><b>${monthName}</b><button data-mon="1" aria-label="Next month">›</button></div>
+    <table class="cal"><tr>${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(x=>`<th>${x}</th>`).join('')}</tr><tr>${cells}</tr></table>
+    <div class="legend"><span><span class="dot p">picks</span> reviewed jobs</span><span><span class="dot a">applied</span></span><span><span class="dot e">campus</span> USC events</span><span><span class="dot u">listed</span> not reviewed</span></div>
+    <p class="small muted" style="margin:12px 0 0">Click a day to see everything found that day. New scans come from Claude: ask “find me internships today”.</p>
+   </div></div><div id="day"></div></div>`;
+  renderDay();
+}
+function renderDay(){
+  const d=sel, js=dayJobs(d), ap=applied(), meta=S.days[d]||{};
+  const live=j=>j.status!=='dismissed';
+  const prio=(a,b)=>(b.priority??-1)-(a.priority??-1)||((b.prescore||0)-(a.prescore||0));
+  const first=js.filter(j=>j.reviewed&&['apply','stretch'].includes(j.bucket)&&live(j)).sort(prio);
+  const check=js.filter(j=>j.reviewed&&j.bucket==='check'&&live(j)).sort(prio);
+  const mine=js.filter(j=>j.origin==='lead');
+  const aside=js.filter(j=>j.reviewed&&(j.bucket==='excluded'||!live(j)));
+  const unrev=js.filter(j=>!j.reviewed&&j.origin!=='lead'&&live(j)).sort((a,b)=>(b.prescore||0)-(a.prescore||0));
+  const evs=S.campus_events.filter(e=>e.date===d||(e.end_date&&e.date<=d&&e.end_date>=d));
+  const f=meta.funnel;
+  let h=`<div class="panel"><div class="dayhead"><div><h2>${fmtDay(d)}</h2>
+    ${f?`<div class="funnel">Read ${f.raw_rows.toLocaleString()} postings → ${f.internships_in_scope.toLocaleString()} US internships in scope → ${f.unique_jobs.toLocaleString()} unique → ${f.new_to_her.toLocaleString()} new to you → ${f.queued_for_review} reviewed by Claude${meta.recommended!=null?` (${meta.recommended} recommended)`:''}</div>`:meta.note?`<div class="funnel">${esc(meta.note)}</div>`:''}</div></div>
+    ${(meta.warnings||[]).map(w=>`<div class="warn">${esc(w)}</div>`).join('')}`;
+  if(!js.length&&!evs.length){h+=`<div class="empty">Nothing on this day.${d===S.today?' Ask Claude: “find me internships today”.':''}</div>`;}
+  if(first.length){h+=`<div class="group"><h3>Apply first</h3><span class="n">${first.length} · sorted by priority</span></div>`+first.map(j=>jobCard(j,ap)).join('');}
+  if(check.length){h+=`<div class="group"><h3>Check before applying</h3><span class="n">${check.length} · one requirement is unclear</span></div>`+check.map(j=>jobCard(j,ap)).join('');}
+  if(mine.length){h+=`<div class="group"><h3>Your own finds</h3><span class="n">${mine.length}</span></div>`+mine.map(j=>jobCard(j,ap)).join('');}
+  if(evs.length){h+=`<div class="group"><h3>On campus</h3></div>`+evs.map(eventRow).join('');}
+  if(aside.length){h+=`<details class="fold"><summary>Set aside after review (${aside.length})</summary>${aside.map(j=>jobCard(j,ap,true)).join('')}</details>`;}
+  if(unrev.length){h+=`<details class="fold"><summary>Found but not reviewed yet (${unrev.length}) — sorted by automatic pre-rank</summary><p class="small muted">These passed the automatic filters (US internship, in scope, not seen before). Claude has not read them. Rate any that catch your eye.</p>${unrev.slice(0,80).map(j=>jobCard(j,ap,true)).join('')}${unrev.length>80?`<p class="small muted">…and ${unrev.length-80} more in Explore → Browse.</p>`:''}</details>`;}
+  $('#day').innerHTML=h+'</div>';
+}
+
+/* ---------------------------------------------------------------- Applications */
+function renderApps(){
+  const ap=applied();
+  const cols=[['saved','Saved'],['applied','Applied'],['interviewing','Interviewing'],['offer','Offer'],['closed','Closed']];
+  const inCol=(j,c)=>c==='closed'?['rejected','withdrawn','closed'].includes(j.status):j.status===c;
+  const mini=j=>`<div class="mini"><div class="co">${esc(j.company)}</div><div class="ttl">${safe(j.url)?`<a href="${safe(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>`:esc(j.title)}</div>
+    <div class="meta">${esc([STATUS_LABEL[j.status],j.status_date?short(j.status_date):'',j.deadline?'deadline '+short(j.deadline):''].filter(Boolean).join(' · '))}</div>
+    <div style="margin-top:6px"><select data-status="${j.id}">${STATUS.map(s=>`<option value="${s}"${j.status===s?' selected':''}>${STATUS_LABEL[s]}</option>`).join('')}</select></div></div>`;
+  $('#view').innerHTML=`<div class="panel" style="margin-bottom:16px"><h3>Add a job you found yourself</h3>
+   <p class="small muted" style="margin:0 0 10px">Handshake, a career fair, a referral, an email — anything. It goes on today's list as Saved.</p>
+   <div class="formgrid" id="leadform">
+    <label>Company<input name="company" required></label><label>Job title<input name="title" required></label>
+    <label>Link<input name="url" placeholder="https://…"></label>
+    <label>Where you found it<select name="source"><option value="handshake">Handshake</option><option value="career fair">Career fair</option><option value="referral">Referral</option><option value="linkedin">LinkedIn</option><option value="company site">Company site</option><option value="email">Email</option><option value="other">Other</option></select></label>
+    <label>Deadline<input name="deadline" type="date"></label><label>Notes<input name="notes"></label>
+    <button id="addlead" class="on">Add</button></div></div>
+   <div class="kanban">${cols.map(([c,l])=>{const xs=S.jobs.filter(j=>inCol(j,c)).sort((a,b)=>(b.status_date||'').localeCompare(a.status_date||''));return `<div class="col"><h3>${l}<span>${xs.length}</span></h3>${xs.map(mini).join('')||'<p class="small muted">—</p>'}</div>`;}).join('')}</div>
+   <p class="small muted">Set a status from any job card. Every change is kept in history, so the calendar shows when you applied.</p>`;
+}
+
+/* ---------------------------------------------------------------- Explore */
+function prefBars(kind,names){
+  const p=S.prefs[kind]||{};const ks=Object.keys(p);
+  if(!ks.length)return '<p class="small muted">Nothing yet. Rate a few jobs Interested / Curious / Not for me and this fills in.</p>';
+  return ks.sort((a,b)=>p[b].adjust-p[a].adjust).map(k=>{const a=p[k].adjust,w=Math.abs(a)/10*50;
+    return `<div class="bar"><span>${esc(names(k))}</span><div class="track"><div class="mid"></div><div class="fill" style="left:${a>=0?50:50-w}%;width:${w}%;background:${a>=0?'var(--sage)':'var(--red)'}"></div></div><span class="small muted">${a>0?'+':''}${a} · ${p[k].votes} vote${p[k].votes>1?'s':''}</span></div>`;}).join('');
+}
+function renderExplore(){
+  const js=S.jobs, count=(f)=>js.filter(f).length;
+  const lanes=S.lanes.map(l=>`<div class="card"><div class="small muted">${esc(l.tier||'')}</div><h3 style="margin-top:4px">${esc(l.name)}</h3>
+     <p>${esc(l.why||'')}</p>${l.day?`<p><b>A day in it:</b> ${esc(l.day)}</p>`:''}${l.skills?`<p class="small muted">${esc(l.skills)}</p>`:''}
+     <p class="small"><a href="#" data-browse-lane="${esc(l.id)}">${count(j=>j.lane===l.id)} found</a> · ${count(j=>j.lane===l.id&&j.interest==='interested')} you liked</p></div>`).join('');
+  const inds=S.industries.map(i=>({i,n:count(j=>j.industry===i.id),liked:count(j=>j.industry===i.id&&j.interest==='interested')})).filter(x=>x.n).sort((a,b)=>(a.i.id==='other')-(b.i.id==='other')||b.n-a.n);
+  $('#view').innerHTML=`<div class="cols" style="grid-template-columns:1fr 1fr"><div class="panel"><h3>Directions your reactions favor</h3>${prefBars('lane',laneName)}</div>
+     <div class="panel"><h3>Industries your reactions favor</h3>${prefBars('industry',indName)}</div></div>
+   <p class="small muted">Learned from your ratings only: each vote moves a direction a little, sparse votes count less, and the effect is capped at ±10 points. “Not for me” because of pay, timing or location doesn't count against the career.</p>
+   <h2 style="margin-top:24px">Industries found so far</h2><p class="small muted">Click one to browse its jobs. Discovering which fields you enjoy is half the point.</p>
+   <div class="tiles">${inds.map(x=>`<button class="tile" data-browse-ind="${esc(x.i.id)}"><b>${x.n}</b><span>${esc(x.i.name)}${x.liked?` · ${x.liked} liked`:''}</span></button>`).join('')}</div>
+   <h2 style="margin-top:24px">Directions</h2><div class="grid2">${lanes}</div>
+   <h2 style="margin-top:28px" id="browse">Browse everything</h2><div id="browseBox"></div>`;
+  renderBrowse();
+}
+function renderBrowse(){
+  const b=browse, q=b.q.toLowerCase();
+  let xs=S.jobs.filter(j=>(!b.lane||j.lane===b.lane)&&(!b.industry||j.industry===b.industry)&&(!b.tier||(b.tier==='big'?['enterprise','large'].includes(j.tier):!['enterprise','large'].includes(j.tier)))&&(!b.status||j.status===b.status)&&(!b.reviewed||j.reviewed)&&(!q||(j.company+' '+j.title+' '+(j.location||'')).toLowerCase().includes(q)));
+  xs.sort((a,c)=>(c.priority??c.prescore??0)-(a.priority??a.prescore??0));
+  const opt=(arr,cur,all)=>`<option value="">${all}</option>`+arr.map(([v,l])=>`<option value="${esc(v)}"${cur===v?' selected':''}>${esc(l)}</option>`).join('');
+  $('#browseBox').innerHTML=`<div class="filters"><input id="bq" placeholder="Search company, title, city" value="${esc(b.q)}">
+   <select id="bl">${opt(S.lanes.map(l=>[l.id,l.name]),b.lane,'All directions')}</select>
+   <select id="bi">${opt(S.industries.map(i=>[i.id,i.name]),b.industry,'All industries')}</select>
+   <select id="bt">${opt([['big','Big employers'],['other','Other employers']],b.tier,'Any employer size')}</select>
+   <select id="bs">${opt(STATUS.map(s=>[s,STATUS_LABEL[s]]),b.status,'Any status')}</select>
+   <label class="small"><input type="checkbox" id="br"${b.reviewed?' checked':''}> reviewed only</label></div>
+   <p class="small muted">${xs.length} jobs${xs.length>300?' (showing 300)':''}</p>
+   <table class="list"><tr><th>Company</th><th>Job</th><th>Direction</th><th>Industry</th><th>Score</th><th>Status</th><th>Day</th></tr>
+   ${xs.slice(0,300).map(j=>`<tr><td>${esc(j.company)}${['enterprise','large'].includes(j.tier)?' <span class="tag big">big</span>':''}</td><td>${safe(j.url)?`<a href="${safe(j.url)}" target="_blank" rel="noopener">${esc(j.title)}</a>`:esc(j.title)}<div class="small muted">${esc(j.location||'')}</div></td><td>${esc(laneName(j.lane))}</td><td>${esc(indName(j.industry))}</td><td>${j.reviewed?'<b>'+Math.round(j.priority)+'</b>':'<span class="muted">'+(j.prescore!=null?Math.round(j.prescore)+' pre':'—')+'</span>'}</td><td>${esc(STATUS_LABEL[j.status])}${j.interest?'<div class="small muted">'+esc(j.interest.replace(/_/g,' '))+'</div>':''}</td><td><a href="#" data-goday="${j.last_surfaced}">${short(j.last_surfaced)}</a></td></tr>`).join('')}</table>`;
+}
+
+/* ---------------------------------------------------------------- USC */
+function eventRow(e){return `<div class="event${e.done?' done':''}"><div class="date">${esc(short(e.date))}${e.end_date&&e.end_date!==e.date?' – '+esc(short(e.end_date)):''}${e.time?`<div class="small muted">${esc(e.time)}</div>`:''}</div>
+  <div><b>${safe(e.url)?`<a href="${safe(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a>`:esc(e.title)}</b><div class="small muted">${esc(e.description||'')}${e.verified?'':' (date not confirmed — check before going)'}</div></div>
+  <label class="small"><input type="checkbox" data-done="${e.id}"${e.done?' checked':''}> done</label></div>`;}
+function renderUSC(){
+  const c=S.campus||{resources:[]};const groups={};
+  for(const r of c.resources||[])(groups[r.kind]=groups[r.kind]||[]).push(r);
+  const KIND={platform:'Job platforms',advising:'Advising & résumé help',fair:'Career fairs',events:'Employer events',alumni:'Alumni & mentors',department:'Your department (ISE)',club:'Student organizations',program:'Programs & funding',tool:'Tools USC pays for'};
+  const up=S.campus_events.filter(e=>e.date>=S.today||(e.end_date&&e.end_date>=S.today));
+  $('#view').innerHTML=`<div class="cols" style="grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)"><div>
+    <h2>Your USC advantage</h2><p class="muted small">Things a student can use that a regular job seeker can't. Signed-in pages (Handshake, booking) need your USC login; Claude never logs in for you.</p>
+    ${Object.entries(groups).map(([k,rs])=>`<h3 style="margin-top:18px">${esc(KIND[k]||k)}</h3>${rs.map(r=>`<div class="card" style="margin:8px 0"><b>${safe(r.url)?`<a href="${safe(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a>`:esc(r.title)}</b><p>${esc(r.what||'')}</p>${r.how?`<p><b>Do:</b> ${esc(r.how)}</p>`:''}</div>`).join('')}`).join('')||'<p class="empty">No campus resources loaded yet.</p>'}
+   </div><div>
+    <div class="panel"><h3>Find USC alumni at a company</h3><p class="small muted" style="margin:0 0 8px">Opens LinkedIn's USC alumni page filtered to that company. A short, specific note to one alum beats a cold application.</p>
+     <div class="filters" style="margin:0"><input id="alumco" placeholder="e.g. Target"><button id="alumgo" class="on">Search</button></div></div>
+    <div class="panel" style="margin-top:14px"><h3>Coming up</h3>${up.map(eventRow).join('')||'<p class="small muted">No dated events yet.</p>'}
+     <h3 style="margin-top:16px">Add an event</h3><div class="formgrid" id="evform"><label>What<input name="title"></label><label>Date<input name="date" type="date"></label><label>Link<input name="url"></label><button id="addev">Add</button></div></div>
+    ${(c.notes||[]).length?`<div class="panel" style="margin-top:14px"><h3>Notes</h3><ul class="small">${c.notes.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>`:''}
+   </div></div>`;
+}
+
+/* ---------------------------------------------------------------- Companies */
+function renderCos(){
+  const m={};
+  for(const j of S.jobs){const k=j.company_canon;(m[k]=m[k]||{name:j.company,tier:j.tier,industry:j.industry,n:0,ap:0,int:0,liked:0,last:''});const x=m[k];x.n++;if(['applied','interviewing','offer','rejected'].includes(j.status))x.ap++;if(j.status==='interviewing'||j.status==='offer')x.int++;if(j.interest==='interested')x.liked++;if(j.last_surfaced>x.last)x.last=j.last_surfaced;}
+  const never=new Set((S.never||[]).map(n=>n.company_canon));
+  const rows=Object.entries(m).filter(([k])=>!never.has(k)).sort((a,b)=>(['enterprise','large'].includes(b[1].tier)-['enterprise','large'].includes(a[1].tier))||b[1].n-a[1].n);
+  const byInd={};for(const e of S.enterprises||[])(byInd[e.industry||'other']=byInd[e.industry||'other']||[]).push(e.name+(e.korean?' 🇰🇷':''));
+  $('#view').innerHTML=`<h2>Companies</h2><p class="small muted">Every employer with a job in your hub. “Never show” hides a company from future scans (staffing agencies, places you've ruled out).</p>
+   <table class="list"><tr><th>Company</th><th>Size</th><th>Industry</th><th>Jobs found</th><th>Applied</th><th>Liked</th><th>Last seen</th><th></th></tr>
+   ${rows.slice(0,400).map(([k,x])=>`<tr><td><b>${esc(x.name)}</b></td><td>${x.tier==='enterprise'?'Big employer':x.tier==='large'?'Large':x.tier==='growth'?'Growth':'—'}</td><td>${esc(indName(x.industry))}</td><td>${x.n}</td><td>${x.ap||''}</td><td>${x.liked||''}</td><td>${short(x.last)}</td><td><button class="linkbtn" data-never="${esc(x.name)}">Never show</button></td></tr>`).join('')}</table>
+   <h2 style="margin-top:28px">Big employers searched directly every scan</h2><p class="small muted">${(S.enterprises||[]).length} employers, read straight from their own career sites (so links go to the employer). Claude can add more — just ask.</p>
+   <div class="grid2">${Object.entries(byInd).sort().map(([i,ns])=>`<div class="card"><h3>${esc(indName(i))}</h3><p class="small">${esc(ns.sort().join(' · '))}</p></div>`).join('')}</div>
+   ${(S.never||[]).length?`<h3 style="margin-top:20px">Hidden companies</h3><p class="small">${S.never.map(n=>esc(n.company)).join(' · ')}</p>`:''}`;
+}
+
+/* ---------------------------------------------------------------- How it works */
+function renderHow(){
+  $('#view').innerHTML=`<div class="panel" style="max-width:860px"><h2>How this works</h2>
+  <h3 style="margin-top:16px">Where jobs come from</h3><ul>
+   <li><b>Big employers' own career sites</b> (Target, Disney, NVIDIA, Amazon, Capital One, Salesforce and ${(S.enterprises||[]).length-6}+ more) — searched first, linked directly.</li>
+   <li><b>~1,300 company job boards</b> (Greenhouse, Lever, Ashby) for mid-size and growing companies.</li>
+   <li><b>The Simplify internship list</b> on GitHub and <b>LinkedIn's public internship search</b> (at most 20 requests a day; if LinkedIn ever blocks, the scan skips it for the day).</li>
+   <li><b>You</b>: Handshake, fairs and referrals — add them in Applications.</li></ul>
+  <h3>What gets filtered out (and counted)</h3><p>Non-US jobs, seasons that are already over, roles that require US citizenship or a security clearance, PhD- or MBA-only roles, and software/hardware engineering, lab and clinical roles. Everything else stays — including directions nobody has thought of yet (“Other directions to explore”).</p>
+  <h3>How jobs are ordered</h3><p><b>Priority = Claude's reviewed fit (0–100) + a big-employer bonus (+8, or +5 for large companies) + what your ratings have taught it (±10).</b> Fit adds up transferable experience /30, learning value /25, readiness now /20, published pay /10, a stated return-offer path /10 and timing /5. It is an ordering, not a chance of getting an offer.</p>
+  <p>Jobs Claude hasn't read show an automatic <i>pre-rank</i> instead. That only says which ones to read first.</p>
+  <h3>Your ratings</h3><p><b>Interested / Curious / Not for me</b> teach the hub which directions and industries to bring forward. Tell it <i>why</i> when something is not for you: only “the work itself” or “the industry” count against a career.</p>
+  <h3>Asking Claude</h3><ul><li>“Find me internships today.” — scans, reviews the best ~40, and puts them on today's list.</li>
+   <li>“Build my résumé for the Target Associate Buyer internship.” — use the copy button on any card.</li>
+   <li>“What do my ratings say? Which industries should I look at next?”</li>
+   <li>“Refresh the USC events for this month.”</li></ul>
+  <h3>Privacy</h3><p>Everything lives on this Mac: the hub only answers on 127.0.0.1. Nothing applies, emails or logs in for you.</p></div>`;
+}
+
+/* ---------------------------------------------------------------- render + events */
+function render(){renderTop();({today:renderToday,apps:renderApps,explore:renderExplore,usc:renderUSC,cos:renderCos,how:renderHow})[tab]();
+  for(const b of document.querySelectorAll('#tabs button'))b.classList.toggle('on',b.dataset.tab===tab);}
+function goTab(t){tab=t;render();window.scrollTo(0,0);}
+document.addEventListener('click',async e=>{
+  const t=e.target.closest('button,a,td');if(!t)return;
+  if(t.dataset.tab)return goTab(t.dataset.tab);
+  if(t.dataset.goto){e.preventDefault();return goTab(t.dataset.goto);}
+  if(t.dataset.day){sel=t.dataset.day;return renderToday();}
+  if(t.dataset.mon){const [y,m]=calMonth.split('-').map(Number);const d=new Date(y,m-1+Number(t.dataset.mon),1);calMonth=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;return renderToday();}
+  if(t.dataset.goday){e.preventDefault();sel=t.dataset.goday;calMonth=sel.slice(0,7);return goTab('today');}
+  if(t.dataset.browseLane){e.preventDefault();browse.lane=t.dataset.browseLane;browse.industry='';renderBrowse();return $('#browse').scrollIntoView();}
+  if(t.dataset.browseInd){browse.industry=t.dataset.browseInd;browse.lane='';renderBrowse();return $('#browse').scrollIntoView();}
+  if(t.dataset.rate){if(busy)return;busy=true;try{const j=byId(Number(t.dataset.id));const v=j.interest===t.dataset.rate?'':t.dataset.rate;
+    const r=await post('/api/rate',{id:j.id,interest:v,reason:v==='not_for_me'?j.reason:'',confidence:j.confidence});patch(r.job);await load();
+    toast(v?({interested:'Marked interested',curious:'Marked curious',not_for_me:'Noted — tell it why, if you like'})[v]:'Rating cleared');}finally{busy=false;}return;}
+  if(t.dataset.copy){try{await navigator.clipboard.writeText(t.dataset.copy);toast('Copied — paste it to Claude');}catch{prompt('Copy this for Claude:',t.dataset.copy);}return;}
+  if(t.dataset.never){if(!confirm(`Hide ${t.dataset.never} from future scans?`))return;await post('/api/never',{company:t.dataset.never});toast('Hidden from future scans');return load();}
+  if(t.id==='addlead'){const f=$('#leadform');const v=n=>f.querySelector(`[name=${n}]`).value.trim();
+    await post('/api/lead',{company:v('company'),title:v('title'),url:v('url'),source:v('source'),deadline:v('deadline'),notes:v('notes')});toast('Added to today as Saved');sel=S.today;return load();}
+  if(t.id==='addev'){const f=$('#evform');const v=n=>f.querySelector(`[name=${n}]`).value.trim();await post('/api/event',{title:v('title'),date:v('date'),url:v('url')});toast('Event added');return load();}
+  if(t.id==='alumgo'){const c=$('#alumco').value.trim();if(c)window.open(alumniUrl(c),'_blank','noopener');return;}
+});
+document.addEventListener('change',async e=>{
+  const t=e.target;
+  if(t.dataset.status){const r=await post('/api/status',{id:Number(t.dataset.status),status:t.value});patch(r.job);toast(STATUS_LABEL[t.value]);return load();}
+  if(t.dataset.reason){const j=byId(Number(t.dataset.reason));const r=await post('/api/rate',{id:j.id,interest:j.interest,reason:t.value,confidence:j.confidence});patch(r.job);return load();}
+  if(t.dataset.ready){const j=byId(Number(t.dataset.ready));const r=await post('/api/rate',{id:j.id,interest:j.interest,reason:j.reason,confidence:t.value});patch(r.job);toast('Saved');return;}
+  if(t.dataset.done){await post('/api/event-done',{id:Number(t.dataset.done),done:t.checked});return load();}
+  if(t.id==='bl'){browse.lane=t.value;return renderBrowse();} if(t.id==='bi'){browse.industry=t.value;return renderBrowse();}
+  if(t.id==='bt'){browse.tier=t.value;return renderBrowse();} if(t.id==='bs'){browse.status=t.value;return renderBrowse();}
+  if(t.id==='br'){browse.reviewed=t.checked;return renderBrowse();}
+});
+document.addEventListener('input',e=>{if(e.target.id==='bq'){browse.q=e.target.value;clearTimeout(renderBrowse.t);renderBrowse.t=setTimeout(()=>{renderBrowse();const q=$('#bq');q.focus();q.setSelectionRange(q.value.length,q.value.length);},250);}});
+document.addEventListener('focusout',async e=>{const t=e.target;if(t.dataset&&t.dataset.notes){const j=byId(Number(t.dataset.notes));if((j.notes||'')===t.value)return;
+  const r=await post('/api/rate',{id:j.id,interest:j.interest,reason:j.reason,confidence:j.confidence,notes:t.value});patch(r.job);toast('Note saved');}});
+load().catch(err=>{$('#view').innerHTML=`<p class="err">Could not load the hub: ${esc(err.message)}</p>`;});
+</script>
+</body>
+</html>

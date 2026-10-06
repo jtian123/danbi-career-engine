@@ -1,90 +1,123 @@
 #!/usr/bin/env python3
-"""Danbi's internship discovery, feedback and source-backed resume pipeline."""
-import argparse
-import json
-from pathlib import Path
-import fcntl
+"""Danbi's career engine: internship discovery, the Career Hub, and source-backed résumés.
 
-from src.engine import ROOT, atomic_json, load, merge_feedback, import_reviewed, render
+Daily:   python3 career.py scan            → output/scans/scan-DATE/ (review queue for Claude)
+         python3 career.py mark output/scans/scan-DATE   → today's list in the hub
+Hub:     python3 career.py hub serve | install | status | open
+"""
+import argparse
+import fcntl
+import json
+import sys
+from pathlib import Path
+
+from src.paths import ROOT, data
 
 
 def main():
-    p = argparse.ArgumentParser(description=__doc__)
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest='command', required=True)
-    r = sub.add_parser('build', help='Render a standalone dashboard from reviewed jobs')
-    r.add_argument('--output')
-    f = sub.add_parser('feedback', help='Import her exported ratings; rerank and rebuild')
-    f.add_argument('file')
-    review = sub.add_parser('review-import', help='Validate and upsert explicitly reviewed jobs, then rebuild')
-    review.add_argument('file')
-    sub.add_parser('queries', help='Generate current title-first web and Handshake research queries')
-    d = sub.add_parser('discover', help='Fetch public ATS boards into a review queue (does not auto-approve jobs)')
-    d.add_argument('--boards', default=str(ROOT / 'data/boards.json'))
-    resume = sub.add_parser('resume', help='Prepare a source-backed resume draft and review packet')
-    resume.add_argument('jd', help='Saved job-description text file')
-    resume.add_argument('--lane', default='product', choices=['product','commerce','insights','business','demand','finance','data'])
-    resume.add_argument('--label', default='resume')
-    resume.add_argument('--proposal', help='Assistant-written selection plan; new wording belongs in the master profile first')
-    resume.add_argument('--plan-only', action='store_true', help='Prepare content without rendering documents')
-    revise = sub.add_parser('resume-revise', help='Build a new revision; preserves the previous draft')
-    revise.add_argument('directory')
-    revise.add_argument('--proposal', required=True)
+    s = sub.add_parser('scan', help='Find new US internships and write a review queue')
+    s.add_argument('--queue', type=int, default=40, help='how many jobs Claude reviews (default 40)')
+    s.add_argument('--no-linkedin', action='store_true')
+    s.add_argument('--no-boards', action='store_true', help='skip the ~1,300 mid-size/startup boards (faster)')
+    s.add_argument('--workers', type=int, default=16)
+    m = sub.add_parser('mark', help="Validate Claude's reviews and put the day's list into the hub")
+    m.add_argument('scan_dir')
+    m.add_argument('--reviewed', help='default: SCAN_DIR/reviewed.json')
+    h = sub.add_parser('hub', help='The Career Hub (local dashboard, http://127.0.0.1:7768)')
+    h.add_argument('action', choices=['serve', 'install', 'uninstall', 'status', 'open'])
+    h.add_argument('--port', type=int, default=7768)
+    lead = sub.add_parser('lead', help='Add a job she found herself (Handshake, a fair, a referral)')
+    lead.add_argument('company'); lead.add_argument('title')
+    lead.add_argument('--url', default=''); lead.add_argument('--source', default='handshake')
+    lead.add_argument('--deadline', default=''); lead.add_argument('--notes', default='')
+    st = sub.add_parser('status', help='Set a job status from the command line')
+    st.add_argument('job_id', type=int)
+    st.add_argument('status')
+    nv = sub.add_parser('never', help='Never show this company again')
+    nv.add_argument('company')
+    sub.add_parser('prefs', help="Print what her ratings say so far (for Claude's planning)")
+    sub.add_parser('campus-sync', help='Load dated USC events from registry/campus.json into the hub')
+    sub.add_parser('import-legacy', help='One-time: move the Sep 2026 reviewed shortlist into the hub')
+
+    r = sub.add_parser('resume', help='Prepare a source-backed resume draft and review packet')
+    r.add_argument('jd', help='Saved job-description text file')
+    r.add_argument('--lane', default='product')
+    r.add_argument('--label', default='resume')
+    r.add_argument('--proposal', help='Assistant-written selection plan')
+    r.add_argument('--plan-only', action='store_true')
+    rv = sub.add_parser('resume-revise', help='Build a new revision; preserves the previous draft')
+    rv.add_argument('directory'); rv.add_argument('--proposal', required=True)
     rq = sub.add_parser('resume-qa', help='Recheck exact content and rendered artifacts')
     rq.add_argument('directory')
-    final = sub.add_parser('resume-finalize', help='Release only after factual, content and visual checks pass')
-    final.add_argument('directory')
-    final.add_argument('--content-review')
-    final.add_argument('--visual-review')
-    compare = sub.add_parser('resume-compare', help='Select the cleanest reviewed revision of one JD')
-    compare.add_argument('directories', nargs='+')
+    rf = sub.add_parser('resume-finalize', help='Release only after factual, content and visual checks pass')
+    rf.add_argument('directory'); rf.add_argument('--content-review'); rf.add_argument('--visual-review')
+    rc = sub.add_parser('resume-compare', help='Select the cleanest reviewed revision of one JD')
+    rc.add_argument('directories', nargs='+')
+    sub.add_parser('doctor', help='Check this machine has what the engine needs')
     args = p.parse_args()
-    with (ROOT / 'data/.lock').open('a') as lock:
+
+    if args.command == 'hub':
+        from src.hub import service
+        return service.run(args.action, args.port)
+    if args.command == 'doctor':
+        from src import doctor
+        return doctor.run()
+
+    data().mkdir(parents=True, exist_ok=True)
+    with (data() / '.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        if args.command.startswith('resume'):
+        if args.command == 'scan':
+            from src.scan.run import scan
+            out = scan(args.queue, not args.no_boards, not args.no_linkedin, args.workers,
+                       log=lambda msg: print(msg, file=sys.stderr, flush=True))
+            print(out)
+        elif args.command == 'mark':
+            from src.scan.run import mark
+            try:
+                mark(args.scan_dir, args.reviewed)
+            except ValueError as e:
+                p.error(str(e))
+        elif args.command == 'lead':
+            from src.hub import db
+            row = db.add_lead(args.company, args.title, args.url, args.source, notes=args.notes, deadline=args.deadline)
+            print(f"Added #{row['id']}: {row['company']} — {row['title']} (saved)")
+        elif args.command == 'status':
+            from src.hub import db
+            row = db.set_status(args.job_id, args.status)
+            print(f"#{row['id']} {row['company']} — {row['title']}: {row['status']}")
+        elif args.command == 'never':
+            from src.hub import db
+            print('added' if db.never_add(args.company) else 'already listed')
+        elif args.command == 'prefs':
+            from src.hub import db
+            print(json.dumps(db.preferences(), indent=2))
+        elif args.command == 'campus-sync':
+            from src.hub import db
+            print(db.sync_campus(json.loads((ROOT / 'registry/campus.json').read_text())), 'new events')
+        elif args.command == 'import-legacy':
+            from src.hub import legacy
+            print(legacy.import_legacy())
+        elif args.command.startswith('resume'):
             from src.resume import pipeline
             try:
                 if args.command == 'resume':
-                    print(pipeline.build(args.jd,args.lane,args.label,args.proposal,args.plan_only))
+                    print(pipeline.build(args.jd, args.lane, args.label, args.proposal, args.plan_only))
                 elif args.command == 'resume-revise':
-                    directory=Path(args.directory)
-                    print(pipeline.build(directory/'job_description.txt',label='revision',proposal=args.proposal,previous=directory))
+                    d = Path(args.directory)
+                    print(pipeline.build(d / 'job_description.txt', label='revision', proposal=args.proposal, previous=d))
                 elif args.command == 'resume-qa':
-                    *_, findings=pipeline.check_build(args.directory)
-                    print(json.dumps(findings,indent=2))
+                    *_, findings = pipeline.check_build(args.directory)
+                    print(json.dumps(findings, indent=2))
                 elif args.command == 'resume-finalize':
-                    print(pipeline.finalize(args.directory,args.content_review,args.visual_review))
+                    print(pipeline.finalize(args.directory, args.content_review, args.visual_review))
                 elif args.command == 'resume-compare':
                     print(pipeline.compare_builds(args.directories))
-            except (ValueError,RuntimeError,KeyError,FileNotFoundError) as error:
+            except (ValueError, RuntimeError, KeyError, FileNotFoundError) as error:
                 p.error(str(error))
-        elif args.command == 'review-import':
-            result = import_reviewed(load(ROOT / 'data/jobs.json', []), load(args.file), load(ROOT / 'data/lanes.json'))
-            atomic_json(ROOT / 'data/jobs.json', result)
-            path, _ = render()
-            print('Reviewed jobs imported; dashboard rebuilt:', path)
-        elif args.command == 'feedback':
-            result = merge_feedback(load(ROOT / 'data/feedback.json', {}), load(args.file), load(ROOT / 'data/jobs.json'))
-            atomic_json(ROOT / 'data/feedback.json', result)
-            path, _ = render()
-            print('Feedback imported; dashboard rebuilt:', path)
-        elif args.command == 'build':
-            path, data = render(output=args.output)
-            print(path)
-            print(str(len(data['jobs'])) + ' reviewed records; ' + str(len(data['today_ids'])) + ' priority applications')
-        elif args.command == 'queries':
-            from src.discovery import query_plan
-            path = ROOT / 'output/search_plan.json'
-            atomic_json(path, query_plan(load(ROOT / 'data/lanes.json')))
-            print(path)
-        elif args.command == 'discover':
-            from src.discovery import discover
-            result = discover(load(args.boards), load(ROOT / 'data/lanes.json'))
-            stamp = result['run_at'].replace(':', '').replace('+', '_')
-            path = ROOT / 'output' / ('discovery_' + stamp + '.json')
-            atomic_json(path, result)
-            print(path)
-            print(str(len(result['candidates'])) + ' candidates awaiting review; ' + str(len(result['sources'])) + ' source results recorded')
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main() or 0)

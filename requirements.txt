@@ -1,0 +1,7 @@
+# Discovery and the Career Hub use only the Python standard library (3.8+).
+# These are for résumé rendering and checks (plus LibreOffice, installed separately):
+python-docx>=0.8
+pypdf>=3.0
+pdfplumber>=0.10
+pypdfium2>=4.0
+pillow>=9.0

@@ -1,0 +1,2496 @@
+{
+ "note": "Big employers searched directly through their own public career APIs (no login). tier=enterprise gets the big-employer priority. large_names only tags employers found through other sources. Workday sites were verified by a live probe on 2026-10-06; re-probe if one starts failing (the scanner records a fail streak per board).",
+ "employers": [
+  {
+   "name": "Adobe",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "adobe",
+     "wd": 5,
+     "site": "external_experienced"
+    }
+   ],
+   "intern_hits_probe": 171
+  },
+  {
+   "name": "Salesforce",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "salesforce",
+     "wd": 12,
+     "site": "External_Career_Site"
+    }
+   ],
+   "intern_hits_probe": 750
+  },
+  {
+   "name": "NVIDIA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nvidia",
+     "wd": 5,
+     "site": "NVIDIAExternalCareerSite"
+    }
+   ],
+   "intern_hits_probe": 1058
+  },
+  {
+   "name": "Intel",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "intel",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 374
+  },
+  {
+   "name": "HP Inc.",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "hp",
+     "wd": 5,
+     "site": "ExternalCareerSite"
+    }
+   ],
+   "intern_hits_probe": 492
+  },
+  {
+   "name": "Hewlett Packard Enterprise",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "hpe",
+     "wd": 5,
+     "site": "Jobsathpe"
+    }
+   ],
+   "intern_hits_probe": 923
+  },
+  {
+   "name": "Workday",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "workday",
+     "wd": 5,
+     "site": "Workday"
+    }
+   ],
+   "intern_hits_probe": 163
+  },
+  {
+   "name": "Autodesk",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "autodesk",
+     "wd": 1,
+     "site": "Ext"
+    }
+   ],
+   "intern_hits_probe": 318
+  },
+  {
+   "name": "PayPal",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "paypal",
+     "wd": 1,
+     "site": "jobs"
+    }
+   ],
+   "intern_hits_probe": 177
+  },
+  {
+   "name": "Zillow",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "zillow",
+     "wd": 5,
+     "site": "Zillow_Group_External"
+    }
+   ],
+   "intern_hits_probe": 44
+  },
+  {
+   "name": "Mastercard",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mastercard",
+     "wd": 1,
+     "site": "CorporateCareers"
+    }
+   ],
+   "intern_hits_probe": 690
+  },
+  {
+   "name": "Capital One",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "capitalone",
+     "wd": 12,
+     "site": "Capital_One"
+    }
+   ],
+   "intern_hits_probe": 1129
+  },
+  {
+   "name": "Wells Fargo",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "wf",
+     "wd": 1,
+     "site": "WellsFargoJobs"
+    }
+   ],
+   "intern_hits_probe": 704
+  },
+  {
+   "name": "U.S. Bank",
+   "aliases": [
+    "US Bank"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "usbank",
+     "wd": 1,
+     "site": "US_Bank_Careers"
+    }
+   ],
+   "intern_hits_probe": 1205
+  },
+  {
+   "name": "PNC",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pnc",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1348
+  },
+  {
+   "name": "Truist",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "truist",
+     "wd": 1,
+     "site": "Careers"
+    }
+   ],
+   "intern_hits_probe": 980
+  },
+  {
+   "name": "Fidelity Investments",
+   "aliases": [
+    "Fidelity"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fmr",
+     "wd": 1,
+     "site": "FidelityCareers"
+    }
+   ],
+   "intern_hits_probe": 302
+  },
+  {
+   "name": "BlackRock",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "blackrock",
+     "wd": 1,
+     "site": "BlackRock_Professional"
+    }
+   ],
+   "intern_hits_probe": 179
+  },
+  {
+   "name": "State Street",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "statestreet",
+     "wd": 1,
+     "site": "Global"
+    }
+   ],
+   "intern_hits_probe": 633
+  },
+  {
+   "name": "Northern Trust",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ntrs",
+     "wd": 1,
+     "site": "northerntrust"
+    }
+   ],
+   "intern_hits_probe": 337
+  },
+  {
+   "name": "Travelers",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "travelers",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 281
+  },
+  {
+   "name": "Allstate",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "allstate",
+     "wd": 5,
+     "site": "allstate_careers"
+    }
+   ],
+   "intern_hits_probe": 357
+  },
+  {
+   "name": "Nationwide",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nationwide",
+     "wd": 1,
+     "site": "Nationwide_Career"
+    }
+   ],
+   "intern_hits_probe": 130
+  },
+  {
+   "name": "Prudential",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "insurance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pru",
+     "wd": 5,
+     "site": "Careers"
+    }
+   ],
+   "intern_hits_probe": 106
+  },
+  {
+   "name": "Humana",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "humana",
+     "wd": 5,
+     "site": "Humana_External_Career_Site"
+    }
+   ],
+   "intern_hits_probe": 208
+  },
+  {
+   "name": "Cigna",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cigna",
+     "wd": 5,
+     "site": "cignacareers"
+    }
+   ],
+   "intern_hits_probe": 506
+  },
+  {
+   "name": "Elevance Health",
+   "aliases": [
+    "Anthem"
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "elevancehealth",
+     "wd": 1,
+     "site": "ANT"
+    }
+   ],
+   "intern_hits_probe": 77
+  },
+  {
+   "name": "CVS Health",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cvshealth",
+     "wd": 1,
+     "site": "CVS_Health_Careers"
+    }
+   ],
+   "intern_hits_probe": 4074
+  },
+  {
+   "name": "Johnson & Johnson",
+   "aliases": [
+    "J&J",
+    "Johnson and Johnson"
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "jj",
+     "wd": 5,
+     "site": "JJ"
+    }
+   ],
+   "intern_hits_probe": 1319
+  },
+  {
+   "name": "Pfizer",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pfizer",
+     "wd": 1,
+     "site": "PfizerCareers"
+    }
+   ],
+   "intern_hits_probe": 238
+  },
+  {
+   "name": "Abbott",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "abbott",
+     "wd": 5,
+     "site": "abbottcareers"
+    }
+   ],
+   "intern_hits_probe": 1981
+  },
+  {
+   "name": "Medtronic",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "medtronic",
+     "wd": 1,
+     "site": "MedtronicCareers"
+    }
+   ],
+   "intern_hits_probe": 754
+  },
+  {
+   "name": "Stryker",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "stryker",
+     "wd": 1,
+     "site": "StrykerCareers"
+    }
+   ],
+   "intern_hits_probe": 749
+  },
+  {
+   "name": "Merck",
+   "aliases": [
+    "MSD",
+    "Merck & Co."
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "msd",
+     "wd": 5,
+     "site": "SearchJobs"
+    }
+   ],
+   "intern_hits_probe": 664
+  },
+  {
+   "name": "Bristol Myers Squibb",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "bristolmyerssquibb",
+     "wd": 5,
+     "site": "BMS"
+    }
+   ],
+   "intern_hits_probe": 440
+  },
+  {
+   "name": "Amgen",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "amgen",
+     "wd": 1,
+     "site": "Careers"
+    }
+   ],
+   "intern_hits_probe": 834
+  },
+  {
+   "name": "Gilead Sciences",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gilead",
+     "wd": 1,
+     "site": "gileadcareers"
+    }
+   ],
+   "intern_hits_probe": 508
+  },
+  {
+   "name": "Genentech / Roche",
+   "aliases": [
+    "Genentech",
+    "Roche"
+   ],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "roche",
+     "wd": 3,
+     "site": "roche-ext"
+    }
+   ],
+   "intern_hits_probe": 763
+  },
+  {
+   "name": "McKesson",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mckesson",
+     "wd": 3,
+     "site": "External_Careers"
+    }
+   ],
+   "intern_hits_probe": 301
+  },
+  {
+   "name": "Cardinal Health",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cardinalhealth",
+     "wd": 1,
+     "site": "EXT"
+    }
+   ],
+   "intern_hits_probe": 657
+  },
+  {
+   "name": "Cencora",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "myhrabc",
+     "wd": 5,
+     "site": "Global"
+    }
+   ],
+   "intern_hits_probe": 461
+  },
+  {
+   "name": "IQVIA",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "iqvia",
+     "wd": 1,
+     "site": "IQVIA"
+    }
+   ],
+   "intern_hits_probe": 1009
+  },
+  {
+   "name": "Target",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "target",
+     "wd": 5,
+     "site": "targetcareers"
+    }
+   ],
+   "intern_hits_probe": 335
+  },
+  {
+   "name": "Nike",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nike",
+     "wd": 1,
+     "site": "nke"
+    }
+   ],
+   "intern_hits_probe": 189
+  },
+  {
+   "name": "Gap Inc.",
+   "aliases": [
+    "Gap",
+    "Old Navy",
+    "Banana Republic",
+    "Athleta"
+   ],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gapinc",
+     "wd": 1,
+     "site": "GAPINC"
+    }
+   ],
+   "intern_hits_probe": 81
+  },
+  {
+   "name": "TJX Companies",
+   "aliases": [
+    "TJX",
+    "T.J. Maxx",
+    "Marshalls",
+    "HomeGoods"
+   ],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tjx",
+     "wd": 1,
+     "site": "TJX_EXTERNAL"
+    }
+   ],
+   "intern_hits_probe": 9069
+  },
+  {
+   "name": "The Home Depot",
+   "aliases": [
+    "Home Depot"
+   ],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "homedepot",
+     "wd": 5,
+     "site": "CareerDepot"
+    }
+   ],
+   "intern_hits_probe": 306
+  },
+  {
+   "name": "Lowe's",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "lowes",
+     "wd": 5,
+     "site": "LWS_External_CS"
+    }
+   ],
+   "intern_hits_probe": 190
+  },
+  {
+   "name": "Nordstrom",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nordstrom",
+     "wd": 501,
+     "site": "nordstrom_careers"
+    }
+   ],
+   "intern_hits_probe": 60
+  },
+  {
+   "name": "Procter & Gamble",
+   "aliases": [
+    "P&G",
+    "Procter and Gamble"
+   ],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pg",
+     "wd": 5,
+     "site": "1000"
+    }
+   ],
+   "intern_hits_probe": 531
+  },
+  {
+   "name": "Coca-Cola",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "coke",
+     "wd": 1,
+     "site": "coca-cola-careers"
+    }
+   ],
+   "intern_hits_probe": 103
+  },
+  {
+   "name": "Kraft Heinz",
+   "aliases": [
+    "The Kraft Heinz Company"
+   ],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "heinz",
+     "wd": 1,
+     "site": "KraftHeinz_Careers"
+    }
+   ],
+   "intern_hits_probe": 650
+  },
+  {
+   "name": "Mondelez",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mdlz",
+     "wd": 3,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1283
+  },
+  {
+   "name": "Kimberly-Clark",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "kimberlyclark",
+     "wd": 1,
+     "site": "GLOBAL"
+    }
+   ],
+   "intern_hits_probe": 70
+  },
+  {
+   "name": "Conagra Brands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "conagrabrands",
+     "wd": 1,
+     "site": "careers_us"
+    }
+   ],
+   "intern_hits_probe": 159
+  },
+  {
+   "name": "Chipotle",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "food",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chipotle",
+     "wd": 5,
+     "site": "chipotlecareers"
+    }
+   ],
+   "intern_hits_probe": 22
+  },
+  {
+   "name": "Kenvue",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "kenvue",
+     "wd": 5,
+     "site": "kenvue"
+    }
+   ],
+   "intern_hits_probe": 108
+  },
+  {
+   "name": "Constellation Brands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cbrands",
+     "wd": 5,
+     "site": "CBI_External_Careers"
+    }
+   ],
+   "intern_hits_probe": 60
+  },
+  {
+   "name": "Disney",
+   "aliases": [
+    "The Walt Disney Company",
+    "Walt Disney",
+    "Disney Entertainment"
+   ],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "disney",
+     "wd": 5,
+     "site": "disneycareer"
+    }
+   ],
+   "intern_hits_probe": 500
+  },
+  {
+   "name": "Warner Bros. Discovery",
+   "aliases": [
+    "Warner Bros",
+    "WBD"
+   ],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "warnerbros",
+     "wd": 5,
+     "site": "global"
+    }
+   ],
+   "intern_hits_probe": 195
+  },
+  {
+   "name": "Sony",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "sonyglobal",
+     "wd": 1,
+     "site": "SonyGlobalCareers"
+    }
+   ],
+   "intern_hits_probe": 69
+  },
+  {
+   "name": "Universal Music Group",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "umusic",
+     "wd": 5,
+     "site": "UMGUS"
+    }
+   ],
+   "intern_hits_probe": 20
+  },
+  {
+   "name": "Live Nation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "livenation",
+     "wd": 503,
+     "site": "LNExternalSite"
+    }
+   ],
+   "intern_hits_probe": 1286
+  },
+  {
+   "name": "Fox Corporation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fox",
+     "wd": 1,
+     "site": "Domestic"
+    }
+   ],
+   "intern_hits_probe": 227
+  },
+  {
+   "name": "General Motors",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "generalmotors",
+     "wd": 5,
+     "site": "Careers_GM"
+    }
+   ],
+   "intern_hits_probe": 353
+  },
+  {
+   "name": "Toyota North America",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "automotive",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "toyota",
+     "wd": 503,
+     "site": "TMNA"
+    }
+   ],
+   "intern_hits_probe": 47
+  },
+  {
+   "name": "Caterpillar",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cat",
+     "wd": 5,
+     "site": "CaterpillarCareers"
+    }
+   ],
+   "intern_hits_probe": 371
+  },
+  {
+   "name": "3M",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "industrial",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "3m",
+     "wd": 1,
+     "site": "Search"
+    }
+   ],
+   "intern_hits_probe": 690
+  },
+  {
+   "name": "GE Aerospace",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "geaerospace",
+     "wd": 5,
+     "site": "GE_ExternalSite"
+    }
+   ],
+   "intern_hits_probe": 274
+  },
+  {
+   "name": "GE Vernova",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gevernova",
+     "wd": 5,
+     "site": "Vernova_ExternalSite"
+    }
+   ],
+   "intern_hits_probe": 1234
+  },
+  {
+   "name": "GE HealthCare",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "gehc",
+     "wd": 5,
+     "site": "GEHC_ExternalSite"
+    }
+   ],
+   "intern_hits_probe": 504
+  },
+  {
+   "name": "Boeing",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "boeing",
+     "wd": 1,
+     "site": "EXTERNAL_CAREERS"
+    }
+   ],
+   "intern_hits_probe": 495
+  },
+  {
+   "name": "RTX",
+   "aliases": [
+    "Raytheon",
+    "Pratt & Whitney",
+    "Collins Aerospace"
+   ],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "globalhr",
+     "wd": 5,
+     "site": "REC_RTX_Ext_Gateway"
+    }
+   ],
+   "intern_hits_probe": 2445
+  },
+  {
+   "name": "Northrop Grumman",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "aerospace",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ngc",
+     "wd": 1,
+     "site": "Northrop_Grumman_External_Site"
+    }
+   ],
+   "intern_hits_probe": 1597
+  },
+  {
+   "name": "FedEx",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "logistics",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "fedex",
+     "wd": 1,
+     "site": "FXE-LAC_External_Career_Site"
+    }
+   ],
+   "intern_hits_probe": 65
+  },
+  {
+   "name": "Southwest Airlines",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "swa",
+     "wd": 1,
+     "site": "external"
+    }
+   ],
+   "intern_hits_probe": 52
+  },
+  {
+   "name": "Expedia Group",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "expedia",
+     "wd": 108,
+     "site": "search"
+    }
+   ],
+   "intern_hits_probe": 130
+  },
+  {
+   "name": "T-Mobile",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tmobile",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "Verizon",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "verizon",
+     "wd": 12,
+     "site": "verizon-careers"
+    }
+   ],
+   "intern_hits_probe": 992
+  },
+  {
+   "name": "AT&T",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "telecom",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "att",
+     "wd": 1,
+     "site": "ATTGeneral"
+    }
+   ],
+   "intern_hits_probe": 1088
+  },
+  {
+   "name": "Chevron",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "energy",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chevron",
+     "wd": 5,
+     "site": "jobs"
+    }
+   ],
+   "intern_hits_probe": 93
+  },
+  {
+   "name": "PwC",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pwc",
+     "wd": 3,
+     "site": "Global_Experienced_Careers"
+    }
+   ],
+   "intern_hits_probe": 2136
+  },
+  {
+   "name": "Booz Allen",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "consulting",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "bah",
+     "wd": 1,
+     "site": "BAH_Jobs"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "Samsung Electronics America",
+   "aliases": [
+    "Samsung"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": true,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "sec",
+     "wd": 3,
+     "site": "Samsung_Careers"
+    }
+   ],
+   "intern_hits_probe": 247
+  },
+  {
+   "name": "Visa",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "fintech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "visa",
+     "wd": 5,
+     "site": "Visa"
+    }
+   ],
+   "intern_hits_probe": 470
+  },
+  {
+   "name": "Bank of America",
+   "aliases": [
+    "BofA"
+   ],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ghr",
+     "wd": 1,
+     "site": "Lateral-US"
+    }
+   ],
+   "intern_hits_probe": 961
+  },
+  {
+   "name": "Morgan Stanley",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "ms",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 696
+  },
+  {
+   "name": "Citi",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "citi",
+     "wd": 5,
+     "site": "2"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "S&P Global",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "spgi",
+     "wd": 5,
+     "site": "SPGI_Careers"
+    }
+   ],
+   "intern_hits_probe": 261
+  },
+  {
+   "name": "Nasdaq",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "nasdaq",
+     "wd": 1,
+     "site": "Global_External_Site"
+    }
+   ],
+   "intern_hits_probe": 80
+  },
+  {
+   "name": "Equifax",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "equifax",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 121
+  },
+  {
+   "name": "TransUnion",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "finance",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "transunion",
+     "wd": 5,
+     "site": "TransUnion"
+    }
+   ],
+   "intern_hits_probe": 182
+  },
+  {
+   "name": "Cisco",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "cisco",
+     "wd": 5,
+     "site": "Cisco_Careers"
+    }
+   ],
+   "intern_hits_probe": 593
+  },
+  {
+   "name": "Qualcomm",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "qualcomm",
+     "wd": 12,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 0
+  },
+  {
+   "name": "Micron",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "micron",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 3107
+  },
+  {
+   "name": "Applied Materials",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "amat",
+     "wd": 1,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 1413
+  },
+  {
+   "name": "Broadcom",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "broadcom",
+     "wd": 1,
+     "site": "External_Career"
+    }
+   ],
+   "intern_hits_probe": 93
+  },
+  {
+   "name": "Mars",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "mars",
+     "wd": 3,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 317
+  },
+  {
+   "name": "Unilever",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "cpg",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "unilever",
+     "wd": 3,
+     "site": "Unilever_Experienced_Professionals"
+    }
+   ],
+   "intern_hits_probe": 105
+  },
+  {
+   "name": "Centene",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "centene",
+     "wd": 5,
+     "site": "Centene_External"
+    }
+   ],
+   "intern_hits_probe": 112
+  },
+  {
+   "name": "Edwards Lifesciences",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "edwards",
+     "wd": 5,
+     "site": "EdwardsCareers"
+    }
+   ],
+   "intern_hits_probe": 196
+  },
+  {
+   "name": "Illumina",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "healthcare",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "illumina",
+     "wd": 1,
+     "site": "illumina-careers"
+    }
+   ],
+   "intern_hits_probe": 120
+  },
+  {
+   "name": "Chewy",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "chewy",
+     "wd": 5,
+     "site": "External"
+    }
+   ],
+   "intern_hits_probe": 72
+  },
+  {
+   "name": "Tapestry",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "tapestry",
+     "wd": 108,
+     "site": "tapestry_careers"
+    }
+   ],
+   "intern_hits_probe": 2000
+  },
+  {
+   "name": "PVH",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "pvh",
+     "wd": 1,
+     "site": "PVH_Careers"
+    }
+   ],
+   "intern_hits_probe": 620
+  },
+  {
+   "name": "VF Corporation",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "retail",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "vfc",
+     "wd": 5,
+     "site": "vfc_careers"
+    }
+   ],
+   "intern_hits_probe": 986
+  },
+  {
+   "name": "Las Vegas Sands",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "travel",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "sands",
+     "wd": 1,
+     "site": "sands_careers"
+    }
+   ],
+   "intern_hits_probe": 10
+  },
+  {
+   "name": "Amazon",
+   "aliases": [
+    "Amazon.com",
+    "AWS",
+    "Amazon Web Services"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "amazon"
+    }
+   ]
+  },
+  {
+   "name": "Microsoft",
+   "aliases": [
+    "LinkedIn"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "microsoft"
+    }
+   ]
+  },
+  {
+   "name": "Apple",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "apple"
+    }
+   ]
+  },
+  {
+   "name": "Google",
+   "aliases": [
+    "Alphabet",
+    "YouTube"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": true,
+   "ats": [
+    {
+     "type": "google"
+    }
+   ]
+  },
+  {
+   "name": "Netflix",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "eightfold",
+     "host": "explore.jobs.netflix.net",
+     "domain": "netflix.com"
+    }
+   ]
+  },
+  {
+   "name": "Uber",
+   "aliases": [],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "oracle",
+     "host": "iaziqy.fa.ocs.oraclecloud.com",
+     "site": "CX_1",
+     "public_site": "UberCareers"
+    }
+   ]
+  },
+  {
+   "name": "Snap",
+   "aliases": [
+    "Snapchat",
+    "Snap Inc."
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "snapchat",
+     "site": "snap",
+     "host": "wd1.myworkdaysite.com"
+    }
+   ]
+  },
+  {
+   "name": "Meta",
+   "aliases": [
+    "Facebook",
+    "Instagram",
+    "WhatsApp"
+   ],
+   "tier": "enterprise",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": []
+  },
+  {
+   "name": "TikTok",
+   "aliases": [
+    "ByteDance"
+   ],
+   "tier": "enterprise",
+   "industry": "media",
+   "korean": false,
+   "usc": true,
+   "ats": []
+  },
+  {
+   "name": "Workiva",
+   "aliases": [],
+   "tier": "large",
+   "industry": "tech",
+   "korean": false,
+   "usc": false,
+   "ats": [
+    {
+     "type": "workday",
+     "tenant": "workiva",
+     "wd": 503,
+     "site": "careers"
+    }
+   ]
+  }
+ ],
+ "large_names": [
+  "3M",
+  "ABC",
+  "AECOM",
+  "AT&T",
+  "AbbVie",
+  "Abbott",
+  "Abercrombie & Fitch",
+  "Accenture",
+  "Activision",
+  "Adidas",
+  "Aflac",
+  "Airbnb",
+  "Albertsons",
+  "Alcon",
+  "Allianz",
+  "Ally",
+  "American Airlines",
+  "American Eagle",
+  "American Express",
+  "Amgen",
+  "Amorepacific",
+  "Anheuser-Busch",
+  "Aon",
+  "Applied Materials",
+  "Aramark",
+  "Arrow Electronics",
+  "AutoZone",
+  "Autodesk",
+  "Avis",
+  "BCG",
+  "BNY",
+  "BNY Mellon",
+  "Bain",
+  "Bain & Company",
+  "Ball",
+  "Bath & Body Works",
+  "Bayer",
+  "Becton Dickinson",
+  "Bed Bath",
+  "Berkshire Hathaway",
+  "Best Buy",
+  "Biogen",
+  "BlackRock",
+  "Blackstone",
+  "Blizzard",
+  "Bloomberg",
+  "Bloomingdale's",
+  "Booking Holdings",
+  "Booz Allen Hamilton",
+  "Bose",
+  "Boston Consulting Group",
+  "Bristol-Myers Squibb",
+  "Broadcom",
+  "Burlington",
+  "ByteDance",
+  "C.H. Robinson",
+  "CBRE",
+  "CBS",
+  "CDW",
+  "CJ America",
+  "CME Group",
+  "CNH",
+  "CVS",
+  "Campbell Soup",
+  "Campbell's",
+  "Canva",
+  "CarMax",
+  "Cardinal Health",
+  "Cargill",
+  "Carrier",
+  "Carter's",
+  "Caterpillar",
+  "Centene",
+  "Charles Schwab",
+  "Charter Communications",
+  "Chevron",
+  "Chewy",
+  "Chipotle",
+  "Chobani",
+  "Chubb",
+  "Church & Dwight",
+  "Cigna",
+  "Cintas",
+  "Cisco",
+  "Citi",
+  "Citigroup",
+  "Citizens",
+  "Clorox",
+  "Coca-Cola",
+  "Cognizant",
+  "Colgate-Palmolive",
+  "Columbia Sportswear",
+  "Comcast",
+  "ConocoPhillips",
+  "Constellation",
+  "Corning",
+  "Costco",
+  "Coty",
+  "Coupang",
+  "Cox",
+  "Crocs",
+  "CrowdStrike",
+  "Cummins",
+  "DICK'S Sporting Goods",
+  "Danaher",
+  "Darden",
+  "Deere",
+  "Dell",
+  "Deloitte",
+  "Delta",
+  "Dick's Sporting Goods",
+  "Discover",
+  "Disney",
+  "Dollar General",
+  "Dollar Tree",
+  "DoorDash",
+  "Dow",
+  "DuPont",
+  "Duke Energy",
+  "ESPN",
+  "EY",
+  "Ecolab",
+  "Edgewell",
+  "Edward Jones",
+  "Electronic Arts",
+  "Elevance",
+  "Eli Lilly",
+  "Emerson",
+  "Enterprise Mobility",
+  "Enterprise Rent-A-Car",
+  "Epic Games",
+  "Ernst & Young",
+  "Estee Lauder",
+  "Estée Lauder",
+  "Etsy",
+  "Expedia",
+  "ExxonMobil",
+  "Fannie Mae",
+  "FedEx",
+  "Fidelity",
+  "Fifth Third",
+  "Fiserv",
+  "Foot Locker",
+  "Ford",
+  "Ford Motor",
+  "Fox",
+  "Freddie Mac",
+  "Frito-Lay",
+  "GE",
+  "GEICO",
+  "Gap",
+  "Gartner",
+  "General Dynamics",
+  "General Mills",
+  "General Motors",
+  "Gilead",
+  "Goldman Sachs",
+  "Goodyear",
+  "Grainger",
+  "H-E-B",
+  "HCA Healthcare",
+  "HP",
+  "HYBE",
+  "Haleon",
+  "Halliburton",
+  "Hallmark",
+  "Hanesbrands",
+  "Hasbro",
+  "Henkel",
+  "Hershey",
+  "Hewlett Packard",
+  "Hilton",
+  "Home Depot",
+  "Honda",
+  "Honeywell",
+  "Hormel",
+  "Hormel Foods",
+  "Humana",
+  "Hyatt",
+  "Hyundai",
+  "Hyundai Capital America",
+  "Hyundai Motor America",
+  "IBM",
+  "Instacart",
+  "Intel",
+  "Intuit",
+  "J.Crew",
+  "J.P. Morgan",
+  "JPMorgan",
+  "JPMorgan Chase",
+  "Jabil",
+  "Jacobs",
+  "Johnson & Johnson",
+  "Johnson Controls",
+  "KPMG",
+  "Kaiser Permanente",
+  "Kellanova",
+  "Kellogg",
+  "Kenvue",
+  "Kering",
+  "Keurig Dr Pepper",
+  "KeyBank",
+  "Kia",
+  "Kia America",
+  "Kimberly-Clark",
+  "Koch",
+  "Kohl's",
+  "Kohler",
+  "Korean Air",
+  "Kraft Heinz",
+  "Krafton",
+  "Kroger",
+  "L'Oreal",
+  "L'Oréal",
+  "LEGO",
+  "LG",
+  "LVMH",
+  "Land O'Lakes",
+  "Lands' End",
+  "Las Vegas Sands",
+  "Lennar",
+  "Levi's",
+  "Liberty Mutual",
+  "Lilly",
+  "Live Nation",
+  "Lockheed Martin",
+  "Lotte",
+  "Lowe's",
+  "Lululemon",
+  "Lyft",
+  "MGM Resorts",
+  "Macy's",
+  "Marathon",
+  "Marriott",
+  "Mars",
+  "Marsh McLennan",
+  "Mastercard",
+  "Mattel",
+  "McDonald's",
+  "McKesson",
+  "McKinsey",
+  "McKinsey & Company",
+  "Medtronic",
+  "Meijer",
+  "Merck",
+  "MetLife",
+  "Meta",
+  "Micron",
+  "Microsoft",
+  "Milliken",
+  "Moderna",
+  "Molina",
+  "Mondelez",
+  "Moody's",
+  "Morgan Stanley",
+  "Motorola",
+  "NBCUniversal",
+  "NVIDIA",
+  "Nasdaq",
+  "Nationwide",
+  "Neiman Marcus",
+  "Nestle",
+  "Nestlé",
+  "Netflix",
+  "Netmarble",
+  "New Balance",
+  "Newell Brands",
+  "Nexon",
+  "Nike",
+  "Nintendo",
+  "Nissan",
+  "Nongshim",
+  "Nordstrom",
+  "Nordstrom Rack",
+  "Northrop Grumman",
+  "Northwestern Mutual",
+  "Novartis",
+  "Optum",
+  "Oracle",
+  "Otis",
+  "PNC",
+  "PPG",
+  "PVH",
+  "Paramount",
+  "Patagonia",
+  "PayPal",
+  "Peloton",
+  "PepsiCo",
+  "Pfizer",
+  "Philip Morris",
+  "Pinterest",
+  "Procter & Gamble",
+  "Progressive",
+  "Prudential",
+  "Publix",
+  "PulteGroup",
+  "PwC",
+  "Qualcomm",
+  "REI",
+  "RTX",
+  "Ralph Lauren",
+  "Raytheon",
+  "Red Bull",
+  "Reddit",
+  "Regeneron",
+  "Revlon",
+  "Riot Games",
+  "Rivian",
+  "Roblox",
+  "Ross",
+  "S&P Global",
+  "S.C. Johnson",
+  "SAP",
+  "SC Johnson",
+  "SK hynix",
+  "Saks",
+  "Salesforce",
+  "Sam's Club",
+  "Samsung",
+  "Samsung Research America",
+  "Samsung Semiconductor",
+  "Sanofi",
+  "Schneider Electric",
+  "Sephora",
+  "ServiceNow",
+  "Shell",
+  "Sherwin-Williams",
+  "Shiseido",
+  "Shopify",
+  "Siemens",
+  "Sirius XM",
+  "Skechers",
+  "Snap",
+  "Sony",
+  "Sony Pictures",
+  "SoundCloud",
+  "Southwest",
+  "Southwest Airlines",
+  "Spectrum Brands",
+  "Spotify",
+  "Starbucks",
+  "State Farm",
+  "State Street",
+  "Stellantis",
+  "Stryker",
+  "Subaru",
+  "Sysco",
+  "T-Mobile",
+  "TD Bank",
+  "TJX",
+  "Take-Two",
+  "Takeda",
+  "Tapestry",
+  "Target",
+  "Tesla",
+  "Texas Instruments",
+  "Thermo Fisher",
+  "Tiffany",
+  "TikTok",
+  "Toyota",
+  "Travelers",
+  "Truist",
+  "Tyson",
+  "U.S. Bank",
+  "UPS",
+  "USAA",
+  "Uber",
+  "Ubisoft",
+  "Ulta",
+  "Ulta Beauty",
+  "Under Armour",
+  "Unilever",
+  "Union Pacific",
+  "United Airlines",
+  "UnitedHealth",
+  "UnitedHealth Group",
+  "Universal Music",
+  "VF",
+  "Verizon",
+  "Vertex",
+  "Victoria's Secret",
+  "Visa",
+  "Volkswagen",
+  "WEBTOON",
+  "Walgreens",
+  "Walmart",
+  "Warner Bros",
+  "Wayfair",
+  "Wegmans",
+  "Wells Fargo",
+  "Western Digital",
+  "Whirlpool",
+  "Whoop",
+  "Williams-Sonoma",
+  "Workday",
+  "Xerox",
+  "Yum! Brands",
+  "Zillow",
+  "Zoetis",
+  "e.l.f. Beauty",
+  "eBay",
+  "iHeartMedia"
+ ],
+ "usc_note": "usc=true: recruits at USC (Viterbi partner, trek or info-session host) or is a named employer of USC Viterbi / MS Analytics graduates (registry/campus.json recruiting_employers).",
+ "usc_recruiters": [
+  "Abbott",
+  "Lockheed Martin",
+  "Qualcomm",
+  "Visa",
+  "Bloomberg",
+  "Boeing",
+  "Microsoft",
+  "Google",
+  "FBI",
+  "Qvest.US",
+  "Griffith Company",
+  "McKinsey & Company",
+  "Whatnot",
+  "Secretariat",
+  "The Trade Desk",
+  "SpaceX",
+  "The Aerospace Corporation",
+  "Farmers Insurance",
+  "Verizon",
+  "EY",
+  "Accenture",
+  "KPMG",
+  "Tencent",
+  "Walmart",
+  "Zillow Group",
+  "TripAdvisor",
+  "Medtronic",
+  "NVIDIA",
+  "Cisco",
+  "TikTok",
+  "NBA",
+  "Rakuten International",
+  "Creative Artists Agency (CAA)",
+  "Stifel",
+  "E. & J. Gallo (GALLO)",
+  "Financial Technology Partners",
+  "Central Intelligence Agency",
+  "County of Los Angeles",
+  "Epic",
+  "KRAFTON",
+  "Semler Brossy",
+  "Henkel",
+  "New York Life",
+  "Fabletics",
+  "PacSun",
+  "Eggs Unlimited",
+  "Amazon",
+  "UniUni Logistics",
+  "Tesla",
+  "Salesforce",
+  "Alibaba",
+  "eBay",
+  "Airbnb",
+  "Apple",
+  "Adobe",
+  "Deloitte",
+  "PwC",
+  "Boston Consulting Group",
+  "Goldman Sachs",
+  "JPMorganChase",
+  "Bank of America",
+  "IBM",
+  "Intel",
+  "Oracle",
+  "Palantir Technologies",
+  "PayPal",
+  "Honeywell"
+ ]
+}

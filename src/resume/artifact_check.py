@@ -1,4 +1,4 @@
-"""Inspect rendered artifacts using the bundled PDF libraries; no visual verdict inferred."""
+"""Inspect rendered artifacts (pypdf + pdfplumber); no visual verdict inferred. Fill band is advisory."""
 import json
 import sys
 import unicodedata
@@ -48,7 +48,13 @@ def check(directory):
                 box=[min(w['x0'] for w in words),min(w['top'] for w in words),max(w['x1'] for w in words),max(w['bottom'] for w in words)]
                 geometry.append({'page':p.page_number,'bounds':box,'page_size':[p.width,p.height],'height_fraction':round((box[3]-box[1])/(p.height-2*cfg['margin']*72),3)})
                 if box[0]<25 or box[2]>p.width-25 or box[1]<25 or box[3]>p.height-25:issues.append('Content is outside safe page margins')
-    return {'page_count':len(pdf.pages),'issues':issues,'missing_text':missing,'geometry':geometry,'links':urls,
+    advisories=[]
+    lo,hi=cfg.get('fill_band',[0.85,0.98])
+    if geometry and len(pdf.pages)==1:
+        f=geometry[0]['height_fraction']
+        if f<lo:advisories.append(f'Page is only {f:.0%} full — target ~90–95%. Select one more strong claim or a fuller variant; never pad.')
+        elif f>hi:advisories.append(f'Page is {f:.0%} full — it may look crowded; consider a concise variant.')
+    return {'page_count':len(pdf.pages),'issues':issues,'advisories':advisories,'missing_text':missing,'geometry':geometry,'links':urls,
             'status':'pass' if not issues else 'revise','visual_review':'Required: inspect every page image; geometry is not a visual approval'}
 
 

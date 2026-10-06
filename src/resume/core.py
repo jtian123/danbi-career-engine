@@ -22,11 +22,15 @@ def file_hash(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def bundle(root=ROOT):
-    root = Path(root)
-    profile = load(root / 'data/master_profile.json')
-    config = load(root / 'data/resume/config.json')
-    evidence = load(root / 'data/resume/evidence.json')
+def bundle(root=None):
+    from .. import paths
+    d = (lambda *p: Path(root).joinpath('data', *p)) if root else paths.data
+    profile = load(d('master_profile.json'))
+    config = load(paths.registry('resume_config.json'))
+    evidence = load(d('resume', 'evidence.json'))
+    if profile is None or evidence is None:
+        raise FileNotFoundError('Danbi\'s private résumé facts are missing from data/ — unzip her private bundle '
+                                'into data/ (see SETUP_FOR_CLAUDE.md)')
     validate_profile(profile, evidence)
     return profile, config, evidence
 
@@ -213,9 +217,64 @@ def qa(resume, trace, profile, cfg):
     body = resume['summary'] + '\n' + '\n'.join(c['text'] for c in trace)
     if re.search(r'https?://', body):
         blockers.append('Product links belong on product names, not raw URLs in bullets')
-    return {'blockers': blockers, 'majors': majors, 'submission_blockers': submission,
+    if re.search(r'\[[^\]]{1,60}\]', text):
+        blockers.append('Bracket residue such as [Name] in the visible text')
+    warnings = []
+    for where, line in [('headline', resume.get('headline', '')), ('summary', resume.get('summary', ''))] + \
+            [(e['company'], b) for e in exps for b in e['bullets']]:
+        warnings += [f'{where}: {w}' for w in plain_language(line, cfg)]
+    if re.search(r'\b\d+\+?\s*(?:years?|yrs?)\b', resume.get('summary', '') + ' ' + resume.get('headline', ''), re.I):
+        warnings.append('summary/headline: a years-of-experience number — make sure it describes the right KIND of work '
+                        '(e-commerce marketing ≠ analytics ≠ product), not just the right total')
+    return {'blockers': blockers, 'majors': majors, 'submission_blockers': submission, 'warnings': warnings,
             'word_count': words, 'status': 'pass' if not blockers and not majors else 'revise',
             'note': 'Deterministic source and structure checks. Editorial and visual reviews are separate required stages.'}
+
+
+AI_TELLS = r'\b(leverag\w*|robust|decision-grade|end[- ]to[- ]end|spearhead\w*|synerg\w*|cutting-edge|utiliz\w*|' \
+           r'seamless\w*|holistic|best-in-class|world-class|delv\w*|game-changing|state-of-the-art)\b'
+STATUS_WORDS = r'\b(shipped|deployed|in production|production-grade|scaled to|launched)\b'
+
+
+def plain_language(line, cfg=None):
+    """说人话 — the reader test, made into warnings (never blockers). A recruiter outside
+    the company should be able to say back what was done and why in one sentence."""
+    out = []
+    words = len(line.split())
+    if words > 32:
+        out.append(f'{words} words — one idea per bullet, aim for ≤ 30')
+    if re.search(r'→|->|=>', line):
+        out.append('arrow chain — write it as a sentence')
+    if line.count('—') + line.count(' – ') > 1:
+        out.append('more than one dash — split or simplify')
+    m = re.search(AI_TELLS, line, re.I)
+    if m:
+        out.append(f'"{m.group(0)}" reads as filler — say what actually happened')
+    if re.search(r'(?:[^,;]+,){4,}[^,;]+', line):
+        out.append('long list — keep the 2–3 specifics a reader cares about')
+    for term in ((cfg or {}).get('plain_language') or {}).get('avoid_terms', []):
+        if re.search(r'(?<!\w)' + re.escape(term) + r'(?!\w)', line, re.I):
+            out.append(f'in-house or spec term "{term}" — translate it for an outsider')
+    m = re.search(STATUS_WORDS, line, re.I)
+    if m:
+        out.append(f'"{m.group(0)}" claims a status — confirm the source supports it')
+    if re.search(r'\bDanbi\b', line):
+        out.append('third person — the résumé never names its owner in the body')
+    return out
+
+
+def lint_bank(profile, cfg):
+    """Plain-language warnings for every usable wording variant in the claim bank."""
+    rows = []
+    for role in profile.get('experience', []):
+        for c in role.get('bullets', []):
+            if c.get('status') != 'usable':
+                continue
+            for name, text in (c.get('variants') or {}).items():
+                issues = plain_language(text, cfg)
+                if issues:
+                    rows.append({'claim_id': c['id'], 'variant': name, 'issues': issues})
+    return rows
 
 
 def trim_once(plan, cfg):
