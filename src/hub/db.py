@@ -92,9 +92,9 @@ _JOB_FIELDS = ('company', 'title', 'url', 'location', 'also_locations', 'lane', 
                'source', 'board', 'season', 'posted', 'pay', 'deadline', 'arenas', 'jd_path', 'prescore',
                'prescore_parts', 'reviewed', 'fit', 'review', 'bucket', 'track')
 # Columns added after the first release. Existing hub.db files get them through _migrate();
-# _SCHEMA stays the original table so old databases keep opening. `track` is the job kind:
-# 'internship' or 'staff' (a full-time salaried staff role, e.g. at a university). The other
-# columns are unused leftovers of an abandoned design, kept only so old files still open.
+# _SCHEMA stays the original table so old databases keep opening. Every job is an internship
+# (`track` is always 'internship'); the other added columns are unused leftovers of abandoned
+# designs, kept only so existing hub.db files still open.
 _NEW_COLUMNS = (('track', "TEXT DEFAULT 'internship'"), ('employment', 'TEXT'), ('uni_function', 'TEXT'),
                 ('university', 'TEXT'), ('pay_min', 'REAL'), ('pay_max', 'REAL'), ('pay_unit', 'TEXT'),
                 ('pay_annual_max', 'REAL'))

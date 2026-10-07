@@ -27,14 +27,14 @@ it here — this is the one rulebook every assistant reads (personal preferences
    the reviewed fit — never hidden inside the fit.
 5. **The hub is the home base.** Everything found lands in the hub's calendar on the day it was
    found, as one list for that day. No separate HTML reports.
-6. **University staff jobs are a dedicated field, not a separate pipeline** (2026-10-07). She
-   also wants full-time, salaried staff roles at universities (real employee jobs — never student,
-   part-time, hourly or temporary positions). They are found through the shared platforms
-   (LinkedIn guest search with full-time + entry/associate filters, HigherEdJobs' public category
-   RSS feeds) — never by building a scraper per school — and go through the same queue, the same
-   Claude review and the same daily list as internships. They carry `track: staff`, industry
-   "Universities & higher education", and a "Full-time staff role" tag; up to a quarter of the
-   review queue is kept for them. The hub's day list has an Internships / Full-time staff switch.
+6. **Internships at universities are a dedicated field — internships only** (2026-10-07). She also
+   wants internships in university offices (USC, UCLA, NYU and the like: marketing, communications,
+   admissions, events, analytics…). They are found the same way as every internship (LinkedIn
+   gets 3 university-internship searches a run, plus all the usual sources), reviewed the same
+   way, and shown on the same daily list with industry "Universities & higher education", a
+   "University" tag, and an "At universities" switch on each day. Up to a fifth of the review
+   queue is kept for them. NOT full-time staff jobs, NOT campus student-worker/work-study jobs, and
+   never a scraper per school.
 
 ## 2. Sources of truth (strictest wins on privacy)
 | What | Where | Tracked in git? |

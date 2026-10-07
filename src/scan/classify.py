@@ -72,43 +72,19 @@ def _staffing():
 UNIVERSITY = re.compile(r"\buniversit(y|ies)\b|\bcollege\b|institute of technology|polytechnic|\bschool of "
                         r"(medicine|law|business|management|public health|engineering|education)\b|community college|"
                         r"\b(UCLA|USC|NYU|MIT|CUNY|SUNY|Caltech|UCSF|UCSD|UCI|UC Berkeley|UC Davis|UC Irvine|"
-                        r"UC San Diego|UC Santa Barbara|UC Riverside|UC Santa Cruz|UMass|UConn|UNC|UVA|UT Austin)\b|"
-                        r"higher education", re.I)
+                        r"UC San Diego|UC Santa Barbara|UC Riverside|UC Santa Cruz|UMass|UConn|UNC|UVA|UT Austin)\b", re.I)
+# Company names that merely mention the sector are vendors, not universities
+_UNIV_VENDOR = re.compile(r"dining|food|catering|services|solutions|partners|consulting|\bllc\b|\binc\b", re.I)
 
 
 def is_university(company: str) -> bool:
-    """A university or college employer (a non-profit, not an enterprise)."""
+    """A university or college employer (her dedicated field: internships at universities)."""
     c = company or ''
     if re.search(r'hospitals?\b|health system|healthcare system', c, re.I) and not re.search(r'university of', c, re.I):
         return False
+    if _UNIV_VENDOR.search(c) and not re.search(r'universit|college', c, re.I):
+        return False
     return bool(UNIVERSITY.search(c))
-
-
-# Full-time salaried STAFF roles only — never part-time, hourly, temporary, student, faculty or
-# executive positions (a university "staff job" means a real salaried employee).
-NOT_STAFF = [
-    (r'part[- ]time|\bPT\b|temporary|\btemp\b|hourly|casual|per diem|seasonal|on[- ]call|substitute|'
-     r'contingent|limited[- ]term|\bterm\b position|fixed[- ]term|\bshift\b|\b\d{3,4}\s*-\s*\d{3,4}\b',
-     'part-time, hourly, shift or temporary'),
-    (r'\bstudent\b|graduate assistant|work[- ]study|\bintern(ship)?\b|fellow(ship)?\b|apprentice|trainee',
-     'student or trainee position'),
-    (r'professor|faculty|lecturer|instructor|adjunct|post-?doc|teacher|tutor|\bcoach\b|librarian',
-     'faculty or teaching'),
-    (r'\bdean\b|vice (president|provost|chancellor)|\bvp\b|\bavp\b|\bchief\b(?! of staff)|provost|president|'
-     r'chancellor|\bc[ifot]o\b|(?<!assistant )(?<!associate )\bdirector\b|\bhead of\b|executive director',
-     'executive or director level'),
-    (r'administrative assistant|office assistant|receptionist|front desk|clerk|custod|housekeep|maintenance|'
-     r'groundskeep|food service|cook\b|police|security officer|driver', 'support or facilities role'),
-]
-_NOT_STAFF = [(re.compile(p, re.I), why) for p, why in NOT_STAFF]
-# Ranking only (never a filter): her strongest kinds of university work vs back-office roles.
-STAFF_STRONG = re.compile(r'marketing|communication|digital|social media|content|brand|\bdata\b|analytic|analyst|'
-                          r'institutional research|admission|enrollment|recruitment|international|global|career|'
-                          r'program (manager|coordinator|specialist|director|administrator)|project manager|strateg|'
-                          r'planning|product|e-?commerce|alumni|engagement|events?\b|outreach|partnership', re.I)
-STAFF_WEAK = re.compile(r'procurement|buyer|purchasing|inventory|warehouse|fiscal|accounting|accountant|payroll|'
-                        r'accounts (payable|receivable)|bursar|billing|facilities|supply chain associate|'
-                        r'\bassistant\b(?! director)|technician', re.I)
 
 
 @lru_cache(maxsize=None)
@@ -118,17 +94,9 @@ def _major_universities():
 
 
 def major_university(company: str) -> bool:
-    """Well-known research universities (her examples: UCLA, USC, NYU)."""
+    """Well-known research universities (her examples: UCLA, USC, NYU) — a small ranking boost."""
     c = canon_company(company)
     return any(m and (c == m or c.startswith(m) or m in c) for m in _major_universities())
-
-
-def not_staff(title: str):
-    """Why a title is not a full-time salaried staff role, or None when it is one."""
-    for rx, why in _NOT_STAFF:
-        if rx.search(title or ''):
-            return why
-    return None
 
 
 def employer(company: str) -> dict:

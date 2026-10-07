@@ -60,8 +60,8 @@ python3 career.py hub install
 ```
 This installs a small background service (`com.danbi.careerhub`) that starts at every login and
 restarts itself if it ever stops, then opens http://127.0.0.1:7768. Show her:
-- **Today** — click a day in the calendar; the right side is that day's list (internships and
-  full-time university staff roles, with a switch to show either) ("Apply first",
+- **Today** — click a day in the calendar; the right side is that day's list (all internships,
+  with an "At universities" switch for internships at universities) ("Apply first",
   "Check before applying", her own finds, campus events). Oct 6, 2026 already has a reviewed list.
 - On each job: **Interested / Curious / Not for me** (and why) — this is how the hub learns what she
   likes; **status** (Saved → Applied → Interviewing …); notes; "USC alumni at …"; and "Copy résumé
@@ -110,8 +110,8 @@ what she wants from the search, and the open facts to confirm with her. Also rem
 - **"What's happening at USC this month?"** → the USC tab; refresh `registry/campus.json` from the
   Viterbi Career Connections and USC Career Center pages if it's stale, then
   `python3 career.py campus-sync`.
-- **"Any good university jobs?"** → they come in with every daily scan (full-time staff roles,
-  tagged in the day list — use its "Full-time staff" switch); summarize the reviewed ones.
+- **"Any good university internships?"** → they come in with every daily scan, tagged
+  "University" on the day list (use its "At universities" switch); summarize the reviewed ones.
 - **"I found this on Handshake: …"** → `python3 career.py lead "Company" "Title" --url … --source handshake`.
 
 ## Updates from James

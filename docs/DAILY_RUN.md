@@ -66,17 +66,15 @@ or industries not yet in the queue (exploration).
 - Board health is tracked per source; a source that fails 4 times in a row goes dormant and is
   retried on probation (7, 14 … 30 days).
 
-## University staff roles (same pipeline)
-- Sources: LinkedIn guest search (3 of the 20 requests each run, rotating through
-  `registry/queries.json → staff`, filters full-time + entry/associate) and HigherEdJobs' public
-  category RSS feeds (`higheredjobs_categories`, one request per category). HigherEdJobs posting
-  pages are behind a bot challenge — never fetch them; the reviewer finds the university's own
-  posting instead.
-- Kept only when the employer is a university/college (or the posting came from HigherEdJobs) and
-  the title is a full-time staff role: part-time, hourly, temporary, student, faculty, executive /
-  director, and support/facilities titles are dropped and counted.
-- Up to 25% of the review queue goes to these (`STAFF_SHARE` in `src/scan/run.py`); they are
-  reviewed with `prompts/job_review.md` like any job (see its staff-role section).
+## Internships at universities (same pipeline)
+- LinkedIn spends 3 of its 20 requests each run on university-internship searches
+  (`registry/queries.json → university`, rotating), with the same internship filter; the other
+  sources find university internships too. Any internship whose employer is a university or
+  college gets industry `higher_ed`, tier `university` and a small boost for well-known schools.
+- Up to 20% of the review queue is kept for them (`UNIVERSITY_SHARE` in `src/scan/run.py`).
+- Campus student-worker / work-study / graduate-assistant jobs are not internships: dropped and
+  counted. Full-time staff jobs fail the internship gate like anywhere else.
+- HigherEdJobs blocks automated requests (Incapsula, even its RSS) — do not use it.
 
 ## Do-not list
 - Never log in anywhere, solve a CAPTCHA, rotate identities, or retry a block.

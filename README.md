@@ -22,8 +22,8 @@ public career sources ──scan──▶ output/scans/scan-DATE/ ──Claude r
 - **Scope:** US internships in any industry; big employers first; eligibility follows her private
   profile (no sponsorship filter); software/hardware/lab roles excluded,
   data science kept as a stretch; anything else that fits no named direction is kept as "explore".
-- **University staff jobs** (full-time, salaried) are a dedicated field inside the same pipeline:
-  found on LinkedIn and HigherEdJobs, reviewed by Claude like any job, tagged in the daily list.
+- **Internships at universities** are a dedicated field inside the same pipeline: searched for
+  daily, reviewed by Claude like any internship, tagged "University" on the daily list.
 - **Priority** = Claude's reviewed fit (0–100) + big-employer bonus (+8/+5) + what her ratings taught
   it (±10). An ordering, not an acceptance probability.
 - **Privacy:** her facts and the hub database live in `data/`, which is never tracked. The hub only

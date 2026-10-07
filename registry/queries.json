@@ -14,44 +14,6 @@
   "customer insights analyst intern",
   "pricing strategy intern"
  ],
- "staff_note": "Full-time staff roles at universities (her dedicated field, 2026-10-07): LinkedIn guest search with full-time + entry/associate filters (3 queries a run, rotating) and HigherEdJobs category RSS feeds. Results must come from a university/college employer.",
- "staff": [
-  "university data analyst",
-  "university marketing",
-  "university program coordinator",
-  "university admissions",
-  "university communications specialist",
-  "university business analyst",
-  "university international programs",
-  "university career services",
-  "higher education institutional research",
-  "university project manager",
-  "college marketing specialist",
-  "university financial analyst",
-  "university events coordinator",
-  "university student services",
-  "university alumni relations"
- ],
- "higheredjobs_categories": {
-  "14": "Admissions and Enrollment",
-  "15": "Alumni Relations",
-  "18": "Business and Financial Services",
-  "22": "Career Development and Services",
-  "37": "Communications, Marketing, and Public Affairs",
-  "172": "Conference and Events Administration",
-  "23": "Development and Fundraising",
-  "214": "Economic and Business Development",
-  "25": "Extension and Outreach",
-  "31": "Institutional Research and Planning",
-  "32": "International Programs and Services",
-  "28": "Sponsored Programs, Grants, and Contracts",
-  "40": "Student Affairs and Services",
-  "141": "Academic Advising",
-  "279": "Planning, Design, and Project Management",
-  "220": "Online and Distance Education Programs",
-  "212": "Assessment, Accreditation, and Compliance",
-  "43": "Other Administrative Positions"
- },
  "major_universities": [
   "American University",
   "Arizona State University",
@@ -166,5 +128,20 @@
   "Wake Forest University",
   "Washington University in St. Louis",
   "Yale University"
+ ],
+ "university_note": "Internships AT universities (her dedicated field, 2026-10-07): 3 of the 7+3 LinkedIn queries each run rotate through these, with the same internship filter as all others.",
+ "university": [
+  "university marketing intern",
+  "university communications intern",
+  "university analytics intern",
+  "college admissions intern",
+  "higher education internship",
+  "university events intern",
+  "university social media intern",
+  "university business intern",
+  "university data intern",
+  "university career services intern",
+  "university international office intern",
+  "university advancement intern"
  ]
 }

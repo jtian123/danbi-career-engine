@@ -27,8 +27,6 @@ def main():
     m.add_argument('scan_dir')
     m.add_argument('--reviewed', help='default: SCAN_DIR/reviewed.json')
     m.add_argument('--force', action='store_true', help='re-apply reviews already marked (after edits or new profile facts)')
-    rq2 = sub.add_parser('requeue', help='Re-pick the university staff part of an unreviewed scan with current rules')
-    rq2.add_argument('scan_dir')
     h = sub.add_parser('hub', help='The Career Hub (local dashboard, http://127.0.0.1:7768)')
     h.add_argument('action', choices=['serve', 'install', 'uninstall', 'status', 'open'])
     h.add_argument('--port', type=int, default=7768)
@@ -77,9 +75,6 @@ def main():
             out = scan(args.queue, not args.no_boards, not args.no_linkedin, args.workers,
                        log=lambda msg: print(msg, file=sys.stderr, flush=True))
             print(out)
-        elif args.command == 'requeue':
-            from src.scan.run import requeue
-            requeue(args.scan_dir)
         elif args.command == 'mark':
             from src.scan.run import mark
             try:

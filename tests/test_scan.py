@@ -151,60 +151,59 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(d['api'].startswith('https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/job/'))
 
 
-class StaffRoleTests(unittest.TestCase):
-    """University staff jobs: full-time salaried roles, found on shared platforms, same pipeline."""
+class UniversityFieldTests(unittest.TestCase):
+    """Internships AT universities: her dedicated field, same pipeline, internships only."""
 
-    def test_university_staff_roles_kept_and_tagged(self):
-        rows = [row(company='University of Southern California', title='Data Analyst', url='https://e.com/1'),
-                row(company='UCLA', title='Assistant Director of Admissions', url='https://e.com/2'),
-                row(company='Juilliard', title='Marketing Specialist', url='https://e.com/3', source='higheredjobs')]
-        kept, dropped = run.classify_rows(rows, DAY, citizen=False)
-        self.assertEqual(len(kept), 3)
-        self.assertEqual({(r['track'], r['industry'], r['tier']) for r in kept}, {('staff', 'higher_ed', 'university')})
+    def test_university_internships_kept_and_tagged(self):
+        rows = [row(company='University of Southern California', title='Marketing Intern', url='https://e.com/1'),
+                row(company='UCLA', title='Communications Internship', url='https://e.com/2')]
+        kept, _ = run.classify_rows(rows, DAY, citizen=False)
+        self.assertEqual({(r['industry'], r['tier']) for r in kept}, {('higher_ed', 'university')})
 
-    def test_not_staff_level_or_not_a_university_is_dropped(self):
-        titles = ['Marketing Specialist (Part-Time)', 'Student Worker - Library', 'Adjunct Lecturer',
-                  'Director of Marketing', 'Temporary Events Assistant']
-        rows = [row(company='New York University', title=t, url=f'https://e.com/{i}') for i, t in enumerate(titles)]
-        rows.append(row(company='Acme Corp', title='Data Analyst', url='https://e.com/x', staff_hint=True))
+    def test_her_own_school_ranks_highest(self):
+        base = dict(row(company='University of Southern California', title='Marketing Intern'), lane='commerce',
+                    industry='higher_ed', tier='university', flags={'degree_rule': 'unknown'}, seasons=[])
+        with patch.object(run, '_lead_profile', return_value={'home_university': 'University of Southern California',
+                                                              'home_university_aliases': ['USC']}):
+            usc, _ = run.prescore(base, {'lane': {}, 'industry': {}}, DAY)
+            other, _ = run.prescore(dict(base, company='Weber State University'), {'lane': {}, 'industry': {}}, DAY)
+            alias, _ = run.prescore(dict(base, company='USC'), {'lane': {}, 'industry': {}}, DAY)
+        self.assertEqual(usc - other, 15)
+        self.assertEqual(alias, usc)
+
+    def test_campus_vendors_are_not_universities(self):
+        self.assertFalse(C.is_university('Chartwells Higher Education Dining'))
+        self.assertTrue(C.is_university('Rutgers University Foundation'))
+        self.assertFalse(C.is_university('University Hospitals'))
+
+    def test_full_time_and_student_jobs_at_universities_are_dropped(self):
+        rows = [row(company='New York University', title='Data Analyst', url='https://e.com/a'),
+                row(company='New York University', title='Student Worker - Marketing', url='https://e.com/b'),
+                row(company='University of Virginia', title='Direct Marketing Data Assistant - Student Wage', url='https://e.com/c')]
         kept, dropped = run.classify_rows(rows, DAY, citizen=False)
         self.assertEqual(kept, [])
-        self.assertEqual(sum(dropped.values()), len(rows))
+        self.assertEqual(dropped['not an internship'], 1)
+        self.assertEqual(dropped['campus student job (not an internship)'], 2)
 
-    def test_internships_at_universities_stay_internships(self):
-        kept, _ = run.classify_rows([row(company='UCLA', title='Marketing Intern', url='https://e.com/i')], DAY, citizen=False)
-        self.assertEqual(kept[0]['track'], 'internship')
-
-    def test_queue_gives_staff_at_most_a_quarter(self):
-        staff = [dict(row(company=f'U{i} University', title='Analyst', url=f'https://s.com/{i}'), track='staff',
-                      lane='data', industry='higher_ed', prescore=99, flags={'degree_rule': 'unknown'}) for i in range(20)]
-        interns = [dict(row(company=f'Co{i}', title='Marketing Intern', url=f'https://i.com/{i}'), track='internship',
-                        lane='commerce', industry='retail', prescore=50, flags={'degree_rule': 'graduate_allowed'})
-                   for i in range(40)]
-        q = run.select_queue(staff + interns, 40)
-        self.assertEqual(sum(r['track'] == 'staff' for r in q), 10)
+    def test_queue_keeps_up_to_a_fifth_for_universities(self):
+        uni = [dict(row(company=f'U{i} University', title='Marketing Intern', url=f'https://u.com/{i}'), lane='commerce',
+                    industry='higher_ed', prescore=40, flags={'degree_rule': 'unknown'}) for i in range(20)]
+        other = [dict(row(company=f'Co{i}', title='Marketing Intern', url=f'https://i.com/{i}'), lane='commerce',
+                      industry='retail', prescore=90, flags={'degree_rule': 'graduate_allowed'}) for i in range(60)]
+        q = run.select_queue(uni + other, 40)
+        n = sum(r['industry'] == 'higher_ed' for r in q)
+        self.assertTrue(8 <= n <= 10, n)        # the reserved fifth, plus at most an exploration pick or two
         self.assertEqual(len(q), 40)
 
-    def test_higheredjobs_feed_parse(self):
-        xml = ('<rss><channel><item><title>Data Analyst</title><description>Pepperdine University (Malibu, CA)'
-               '</description><link>https://www.higheredjobs.com/details.cfm?JobCode=1</link>'
-               '<pubDate>Tue, 06 Oct 2026 08:04:21 EDT</pubDate></item></channel></rss>')
-        with patch.object(net, 'get', return_value=xml), patch.object(sources.time, 'sleep'):
-            rows, n = sources.higheredjobs(['31'])
-        r = rows[0]
-        self.assertEqual((r['company'], r['location'], r['posted'], r['staff_hint']),
-                         ('Pepperdine University', 'Malibu, CA', '2026-10-06', True))
-
-    def test_linkedin_staff_queries_use_full_time_filter(self):
+    def test_linkedin_queries_all_use_the_internship_filter(self):
         urls = []
 
         def fake(url, **k):
             urls.append(url)
             return ''
         with patch.object(net, 'get', side_effect=fake), patch.object(sources.time, 'sleep'):
-            sources.linkedin(['marketing intern'], staff_queries=['university marketing'])
-        self.assertIn('f_E=1', urls[0])
-        self.assertIn('f_JT=F', urls[1])
+            sources.linkedin(['marketing intern', 'university marketing intern'])
+        self.assertTrue(all('f_E=1' in u for u in urls))
 
 
 class PipelineTests(TempData, unittest.TestCase):

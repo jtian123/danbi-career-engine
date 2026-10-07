@@ -11,21 +11,14 @@ was fetched). Fill one object per job in `reviewed.json`, starting from `review_
 Location is NOT a factor (she will relocate anywhere in the US); big employers are preferred, but the
 hub adds that bonus itself — do not add it to the score.
 
-## Two kinds of job, one review
-Each queued job has `track`: `internship`, or `staff` — a **full-time, salaried staff role at a
-university** (her dedicated field). Review both the same way, with these differences for staff roles:
-- Confirm it is **full-time and salaried** (not part-time, hourly, temporary or a student job) and
-  give the salary in `pay` ("$72,000–$85,000 a year"). Skip it if it turns out part-time/temporary.
-- Discovery copies (LinkedIn, HigherEdJobs) are not the posting: find the university's own careers
-  page for the role and use that `url`. HigherEdJobs pages block automated reading — search the
-  title + university instead.
-- `degree_rule`: these usually ask for a bachelor's (she has one) → `related_degree` or
-  `graduate_allowed`; note required years of experience against hers in `gaps`.
-- `timing` /5: full-time roles start now while she is enrolled (graduation Dec 2027 or May 2028).
-  That is true of every staff role, so say it in `gaps` (not `checks` — checks are for open
-  questions about THIS posting), score timing honestly, and do NOT skip a role for this alone —
-  she wants to see them.
-- `conversion` /10: for staff roles, the long-term value — stability, growth path, tuition benefits.
+## Internships at universities (her dedicated field)
+Internships in university offices (marketing, communications, admissions, events, analytics,
+international programs…) are reviewed exactly like any internship. Industry is `higher_ed`. Check
+that it really is an internship open to graduate students — a campus student-worker or
+work-study job is not an internship (skip it), and a full-time staff job is out of scope. Find the
+university's own posting for the `url`, and give pay as posted (hourly is normal here).
+Most university internships are only for that school's own students (often work-study): skip
+those quickly with the reason — unless the school is hers (USC), where she qualifies.
 
 ## Decision
 - `recommend` — US, she is eligible (MS students allowed or not excluded), the work fits or is a

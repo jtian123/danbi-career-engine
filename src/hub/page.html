@@ -56,7 +56,6 @@ table.cal .d{font-size:12px;color:var(--ink2);font-weight:600}
 .dot{font-size:10px;border-radius:7px;padding:0 5px;width:fit-content;font-weight:650;white-space:nowrap}
 .dot.p{background:var(--green);color:var(--green-ink)} .dot.a{background:var(--teal-wash);color:var(--teal-ink)}
 .dot.e{background:var(--orange-wash);color:var(--orange-ink)} .dot.u{background:#ecefe8;color:var(--muted)}
-.tag.staff{background:var(--teal-wash);color:var(--teal-ink)}
 .seg button{border-radius:0;margin-left:-1px;font-size:12.5px;padding:5px 11px}.seg button:first-child{border-radius:8px 0 0 8px}.seg button:last-child{border-radius:0 8px 8px 0}
 .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--muted)}
 /* day panel */
@@ -152,7 +151,7 @@ table.list td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 'use strict';
-let kindF='';   // '' all · 'internship' · 'staff' (full-time staff roles, e.g. universities)
+let fieldF='';   // '' all internships · 'uni' internships at universities (her dedicated field)
 let S=null, busy=false, tab='today', sel=null, calMonth=null, browse={q:'',lane:'',industry:'',tier:'',status:'',reviewed:false};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -205,7 +204,6 @@ function tags(j,ap){
   const t=[];
   if(j.tier==='enterprise')t.push('<span class="tag big">Big employer</span>');else if(j.tier==='large')t.push('<span class="tag big">Large company</span>');
   else if(j.tier==='university')t.push('<span class="tag big">University</span>');
-  if(j.track==='staff')t.push('<span class="tag staff">Full-time staff role</span>');
   t.push(`<span class="tag">${esc(laneName(j.lane))}</span>`,`<span class="tag">${esc(indName(j.industry))}</span>`);
   if(j.stretch||(j.review&&j.review.technical_level>=4))t.push('<span class="tag stretch">Stretch</span>');
   for(const a of (j.arenas||[]))if(ARENA[a])t.push(`<span class="tag edge">${ARENA[a]}</span>`);
@@ -254,7 +252,7 @@ function jobCard(j,ap,compact){
 }
 
 /* ---------------------------------------------------------------- Today */
-function dayJobs(d){return S.jobs.filter(j=>j.last_surfaced===d&&(!kindF||(j.track||'internship')===kindF));}
+function dayJobs(d){return S.jobs.filter(j=>j.last_surfaced===d&&(!fieldF||j.industry==='higher_ed'));}
 function renderToday(){
   const [y,m]=calMonth.split('-').map(Number);
   const first=new Date(y,m-1,1), days=new Date(y,m,0).getDate(), lead=first.getDay();
@@ -294,8 +292,8 @@ function renderDay(){
   let h=`<div class="panel"><div class="dayhead"><div><h2>${fmtDay(d)}</h2>
     ${f?`<div class="funnel">Read ${f.raw_rows.toLocaleString()} postings → ${f.internships_in_scope.toLocaleString()} US jobs in scope → ${f.unique_jobs.toLocaleString()} unique → ${f.new_to_her.toLocaleString()} new to you → ${f.queued_for_review} reviewed by Claude${meta.recommended!=null?` (${meta.recommended} recommended)`:''}</div>`:meta.note?`<div class="funnel">${esc(meta.note)}</div>`:''}</div></div>
     ${(meta.warnings||[]).map(w=>`<div class="warn">${esc(w)}</div>`).join('')}`;
-  const staffN=S.jobs.filter(j=>j.last_surfaced===d&&j.track==='staff').length;
-  h+=`<div class="seg" style="margin:4px 0 10px"><button data-kind="" class="${kindF===''?'on':''}">Everything</button><button data-kind="internship" class="${kindF==='internship'?'on':''}">Internships</button><button data-kind="staff" class="${kindF==='staff'?'on':''}">Full-time staff (${staffN})</button></div>`;
+  const uniN=S.jobs.filter(j=>j.last_surfaced===d&&j.industry==='higher_ed').length;
+  h+=`<div class="seg" style="margin:4px 0 10px"><button data-field="" class="${fieldF===''?'on':''}">All internships</button><button data-field="uni" class="${fieldF==='uni'?'on':''}">At universities (${uniN})</button></div>`;
   if(!js.length&&!evs.length){h+=`<div class="empty">Nothing on this day.${d===S.today?' Ask Claude: “find me internships today”.':''}</div>`;}
   if(first.length){h+=`<div class="group"><h3>Apply first</h3><span class="n">${first.length} · sorted by priority</span></div>`+first.map(j=>jobCard(j,ap)).join('');}
   if(check.length){h+=`<div class="group"><h3>Check before applying</h3><span class="n">${check.length} · one requirement is unclear</span></div>`+check.map(j=>jobCard(j,ap)).join('');}
@@ -411,7 +409,7 @@ function renderHow(){
   <h3>What gets filtered out (and counted)</h3><p>Non-US jobs, seasons that are already over, roles that require US citizenship or a security clearance, PhD- or MBA-only roles, and software/hardware engineering, lab and clinical roles. Everything else stays — including directions nobody has thought of yet (“Other directions to explore”).</p>
   <h3>How jobs are ordered</h3><p><b>Priority = Claude's reviewed fit (0–100) + a big-employer bonus (+8, or +5 for large companies) + what your ratings have taught it (±10).</b> Fit adds up transferable experience /30, learning value /25, readiness now /20, published pay /10, a stated return-offer path /10 and timing /5. It is an ordering, not a chance of getting an offer.</p>
   <p>Jobs Claude hasn't read show an automatic <i>pre-rank</i> instead. That only says which ones to read first.</p>
-  <h3>University staff jobs</h3><p>Full-time, salaried staff roles at universities (and other non-profits) are found through LinkedIn and HigherEdJobs, reviewed by Claude like any job, and land on the same daily list, tagged <b>University staff</b>. Use the “Full-time staff” switch on a day, or Explore → <i>Universities &amp; higher education</i>.</p>
+  <h3>Internships at universities</h3><p>Internships in university offices (marketing, communications, admissions, events, analytics…) are a field of their own: LinkedIn searches for them every day, they are reviewed by Claude like every internship, and they appear on the same daily list tagged <b>University</b>. Use the “At universities” switch on a day, or Explore → <i>Universities &amp; higher education</i>. Campus student-worker jobs are not internships and are left out.</p>
   <h3>Your ratings</h3><p><b>Interested / Curious / Not for me</b> teach the hub which directions and industries to bring forward. Tell it <i>why</i> when something is not for you: only “the work itself” or “the industry” count against a career.</p>
   <h3>Asking Claude</h3><ul><li>“Find me internships today.” — scans, reviews the best ~40, and puts them on today's list.</li>
    <li>“Build my résumé for the Target Associate Buyer internship.” — use the copy button on any card.</li>
@@ -441,7 +439,7 @@ document.addEventListener('click',async e=>{
   if(t.id==='addlead'){const f=$('#leadform');const v=n=>f.querySelector(`[name=${n}]`).value.trim();
     await post('/api/lead',{company:v('company'),title:v('title'),url:v('url'),source:v('source'),deadline:v('deadline'),notes:v('notes')});toast('Added to today as Saved');sel=S.today;return load();}
   if(t.id==='addev'){const f=$('#evform');const v=n=>f.querySelector(`[name=${n}]`).value.trim();await post('/api/event',{title:v('title'),date:v('date'),url:v('url')});toast('Event added');return load();}
-  if(t.dataset.kind!==undefined&&t.closest('.seg')){kindF=t.dataset.kind;return renderDay();}
+  if(t.dataset.field!==undefined&&t.closest('.seg')){fieldF=t.dataset.field;return renderDay();}
   if(t.id==='alumgo'){const c=$('#alumco').value.trim();if(c)window.open(alumniUrl(c),'_blank','noopener');return;}
 });
 document.addEventListener('change',async e=>{
