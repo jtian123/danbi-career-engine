@@ -66,22 +66,17 @@ or industries not yet in the queue (exploration).
 - Board health is tracked per source; a source that fails 4 times in a row goes dormant and is
   retried on probation (7, 14 … 30 days).
 
-## University jobs track
-- `scan` also reads every board in `registry/universities.json` (searches: analyst, marketing,
-  coordinator, student, admissions, program, communications, data, international, advisor) and
-  writes `universities.json` into the scan folder; `mark` lists them in the hub (Universities tab).
-  `career.py universities` runs just this track and lists results immediately.
-- Kept: titles matching her kinds of work (`src/scan/universities.py → FUNCTIONS`). Dropped and
-  counted: faculty, clinical/medical, trades, IT engineering, deans/VPs/directors (assistant
-  directors stay).
-- Student jobs count only at her own school (`home_university` in `data/profile.json`): elsewhere
-  they need enrollment there. USC posts student jobs on Handshake (login), so that list is usually
-  empty from public boards — she adds Handshake finds herself.
-- Pay comes from the posting text; each posting page is fetched once and cached in
-  `data/state/uni_details.json`. Hourly student pay and annual staff pay are compared with her
-  "good salary" line (hub setting; default $70k a year / $22 an hour).
-- Add a university: verify its public board answers without login (Workday cxs is the common
-  case), then add it to `registry/universities.json` under `boards`.
+## University staff roles (same pipeline)
+- Sources: LinkedIn guest search (3 of the 20 requests each run, rotating through
+  `registry/queries.json → staff`, filters full-time + entry/associate) and HigherEdJobs' public
+  category RSS feeds (`higheredjobs_categories`, one request per category). HigherEdJobs posting
+  pages are behind a bot challenge — never fetch them; the reviewer finds the university's own
+  posting instead.
+- Kept only when the employer is a university/college (or the posting came from HigherEdJobs) and
+  the title is a full-time staff role: part-time, hourly, temporary, student, faculty, executive /
+  director, and support/facilities titles are dropped and counted.
+- Up to 25% of the review queue goes to these (`STAFF_SHARE` in `src/scan/run.py`); they are
+  reviewed with `prompts/job_review.md` like any job (see its staff-role section).
 
 ## Do-not list
 - Never log in anywhere, solve a CAPTCHA, rotate identities, or retry a block.

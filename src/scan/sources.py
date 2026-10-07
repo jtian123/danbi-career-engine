@@ -43,7 +43,7 @@ def _day(value):
 def _row(**kw):
     base = dict(source='', board='', company='', title='', location='', url='', posted=None,
                 date_precision='absolute', req_id='', description='', pay_text='', degrees=None,
-                terms=None, detail=None, deadline=None, intern_hint=False)
+                terms=None, detail=None, deadline=None, intern_hint=False, staff_hint=False)
     base.update(kw)
     base['title'] = html.unescape(str(base['title'] or '')).strip()
     base['company'] = html.unescape(urllib.parse.unquote(str(base['company'] or ''))).strip()
@@ -419,22 +419,63 @@ def simplify(**_):
     return rows, len(d)
 
 
+# ------------------------------------------------------------------ HigherEdJobs (university staff roles)
+HIGHEREDJOBS = 'https://www.higheredjobs.com/rss/categoryFeed.cfm?catID={cat}'
+
+
+def higheredjobs(categories, sleep=1.0, **_):
+    """HigherEdJobs' public category RSS feeds: university and college STAFF postings across the
+    US (title, institution, city, date, link). Discovery only — its posting pages sit behind a bot
+    challenge, so the reviewer verifies on the university's own careers page."""
+    rows = []
+    for cat in categories:
+        xml = net.get(HIGHEREDJOBS.format(cat=cat), raw=True, timeout=40,
+                      headers={'Accept': 'application/rss+xml, application/xml;q=0.9, */*;q=0.8'})
+        for it in xml.split('<item>')[1:]:
+            t = re.search(r'<title>(.*?)</title>', it, re.S)
+            d = re.search(r'<description>(.*?)</description>', it, re.S)
+            ln = re.search(r'<link>(.*?)</link>', it, re.S)
+            pd = re.search(r'<pubDate>(.*?)</pubDate>', it, re.S)
+            if not (t and d and ln):
+                continue
+            inst = text(d.group(1))
+            m = re.match(r'(.*?)\s*\(([^()]*)\)\s*$', inst)
+            company, loc = (m.group(1), m.group(2)) if m else (inst, '')
+            posted = None
+            if pd:
+                try:
+                    from email.utils import parsedate_to_datetime
+                    posted = parsedate_to_datetime(pd.group(1).replace(' EDT', ' -0400').replace(' EST', ' -0500')).date().isoformat()
+                except (TypeError, ValueError):
+                    posted = None
+            rows.append(_row(source='higheredjobs', board=f'higheredjobs:{cat}', company=company, title=text(t.group(1)),
+                             location=loc, url=text(ln.group(1)), posted=posted, date_precision='absolute',
+                             req_id=(re.search(r'JobCode=(\d+)', ln.group(1)) or [None, ''])[1], staff_hint=True))
+        time.sleep(sleep)
+    return rows, len(rows)
+
+
 # ------------------------------------------------------------------ LinkedIn guest search
 LINKEDIN = ('https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords={q}'
-            '&location=United%20States&f_E=1&f_TPR=r{secs}&start={start}')
+            '&location=United%20States{filters}&f_TPR=r{secs}&start={start}')
+INTERN_FILTER = '&f_E=1'                       # experience level: internship
+STAFF_FILTER = '&f_JT=F&f_E=2%2C3'             # full-time, entry level + associate
 
 
-def linkedin(queries, days=7, max_requests=20, sleep=2.0, log=print):
-    """Internship-filtered (f_E=1) public search. ≤20 requests a run, 2 s apart.
-    Any block ends LinkedIn for the run; the caller records it and skips the day."""
+def linkedin(queries, days=7, max_requests=20, sleep=2.0, log=print, staff_queries=()):
+    """Public guest search: internship queries (f_E=1) and full-time staff queries (f_JT=F,
+    entry/associate). ≤20 requests a run in total, 2 s apart. Any block ends LinkedIn for the
+    run; the caller records it and skips the day."""
     rows, used, by_query = [], 0, {}
-    for q in queries:
+    plan = [(q, INTERN_FILTER, 'internship') for q in queries] + [(q, STAFF_FILTER, 'staff') for q in staff_queries]
+    for q, filters, kind in plan:
         for start in (0, 10):
             if used >= max_requests:
                 return rows, {'requests': used, 'by_query': by_query}
             time.sleep(sleep)
             used += 1
-            page = net.get(LINKEDIN.format(q=urllib.parse.quote(q), secs=days * 86400, start=start), raw=True)
+            page = net.get(LINKEDIN.format(q=urllib.parse.quote(q), filters=filters, secs=days * 86400, start=start),
+                           raw=True)
             if 'authwall' in page[:5000].lower():
                 raise net.Blocked('authwall')
             cards = page.split('data-entity-urn="urn:li:jobPosting:')[1:]
@@ -446,7 +487,8 @@ def linkedin(queries, days=7, max_requests=20, sleep=2.0, log=print):
                 dt = re.search(r'datetime="(\d{4}-\d{2}-\d{2})"', c)
                 if not (t and co):
                     continue
-                rows.append(_row(source='linkedin', board='linkedin', intern_hint=True, company=html.unescape(co.group(1)),
+                rows.append(_row(source='linkedin', board='linkedin', intern_hint=(kind == 'internship'),
+                                 staff_hint=(kind == 'staff'), company=html.unescape(co.group(1)),
                                  title=html.unescape(t.group(1)), location=html.unescape(loc.group(1)) if loc else '',
                                  url=f'https://www.linkedin.com/jobs/view/{jid}', posted=dt.group(1) if dt else None,
                                  req_id=jid))

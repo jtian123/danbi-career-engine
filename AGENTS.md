@@ -27,13 +27,14 @@ it here — this is the one rulebook every assistant reads (personal preferences
    the reviewed fit — never hidden inside the fit.
 5. **The hub is the home base.** Everything found lands in the hub's calendar on the day it was
    found, as one list for that day. No separate HTML reports.
-6. **University jobs are their own track** (added 2026-10-07). Staff and student positions at
-   universities (registry/universities.json) are scanned with every run but never mixed into the
-   internship list: they live in the hub's **Universities** tab, ranked by pay (against a "good
-   salary" line she sets) and then fit. Student jobs count only at her own school
-   (`home_university` in the private profile) and are listed apart from full-time staff roles. Faculty, clinical/medical-center, trades, IT-engineering and senior
-   leadership roles are dropped (counted). They are not Claude-reviewed by default; review any she
-   asks about with the same care as an internship.
+6. **University staff jobs are a dedicated field, not a separate pipeline** (2026-10-07). She
+   also wants full-time, salaried staff roles at universities (real employee jobs — never student,
+   part-time, hourly or temporary positions). They are found through the shared platforms
+   (LinkedIn guest search with full-time + entry/associate filters, HigherEdJobs' public category
+   RSS feeds) — never by building a scraper per school — and go through the same queue, the same
+   Claude review and the same daily list as internships. They carry `track: staff`, industry
+   "Universities & higher education", and a "Full-time staff role" tag; up to a quarter of the
+   review queue is kept for them. The hub's day list has an Internships / Full-time staff switch.
 
 ## 2. Sources of truth (strictest wins on privacy)
 | What | Where | Tracked in git? |
@@ -128,8 +129,7 @@ Read `docs/RESUME_WORKFLOW.md`, `prompts/resume_writer.md`, `data/master_profile
 ## 7. Commands
 ```sh
 python3 career.py doctor                      # what this Mac still needs
-python3 career.py scan [--queue 40] [--no-linkedin] [--no-boards] [--no-universities]
-python3 career.py universities                # university track only, straight into the hub
+python3 career.py scan [--queue 40] [--no-linkedin] [--no-boards]
 python3 career.py mark output/scans/scan-DATE [--reviewed FILE]
 python3 career.py hub install|status|open|serve|uninstall
 python3 career.py lead "Company" "Title" --url URL --source handshake --deadline 2026-11-01

@@ -45,7 +45,7 @@ class ClassifyTests(unittest.TestCase):
     def test_us_detection(self):
         for loc in ('Los Angeles, CA', 'TX-Dallas', 'Remote in USA', 'New London, CT', 'Toronto, ON; New York, NY'):
             self.assertEqual(C.us_status(loc), 'US', loc)
-        for loc in ('Hamburg, Hamburg, DEU', 'London, UK', 'CAN, ON, Mississauga', 'Casablanca, Morocco'):
+        for loc in ('Hamburg, Hamburg, DEU', 'London, UK', 'CAN, ON, Mississauga', 'Casablanca, Morocco', 'Breda, NB, nl'):
             self.assertEqual(C.us_status(loc), 'foreign', loc)
         for loc in ('Remote', '4 Locations', ''):
             self.assertEqual(C.us_status(loc), 'unknown', loc)
@@ -151,6 +151,62 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(d['api'].startswith('https://target.wd5.myworkdayjobs.com/wday/cxs/target/targetcareers/job/'))
 
 
+class StaffRoleTests(unittest.TestCase):
+    """University staff jobs: full-time salaried roles, found on shared platforms, same pipeline."""
+
+    def test_university_staff_roles_kept_and_tagged(self):
+        rows = [row(company='University of Southern California', title='Data Analyst', url='https://e.com/1'),
+                row(company='UCLA', title='Assistant Director of Admissions', url='https://e.com/2'),
+                row(company='Juilliard', title='Marketing Specialist', url='https://e.com/3', source='higheredjobs')]
+        kept, dropped = run.classify_rows(rows, DAY, citizen=False)
+        self.assertEqual(len(kept), 3)
+        self.assertEqual({(r['track'], r['industry'], r['tier']) for r in kept}, {('staff', 'higher_ed', 'university')})
+
+    def test_not_staff_level_or_not_a_university_is_dropped(self):
+        titles = ['Marketing Specialist (Part-Time)', 'Student Worker - Library', 'Adjunct Lecturer',
+                  'Director of Marketing', 'Temporary Events Assistant']
+        rows = [row(company='New York University', title=t, url=f'https://e.com/{i}') for i, t in enumerate(titles)]
+        rows.append(row(company='Acme Corp', title='Data Analyst', url='https://e.com/x', staff_hint=True))
+        kept, dropped = run.classify_rows(rows, DAY, citizen=False)
+        self.assertEqual(kept, [])
+        self.assertEqual(sum(dropped.values()), len(rows))
+
+    def test_internships_at_universities_stay_internships(self):
+        kept, _ = run.classify_rows([row(company='UCLA', title='Marketing Intern', url='https://e.com/i')], DAY, citizen=False)
+        self.assertEqual(kept[0]['track'], 'internship')
+
+    def test_queue_gives_staff_at_most_a_quarter(self):
+        staff = [dict(row(company=f'U{i} University', title='Analyst', url=f'https://s.com/{i}'), track='staff',
+                      lane='data', industry='higher_ed', prescore=99, flags={'degree_rule': 'unknown'}) for i in range(20)]
+        interns = [dict(row(company=f'Co{i}', title='Marketing Intern', url=f'https://i.com/{i}'), track='internship',
+                        lane='commerce', industry='retail', prescore=50, flags={'degree_rule': 'graduate_allowed'})
+                   for i in range(40)]
+        q = run.select_queue(staff + interns, 40)
+        self.assertEqual(sum(r['track'] == 'staff' for r in q), 10)
+        self.assertEqual(len(q), 40)
+
+    def test_higheredjobs_feed_parse(self):
+        xml = ('<rss><channel><item><title>Data Analyst</title><description>Pepperdine University (Malibu, CA)'
+               '</description><link>https://www.higheredjobs.com/details.cfm?JobCode=1</link>'
+               '<pubDate>Tue, 06 Oct 2026 08:04:21 EDT</pubDate></item></channel></rss>')
+        with patch.object(net, 'get', return_value=xml), patch.object(sources.time, 'sleep'):
+            rows, n = sources.higheredjobs(['31'])
+        r = rows[0]
+        self.assertEqual((r['company'], r['location'], r['posted'], r['staff_hint']),
+                         ('Pepperdine University', 'Malibu, CA', '2026-10-06', True))
+
+    def test_linkedin_staff_queries_use_full_time_filter(self):
+        urls = []
+
+        def fake(url, **k):
+            urls.append(url)
+            return ''
+        with patch.object(net, 'get', side_effect=fake), patch.object(sources.time, 'sleep'):
+            sources.linkedin(['marketing intern'], staff_queries=['university marketing'])
+        self.assertIn('f_E=1', urls[0])
+        self.assertIn('f_JT=F', urls[1])
+
+
 class PipelineTests(TempData, unittest.TestCase):
     def test_filters_count_every_drop(self):
         rows = [row(), row(title='Software Engineer Intern', url='https://e.com/2'),
@@ -159,7 +215,7 @@ class PipelineTests(TempData, unittest.TestCase):
                 row(title='Analyst', url='https://e.com/5'),
                 row(description='Must be a U.S. citizen.', title='Finance Intern', url='https://e.com/6'),
                 row(company='Robert Half', title='Marketing Intern', url='https://e.com/7')]
-        kept, dropped = run.classify_rows(rows, DAY)
+        kept, dropped = run.classify_rows(rows, DAY, citizen=False)
         self.assertEqual([r['title'] for r in kept], ['Inventory Analyst Intern'])
         self.assertEqual(sum(dropped.values()), 6)
 

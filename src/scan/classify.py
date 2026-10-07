@@ -69,6 +69,68 @@ def _staffing():
     return {canon_company(x) for x in json.loads(registry('exclusions.json').read_text())['staffing']}
 
 
+UNIVERSITY = re.compile(r"\buniversit(y|ies)\b|\bcollege\b|institute of technology|polytechnic|\bschool of "
+                        r"(medicine|law|business|management|public health|engineering|education)\b|community college|"
+                        r"\b(UCLA|USC|NYU|MIT|CUNY|SUNY|Caltech|UCSF|UCSD|UCI|UC Berkeley|UC Davis|UC Irvine|"
+                        r"UC San Diego|UC Santa Barbara|UC Riverside|UC Santa Cruz|UMass|UConn|UNC|UVA|UT Austin)\b|"
+                        r"higher education", re.I)
+
+
+def is_university(company: str) -> bool:
+    """A university or college employer (a non-profit, not an enterprise)."""
+    c = company or ''
+    if re.search(r'hospitals?\b|health system|healthcare system', c, re.I) and not re.search(r'university of', c, re.I):
+        return False
+    return bool(UNIVERSITY.search(c))
+
+
+# Full-time salaried STAFF roles only — never part-time, hourly, temporary, student, faculty or
+# executive positions (a university "staff job" means a real salaried employee).
+NOT_STAFF = [
+    (r'part[- ]time|\bPT\b|temporary|\btemp\b|hourly|casual|per diem|seasonal|on[- ]call|substitute|'
+     r'contingent|limited[- ]term|\bterm\b position|fixed[- ]term|\bshift\b|\b\d{3,4}\s*-\s*\d{3,4}\b',
+     'part-time, hourly, shift or temporary'),
+    (r'\bstudent\b|graduate assistant|work[- ]study|\bintern(ship)?\b|fellow(ship)?\b|apprentice|trainee',
+     'student or trainee position'),
+    (r'professor|faculty|lecturer|instructor|adjunct|post-?doc|teacher|tutor|\bcoach\b|librarian',
+     'faculty or teaching'),
+    (r'\bdean\b|vice (president|provost|chancellor)|\bvp\b|\bavp\b|\bchief\b(?! of staff)|provost|president|'
+     r'chancellor|\bc[ifot]o\b|(?<!assistant )(?<!associate )\bdirector\b|\bhead of\b|executive director',
+     'executive or director level'),
+    (r'administrative assistant|office assistant|receptionist|front desk|clerk|custod|housekeep|maintenance|'
+     r'groundskeep|food service|cook\b|police|security officer|driver', 'support or facilities role'),
+]
+_NOT_STAFF = [(re.compile(p, re.I), why) for p, why in NOT_STAFF]
+# Ranking only (never a filter): her strongest kinds of university work vs back-office roles.
+STAFF_STRONG = re.compile(r'marketing|communication|digital|social media|content|brand|\bdata\b|analytic|analyst|'
+                          r'institutional research|admission|enrollment|recruitment|international|global|career|'
+                          r'program (manager|coordinator|specialist|director|administrator)|project manager|strateg|'
+                          r'planning|product|e-?commerce|alumni|engagement|events?\b|outreach|partnership', re.I)
+STAFF_WEAK = re.compile(r'procurement|buyer|purchasing|inventory|warehouse|fiscal|accounting|accountant|payroll|'
+                        r'accounts (payable|receivable)|bursar|billing|facilities|supply chain associate|'
+                        r'\bassistant\b(?! director)|technician', re.I)
+
+
+@lru_cache(maxsize=None)
+def _major_universities():
+    data = json.loads(registry('queries.json').read_text())
+    return [canon_company(x) for x in data.get('major_universities', [])]
+
+
+def major_university(company: str) -> bool:
+    """Well-known research universities (her examples: UCLA, USC, NYU)."""
+    c = canon_company(company)
+    return any(m and (c == m or c.startswith(m) or m in c) for m in _major_universities())
+
+
+def not_staff(title: str):
+    """Why a title is not a full-time salaried staff role, or None when it is one."""
+    for rx, why in _NOT_STAFF:
+        if rx.search(title or ''):
+            return why
+    return None
+
+
 def employer(company: str) -> dict:
     """Registry facts about an employer, or {} when we know nothing."""
     return _enterprises().get(canon_company(company)) or {}
@@ -150,6 +212,9 @@ _ISO3 = re.compile(r"\b(?:DEU|CAN|GBR|IND|ITA|FRA|ESP|NLD|POL|BRA|MEX|CHN|JPN|KO
 _US = re.compile(r'(\b(' + '|'.join(US_STATES + ['US', 'USA']) + r')\b)|(?i:' + US_NAMES + ')')
 _US_ABBR_ONLY = re.compile(r',\s*(' + '|'.join(US_STATES) + r')\b')
 _FOREIGN = re.compile(FOREIGN, re.I)
+# lowercase ISO-2 country codes at the end ("Breda, NB, nl"), as some ATSs write them
+_ISO2_LOWER = re.compile(r',\s*(nl|de|fr|gb|uk|in|cn|jp|kr|br|mx|ca|au|es|it|sg|ie|il|ch|se|be|pl|pt|at|dk|no|fi|hu|cz|ro|'
+                         r'tr|ae|sa|za|ph|vn|th|my|id|ar|co|cl|pe|nz|tw|hk)\s*$')
 
 
 def us_status(location: str) -> str:
@@ -160,7 +225,7 @@ def us_status(location: str) -> str:
     parts = re.split(r';|\||/| or |\n', loc)
     seen_foreign = False
     for p in parts:
-        foreign = bool(_FOREIGN.search(p) or _ISO3.search(p))
+        foreign = bool(_FOREIGN.search(p) or _ISO3.search(p) or _ISO2_LOWER.search(p))
         if (_US_ABBR_ONLY.search(p) and not _ISO3.search(p)) or (_US.search(p) and not foreign):
             return 'US'
         if foreign:
@@ -193,6 +258,8 @@ def _industry_rules():
 
 
 def industry_of(company: str, description: str = '', title: str = '') -> str:
+    if is_university(company):
+        return 'higher_ed'
     e = employer(company)
     if e.get('industry'):
         return e['industry']

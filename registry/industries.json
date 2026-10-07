@@ -1,6 +1,10 @@
 {
   "industries": [
     {
+      "id": "higher_ed",
+      "name": "Universities & higher education"
+    },
+    {
       "id": "tech",
       "name": "Tech & software"
     },
@@ -102,6 +106,10 @@
     }
   ],
   "keyword_rules": [
+    {
+      "id": "higher_ed",
+      "pattern": "\\buniversity\\b|\\bcollege\\b|higher education|institute of technology"
+    },
     {
       "id": "tech",
       "pattern": "software|cloud|saas|platform|\\bai\\b|artificial intelligence|semiconductor|internet|app\\b|data platform|cyber|devices"

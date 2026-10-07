@@ -50,6 +50,9 @@ def _tasks(general_boards=True):
         for b in _load('boards.json')['boards']:
             tasks.append((f"{b['type']}:{b['token']}", 'board', b.get('company') or '', b))
     tasks.append(('simplify', 'list', '', {'type': 'simplify'}))
+    cats = list(_load('queries.json').get('higheredjobs_categories', {}))
+    if cats:
+        tasks.append(('higheredjobs', 'list', '', {'type': 'higheredjobs', 'categories': cats}))
     return tasks
 
 
@@ -57,6 +60,7 @@ ADAPTERS = {'greenhouse': sources.greenhouse, 'lever': sources.lever, 'ashby': s
             'smartrecruiters': sources.smartrecruiters, 'workday': sources.workday,
             'eightfold': sources.eightfold, 'oracle': sources.oracle, 'simplify': sources.simplify,
             'jibe': sources.jibe, 'phenom': sources.phenom, 'jobscore': sources.jobscore,
+            'higheredjobs': sources.higheredjobs,
             **sources.BIGTECH}
 
 
@@ -84,7 +88,7 @@ def harvest(general_boards=True, use_linkedin=True, workers=16, log=print, today
         done = 0
         for f in as_completed(futs):
             board_id, kind, company, a = futs[f]
-            lane = 'enterprise' if kind == 'enterprise' else ('simplify' if kind == 'list' else
+            lane = 'enterprise' if kind == 'enterprise' else (a['type'] if kind == 'list' else
                                                                'bigtech' if a['type'] in sources.BIGTECH else 'boards')
             h = health.setdefault(lane, {'sources': 0, 'ok': 0, 'failed': 0, 'blocked': 0, 'inventory': 0, 'rows': 0})
             h['sources'] += 1
@@ -124,9 +128,12 @@ def _linkedin(today, log):
     base += _load('queries.json').get('extra', [])
     ranked = state.ranked_queries(list(dict.fromkeys(base)))
     off = li.get('offset', 0) % max(1, len(ranked))
-    window = (ranked[off:] + ranked[:off])[:10]
+    window = (ranked[off:] + ranked[:off])[:7]
+    staff = _load('queries.json').get('staff', [])
+    soff = li.get('staff_offset', 0) % max(1, len(staff) or 1)
+    staff_window = (staff[soff:] + staff[:soff])[:3]
     try:
-        got, meta = sources.linkedin(window, log=log)
+        got, meta = sources.linkedin(window, log=log, staff_queries=staff_window)
     except net.Blocked as e:
         li.setdefault('blocks', []).append({'day': today.isoformat(), 'why': str(e)})
         li['blocks'] = li['blocks'][-20:]
@@ -135,10 +142,11 @@ def _linkedin(today, log):
         return [], {'status': 'blocked', 'note': f'{e} — skipped for today, not retried'}
     except Exception as e:  # noqa: BLE001
         return [], {'status': 'failed', 'note': f'{type(e).__name__}: {e}'}
-    li['offset'] = (off + 10) % max(1, len(ranked))   # persist only after a clean pass
+    li['offset'] = (off + 7) % max(1, len(ranked))   # persist only after a clean pass
+    li['staff_offset'] = (soff + 3) % max(1, len(staff) or 1)
     state.save_linkedin(li)
     state.add_query_yield(meta['by_query'], today.isoformat())
-    return got, {'status': 'ok', 'requests': meta['requests'], 'rows': len(got), 'queries': window}
+    return got, {'status': 'ok', 'requests': meta['requests'], 'rows': len(got), 'queries': window + staff_window}
 
 
 # ------------------------------------------------------------------ filter + classify
@@ -158,9 +166,24 @@ def classify_rows(rows, today, never=frozenset(), citizen=None):
         if not title or not r.get('url'):
             dropped['no title or link'] += 1
             continue
-        if not (r.get('intern_hint') or C.INTERN.search(title)) or re.search(r'\bfellowship|new grad', title, re.I):
-            dropped['not an internship'] += 1
+        if (C.is_university(r['company']) or r['source'] == 'higheredjobs') and \
+                re.search(r'student (worker|assistant|employee|aide|associate)|work[- ]study|graduate assistant', title, re.I):
+            dropped['campus student job (not a staff role or internship)'] += 1
             continue
+        intern = bool(r.get('intern_hint') or C.INTERN.search(title)) and not re.search(r'\bfellowship|new grad', title, re.I)
+        staff = False
+        if not intern:
+            # her dedicated field: full-time salaried STAFF roles at universities, same pipeline as internships
+            higher_ed = C.is_university(r['company']) or r['source'] == 'higheredjobs'
+            if not higher_ed:
+                dropped['not an internship' + (' (staff search hit a non-university employer)' if r.get('staff_hint') else '')] += 1
+                continue
+            why = C.not_staff(title)
+            if why:
+                dropped['university job but ' + why] += 1
+                continue
+            staff = True
+        r['track'] = 'staff' if staff else 'internship'
         why = C.out_of_scope(title)
         if why:
             dropped['out of scope: ' + why] += 1
@@ -172,7 +195,7 @@ def classify_rows(rows, today, never=frozenset(), citizen=None):
         if where == 'foreign':
             dropped['outside the US'] += 1
             continue
-        found = C.seasons(title, ' '.join(r.get('terms') or []), r.get('description', '')[:3000])
+        found = [] if staff else C.seasons(title, ' '.join(r.get('terms') or []), r.get('description', '')[:3000])
         if found and all(C.season_past(s, today) for s in found):
             dropped['season already over'] += 1
             continue
@@ -187,9 +210,11 @@ def classify_rows(rows, today, never=frozenset(), citizen=None):
         emp = C.employer(r['company'])
         if emp.get('tier') == 'enterprise' and emp.get('name'):
             r['company'] = emp['name']            # 'The Walt Disney Company' and 'Disney' are one employer
+        higher_ed = C.is_university(r['company']) or r['source'] == 'higheredjobs'
         r.update(country='US' if where == 'US' else 'unknown', seasons=found, flags=flags, lane=lane,
-                 stretch=stretch, industry=C.industry_of(r['company'], r.get('description', ''), title),
-                 tier=emp.get('tier') or ('growth' if r.get('origin_kind') == 'board' else ''),
+                 stretch=stretch, industry='higher_ed' if higher_ed else C.industry_of(r['company'], r.get('description', ''), title),
+                 tier=emp.get('tier') or ('university' if higher_ed else
+                                          'growth' if r.get('origin_kind') == 'board' else ''),
                  usc=bool(emp.get('usc')), korean_company=bool(emp.get('korean')),
                  job_key=state.job_key(r['company'], title))
         if r['korean_company']:
@@ -238,12 +263,20 @@ def merge(rows):
 def prescore(r, prefs, today):
     f = r['flags']
     parts = {}
-    parts['employer'] = {'enterprise': 25, 'large': 18, 'growth': 8}.get(r['tier'], 10)
+    parts['employer'] = {'enterprise': 25, 'large': 18, 'university': 20, 'growth': 8}.get(r.get('tier') or '', 10)
     parts['direction'] = (25 if r['lane'] in CORE_LANES else 20 if r['lane'] in ('finance', 'data') else 8) \
-        - (8 if r['stretch'] else 0)
-    parts['degree'] = {'graduate_allowed': 15, 'unknown': 8, 'related_degree': 10}.get(f['degree_rule'], 0)
-    seas = r.get('seasons') or []
-    parts['season'] = 10 if any(s in PASSING_SEASONS for s in seas) else 3 if 'Fall 2026' in seas else 6
+        - (8 if r.get('stretch') else 0)
+    if r.get('track') == 'staff':
+        # full-time staff role: she holds the bachelor's these ask for. Rank her strongest kinds of
+        # work and well-known universities up; back-office and more senior titles down a little.
+        parts['degree'] = 12
+        parts['season'] = 6 - (4 if re.search(r'\bsenior\b|\bsr\b|manager|associate director', r['title'], re.I) else 0)
+        parts['work_fit'] = (10 if C.STAFF_STRONG.search(r['title']) else 0) - (10 if C.STAFF_WEAK.search(r['title']) else 0)
+        parts['university'] = 6 if C.major_university(r['company']) else 0
+    else:
+        parts['degree'] = {'graduate_allowed': 15, 'unknown': 8, 'related_degree': 10}.get(f['degree_rule'], 0)
+        seas = r.get('seasons') or []
+        parts['season'] = 10 if any(s in PASSING_SEASONS for s in seas) else 3 if 'Fall 2026' in seas else 6
     posted = iso_date(r.get('posted'))
     age = (today - posted).days if posted else None
     parts['fresh'] = 4 if age is None else 10 if age <= 7 else 7 if age <= 21 else 4 if age <= 60 else 1
@@ -252,15 +285,34 @@ def prescore(r, prefs, today):
     ar = f.get('arenas') or []
     parts['her_edge'] = (5 if 'korean' in ar else 0) + (3 if 'beauty_commerce' in ar else 0)
     from ..hub.db import pref_adjust
-    parts['her_ratings'] = pref_adjust(prefs, r['lane'], r['industry'])
+    parts['her_ratings'] = pref_adjust(prefs, r['lane'], r.get('industry'))
     if f['degree_rule'] == 'undergraduate_only':
         parts['degree'] = -20
     return round(max(0, min(100, sum(parts.values()))), 1), parts
 
 
+STAFF_SHARE = 0.25   # up to a quarter of the review queue goes to university staff roles
+
+
 def select_queue(rows, size):
+    """University staff roles get up to a quarter of the slots (her dedicated field); the rest
+    follow the internship rules below."""
+    staff = [r for r in rows if r.get('track') == 'staff']
+    k = min(len(staff), int(size * STAFF_SHARE))
+    picked = _select(staff, k) if k else []
+    rest = [r for r in rows if r.get('track') != 'staff']
+    out = picked + _select(rest, size - len(picked))
+    if len(out) < size:                              # few internships: fill with more staff roles
+        more = [r for r in _select(staff, size) if r not in out]
+        out += more[:size - len(out)]
+    return out
+
+
+def _select(rows, size):
     """Highest pre-rank first, at most 2 per employer, no direction above 40% of the
     queue, and the last few slots kept for directions/industries not yet present."""
+    if size <= 0:
+        return []
     rows = sorted(rows, key=lambda r: -r['prescore'])
     explore_slots = max(2, size // 8)
     chosen, per_co, per_lane = [], Counter(), Counter()
@@ -349,7 +401,8 @@ def write_scan(out_dir, queue, rest, summary):
         r['idx'] = i
         q_out.append(_public(r))
         template.append({
-            'key': r['job_key'], 'idx': i, 'company': r['company'], 'title': r['title'], 'url': r['url'],
+            'key': r['job_key'], 'idx': i, 'track': r.get('track', 'internship'),
+            'company': r['company'], 'title': r['title'], 'url': r['url'],
             'lane': r['lane'], 'industry': r['industry'], 'country': r['country'],
             'pay': r.get('pay_text') or r['flags'].get('pay_text') or 'Not published',
             'timing': ', '.join(r.get('seasons') or r.get('terms') or []) or 'Not stated',
@@ -372,11 +425,11 @@ def _public(r):
     keep = ('job_key', 'idx', 'company', 'title', 'location', 'also_locations', 'url', 'also_urls', 'source',
             'found_by', 'board', 'posted', 'deadline', 'lane', 'stretch', 'industry', 'tier', 'usc', 'seasons',
             'terms', 'degrees', 'flags', 'country', 'prescore', 'prescore_parts', 'jd_path', 'exploration',
-            'pay_text', 'start_date', 'can_apply', 'enrich_error', 'query')
+            'pay_text', 'start_date', 'can_apply', 'enrich_error', 'query', 'track')
     return {k: r[k] for k in keep if k in r and r[k] not in (None, '', [], {})}
 
 
-def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=print, use_universities=True):
+def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=print):
     from ..hub import db
     today = date.today()
     base = paths.OUTPUT / 'scans' / ('scan-' + today.isoformat())
@@ -415,7 +468,8 @@ def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=
             dropped['US citizenship / clearance / PhD / MBA (found in full text)'] += 1
             gone.add(r['job_key'])
             continue
-        r['seasons'] = C.seasons(r['title'], ' '.join(r.get('terms') or []), (r.get('description') or '')[:4000])
+        r['seasons'] = [] if r.get('track') == 'staff' else \
+            C.seasons(r['title'], ' '.join(r.get('terms') or []), (r.get('description') or '')[:4000])
         if r['seasons'] and all(C.season_past(s, today) for s in r['seasons']):
             dropped['season already over (full text)'] += 1
             gone.add(r['job_key'])
@@ -446,60 +500,19 @@ def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=
                'by_tier': dict(Counter(r['tier'] or 'unknown' for r in fresh)),
                'by_source': dict(Counter(s for r in merged for s in r['found_by'])),
                'health': health, 'warnings': warnings}
-    if use_universities and paths.registry('universities.json').exists():
-        try:
-            uni_rows, uni_summary = scan_universities(prefs, log)
-            atomic_json(out_dir / 'universities.json', [university_public(r) for r in uni_rows])
-            summary['universities'] = uni_summary
-        except Exception as e:  # noqa: BLE001 — the internship scan never fails because of this track
-            summary['warnings'].append(f'University track failed: {type(e).__name__}: {e}')
     write_scan(out_dir, queue, rest, summary)
-    _say(log, f'[scan] {len(rows)} postings read → {len(kept)} US internships in scope → {len(merged)} unique → '
+    n_staff = sum(1 for r in merged if r.get('track') == 'staff')
+    _say(log, f'[scan] {len(rows)} postings read → {len(kept)} US jobs in scope ({len(merged) - n_staff} internships + '
+              f'{n_staff} university staff roles unique) → '
               f'{len(fresh)} new to her → {len(queue)} queued for review ({out_dir.relative_to(paths.ROOT)})')
     for w in warnings:
         _say(log, '[scan] WARNING ' + w)
     return out_dir
 
 
-def scan_universities(prefs=None, log=print):
-    from ..hub import db
-    from . import universities
-    prefs = prefs or db.preferences()
-    floors = db.pay_floors()
-    rows, summary = universities.scan(prefs, floors['year'], floors['hour'], log=log)
-    log(f"[universities] {summary['postings_read']} postings → {summary['kept']} in her functions "
-        f"({summary['student_jobs']} student jobs, {summary['good_pay']} at or above her pay floor)")
-    return rows, summary
-
-
-def university_public(r):
-    pay = r.get('pay') or {}
-    return {'job_key': r['job_key'], 'company': r['company'], 'university': r['university'], 'title': r['title'],
-            'location': r.get('location'), 'url': r['url'], 'posted': r.get('posted'), 'lane': r['lane'],
-            'industry': 'education', 'tier': 'university', 'track': 'university', 'employment': r['employment'],
-            'uni_function': r['uni_function'], 'pay': pay.get('text') or '', 'pay_min': pay.get('min'),
-            'pay_max': pay.get('max'), 'pay_unit': pay.get('unit'), 'pay_annual_max': pay.get('annual_mid'),
-            'prescore': r['prescore'], 'prescore_parts': r['prescore_parts'], 'source': 'university',
-            'board': r.get('board'), 'excerpt': (r.get('description') or '')[:600]}
-
-
-def ingest_universities(rows, day, scan_id, log=print, health=None):
-    """pay_annual_max holds the MIDDLE of the posted range as a yearly amount (ranking + pay line)."""
-    from ..hub import db
-    if health is None or health.get('ok', 0) >= 0.8 * max(1, health.get('sources', 1)):
-        gone = db.retire_university({r['job_key'] for r in rows}, day)
-        if gone:
-            log(f"[mark] universities: {gone} postings no longer listed were retired")
-    for r in rows:
-        r.update(reviewed=False, bucket='university', review={'excerpt': r.pop('excerpt', '')})
-    counts = db.upsert_surfaced(rows, day, scan_id, force=True)   # a same-day rerun refreshes pay and fields
-    db.save_day(day, {'universities': {'listed': len(rows), 'new': counts['new'],
-                                        'student_jobs': sum(r['employment'] == 'student' for r in rows)}})
-    log(f"[mark] universities: {len(rows)} listed ({counts['new']} new) in the hub's Universities tab")
-    return counts
-
-
 def _lane_of_row(r):
+    if r['source'] == 'higheredjobs':
+        return 'higheredjobs'
     if r['source'] == 'linkedin':
         return 'linkedin'
     if r['source'] == 'simplify':
@@ -507,6 +520,39 @@ def _lane_of_row(r):
     if r['source'] == 'bigtech' or r.get('board', '').split(':')[0] in ('amazon', 'microsoft', 'apple', 'google'):
         return 'bigtech'
     return 'enterprise' if r.get('origin_kind') == 'enterprise' else 'boards'
+
+
+def requeue(scan_dir, log=print):
+    """Re-pick ONLY the university staff part of an unreviewed scan's queue with the current
+    ranking rules. Queued internships (and their fetched posting text) are left exactly as they are."""
+    from pathlib import Path
+    from ..hub import db
+    scan_dir = Path(scan_dir) if Path(scan_dir).is_absolute() else paths.ROOT / scan_dir
+    if (scan_dir / 'reviewed.json').exists():
+        raise ValueError('this scan already has reviews; requeue only before reviewing')
+    queue = json.loads((scan_dir / 'queue.json').read_text())
+    rest = json.loads((scan_dir / 'rest.json').read_text())
+    summary = json.loads((scan_dir / 'summary.json').read_text())
+    prefs, today = db.preferences(), date.fromisoformat(summary['day'])
+    for r in queue:                           # keep the posting text already fetched
+        jd = paths.ROOT / r['jd_path'] if r.get('jd_path') else None
+        if jd and jd.exists():
+            body = jd.read_text().split('\n\n', 1)
+            if len(body) == 2 and not body[1].startswith('(no text fetched'):
+                r['description'] = body[1]
+    interns = [r for r in queue if r.get('track') != 'staff']
+    staff = [r for r in queue + rest if r.get('track') == 'staff' and not C.not_staff(r['title'])]
+    for r in staff:
+        r.setdefault('flags', {'degree_rule': 'unknown'})
+        r['prescore'], r['prescore_parts'] = prescore(r, prefs, today)
+    picks = _select(staff, len(queue) - len(interns))
+    keys = {r['job_key'] for r in interns + picks}
+    new_rest = sorted((r for r in queue + rest if r['job_key'] not in keys and
+                       (r.get('track') != 'staff' or not C.not_staff(r['title']))), key=lambda r: -r.get('prescore', 0))
+    for f in (scan_dir / 'jds').glob('*.txt'):
+        f.unlink()
+    write_scan(scan_dir, picks + interns, new_rest, summary)
+    log(f"[requeue] {len(picks)} university staff roles re-picked; {len(interns)} internships unchanged")
 
 
 # ------------------------------------------------------------------ mark
@@ -609,7 +655,8 @@ def mark(scan_dir, reviewed_path=None, log=print, force=False):
                         board=base.get('board'), season=j.get('timing'), posted=base.get('posted'), pay=j['pay'],
                         deadline=j.get('deadline') or base.get('deadline'), arenas=(base.get('flags') or {}).get('arenas'),
                         jd_path=base.get('jd_path'), prescore=base.get('prescore'), prescore_parts=base.get('prescore_parts'),
-                        reviewed=True, fit=fit, review=review, bucket=bucket))
+                        reviewed=True, fit=fit, review=review, bucket=bucket,
+                        track=j.get('track') or base.get('track') or 'internship'))
         reviewed_keys.add(key)
     for r in queue + rest:
         if r['job_key'] in reviewed_keys:
@@ -621,7 +668,8 @@ def mark(scan_dir, reviewed_path=None, log=print, force=False):
                         posted=r.get('posted'), pay=r.get('pay_text') or (r.get('flags') or {}).get('pay_text'),
                         deadline=r.get('deadline'), arenas=(r.get('flags') or {}).get('arenas'), jd_path=r.get('jd_path'),
                         prescore=r.get('prescore'), prescore_parts=r.get('prescore_parts'), reviewed=False,
-                        bucket='unreviewed', review={'flags': r.get('flags'), 'checks': _auto_checks_public(r)}))
+                        bucket='unreviewed', review={'flags': r.get('flags'), 'checks': _auto_checks_public(r)},
+                        track=r.get('track') or 'internship'))
     counts = db.upsert_surfaced(out, day, summary['scan_id'], force=force)
     state.mark_seen([(k, summary['scan_id']) for k in reviewed_keys | {q['job_key'] for q in queue}], day)
     meta = {'scan_id': summary['scan_id'], 'reviewed': len(reviews),
@@ -631,9 +679,6 @@ def mark(scan_dir, reviewed_path=None, log=print, force=False):
                                                'queued_for_review')},
             'dropped': summary.get('dropped'), 'by_source': summary.get('by_source')}
     db.save_day(day, meta)
-    if (scan_dir / 'universities.json').exists():
-        ingest_universities(json.loads((scan_dir / 'universities.json').read_text()), day, summary['scan_id'], log,
-                            (summary.get('universities') or {}).get('health'))
     log(f"[mark] hub updated for {day}: {len(reviews)} reviewed ({meta['recommended']} recommended), "
         f"{meta['listed_unreviewed']} listed as score unknown; {counts}")
     return meta
