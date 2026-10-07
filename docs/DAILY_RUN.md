@@ -66,6 +66,23 @@ or industries not yet in the queue (exploration).
 - Board health is tracked per source; a source that fails 4 times in a row goes dormant and is
   retried on probation (7, 14 … 30 days).
 
+## University jobs track
+- `scan` also reads every board in `registry/universities.json` (searches: analyst, marketing,
+  coordinator, student, admissions, program, communications, data, international, advisor) and
+  writes `universities.json` into the scan folder; `mark` lists them in the hub (Universities tab).
+  `career.py universities` runs just this track and lists results immediately.
+- Kept: titles matching her kinds of work (`src/scan/universities.py → FUNCTIONS`). Dropped and
+  counted: faculty, clinical/medical, trades, IT engineering, deans/VPs/directors (assistant
+  directors stay).
+- Student jobs count only at her own school (`home_university` in `data/profile.json`): elsewhere
+  they need enrollment there. USC posts student jobs on Handshake (login), so that list is usually
+  empty from public boards — she adds Handshake finds herself.
+- Pay comes from the posting text; each posting page is fetched once and cached in
+  `data/state/uni_details.json`. Hourly student pay and annual staff pay are compared with her
+  "good salary" line (hub setting; default $70k a year / $22 an hour).
+- Add a university: verify its public board answers without login (Workday cxs is the common
+  case), then add it to `registry/universities.json` under `boards`.
+
 ## Do-not list
 - Never log in anywhere, solve a CAPTCHA, rotate identities, or retry a block.
 - Never use `updated_at` as a posting date (re-saves look new).

@@ -65,6 +65,8 @@ restarts itself if it ever stops, then opens http://127.0.0.1:7768. Show her:
 - On each job: **Interested / Curious / Not for me** (and why) — this is how the hub learns what she
   likes; **status** (Saved → Applied → Interviewing …); notes; "USC alumni at …"; and "Copy résumé
   request for Claude".
+- **Universities** — staff and student jobs at universities, ranked by pay; set her "good
+  salary" line at the top. (This track matters to her — see `data/ABOUT_ME.md`.)
 - **Applications** — her board, plus "Add a job you found yourself" for Handshake, fairs, referrals.
 - **Explore** — which directions and industries her ratings favor, and every job found so far.
 - **USC** — campus resources and dated events.
@@ -109,6 +111,8 @@ what she wants from the search, and the open facts to confirm with her. Also rem
 - **"What's happening at USC this month?"** → the USC tab; refresh `registry/campus.json` from the
   Viterbi Career Connections and USC Career Center pages if it's stale, then
   `python3 career.py campus-sync`.
+- **"Scan university jobs"** → `python3 career.py universities` (also part of every daily scan),
+  then summarize the best-paying student and staff roles in the Universities tab.
 - **"I found this on Handshake: …"** → `python3 career.py lead "Company" "Title" --url … --source handshake`.
 
 ## Updates from James

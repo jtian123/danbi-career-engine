@@ -22,6 +22,8 @@ def main():
     s.add_argument('--no-linkedin', action='store_true')
     s.add_argument('--no-boards', action='store_true', help='skip the ~1,300 mid-size/startup boards (faster)')
     s.add_argument('--workers', type=int, default=16)
+    s.add_argument('--no-universities', action='store_true', help='skip the university jobs track')
+    sub.add_parser('universities', help='Scan university job boards only and list them in the hub now')
     m = sub.add_parser('mark', help="Validate Claude's reviews and put the day's list into the hub")
     m.add_argument('scan_dir')
     m.add_argument('--reviewed', help='default: SCAN_DIR/reviewed.json')
@@ -72,7 +74,8 @@ def main():
         if args.command == 'scan':
             from src.scan.run import scan
             out = scan(args.queue, not args.no_boards, not args.no_linkedin, args.workers,
-                       log=lambda msg: print(msg, file=sys.stderr, flush=True))
+                       log=lambda msg: print(msg, file=sys.stderr, flush=True),
+                       use_universities=not args.no_universities)
             print(out)
         elif args.command == 'mark':
             from src.scan.run import mark
@@ -80,6 +83,13 @@ def main():
                 mark(args.scan_dir, args.reviewed, force=args.force)
             except ValueError as e:
                 p.error(str(e))
+        elif args.command == 'universities':
+            from datetime import date
+            from src.scan.run import ingest_universities, scan_universities, university_public
+            log = lambda msg: print(msg, file=sys.stderr, flush=True)
+            rows, summary = scan_universities(log=log)
+            day = date.today().isoformat()
+            ingest_universities([university_public(r) for r in rows], day, 'universities-' + day, log, summary['health'])
         elif args.command == 'lead':
             from src.hub import db
             row = db.add_lead(args.company, args.title, args.url, args.source, notes=args.notes, deadline=args.deadline)

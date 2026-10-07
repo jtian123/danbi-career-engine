@@ -22,6 +22,8 @@ public career sources ──scan──▶ output/scans/scan-DATE/ ──Claude r
 - **Scope:** US internships in any industry; big employers first; eligibility follows her private
   profile (no sponsorship filter); software/hardware/lab roles excluded,
   data science kept as a stretch; anything else that fits no named direction is kept as "explore".
+- **University jobs** have their own track and hub tab: staff and student positions at
+  universities, ranked by pay and fit (faculty, clinical and trades roles excluded).
 - **Priority** = Claude's reviewed fit (0–100) + big-employer bonus (+8/+5) + what her ratings taught
   it (±10). An ordering, not an acceptance probability.
 - **Privacy:** her facts and the hub database live in `data/`, which is never tracked. The hub only

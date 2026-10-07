@@ -1,0 +1,686 @@
+{
+ "note": "University job boards (staff + student) for the Universities track. Verified live on 2026-10-06/07. Workday cxs boards are searched with the queries in src/scan/universities.py; other systems need an adapter in that file.",
+ "universities": [
+  {
+   "name": "Arizona State University",
+   "short": "ASU",
+   "city": "Tempe",
+   "state": "AZ",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "asu",
+     "wd": 1,
+     "site": "ASUStaffCareers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Boston University",
+   "short": "BU",
+   "city": "Boston",
+   "state": "MA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://jobs.silkroad.com/BU/External/rss"
+    }
+   ],
+   "note": "SilkRoad Recruiting; robots.txt sets Crawl-Delay: 10. Pay in listing payload: 14/201. Pay example: \"ise materials Perform all other duties as assigned. Starting rate of $35.09/hr increasing to $46.78/"
+  },
+  {
+   "name": "Brown University",
+   "short": "Brown",
+   "city": "Providence",
+   "state": "RI",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "brown",
+     "wd": 5,
+     "site": "staff-careers-brown",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "California Institute of Technology",
+   "short": "Caltech",
+   "city": "Pasadena",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://phf.tbe.taleo.net/phf03/ats/servlet/Rss?org=CALTECH&cws=37",
+     "fetch_detail": true
+    }
+   ],
+   "note": "Taleo Business Edition RSS; pay range is on the requisition page, not in the RSS item. JPL is a separate employer. Pay in listing payload: 0/92. Pay example: \"our workforce and become members of our c"
+  },
+  {
+   "name": "California State University, Long Beach",
+   "short": "CSULB",
+   "city": "Long Beach",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/873/cw/en-us/rss",
+     "filter": {
+      "businessLayer1": "Long Beach"
+     }
+    }
+   ],
+   "note": "CSU system-wide PageUp board (instance 873, all 23 campuses); filter RSS items on <job:businessLayer1>='Long Beach'. careers.calstate.edu itself returned 403 to scripted requests. Pay in listing paylo"
+  },
+  {
+   "name": "California State University, Los Angeles",
+   "short": "Cal State LA",
+   "city": "Los Angeles",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/873/cw/en-us/rss",
+     "filter": {
+      "businessLayer1": "Los Angeles"
+     }
+    }
+   ],
+   "note": "CSU system-wide PageUp board (instance 873, all 23 campuses); filter RSS items on <job:businessLayer1>='Los Angeles'. careers.calstate.edu itself returned 403 to scripted requests. Pay in listing payl"
+  },
+  {
+   "name": "Carnegie Mellon University",
+   "short": "CMU",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "cmu",
+     "wd": 115,
+     "site": "CMU",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "City University of New York",
+   "short": "CUNY",
+   "city": "New York",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://cuny.jobs/feed/rss/?num_items=500"
+    }
+   ],
+   "note": "cuny.jobs is a DirectEmployers mirror of CUNYfirst postings with public JSON/RSS feeds (offset/num_items paging). Covers all CUNY colleges. Pay in listing payload: 263/302. Pay example: \"sistant **FLS"
+  },
+  {
+   "name": "Columbia University",
+   "short": "Columbia",
+   "city": "New York",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/884/cw/en-us/rss"
+    }
+   ],
+   "note": "Custom domain opportunities.columbia.edu serves a JS bot challenge (202) to scripts; the vendor-hosted PageUp RSS is public. Board includes CUIMC (Vagelos P&S) staff. PageUp job-detail pages answered "
+  },
+  {
+   "name": "Cornell University",
+   "short": "Cornell",
+   "city": "Ithaca",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "cornell",
+     "wd": 1,
+     "site": "CornellCareerPage",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Duke University",
+   "short": "Duke",
+   "city": "Durham",
+   "state": "NC",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.duke.edu/services/rss/job/?locale=en_US&keywords=",
+     "per_query": true
+    }
+   ],
+   "note": "SAP SuccessFactors Career Site Builder: RSS returns the 20 newest (keyword-filterable), sitemap.xml lists every job URL. One board for Duke University and Duke Health. Pay in listing payload: 4/20 RSS"
+  },
+  {
+   "name": "Emory University",
+   "short": "Emory",
+   "city": "Atlanta",
+   "state": "GA",
+   "boards": [
+    {
+     "type": "jibe_all",
+     "host": "careers.emory.edu"
+    }
+   ],
+   "note": "iCIMS + Jibe; one board for Emory University and Emory Healthcare. Pay in listing payload: tags 0, description 4 of 300 fetched. Pay example: \"Salary: Based on Three (3) different travel levels starti"
+  },
+  {
+   "name": "Fordham University",
+   "short": "Fordham",
+   "city": "Bronx",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.fordham.edu/postings/search.atom"
+    }
+   ],
+   "note": "Pay in listing payload: 0/71. Pay example: \"Minimum Starting Salary $66,555\". Student-worker evidence on this board: BRICS Student Research Assistant, VCPA; Undergraduate Student Research Assistant; B"
+  },
+  {
+   "name": "George Washington University",
+   "short": "GWU",
+   "city": "Washington",
+   "state": "DC",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://www.gwu.jobs/postings/search.atom"
+    }
+   ],
+   "note": "Pay in listing payload: 2/112. Pay example: \"Hiring Range $63,480- $65,000\"."
+  },
+  {
+   "name": "Georgetown University",
+   "short": "Georgetown",
+   "city": "Washington",
+   "state": "DC",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "georgetown",
+     "wd": 1,
+     "site": "Georgetown_Admin_Careers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Harvard University",
+   "short": "Harvard",
+   "city": "Cambridge",
+   "state": "MA",
+   "boards": [
+    {
+     "type": "sr_all",
+     "token": "HarvardUniversity"
+    }
+   ],
+   "note": "SmartRecruiters public Posting API. Listing has a 'Salary Grade' custom field (grade, not dollars); some postings state $ ranges in the job ad."
+  },
+  {
+   "name": "Loyola Marymount University",
+   "short": "LMU",
+   "city": "Los Angeles",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "lmu",
+     "wd": 1,
+     "site": "Careers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "New York University",
+   "short": "NYU",
+   "city": "New York",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "sitemap",
+     "sitemap": "https://uscareers-nyu.icims.com/sitemap.xml",
+     "pattern": "/jobs/\\d+/(?P<slug>[^/]+)/job",
+     "iframe": true
+    }
+   ],
+   "note": "No public JSON; iCIMS portal sitemap.xml lists every open job URL (title in slug) and each job page carries schema.org JobPosting JSON-LD. nyu.edu pages serve a bot challenge to scripts. NYU Langone i"
+  },
+  {
+   "name": "Northeastern University",
+   "short": "Northeastern",
+   "city": "Boston",
+   "state": "MA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "northeastern",
+     "wd": 1,
+     "site": "careers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Ohio State University",
+   "short": "OhioState",
+   "city": "Columbus",
+   "state": "OH",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "osu",
+     "wd": 1,
+     "site": "OSUCareers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Pepperdine University",
+   "short": "Pepperdine",
+   "city": "Malibu",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/676/cw/en-us/rss"
+    }
+   ],
+   "note": "Pay in listing payload: 106/106. Pay example: \"This is a Regular, Exempt, 40 hour per week position. Expected Pay Range: $70,304 - $75,000 per year The above pay rang\"."
+  },
+  {
+   "name": "Princeton University",
+   "short": "Princeton",
+   "city": "Princeton",
+   "state": "NJ",
+   "boards": [
+    {
+     "type": "sitemap",
+     "sitemap": "https://main-princeton.icims.com/sitemap.xml",
+     "pattern": "/jobs/\\d+/(?P<slug>[^/]+)/job",
+     "iframe": true
+    }
+   ],
+   "note": "hr.princeton.edu / careers.princeton.edu are behind Cloudflare challenges; the iCIMS portal sitemap + JSON-LD job pages are public. Pay example: \"Required No\\n Valid Driver\\u2019s License Required No\\"
+  },
+  {
+   "name": "Purdue University",
+   "short": "Purdue",
+   "city": "West Lafayette",
+   "state": "IN",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.purdue.edu/services/rss/job/?locale=en_US&keywords=",
+     "per_query": true
+    }
+   ],
+   "note": "SuccessFactors CSB: RSS = 20 newest (keyword-filterable); sitemap.xml = full list. Covers all Purdue campuses. Pay in listing payload: 3/20 RSS items. Pay example: \"ommensurate with experience and qua"
+  },
+  {
+   "name": "Rice University",
+   "short": "Rice",
+   "city": "Houston",
+   "state": "TX",
+   "boards": [
+    {
+     "type": "oracle_q",
+     "host": "emdz.fa.us2.oraclecloud.com",
+     "site": "CX_1001"
+    }
+   ],
+   "note": "jobs.rice.edu links CX_1001 and CX_2001; the API returned identical results for both (and for a bogus siteNumber), so siteNumber appears not to filter here."
+  },
+  {
+   "name": "San Diego State University",
+   "short": "SDSU",
+   "city": "San Diego",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/873/cw/en-us/rss",
+     "filter": {
+      "businessLayer1": "San Diego"
+     }
+    }
+   ],
+   "note": "CSU system-wide PageUp board (instance 873, all 23 campuses); filter RSS items on <job:businessLayer1>='San Diego'. careers.calstate.edu itself returned 403 to scripted requests. Pay in listing payloa"
+  },
+  {
+   "name": "Seattle University",
+   "short": "SeattleU",
+   "city": "Seattle",
+   "state": "WA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "seattleu",
+     "wd": 108,
+     "site": "SeattleUJobs",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Stanford University",
+   "short": "Stanford",
+   "city": "Stanford",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "oracle_q",
+     "host": "careersearch.stanford.edu",
+     "site": "CX_1"
+    }
+   ],
+   "note": "Oracle Recruiting Cloud on a custom domain (site URL name 'stanford', siteNumber CX_1). Stanford Health Care is a separate employer/board. Pay example: \"Pay Range: $144,362-$269,477\"."
+  },
+  {
+   "name": "The New School",
+   "short": "NewSchool",
+   "city": "New York",
+   "state": "NY",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "newschool",
+     "wd": 1,
+     "site": "External",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "Tufts University",
+   "short": "Tufts",
+   "city": "Medford",
+   "state": "MA",
+   "boards": [
+    {
+     "type": "jibe_all",
+     "host": "jobs.tufts.edu"
+    }
+   ],
+   "note": "Pay in listing payload: tags 118, description 121 of 126 fetched. Pay example: \"el Context Protocol, and retrieval-based AI systems. Pay Range Minimum $108,200.00, Midpoint $135,300.00, Maximum $162,4"
+  },
+  {
+   "name": "University of California, Irvine",
+   "short": "UC Irvine",
+   "city": "Irvine",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "jibe_all",
+     "host": "jobs.uci.edu"
+    }
+   ],
+   "note": "iCIMS + Jibe; board mixes UCI campus and UCI Health postings (tag 'UCI Campus' vs health). Pay in Jibe tags. Pay in listing payload: tags 300, description 53 of 300 fetched. Pay example: \"ensation pra"
+  },
+  {
+   "name": "University of California, Los Angeles",
+   "short": "UCLA",
+   "city": "Los Angeles",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "jibe_all",
+     "host": "jobs.ucla.edu"
+    }
+   ],
+   "note": "iCIMS ATS with Jibe front-end; pay is in the Jibe 'tags' fields (e.g. 'USD $29.30/Hr.'), not salary_* fields. UCLA Health is a separate board. Pay in listing payload: tags 99, description 2 of 99 fetc"
+  },
+  {
+   "name": "University of California, San Diego",
+   "short": "UC San Diego",
+   "city": "La Jolla",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "sitemap",
+     "sitemap": "https://employment.ucsd.edu/sitemap-7d5be798-en.xml",
+     "pattern": "employment\\.ucsd\\.edu/(?P<slug>[a-z0-9-]+?)-\\d+/job/"
+    }
+   ],
+   "note": "/api/jobs is 403; the XML sitemap lists all jobs and each /jobs page embeds JSON state. Board covers UCSD campus and UC San Diego Health. Pay example: \"ELECTR TCHN Department: INFORMATION TECHNOLOGY S"
+  },
+  {
+   "name": "University of California, San Francisco",
+   "short": "UCSF",
+   "city": "San Francisco",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "oracle_q",
+     "host": "iazuqy.fa.ocs.oraclecloud.com",
+     "site": "CX_1"
+    }
+   ],
+   "note": "careers.ucsf.edu links into Oracle CX_1; board mixes UCSF campus and UCSF Health postings (one tenant). Pay example: \"Budgeted Job Salary Range: 36.59-45.66\"."
+  },
+  {
+   "name": "University of Chicago",
+   "short": "UChicago",
+   "city": "Chicago",
+   "state": "IL",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "uchicago",
+     "wd": 5,
+     "site": "External",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "University of Florida",
+   "short": "UF",
+   "city": "Gainesville",
+   "state": "FL",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.pageuppeople.com/674/cw/en-us/rss"
+    }
+   ],
+   "note": "Custom domain explore.jobs.ufl.edu serves a bot challenge to scripts; vendor-hosted RSS is public. Includes College of Medicine/UF Health faculty postings. Pay in listing payload: 290/711. Pay example"
+  },
+  {
+   "name": "University of Miami",
+   "short": "U Miami",
+   "city": "Coral Gables",
+   "state": "FL",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "umiami",
+     "wd": 1,
+     "site": "UMCareerStaff",
+     "kind": "staff"
+    }
+   ],
+   "note": "careers.miami.edu is a Phenom front-end over this Workday site; includes UHealth clinical postings."
+  },
+  {
+   "name": "University of Michigan",
+   "short": "UMich",
+   "city": "Ann Arbor",
+   "state": "MI",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://careers.umich.edu/search/feed/advanced",
+     "fetch_detail": true
+    }
+   ],
+   "note": "The RSS feed only carries the newest postings (2 items at check time; keyword params narrow it) \u2014 usable for incremental polling, not a full listing; the full list is HTML (careers.umich.edu/search-jo"
+  },
+  {
+   "name": "University of North Carolina at Chapel Hill",
+   "short": "UNC",
+   "city": "Chapel Hill",
+   "state": "NC",
+   "boards": [
+    {
+     "type": "feed",
+     "feed": "https://unc.peopleadmin.com/postings/search.atom"
+    }
+   ],
+   "note": "Pay in listing payload: 3/458. Pay example: \"Hiring Range $45.00 - $50.00 per hour\"."
+  },
+  {
+   "name": "University of Pennsylvania",
+   "short": "Penn",
+   "city": "Philadelphia",
+   "state": "PA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "upenn",
+     "wd": 1,
+     "site": "careers-at-penn",
+     "host": "wd1.myworkdaysite.com",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "University of Southern California",
+   "short": "USC",
+   "city": "Los Angeles",
+   "state": "CA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "usc",
+     "wd": 5,
+     "site": "ExternalUSCCareers",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "University of Texas at Austin",
+   "short": "UTAustin",
+   "city": "Austin",
+   "state": "TX",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "utaustin",
+     "wd": 1,
+     "site": "UTstaff",
+     "kind": "staff"
+    },
+    {
+     "type": "workday",
+     "tenant": "utaustin",
+     "wd": 1,
+     "site": "UTstudent",
+     "kind": "student"
+    }
+   ]
+  },
+  {
+   "name": "University of Virginia",
+   "short": "UVA",
+   "city": "Charlottesville",
+   "state": "VA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "uva",
+     "wd": 1,
+     "site": "UVAStudentJobs",
+     "kind": "student"
+    }
+   ]
+  },
+  {
+   "name": "University of Washington",
+   "short": "UW",
+   "city": "Seattle",
+   "state": "WA",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "uw",
+     "wd": 5,
+     "site": "UWHires",
+     "host": "wd5.myworkdaysite.com",
+     "kind": "staff"
+    }
+   ]
+  },
+  {
+   "name": "University of Wisconsin\u2013Madison",
+   "short": "UW-Madison",
+   "city": "Madison",
+   "state": "WI",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "wisconsin",
+     "wd": 1,
+     "site": "UW_Madison",
+     "kind": "staff"
+    }
+   ],
+   "note": "UW System Workday tenant 'wisconsin' (sites per campus). jobs.wisc.edu front-end is behind a bot challenge; the cxs API is public. Student jobs: PageUp 883 (studentjobs.hr.wisc.edu; RSS https://career"
+  },
+  {
+   "name": "Vanderbilt University",
+   "short": "Vanderbilt",
+   "city": "Nashville",
+   "state": "TN",
+   "boards": [
+    {
+     "type": "oracle_q",
+     "host": "ecsr.fa.us2.oraclecloud.com",
+     "site": "CX_1"
+    }
+   ],
+   "note": "Vanderbilt University Medical Center is a separate employer."
+  },
+  {
+   "name": "Yale University",
+   "short": "Yale",
+   "city": "New Haven",
+   "state": "CT",
+   "boards": [
+    {
+     "type": "workday",
+     "tenant": "yale",
+     "wd": 1,
+     "site": "external_career_site",
+     "kind": "staff"
+    },
+    {
+     "type": "workday",
+     "tenant": "yale",
+     "wd": 1,
+     "site": "temporary_career_site",
+     "kind": "temporary"
+    }
+   ]
+  }
+ ],
+ "skipped": [
+  "MIT \u2014 PeopleClick sitemap has no titles in its URLs (every posting would have to be opened to filter); add later",
+  "UIUC \u2014 Cornerstone search needs a bearer token from the page; not used",
+  "JHU, UC Berkeley, UCSB, UC Davis, Northwestern, Georgia Tech, UMN \u2014 no public JSON/RSS found (2026-10-07)"
+ ]
+}

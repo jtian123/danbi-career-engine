@@ -376,7 +376,7 @@ def _public(r):
     return {k: r[k] for k in keep if k in r and r[k] not in (None, '', [], {})}
 
 
-def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=print):
+def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=print, use_universities=True):
     from ..hub import db
     today = date.today()
     base = paths.OUTPUT / 'scans' / ('scan-' + today.isoformat())
@@ -446,12 +446,57 @@ def scan(queue_size=40, general_boards=True, use_linkedin=True, workers=16, log=
                'by_tier': dict(Counter(r['tier'] or 'unknown' for r in fresh)),
                'by_source': dict(Counter(s for r in merged for s in r['found_by'])),
                'health': health, 'warnings': warnings}
+    if use_universities and paths.registry('universities.json').exists():
+        try:
+            uni_rows, uni_summary = scan_universities(prefs, log)
+            atomic_json(out_dir / 'universities.json', [university_public(r) for r in uni_rows])
+            summary['universities'] = uni_summary
+        except Exception as e:  # noqa: BLE001 — the internship scan never fails because of this track
+            summary['warnings'].append(f'University track failed: {type(e).__name__}: {e}')
     write_scan(out_dir, queue, rest, summary)
     _say(log, f'[scan] {len(rows)} postings read → {len(kept)} US internships in scope → {len(merged)} unique → '
               f'{len(fresh)} new to her → {len(queue)} queued for review ({out_dir.relative_to(paths.ROOT)})')
     for w in warnings:
         _say(log, '[scan] WARNING ' + w)
     return out_dir
+
+
+def scan_universities(prefs=None, log=print):
+    from ..hub import db
+    from . import universities
+    prefs = prefs or db.preferences()
+    floors = db.pay_floors()
+    rows, summary = universities.scan(prefs, floors['year'], floors['hour'], log=log)
+    log(f"[universities] {summary['postings_read']} postings → {summary['kept']} in her functions "
+        f"({summary['student_jobs']} student jobs, {summary['good_pay']} at or above her pay floor)")
+    return rows, summary
+
+
+def university_public(r):
+    pay = r.get('pay') or {}
+    return {'job_key': r['job_key'], 'company': r['company'], 'university': r['university'], 'title': r['title'],
+            'location': r.get('location'), 'url': r['url'], 'posted': r.get('posted'), 'lane': r['lane'],
+            'industry': 'education', 'tier': 'university', 'track': 'university', 'employment': r['employment'],
+            'uni_function': r['uni_function'], 'pay': pay.get('text') or '', 'pay_min': pay.get('min'),
+            'pay_max': pay.get('max'), 'pay_unit': pay.get('unit'), 'pay_annual_max': pay.get('annual_mid'),
+            'prescore': r['prescore'], 'prescore_parts': r['prescore_parts'], 'source': 'university',
+            'board': r.get('board'), 'excerpt': (r.get('description') or '')[:600]}
+
+
+def ingest_universities(rows, day, scan_id, log=print, health=None):
+    """pay_annual_max holds the MIDDLE of the posted range as a yearly amount (ranking + pay line)."""
+    from ..hub import db
+    if health is None or health.get('ok', 0) >= 0.8 * max(1, health.get('sources', 1)):
+        gone = db.retire_university({r['job_key'] for r in rows}, day)
+        if gone:
+            log(f"[mark] universities: {gone} postings no longer listed were retired")
+    for r in rows:
+        r.update(reviewed=False, bucket='university', review={'excerpt': r.pop('excerpt', '')})
+    counts = db.upsert_surfaced(rows, day, scan_id, force=True)   # a same-day rerun refreshes pay and fields
+    db.save_day(day, {'universities': {'listed': len(rows), 'new': counts['new'],
+                                        'student_jobs': sum(r['employment'] == 'student' for r in rows)}})
+    log(f"[mark] universities: {len(rows)} listed ({counts['new']} new) in the hub's Universities tab")
+    return counts
 
 
 def _lane_of_row(r):
@@ -586,6 +631,9 @@ def mark(scan_dir, reviewed_path=None, log=print, force=False):
                                                'queued_for_review')},
             'dropped': summary.get('dropped'), 'by_source': summary.get('by_source')}
     db.save_day(day, meta)
+    if (scan_dir / 'universities.json').exists():
+        ingest_universities(json.loads((scan_dir / 'universities.json').read_text()), day, summary['scan_id'], log,
+                            (summary.get('universities') or {}).get('health'))
     log(f"[mark] hub updated for {day}: {len(reviews)} reviewed ({meta['recommended']} recommended), "
         f"{meta['listed_unreviewed']} listed as score unknown; {counts}")
     return meta

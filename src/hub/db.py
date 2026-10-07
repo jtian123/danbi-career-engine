@@ -67,7 +67,46 @@ def connect() -> sqlite3.Connection:
     con = sqlite3.connect(str(p / 'hub.db'), timeout=15)
     con.row_factory = sqlite3.Row
     con.executescript(_SCHEMA)
+    _migrate(con)
     return con
+
+
+def _migrate(con):
+    have = {r[1] for r in con.execute('PRAGMA table_info(jobs)')}
+    added = False
+    for name, typ in _NEW_COLUMNS:
+        if name not in have:
+            con.execute(f'ALTER TABLE jobs ADD COLUMN {name} {typ}')
+            added = True
+    if added:
+        con.execute("UPDATE jobs SET track='internship' WHERE track IS NULL")
+        con.commit()
+
+
+def get_setting(key, default=None):
+    con = connect()
+    try:
+        r = con.execute('SELECT value FROM settings WHERE key=?', (key,)).fetchone()
+        return json.loads(r['value']) if r else default
+    finally:
+        con.close()
+
+
+def set_setting(key, value):
+    con = connect()
+    try:
+        con.execute('INSERT INTO settings(key, value) VALUES(?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value',
+                    (key, json.dumps(value)))
+        con.commit()
+    finally:
+        con.close()
+
+
+def pay_floors() -> dict:
+    """Her 'good salary' line for university jobs (annual for staff, hourly for student jobs)."""
+    f = dict(DEFAULT_PAY_FLOOR)
+    f.update(get_setting('uni_pay_floor', {}) or {})
+    return f
 
 
 def _event(con, job_id, kind, day, note=''):
@@ -77,11 +116,19 @@ def _event(con, job_id, kind, day, note=''):
 # ------------------------------------------------------------------ ingest from a scan
 _JOB_FIELDS = ('company', 'title', 'url', 'location', 'also_locations', 'lane', 'stretch', 'industry', 'tier',
                'source', 'board', 'season', 'posted', 'pay', 'deadline', 'arenas', 'jd_path', 'prescore',
-               'prescore_parts', 'reviewed', 'fit', 'review', 'bucket')
+               'prescore_parts', 'reviewed', 'fit', 'review', 'bucket', 'track', 'employment', 'uni_function',
+               'university', 'pay_min', 'pay_max', 'pay_unit', 'pay_annual_max')
+# Columns added after the first release (2026-10-07: university track). Existing hub.db files get
+# them through _migrate(); _SCHEMA stays the original table so old databases keep opening.
+_NEW_COLUMNS = (('track', "TEXT DEFAULT 'internship'"), ('employment', 'TEXT'), ('uni_function', 'TEXT'),
+                ('university', 'TEXT'), ('pay_min', 'REAL'), ('pay_max', 'REAL'), ('pay_unit', 'TEXT'),
+                ('pay_annual_max', 'REAL'))
+DEFAULT_PAY_FLOOR = {'year': 70000, 'hour': 22}
 
 
 def _pack(j: dict) -> dict:
     f = {k: j.get(k) for k in _JOB_FIELDS}
+    f['track'] = f['track'] or 'internship'
     for k in ('also_locations', 'arenas', 'prescore_parts', 'review'):
         if f[k] is not None and not isinstance(f[k], str):
             f[k] = json.dumps(f[k], ensure_ascii=False)
@@ -103,7 +150,7 @@ def upsert_surfaced(rows, day: str, scan_id: str, origin: str = 'scan', force: b
             row = con.execute('SELECT id, status, reviewed, scan_id FROM jobs WHERE job_key=?', (j['job_key'],)).fetchone()
             relisted = False
             if row:
-                if row['scan_id'] == scan_id and row['reviewed'] >= f['reviewed'] and not (force and f['reviewed']):
+                if row['scan_id'] == scan_id and row['reviewed'] >= f['reviewed'] and not force:
                     continue
                 relisted = not f['reviewed']
                 if row['reviewed'] and relisted:
@@ -202,6 +249,30 @@ def add_lead(company, title, url='', source='handshake', location='', notes='', 
         con.execute("UPDATE jobs SET status='saved', status_date=? WHERE id=? AND status='new'", (today(), r['id']))
         con.commit()
         return dict(con.execute('SELECT * FROM jobs WHERE id=?', (r['id'],)).fetchone())
+    finally:
+        con.close()
+
+
+def retire_university(keep_keys: set, day: str) -> int:
+    """University postings missing from a healthy full run: untouched ones are removed; ones she
+    saved, rated or noted are kept and marked closed."""
+    con = connect()
+    try:
+        n = 0
+        for r in con.execute("SELECT id, job_key, status, interest, notes FROM jobs WHERE track='university'").fetchall():
+            if r['job_key'] in keep_keys:
+                continue
+            if r['status'] == 'new' and not r['interest'] and not (r['notes'] or '').strip():
+                con.execute('DELETE FROM events WHERE job_id=?', (r['id'],))
+                con.execute('DELETE FROM jobs WHERE id=?', (r['id'],))
+            elif r['status'] in ('new', 'saved'):
+                con.execute("UPDATE jobs SET status='closed', status_date=? WHERE id=?", (day, r['id']))
+                _event(con, r['id'], 'closed', day, 'no longer listed on the university board')
+            else:
+                continue
+            n += 1
+        con.commit()
+        return n
     finally:
         con.close()
 
@@ -351,7 +422,11 @@ def full_state() -> dict:
         campus = [dict(r) for r in con.execute('SELECT * FROM campus_events ORDER BY date')]
         days = {r['day']: json.loads(r['meta']) for r in con.execute('SELECT * FROM days')}
         never = [dict(r) for r in con.execute('SELECT * FROM never ORDER BY added DESC')]
+        floors = dict(DEFAULT_PAY_FLOOR)
+        r = con.execute("SELECT value FROM settings WHERE key='uni_pay_floor'").fetchone()
+        if r:
+            floors.update(json.loads(r['value']) or {})
         return {'jobs': jobs, 'events': events, 'campus_events': campus, 'days': days, 'prefs': prefs,
-                'never': never, 'today': today(), 'tier_bonus': TIER_BONUS}
+                'never': never, 'today': today(), 'tier_bonus': TIER_BONUS, 'pay_floor': floors}
     finally:
         con.close()

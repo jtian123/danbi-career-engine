@@ -115,6 +115,12 @@ class Handler(BaseHTTPRequestHandler):
             elif self.path == '/api/event-done':
                 db.mark_campus_done(int(body['id']), bool(body.get('done', True)))
                 self._json({'ok': True})
+            elif self.path == '/api/pay-floor':
+                year, hour = int(body.get('year', 70000)), float(body.get('hour', 22))
+                if not (0 <= year <= 500000 and 0 <= hour <= 200):
+                    return self._json({'error': 'pay floor out of range'}, 400)
+                db.set_setting('uni_pay_floor', {'year': year, 'hour': hour})
+                self._json({'ok': True, 'pay_floor': db.pay_floors()})
             elif self.path == '/api/never':
                 self._json({'ok': True, 'added': db.never_add(body['company'])})
             else:

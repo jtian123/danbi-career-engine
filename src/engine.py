@@ -120,13 +120,19 @@ def assess(job, profile, today=None):
         checks.append('Live employer application availability needs verification')
     if not job.get('reviewed'):
         checks.append('New discovery: review full requirements and source before recommending')
-    graduation = profile['education'][-1].get('expected_graduation')
+    edu = profile['education'][-1]
+    # Possible graduation months: an explicit list (e.g. Dec 2027 or May 2028) or one month.
+    options = [g for g in (edu.get('graduation_options') or [edu.get('expected_graduation')]) if g]
     if job.get('grad_min') or job.get('grad_max'):
-        if not graduation:
+        fits = [g for g in options if not ((job.get('grad_min') and g < job['grad_min']) or
+                                           (job.get('grad_max') and g > job['grad_max']))]
+        if not options:
             checks.append('Confirm exact graduation month against the employer window')
-        elif ((job.get('grad_min') and graduation < job['grad_min']) or
-              (job.get('grad_max') and graduation > job['grad_max'])):
+        elif not fits:
             blocks.append('Graduation date falls outside the required window')
+        elif len(fits) < len(options):
+            checks.append('Graduation window fits only if she graduates in ' + ' or '.join(
+                date(int(g[:4]), int(g[5:7]), 1).strftime('%b %Y') for g in fits))
     gpa = profile.get('gpa')
     if job.get('min_gpa'):
         if gpa is None:

@@ -214,10 +214,10 @@ def eightfold(company, host, domain, api=None, **_):
     return rows, len(rows)
 
 
-def oracle(company, host, site=None, siteNumber=None, public_site=None, **_):
+def oracle(company, host, site=None, siteNumber=None, public_site=None, keyword=None, **_):
     site = site or siteNumber
     rows = []
-    for q in ('intern', 'internship'):
+    for q in ([keyword] if keyword else ('intern', 'internship')):
         u = (f'https://{host}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true'
              '&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=' + site +
              ',limit=100,keyword=' + urllib.parse.quote(q) + ',sortBy=POSTING_DATES_DESC')

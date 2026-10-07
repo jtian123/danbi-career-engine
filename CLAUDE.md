@@ -6,6 +6,7 @@ a scan, editing code, or writing a résumé. Do not fork its rules here.
 Quick map:
 - "Find me internships today" → AGENTS.md §3 (scan → review with `prompts/job_review.md` → mark).
   Answer in chat with a short summary; the list itself lives in the Career Hub calendar.
+- University jobs (staff + student) → their own track and hub tab; AGENTS.md §1.6.
 - The Career Hub: http://127.0.0.1:7768 (`python3 career.py hub status` if it doesn't open).
 - Résumés → AGENTS.md §6 and `docs/RESUME_WORKFLOW.md`.
 - First time on this Mac → `SETUP_FOR_CLAUDE.md`.
