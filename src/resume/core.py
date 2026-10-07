@@ -146,7 +146,8 @@ def compile_resume(plan, profile, cfg):
         skill_seen.add(sid)
         groups.setdefault(s['group'], []).append(s['text'])
     course_lines, course_trace = coursework.compile_selected(plan.get('coursework_ids', []), profile, cfg)
-    education = [{k: e[k] for k in ('school', 'degree', 'dates')} for e in profile['education']]
+    education = [{k: e[k] for k in ('school', 'degree', 'dates', 'gpa') if e.get(k) or k != 'gpa'}
+                 for e in profile['education']]
     for source, rendered in zip(profile['education'], education):
         if source['id'] in course_lines:
             rendered['coursework'] = course_lines[source['id']]

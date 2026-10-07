@@ -21,6 +21,7 @@ def check(directory):
     expected=[resume['name'],resume['headline'],resume['summary']]
     for e in resume['education']:
         expected.extend(e[k] for k in ('school', 'degree', 'dates'))
+        if e.get('gpa'):expected.append('GPA '+e['gpa'])
         expected.extend(e.get('coursework', []))
     for e in resume['experience']:expected.extend([e['company'],e['title'],e['dates'],*e['bullets']])
     for s in resume['skills']:expected.extend(s['items'])

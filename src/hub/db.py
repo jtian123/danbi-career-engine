@@ -91,7 +91,7 @@ def _pack(j: dict) -> dict:
     return f
 
 
-def upsert_surfaced(rows, day: str, scan_id: str, origin: str = 'scan') -> dict:
+def upsert_surfaced(rows, day: str, scan_id: str, origin: str = 'scan', force: bool = False) -> dict:
     """Fold one scan's rows into the hub. Idempotent per scan. A job she already
     acted on keeps its status and her ratings; only surfacing facts refresh, and a
     reviewed score is never replaced by an unreviewed listing."""
@@ -103,7 +103,7 @@ def upsert_surfaced(rows, day: str, scan_id: str, origin: str = 'scan') -> dict:
             row = con.execute('SELECT id, status, reviewed, scan_id FROM jobs WHERE job_key=?', (j['job_key'],)).fetchone()
             relisted = False
             if row:
-                if row['scan_id'] == scan_id and row['reviewed'] >= f['reviewed']:
+                if row['scan_id'] == scan_id and row['reviewed'] >= f['reviewed'] and not (force and f['reviewed']):
                     continue
                 relisted = not f['reviewed']
                 if row['reviewed'] and relisted:

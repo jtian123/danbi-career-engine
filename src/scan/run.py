@@ -508,7 +508,8 @@ def validate_review(j, lane_ids):
         raise ValueError(f'{name}: a skip needs a blocker, check or skip_reason')
 
 
-def mark(scan_dir, reviewed_path=None, log=print):
+def mark(scan_dir, reviewed_path=None, log=print, force=False):
+    """force=True re-applies reviews already marked (after a review or profile fact changed)."""
     from ..engine import assess
     from ..hub import db
     from pathlib import Path
@@ -533,7 +534,7 @@ def mark(scan_dir, reviewed_path=None, log=print):
         raise ValueError('Fix these reviews first:\n  ' + '\n  '.join(errors))
     profile = _lead_profile()
     by_key = {q['job_key']: q for q in queue + rest}
-    day = date.today().isoformat()
+    day = summary.get('day') or date.today().isoformat()   # the scan's LOCAL day, even if marked later
     out = []
     reviewed_keys = set()
     for j in reviews:
@@ -576,7 +577,7 @@ def mark(scan_dir, reviewed_path=None, log=print):
                         deadline=r.get('deadline'), arenas=(r.get('flags') or {}).get('arenas'), jd_path=r.get('jd_path'),
                         prescore=r.get('prescore'), prescore_parts=r.get('prescore_parts'), reviewed=False,
                         bucket='unreviewed', review={'flags': r.get('flags'), 'checks': _auto_checks_public(r)}))
-    counts = db.upsert_surfaced(out, day, summary['scan_id'])
+    counts = db.upsert_surfaced(out, day, summary['scan_id'], force=force)
     state.mark_seen([(k, summary['scan_id']) for k in reviewed_keys | {q['job_key'] for q in queue}], day)
     meta = {'scan_id': summary['scan_id'], 'reviewed': len(reviews),
             'recommended': sum(1 for j in reviews if j['decision'] == 'recommend'),

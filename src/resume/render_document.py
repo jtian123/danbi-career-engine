@@ -88,7 +88,7 @@ class Renderer:
         self.heading(doc,'Education')
         for e in resume['education']:
             p=self.para(doc,keep=True);self.run(p,e['school'],bold=True);self.run(p,'\t'+e['dates'])
-            self.run(self.para(doc,after=2,keep=bool(e.get('coursework'))),e['degree'])
+            self.run(self.para(doc,after=2,keep=bool(e.get('coursework'))),e['degree']+('  |  GPA '+e['gpa'] if e.get('gpa') else ''))
             for line in e.get('coursework', []):
                 self.run(self.para(doc,after=2),line)
         self.heading(doc,'Experience')

@@ -25,6 +25,7 @@ def main():
     m = sub.add_parser('mark', help="Validate Claude's reviews and put the day's list into the hub")
     m.add_argument('scan_dir')
     m.add_argument('--reviewed', help='default: SCAN_DIR/reviewed.json')
+    m.add_argument('--force', action='store_true', help='re-apply reviews already marked (after edits or new profile facts)')
     h = sub.add_parser('hub', help='The Career Hub (local dashboard, http://127.0.0.1:7768)')
     h.add_argument('action', choices=['serve', 'install', 'uninstall', 'status', 'open'])
     h.add_argument('--port', type=int, default=7768)
@@ -76,7 +77,7 @@ def main():
         elif args.command == 'mark':
             from src.scan.run import mark
             try:
-                mark(args.scan_dir, args.reviewed)
+                mark(args.scan_dir, args.reviewed, force=args.force)
             except ValueError as e:
                 p.error(str(e))
         elif args.command == 'lead':
